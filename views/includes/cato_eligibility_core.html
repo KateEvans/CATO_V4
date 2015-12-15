@@ -1,0 +1,57 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+    
+
+        <fieldset class="inline" id="ineligible-orgs">
+          <legend class="form-label-bold">Do any of the following apply to your company?</legend>
+
+          <p>Your company:</p>
+           <ul class="list-bullet">
+              <li>is in receivership</li>
+              <li>is in its second or a subsequent of liquidation</li>
+              <li>is in members' voluntary liquidation</li>
+              <li>has an accounting period for the return that is covered by more than one set of statutory accounts</li>
+              <li>has statutory accounts that cover more than 3 Corporation Tax accounting periods</li>
+              <li>needs to report a repayment of a loan to a participator more than 9 months after the end of the accounting period</li>
+              <li>pays its Corporation Tax in instalments</li>
+              <li>is registered outside the UK but operates in the UK without a permanent branch or office</li>
+            </ul>
+
+              <div class="form-group form-group-related">
+              <label data-target="" class="block-label" for="yes" onclick="$('#next-button').attr( 'href', '/cato/eligibility-no.html');">
+                <input type="radio" value="Yes" name="ineligible-orgs" id="yes">
+                Yes
+              </label>
+              <label class="block-label" for="no" onclick="$('#next-button').attr( 'href', '/cato/eligibility-secondary.html');">
+                <input type="radio" value="No" name="ineligible-orgs" id="no">
+                No
+              </label>
+            </div>
+          
+        </fieldset>
+
+
+
+        
+</form>
+  

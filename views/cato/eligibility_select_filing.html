@@ -1,0 +1,92 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_eligibility_select_filing_header}}
+    {{>cato_eligibility_select_filing}}
+    <div class="form-group">
+        <br>
+        <a class="next button" id="next-button">Save and continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+
+{{$rightColumn}}
+{{>cato_accounts_aside_type1}}
+{{/rightColumn}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $(".arrow-down").hide();
+
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+
+
+        var type = getUrlParameter('type');
+
+
+        $( ".summary" ).click(function() {
+            $('.panel-indent').toggle( "fast", function() {
+            });
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+            console.log('.arrows');
+        });
+
+
+        $('#chk_bx_filter').click(function(){
+            $('#account_list > li:nth-child(2)').toggleClass("hidden");
+            $('#account_list > li:nth-child(3)').toggleClass("hidden");
+        });
+
+        $('#next-button').click(function(){
+
+
+            if (type != undefined || name == "company"){
+
+            } else {
+                window.location.href = "profit_and_loss.html" + window.location.search;
+//                window.location.href = "upload_accounts.html" + window.location.search;
+            }
+
+            /*if($('#type2').is(':checked')){
+                window.location.href = "#";
+            }
+            else{
+                window.location.href = "eligibility-financial_questions.html" + window.location.search;
+            }*/
+
+
+        })
+
+    });
+</script>
+
+
+
+
+</script>
+
+{{/pageScripts}}
+
+{{/cato_layout}}

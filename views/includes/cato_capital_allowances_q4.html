@@ -1,0 +1,86 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 89%;
+}
+
+</style>
+
+<br />
+
+<form method="POST" class="form">
+
+    <div class="form-group" id="4">
+        <fieldset class="form-group">
+            <span class="form-label-bold">In this period have you sold any assets that you've reported as qualifying for capital allowances?</span>
+            <span class="form-hint">This includes assets you've reported in this period, or in previous periods.</span>
+            <ul>
+                <li>
+                    <label for="q4"  class="block-label" onclick="$('#4').hide().invisible(); $('#5').hide().invisible(); $('#6').hide().invisible(); $('#7').show().visible()">Yes - I've sold assets
+                        <input type="radio" id="q4" name="q4" value="1"/>
+                    </label>
+                </li>
+
+                <li style="clear:left;">
+                    <label for="q41"  class="block-label" onclick="$('#4').show().visible(); $('#5').show().visible(); $('#6').show().visible(); $('#7').hide().invisible() ">No - I haven't sold assets
+                        <input type="radio" id="q41" name="q4" value="2"/>
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+    </div>
+
+</form>

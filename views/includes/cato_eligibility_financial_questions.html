@@ -1,0 +1,144 @@
+<style>
+
+    .summary {
+        text-decoration: underline;
+    }
+    .summary:hover {
+        color: #2e8aca;
+    }
+    .summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    .arrow-down, .arrow-side{
+        margin-left:0px;
+        width:25px;
+        display:inline-block;
+        color:#005ea5;
+        cursor:pointer;
+    }
+
+    div.panel-indent{
+        display: none;
+    }
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+    <div class="form-group">
+        <fieldset class="form-group inline" id=1">
+            <h2 class="form-label-bold">Were your total assets £316,000 or less for the year you're filing for?</h2>
+            <p class="form-hint">This is usually the total figure at the end of your balance sheet.</p>
+            <label for="type1"  class="block-label" onclick="$('#q_2').hide().invisible()">Yes
+                <input type="radio" id="type1" name="selectedType" value="1"/>
+            </label>
+            <label for="type2"  class="block-label" onclick="$('#q_2').show().visible()">No
+                <input type="radio" id="type2" name="selectedType" value="2"/>
+            </label>
+
+        </fieldset>
+    </div>
+
+    <div class="form-group" id="q_2">
+        <fieldset class="form-group inline" id=2">
+            <h2 class="form-label-bold">Were your total assets £3.26 million or less for the year you're filing for?</h2>
+            <p class="form-hint">This is usually the total figure at the end of your balance sheet.</p>
+            <label for="type3"  class="block-label">Yes
+                <input type="radio" id="type3" name="selectedType1" value="1"/>
+            </label>
+            <label for="type4"  class="block-label">No
+                <input type="radio" id="type4" name="selectedType1" value="2"/>
+            </label>
+
+        </fieldset>
+    </div>
+
+    <div class="form-group">
+        <fieldset class="form-group inline" id=3">
+            <h2 class="form-label-bold">Did you have fewer than 10 employees in the year you’re filing for?</h2>
+
+            <!-- #### PROGRESSIVE DISCLOSURE ####-->
+            <section>
+
+                <span class="arrows" style="display: inline">
+                    <span class="arrow-side">&#9658;</span><span class="arrow-down">&#9660;</span>
+                </span>
+                <span class="summary">What to do if your employee numbers changed during the year</span>
+
+                <div class="panel-indent" id="details-content-0" aria-hidden="false">
+                    <ul class="list-bullet">
+                        <li>List the total number of employees you had in each month of the year individually.</li>
+                        <li>Add the total number of employees for each month together.</li>
+                        <li>Divide by 12.</li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <label for="type5"  class="block-label" onclick="$('#q_4').hide().invisible()">Yes
+                <input type="radio" id="type5" name="selectedType2" value="1"/>
+            </label>
+            <label for="type6"  class="block-label" onclick="$('#q_4').show().visible()">No
+                <input type="radio" id="type6" name="selectedType2" value="2"/>
+            </label>
+
+        </fieldset>
+    </div>
+
+
+
+    <div class="form-group" id="q_4">
+        <fieldset class="form-group inline" id=4">
+            <h2 class="form-label-bold">Did you have fewer than 50 employees in the year you’re filing for?</h2>
+
+            <!--<div>
+                <details>
+                    <summary><span class="summary">What to do if your employee numbers changed during the year</span></summary>
+                    <div class="panel-indent">
+                        <ol>
+                            <li>List the total number of employees you had in each month of the year individually.</li>
+                            <li>Add the total number of employees for each month together.</li>
+                            <li>Divide by 12.</li>
+                        </ol>
+                    </div>
+                </details>
+            </div>-->
+
+            <!-- #### PROGRESSIVE DISCLOSURE ####-->
+            <!--<section>
+
+                <span class="arrows" style="display: inline">
+                    <span class="arrow-side">&#9658;</span><span class="arrow-down">&#9660;</span>
+                </span>
+                <span class="summary">What to do if your employee numbers changed during the year</span>
+
+                <div class="panel-indent" id="details-content-1" aria-hidden="false">
+                    <ul class="list-bullet">
+                        <li>List the total number of employees you had in each month of the year individually.</li>
+                        <li>Add the total number of employees for each month together.</li>
+                        <li>Divide by 12.</li>
+                    </ul>
+                </div>
+
+            </section>-->
+
+            <label for="type7"  class="block-label">Yes
+                <input type="radio" id="type7" name="selectedType3" value="1"/>
+            </label>
+            <label for="type8"  class="block-label">No
+                <input type="radio" id="type8" name="selectedType3" value="2"/>
+            </label>
+
+        </fieldset>
+    </div>
+        
+</form>
+  

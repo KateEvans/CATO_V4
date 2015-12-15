@@ -1,0 +1,99 @@
+<style>
+
+.confirmation {
+  background-color: #e9f5f4;
+  border-left: 3px solid #42a197;
+  color: #000;
+  padding: 15px 0 15px 20px;
+
+}
+</style>
+
+<div class="confirmation">
+      <h2 class="heading-small" style="margin-top:0;">Submission successful</h2>
+      <p>Your Accounts have been successfully received by Companies House at 12:34 on 31 May 2015.</p>
+      <p>Your Companies House submission number is S1234567890345</span></p>
+      <p>Download your submission
+      <p>
+            <a href="#">HMRC submission 2013-2014.pdf</a> (PDF, 124 KB)
+       </p>     
+</div>
+
+
+<style>
+  p.help {
+    display: none;
+  }
+
+  .dashboard-current .status {
+  font-size: 20px;
+}
+
+  .dashboard-current td.logo {
+    font-weight: normal;
+  }
+
+  .dashboard-current td.logo img {
+  width: 30px;
+}
+
+  h1.heading-medium a {
+  text-decoration: none;
+  color: black;
+}
+
+.dashboard-current h1 span {
+  padding-top: 2px;
+  font-size: 18px;
+  height: 22px;
+  width: 24px;
+  border-radius: 13px;
+}
+
+.dashboard-current .status {
+    padding-left: 10px;
+}
+
+</style>
+
+<br />
+<br />
+
+<table width="100%" class="dashboard-current">
+  <tr>  
+      <td></td>
+      <td class="logo" style="width: 171px"><img src="/public/images/icons/crests/org_crest_27px.png" />Companies House</td>
+      <td class="logo" style="width: 219px"><img src="/public/images/icons/crests/hmrc_crest_27px.png" />HM Revenue and Customs</td>
+  </tr>
+  <tr>
+      <td>
+        <h1 class="heading-medium"><span>1</span> <a href="#">Accounts</a></h1>
+        <p class="desc help" id="accountsHelp">You're ready to submit your accounts to Companies House and HM Revenue and Customs.</p>  
+        </td>
+      <td class="status">Submitted</td>
+      <td class="status">Ready to submit</td>
+  </tr>
+  <tr>
+      <td>
+        <h1 class="heading-medium"><span>2</span> <a href="#">Computations</a></h1>
+        <p class="desc help" id="compsHelp">You're ready to submit your Corporation Tax calculations.</p>
+      </td>
+      <td class="status not-applicable">Not required</td>
+      <td class="status">Not started</td>
+  </tr>
+  <tr class="end">
+      <td>
+        <h1 class="heading-medium"><span>3</span> <a href="#">Annual tax return (CT600)</a></h1>
+        <p class="desc help" id="returnHelp">Finish your company tax return.</p>
+      </td>
+      <td class="status not-applicable">Not required</td>
+      <td class="status">Not started</td>
+  </tr>
+  <tr>
+  </tr>
+</table>
+
+<br />
+<p>
+<a href="/cato/confirmation.html" class="next button">Start computations</a>
+</p>

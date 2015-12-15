@@ -1,0 +1,82 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_charities_income_declaration_header}}
+    {{>cato_charities_income_declaration}}
+    <div class="form-group">
+        <br>
+        <!--<a href="/cato/company_activity_v2.html" class="next button" id="next-button">Continue</a>-->
+        <a class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".arrow-down").hide();
+        $("#declaration").hide();
+
+
+        $( ".summary" ).click(function() {
+            $('.panel-indent').toggle( "fast", function() {
+            });
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+            console.log('.arrows');
+        });
+
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+
+        var type = getUrlParameter('type');
+
+
+        $('#1').click(function(){
+            $( "#declaration" ).show();
+        });
+
+        $('#2').click(function(){
+            $( "#declaration" ).show();
+        });
+
+        $('#3').click(function(){
+            $( "#declaration" ).hide();
+        });
+
+
+        $('#next-button').click(function(){
+
+            if(type == undefined || type == ""){
+                window.location.href = "upload_accounts.html" + window.location.search;
+            } else {
+                window.location.href = "eligibility_select_filing.html" + window.location.search;
+
+            }
+
+
+
+
+        })
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

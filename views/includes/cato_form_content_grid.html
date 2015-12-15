@@ -1,0 +1,136 @@
+<form method="POST" action="/profitandloss">
+    
+
+<div class="cato-financial"> <!-- Wrapping this div around P+L, Balance Sheet so we can target them specifically-->
+
+
+<div class="grid-wrapper">
+      <div class="grid grid-1-2">
+        <div class="inner-block">
+          &nbsp;
+        </div>
+      </div>
+<div class="grid grid-1-4">
+        <div class="inner-block">
+			<h3>2013<span class="currency">&pound;</span></h3>        </div>
+      </div>
+      <div class="grid grid-1-4">
+        <div class="inner-block">
+			<h3>2012<span class="currency">&pound;</span></h3>        </div>
+      </div>
+</div>
+
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+          <label for="turnover_current"><span class="visuallyhidden">2013</span> Turnover</label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+			<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current">
+      </div>
+      </div>
+      <div class="grid grid-1-4">
+        <div class="inner-block">
+         <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous">
+      </div>
+	</div>
+      
+</div>
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+          <label for="distributioncosts_current"><span class="visuallyhidden">2013</span> Distribution costs</label>
+        </div>
+      </div>
+	<div class="grid grid-1-4 error">
+        <div class="inner-block">
+			<input type="text"size="12" maxlength="11" class="form-control" id="distributioncosts_current" name="distributioncosts_current">
+            <span class="validation-message">This is an error message, and it goes across many lines.</span>
+      </div>
+      </div>
+      
+      <div class="grid grid-1-4 error">
+        <div class="inner-block">
+                  <label for="distributioncosts_previous" class="visuallyhidden">2012 Distribution costs</label>
+
+        	<input type="text"size="12" maxlength="11" class="form-control" id="distributioncosts_previous" name="distributioncosts_previous">
+             <span class="validation-message">This is a different error message, and it goes across many lines.</span>
+      </div>
+	</div>
+      
+</div>
+
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+    <label for="costofsales_current"><span class="visuallyhidden">2013</span> Cost of sales or a label that runs across two or even three lines like this one does here</label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+     	<input type="text"size="12" maxlength="11" class="form-control" id="costofsales_current" name="costofsales_current">
+      </div>
+      </div>
+      <div class="grid grid-1-4">
+        <div class="inner-block">
+            <label for="costofsales_previous" class="visuallyhidden">2012 Cost of sales or a label that runs across two or even three lines like this one does here</label>
+
+        <input type="text"size="12" maxlength="11" class="form-control" id="costofsales_previous" name="costofsales_previous">
+      </div>
+	</div>
+      
+</div>
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+    	<label for="grossprofit_current" class="financial total"><span class="visuallyhidden">2013</span> Gross profit or (loss)</label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_current" name="grossprofit_current" class="form-control form-total">
+      </div>
+    </div>
+    <div class="grid grid-1-4">
+        <div class="inner-block">
+        <label for="grossprofit_previous" class="visuallyhidden">2012 Gross profit or (loss)</label>
+
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_previous" name="grossprofit_previous" class="form-control form-total">
+      </div>
+	</div>
+      
+</div>
+ 
+
+
+
+
+
+
+
+
+
+
+</div><!-- End div class="cato-financial"-->
+        
+
+
+    
+   	
+    
+</form>

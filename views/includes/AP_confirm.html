@@ -1,0 +1,418 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+td.row-label{
+    font-weight: bold;
+}
+
+button{
+    border: medium none;
+    border-radius: 0;
+    box-shadow: 0 2px 0 #003518;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 1.25;
+    margin: 0 15px 15px 0;
+    padding: 0.52632em 0.78947em 0.26316em;
+    position: relative;
+    text-decoration: none;
+    vertical-align: top;
+    background-color: #ccc
+}
+
+
+button:hover{
+    background-color: #eee
+}
+
+
+.turquoise{
+    color:#116C84
+}
+
+
+
+</style>
+
+<br />
+
+
+
+    <fieldset class="form-group" id=1" style="margin-top:1em">
+        <p>Your Companies House and HMRC periods need to align.</p>
+        <p>Your Companies House period is longer than 12 months. The maximum HMRC reporting period
+            you can have 12 months, so you have an extra HMRC period to fill the gap.</p>
+
+
+        <div class="form-group">
+
+            <!-- #### Graphic for the timeline #### -->
+            <div id="timeline" style="margin-top: 1em">
+                <img src="/public/images/poa_timeline_1.png" alt="timeline" id="timeline_image"/>
+            </div>
+        </div>
+
+    </fieldset>
+
+
+    <div class="accordion form-group">
+
+        <!-- ####  Accordion  ####-->
+        <div class="accordion-section" style="border-top: 1px solid #ccc; padding: 0.5em 0">
+            <a href="#accordion-1" class="accordion-section-title">Companies House period dates</a>
+
+            <!-- #### First section  #### -->
+            <div class="accordion-section-content" id="accordion-1" style="">
+                <p>
+                    You can change the end date of your Companies House period ('period of accounts') by 7 days. This will make your Companies House period longer or shorter.
+                </p>
+
+                <fieldset class="form-group inline" id="period0_input_dates" style="margin-top: 1em">
+                    <!--<div style="float: left; padding: 0 3em 0 0">
+                        <legend class="form-label-bold">Start date</legend>
+                        <div class="date-of-birth">
+                            <div class="form-group">
+
+                                <label for="userStartDate.day1" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Day
+                                      </span>
+                                </label>
+                                <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.day" init-value-on-scope="" name="userStartDate.day" id="userStartDate.day1" value="">
+
+                            </div>
+
+                            <div class="form-group flush--bottom">
+
+                                <label for="userStartDate.month1" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Month
+                                      </span>
+                                </label>
+                                <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.month" init-value-on-scope="" name="userStartDate.month" id="userStartDate.month1" value="">
+
+                            </div>
+
+                            <div class="form-group form-group-year">
+                                <label for="userStartDate.year1" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Year
+                                      </span>
+                                </label>
+                                <input type="text" class="input--xsmall form-control" ng-model="userStartDate.year" init-value-on-scope="" name="userStartDate.year" id="userStartDate.year1" value="">
+                            </div>
+
+                        </div>
+                    </div>-->
+
+
+
+                    <div>
+                        <legend class="form-label-bold">End date</legend>
+                        <div class="date-of-birth">
+                            <div class="form-group">
+
+                                <label for="userStartDate.day2" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Day
+                                      </span>
+                                </label>
+                                <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.day" init-value-on-scope="" name="userStartDate.day" id="userStartDate.day2" value="">
+
+                            </div>
+
+                            <div class="form-group flush--bottom">
+
+                                <label for="userStartDate.month2" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Month
+                                      </span>
+                                </label>
+                                <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.month" init-value-on-scope="" name="userStartDate.month" id="userStartDate.month2" value="">
+
+                            </div>
+
+                            <div class="form-group form-group-year">
+                                <label for="userStartDate.year2" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Year
+                                      </span>
+                                </label>
+                                <input type="text" class="input--xsmall form-control" ng-model="userStartDate.year" init-value-on-scope="" name="userStartDate.year" id="userStartDate.year2" value="">
+                            </div>
+
+                            <div class="form-group" style="padding-top:30px">
+                                <button onclick="$('#timeline_image').attr('src', '/public/images/lpoa_timeline_1.png')" id="confirm_0">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+
+
+                <!-- #### static input dates #### -->
+                <fieldset class="form-group hidden" id="period0_end_dates" style="margin-top: 1em">
+                    <div style="float: left; margin-right: 4em">
+                        <legend class="form-label-bold">End date</legend>
+                        <span id="period0_end_date" class="turquoise bold-large"></span>
+                    </div>
+                    <div style="padding-top:25px">
+                        <button id="edit_dates0">Edit dates</button>
+                    </div>
+                </fieldset>
+
+
+
+            </div>
+
+
+
+            <!-- ####  Second section normal ####-->
+            <div id="default_ap" class="accordion-section" style="padding: 0.5em 0">
+                <a href="#accordion-2" class="accordion-section-title">HMRC period dates</a>
+                <div class="accordion-section-content" id="accordion-2" style="display: none;">
+                    <div class="form-group" style="margin-top: 1em">
+                        <p>Your HMRC reporting period start and end on the same dates as your Companies House reporting period.
+                         But if your Companies House reporting period is longer than 12 months, you'll need 2 HMRC periods.</p>
+                        <p>HMRC reporting periods can be a maximum of 12 months. So if your Companies House period is longer than
+                         12 months, you'll need an extra HMRC period to fill the gap.</p>
+                    </div>
+
+                    <div class="form-group inline" style="margin: -1em 0 0 1em">
+                        <p class="bold-medium">HMRC period 1</p>
+                        <p>Your first HMRC period has to start on the same date as your Companies House period. It can be a
+                        maximum of 12 months.</p>
+
+                        <!-- #### input dates #### -->
+                        <fieldset class="form-group inline" id="period1_input_dates" style="margin-top: 0em">
+                            <div style="float: left; padding: 0 3em 0 0">
+                                <legend class="form-label-bold">Start date</legend>
+                                <div class="date-of-birth">
+                                    <div class="form-group">
+
+                                        <label for="userStartDate.day3" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Day
+                                      </span>
+                                        </label>
+                                        <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.day" init-value-on-scope="" name="userStartDate.day" id="userStartDate.day3" value="">
+
+                                    </div>
+
+                                    <div class="form-group flush--bottom">
+
+                                        <label for="userStartDate.month3" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Month
+                                      </span>
+                                        </label>
+                                        <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.month" init-value-on-scope="" name="userStartDate.month" id="userStartDate.month3" value="">
+
+                                    </div>
+
+                                    <div class="form-group form-group-year">
+                                        <label for="userStartDate.year3" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Year
+                                      </span>
+                                        </label>
+                                        <input type="text" class="input--xsmall form-control" ng-model="userStartDate.year" init-value-on-scope="" name="userStartDate.year" id="userStartDate.year3" value="">
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div>
+                                <legend class="form-label-bold">End date</legend>
+                                <div class="date-of-birth">
+                                    <div class="form-group">
+
+                                        <label for="userStartDate.day4" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Day
+                                      </span>
+                                        </label>
+                                        <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.day" init-value-on-scope="" name="userStartDate.day" id="userStartDate.day4" value="">
+
+                                    </div>
+
+                                    <div class="form-group flush--bottom">
+
+                                        <label for="userStartDate.month4" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Month
+                                      </span>
+                                        </label>
+                                        <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.month" init-value-on-scope="" name="userStartDate.month" id="userStartDate.month4" value="">
+
+                                    </div>
+
+                                    <div class="form-group form-group-year">
+                                        <label for="userStartDate.year4" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Year
+                                      </span>
+                                        </label>
+                                        <input type="text" class="input--xsmall form-control" ng-model="userStartDate.year" init-value-on-scope="" name="userStartDate.year" id="userStartDate.year4" value="">
+                                    </div>
+
+                                    <div class="form-group" style="padding-top:30px">
+                                        <button onclick="$('#timeline_image').attr('src', '/public/images/lpoa_timeline_2.png')" id="confirm_1">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+
+
+                        <!-- #### static input dates #### -->
+                        <fieldset class="form-group hidden" id="period1_start_dates">
+                            <div style="float: left; margin-right: 4em">
+                                <legend class="form-label-bold">Start date</legend>
+                                <span id="period1_start_date" class="turquoise bold-large"></span>
+                            </div>
+                            <div style="float: left; margin-right: 4em">
+                                <legend class="form-label-bold">End date</legend>
+                                <span id="period1_end_date" class="turquoise bold-large"></span>
+                            </div>
+                            <div style="padding-top:25px">
+                                <button id="edit_dates1">Edit dates</button>
+                            </div>
+                        </fieldset>
+
+                    </div>
+
+
+
+
+                    <div class="form-group inline" style="margin: 1em 0 0 1em">
+                        <p class="bold-medium">HMRC period 2</p>
+                        <p>Your second HMRC period has to start the day after your first HMRC period. It has to end on the
+                             same date as your Companies House period. It can be a maximum of 12 months.</p>
+
+                        <!-- #### dates #### -->
+                        <fieldset class="form-group inline" id="period2_input_dates" style="margin-top: 0em">
+                            <div style="float: left; padding: 0 3em 0 0">
+                                <legend class="form-label-bold">Start date</legend>
+                                <div class="date-of-birth">
+                                    <div class="form-group">
+
+                                        <label for="userStartDate.day5" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Day
+                                      </span>
+                                        </label>
+                                        <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.day" init-value-on-scope="" name="userStartDate.day" id="userStartDate.day5" value="">
+
+                                    </div>
+
+                                    <div class="form-group flush--bottom">
+
+                                        <label for="userStartDate.month5" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Month
+                                      </span>
+                                        </label>
+                                        <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.month" init-value-on-scope="" name="userStartDate.month" id="userStartDate.month5" value="">
+
+                                    </div>
+
+                                    <div class="form-group form-group-year">
+                                        <label for="userStartDate.year5" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Year
+                                      </span>
+                                        </label>
+                                        <input type="text" class="input--xsmall form-control" ng-model="userStartDate.year" init-value-on-scope="" name="userStartDate.year" id="userStartDate.year5" value="">
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div>
+                                <legend class="form-label-bold">End date</legend>
+                                <div class="date-of-birth">
+                                    <div class="form-group">
+
+                                        <label for="userStartDate.day6" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Day
+                                      </span>
+                                        </label>
+                                        <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.day" init-value-on-scope="" name="userStartDate.day" id="userStartDate.day6" value="">
+
+                                    </div>
+
+                                    <div class="form-group flush--bottom">
+
+                                        <label for="userStartDate.month6" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Month
+                                      </span>
+                                        </label>
+                                        <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.month" init-value-on-scope="" name="userStartDate.month" id="userStartDate.month6" value="">
+
+                                    </div>
+
+                                    <div class="form-group form-group-year">
+                                        <label for="userStartDate.year6" class=" label--dateField-group">
+                                      <span class="label__text">
+                                          Year
+                                      </span>
+                                        </label>
+                                        <input type="text" class="input--xsmall form-control" ng-model="userStartDate.year" init-value-on-scope="" name="userStartDate.year" id="userStartDate.year6" value="">
+                                    </div>
+
+                                    <div class="form-group" style="padding-top:30px">
+                                        <button onclick="$('#timeline_image').attr('src', '/public/images/lpoa_timeline_3.png')" id="confirm_2">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- #### static input dates #### -->
+                        <fieldset class="form-group hidden" id="period2_start_dates">
+                            <div style="float: left; margin-right: 4em">
+                                <legend class="form-label-bold">Start date</legend>
+                                <span id="period2_start_date" class="turquoise bold-large"></span>
+                            </div>
+                            <div style="float: left; margin-right: 4em">
+                                <legend class="form-label-bold">End date</legend>
+                                <span id="period2_end_date" class="turquoise bold-large"></span>
+                            </div>
+                            <div style="padding-top:25px">
+                                <button id="edit_dates2">Edit dates</button>
+                            </div>
+                        </fieldset>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+  

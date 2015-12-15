@@ -1,0 +1,151 @@
+/************************* Styling for forms using GDS grid *************************/
+fieldset {
+    margin-left: 0;
+    margin-right: 0;
+
+    legend {
+        float: none;
+
+        & > details > summary > * {
+            font-size: 19px;
+            font-weight: normal;
+        }
+    }
+}
+
+//remove margin-right overflow on mobile view
+.form-field--error {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/** stop labels from being too close to their input elements **/
+.form-label-bold {
+    margin-bottom: 1em;
+}
+
+label.form-checkbox.block-label.form-field--error input {
+    /* Fixes an issue where checkboxes are out of position when an error message is being displayed */
+    position: static;
+}
+
+.cato-calculation-form {
+    h3 {
+        font-weight: bold;
+        text-align: center;
+    }
+    .currency, .date-header {
+        display: block;
+    }
+
+    .form-control {
+        text-align: right;
+        width: 100%;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group--total {
+        margin-bottom: 5em;
+    }
+    .form-total {
+        .js & {
+            border-left: none;
+            border-right: none;
+        }
+    }
+    .form-total-label {
+        font-weight: bold;
+    }
+
+    .inner-block, .grid-wrapper {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0 15px 0 0;
+    }
+
+    .inner-block.has-help > label {
+        @media screen and (min-width: 641px) {
+            margin-left: 1.25em;
+        }
+    }
+
+    input.form-readonly[readonly] {
+        border: none;
+    }
+    .form-total {
+        font-weight: 700;
+    }
+
+    .box-number-spacer .inner-block > details {
+        margin-top: 1em;
+    }
+
+    .box-number-spacer .inner-block > label {
+        margin-top: 1.6em;
+    }
+
+    @media (max-width: 640px) {
+        input[type="text"],
+        input[type="password"],
+        input[type="color"],
+        input[type="date"],
+        input[type="datetime"],
+        input[type="email"],
+        input[type="month"],
+        input[type="number"],
+        input[type="range"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="time"],
+        input[type="url"],
+        input[type="week"]{
+            margin-bottom: 1em !important;
+            width: 100% !important;
+            min-height: 3em;
+        }
+        h3, .currency {
+            left: -9999px;
+            position: absolute;
+        }
+        .form-control {
+            text-align: left;
+        }
+    }
+}
+
+/****** Allow button elements to span entire width on mobile view *****/
+
+@media screen and (max-width: 640px) {
+    .button {
+        @include box-sizing(border-box);
+        padding: 0.7em 0 0.5em 0;
+        width: 100%;
+    }
+}
+
+/************************* Styling for textareas *************************/
+
+textarea.form-control {
+    width: 99.8%;
+    min-height: 150px;
+}
+
+/************************* Show .date-of-birth elements on mobile devices *************************/
+
+.touchevents {
+    .date-of-birth {
+        display: block;
+    }
+}
+
+///************************* Help Description on field elements *************************/
+.radio-button-with-hint {
+    display: inline-block;
+    float: none;
+}
+
+.form-field--error {
+    @include box-sizing(border-box);
+    overflow: hidden;
+}

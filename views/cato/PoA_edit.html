@@ -1,0 +1,52 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_eligibility_PoA_edit_header}}
+    {{>cato_eligibility_PoA_edit}}
+    <div class="form-group">
+        <br>
+
+        {{#isJoint}}
+        <a href="/cato/turnover_v2.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isJoint}}
+        {{#isHMRC}}
+        <a href="/cato/account_dates.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isHMRC}}
+        {{#isCoHo}}
+        <a href="/cato/turnover_v2.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isCoHo}}
+        <!--<a class="next button" id="next-button">Continue</a>-->
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#dates").hide();
+
+        $('#yes').click(function(){
+            hideDatesPanel();
+        })
+
+        function hideDatesPanel(){
+            $('#dates').css( "display", "none");
+        }
+
+
+        $('#no').click(function(){
+            $("#dates").show();
+        });
+
+
+
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

@@ -1,0 +1,36 @@
+#cato-help
+{
+  float: left;
+  margin-top: 3em;
+
+  .hidden-help
+  {
+    color: #000;
+  }
+
+  .report-error
+  {
+    margin-top: 0;
+  }
+
+  .report-error__toggle.js-visible
+  {
+    display: none;
+  }
+
+  .report-error__content
+  {
+    display: block !important;
+  }
+}
+
+.cato-help--phone
+{
+  float: left;
+}
+
+.cato-help--links-list li
+{
+  list-style: disc inside;
+  word-wrap: normal;
+}

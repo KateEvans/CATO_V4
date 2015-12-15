@@ -1,0 +1,58 @@
+<style>
+    details .summary {
+        text-decoration: underline;
+    }
+    details summary:hover {
+        color: #2e8aca;
+    }
+    details summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+</style>
+
+<br />
+
+<form method="POST" class="form">
+
+    <div class="form-group">
+        <p class="form-label-bold">What was the value of your capital allowance 'main pool' at the start of this reporting period?</p>
+
+        <details>
+            <summary><span class="summary">Find out if you need to answer this question</span></summary>
+            <div class="panel-indent">
+                <p>Don't enter a value here if either: </p>
+
+                <ul class="list-bullet">
+                    <li>you've never reported spending that qualifies for capital allowances</li>
+                    <li>you'd claimed capital allowances on all your previous spending before the start of this period</li>
+                </ul>
+            </div>
+        </details>
+        <br />
+        <fieldset class="form-group">
+            <label for="input_1">£</label>
+            <input id="input_1" type="text" />
+        </fieldset>
+    </div>
+
+    <div class="form-group">
+        <p class="form-label-bold">What was the value of your capital allowance 'special rate pool' at the start of this period?</p>
+        <details>
+            <summary><span class="summary">Find out if you need to answer this question</span></summary>
+            <div class="panel-indent">
+                <p> Don't enter a value unless you bought a car in a previous period that went into your special rate pool. Find out
+                    <a href="https://www.gov.uk/government/publications/capital-allowances-and-balancing-charges-hs252-self-assessment-helpsheet/hs252-capital-allowances-and-balancing-charges-2015#capital-allowances-and-cars"> what capital allowance pool your car is in</a>.</p>
+            </div>
+        </details>
+        <br />
+        <fieldset class="form-group">
+            <label for="input_2">£</label>
+            <input id="input_2" type="text" />
+        </fieldset>
+    </div>
+</form>

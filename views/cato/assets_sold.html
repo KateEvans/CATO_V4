@@ -1,0 +1,37 @@
+{{<cato_layout_no_nav}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_assets_sold_header}}
+    {{>cato_assets_sold}}
+    <div class="form-group">
+        <!--<a href="/cato/turnover_v2.html" class="next button" id="next-button">Continue</a>-->
+        <a class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#next-button').click(function(){
+
+    //            if($('#type1').is(':checked') || $('#type3').is(':checked') || $('#type5').is(':checked')){
+                if($('#type3').is(':checked') || $('#type5').is(':checked')){
+                    window.location.href = "application_exclusion.html" + window.location.search;
+                }
+                else{
+                    window.location.href = "company_registered_v2.html" + window.location.search;
+                }
+
+
+            })
+        });
+    </script>
+
+{{/pageScripts}}
+
+{{/cato_layout_no_nav}}

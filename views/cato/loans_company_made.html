@@ -1,0 +1,371 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+{{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_loans_company_made_header}}
+    {{>cato_loans_company_made}}
+    <div class="form-group">
+        <br>
+        <a href="/cato/CT600_summary.html#loans" class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+        var name = getUrlParameter('name');
+        var outstandingAmount = getUrlParameter('outstanding');
+        var amountRepaidAfter = getUrlParameter('AmountRepaidAfter');
+        var amountRepaidBetween = getUrlParameter('AmountRepaidBetween');
+        var amountWrittenOff = getUrlParameter('amountWrittenOff');
+        var amountWriteOff = getUrlParameter('amountWriteOff');
+        var add_loan = getUrlParameter('add_loan');
+        var add_loan_2 = getUrlParameter('add_loan2');
+//        console.log(amountWriteOff);
+
+        var b_day = getUrlParameter('b_day');
+        var b_month = getUrlParameter('b_month');
+        var b_year = getUrlParameter('b_year');
+        var repaymentDate = b_day + "/" + b_month + "/" + b_year;
+
+        var w_day = getUrlParameter('w_day');
+        var w_month = getUrlParameter('w_month');
+        var w_year = getUrlParameter('w_year');
+        var writtenOffDate = w_day + "/" + w_month + "/" + w_year;
+
+
+        var writeOff_1 = getUrlParameter('amountWrittenOff_1');
+        var writeOff_2a = getUrlParameter('amountWrittenOff_2a');
+
+        var Rcounter = getUrlParameter('Rcounter');
+        var Wcounter = getUrlParameter('Wcounter');
+
+        var url = window.location.search;
+
+
+
+        var createTable = "";
+
+        createTable = "<section class='block-summary' id='person_loan_1'>" +
+                "<div id='loan_1'>" +
+                "<span class='arrows' style='display: inline'>" +
+                "<span class='arrow-side'>&#9658;</span><span class='arrow-down'>&#9660;</span>" +
+                "</span>" +
+                "<span class='summary heading-small' style='margin-top: 0'><span id='Loaned-to_1'>Robert Jones</span> - <span id='outstanding-amount_1'></span></span>" +
+                "<div style='display: inline; float: right;'><a class='block-summary__edit-link' href='#' id='delete_loan'> <span class='visuallyhidden'>@editHint.get</span> Delete</a></div>" +
+                "<div style='display: inline; float: right; margin:0 0.7em 0 2.35em'><a href='#' class='block-summary__edit-link' id='edit_name_1'> Edit</a></div>" +
+                "</div>" +
+                "<div class='panel-indent_1' id='panel-indent' aria-hidden='false'>" +
+                "<div class='div-table'>" +
+                "<div class='div-table' id='repayments_1'>" +
+                "<div class='div-table-col' align='left' style='padding-left: 0.5em' id='repayment_header'><strong>Total repayments between 1 January 2016 and 30 September 2016</strong></div>" +
+                "<div class='div-table-row' id='row_single_repayment'>" +
+                        /* ##### INSERT BETWEEN REPAYMENT  ###### */
+                "<div class='div-table-col' align='left' style='padding-left:2em'><span id='repayment_between'>£500 </span> repayment as of <span id='repayment_betweenDate'></span> </div>" +
+                "<div class='div-table-col'></div>" +
+                "<div class='div-table-col'><a href='#' id='edit_repayments'>Edit</a><a href='#' style='padding-left: 0.7em' id='delete_repayments'>Delete</a></div>" +
+                "</div>" +
+                "<div style='border-bottom: 1px dotted grey' id='border-bottom'></div>" +
+                "<div style='padding:1em 0 0 0.5em'><strong>Repayments after 30 September 2016</strong><div style='float:right'><a id='add_repayment' href='#'>Add another payment</a></div></div>";
+                    /* ##### INSERT MULTIPLE BETWEEN REPAYMENT  ###### */
+                for (var i = 1; i <= Rcounter; i++){
+
+                    createTable = createTable + "<div class='div-table-row' id='row_repayment"+i+"'>" +
+                            "<div class='div-table-col' align='left' style='padding-left:2em'><span id='repaymentAmount"+i+"'></span> repayment as of <span id='repaymentDate"+i+"'></span></div>" +
+                            "<div class='div-table-col'></div>" +
+                            "<div class='div-table-col'><a href='#' id='edit_repayment"+i+"'>Edit</a><a href='#' style='padding-left: 0.7em' id='delete_repayment"+i+"'>Delete</a></div>" +
+                            "</div>";
+
+
+
+                }
+                    /* #### MULTIPLE WRITE OFFS OR RELEASES #### */
+        createTable = createTable + "<div style='border-bottom: 1px dotted grey'></div>"+
+                "<div class='div-table' id='writeOffs_1a' style='margin-top: 1em'>" +
+                "<div style='padding:0em 0 0 0.5em'><strong>Write offs or releases</strong><div style='float:right'><a id='add_writeOff' href='#'>Add another write off</a></div></div>";
+
+                for (var i = 1; i <= Wcounter; i++){
+                    createTable = createTable + "<div class='div-table-row' id='row_write_off"+i+"'>" +
+                            "<div class='div-table-col' align='left' style='padding-left:2em'><span id='writeOffAmount"+i+"'></span> write off or release on <span id='writeOffDate"+i+"'></span><br /> Relief is now due</div>" +
+                            "<div class='div-table-col' align='right'><a href='#' id='edit_writeOffs"+i+"'></a></div>" +
+                            "<div class='div-table-col'><a href='#'>Edit</a><a href='#' style='padding-left: 0.7em' id='delete_single_repayments"+i+"'>Delete</a></div>" +
+                            "</div>";
+                }
+
+        createTable = createTable + "</div>" +
+                "</div>" +
+                "</section>";
+
+
+        $( "div#section" ).after(createTable);
+
+
+        $(".arrow-side").hide();
+        $(".arrow-down_1").hide();
+        $(".arrow-down_2").hide();
+        $(".arrow-down_3").hide();
+
+        $('#writeOffs').hide();
+        $('#writeOffs_1b').hide();
+        $('#person_loan2').hide();
+        $('#writeOffs_2a').hide();
+        $('#writeOffs_2b').hide();
+        $('#person_loan3').hide();
+
+
+        var amountRepaidBetween = getUrlParameter('AmountRepaidBetween_1');
+        var b_day = getUrlParameter('b_day_1');
+        var b_month = getUrlParameter('b_month_1');
+        var b_year = getUrlParameter('b_year_1');
+        var b_date = b_day+"/"+b_month+"/"+b_year;
+
+        $('#repayment_between').text('£'+amountRepaidBetween);
+        $('#repayment_betweenDate').text(b_date);
+
+
+
+        /* #### POPULATE REPAYMENTS >9 MONTHS ROWS ##### */
+        for(var i = 1; i <= Rcounter; i++){
+            var repayAmount = getUrlParameter('AmountRepaidAfter'+i);
+            var r_day = getUrlParameter('repaidAfter_day'+i);
+            var r_month = getUrlParameter('repaidAfter_month'+i);
+            var r_year = getUrlParameter('repaidAfter_year'+1);
+            var r_date = r_day+"/"+r_month+"/"+r_year;
+
+            $('#repaymentAmount'+i).text('£'+repayAmount);
+            $('#repaymentDate'+i).text(r_date);
+//            console.log(repayAmount);
+        }
+
+
+
+        /* #### POPULATE WRITE OFFS ROWS ##### */
+        for(var i = 1; i <= Wcounter; i++){
+            var writeOffAmount = getUrlParameter('amountWrittenOff'+i);
+            var w_day = getUrlParameter('w_day'+i);
+            var w_month = getUrlParameter('w_month'+i);
+            var w_year = getUrlParameter('w_year'+1);
+            var w_date = w_day+"/"+w_month+"/"+w_year;
+
+            $('#writeOffAmount'+i).text('£'+writeOffAmount);
+            $('#writeOffDate'+i).text(w_date);
+//            console.log(repayAmount);
+        }
+
+
+        $( ".summary" ).click(function() {
+            $('#panel-indent').toggle( "fast", function() {
+            });
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+        });
+
+        $( ".summary_1" ).click(function() {
+            $('#panel-indent_1').toggle( "fast", function() {
+            });
+            $('.arrows_1').find(".arrow-side_1, .arrow-down_1").toggle();
+        });
+
+        $( ".summary_2" ).click(function() {
+            $('#panel-indent_2').toggle( "fast", function() {
+            });
+            $('.arrows_2').find(".arrow-side_2, .arrow-down_2").toggle();
+        });
+
+        $( ".summary_3" ).click(function() {
+            $('#panel-indent_3').toggle( "fast", function() {
+            });
+            $('.arrows_3').find(".arrow-side_3, .arrow-down_3").toggle();
+        });
+
+        $('#add_loan').click(function(){
+           window.location.href = "/cato/add_loan.html" + window.location.search;
+        });
+
+
+
+        /* #### REMOVE SINGLE REPAYMENT #### */
+        $('#delete_repayments').click(function(){
+           $('#row_single_repayment').remove();
+           $('#repayment_header').remove();
+           $('#border-bottom').remove();
+        });
+
+
+        /* ##### REMOVE PAYMENTS #### */
+        for (var i = 1; i <= Rcounter; i++) {
+
+            $('#delete_repayment' + i).click(function () {
+//                console.log(this.id.substr(this.id.length - 1));
+                var e = this.id.substr(this.id.length - 1);
+
+                $('#row_repayment'+e).remove();
+            });
+
+        }
+
+
+
+        /* ##### REMOVE WRITE OFFS #### */
+        for (var i = 1; i <= Wcounter; i++){
+            $('#delete_single_repayments' + i).click(function () {
+                var e = this.id.substr(this.id.length - 1);
+                $('#row_write_off'+e).remove();
+            });
+        }
+
+
+        $('#repaymentAmount').text("£"+ amountRepaidBetween);
+        $('#last_repayment_date').text(repaymentDate);
+        $('#writtenOffAmount').text(amountRepaidAfter);
+        $('#outstanding-amount_1').text("£"+outstandingAmount);
+        $('#Loaned-to_1').text(name);
+
+        /* #### OPEN THE PANEL FOR THE 1ST WRITE OFF FOR THE 2ND LOAN IF THERE IS ONE #### */
+        if(writeOff_2a != undefined ){
+            var w_day_2a = getUrlParameter('w_day_2a');
+            var w_month_2a = getUrlParameter('w_month_2a');
+            var w_year_2a = getUrlParameter('w_year_2a');
+            var writtenOffDate_1 = w_day_2a + "/" + w_month_2a + "/" + w_year_2a;
+
+            $('#writeOffs_2a').show();
+            $('#writtenOffAmount_2').text(writeOff_2a);
+            $('#writeOff_date_2').text(writtenOffDate_1);
+            $('#').text();
+        }
+
+
+        /* #### OPEN THE PANEL TO SHOW THE 2ND LOAN #### */
+        if(add_loan == "1"){
+
+            var name_1 = getUrlParameter('name_1');
+            var outstandingAmount_2 = getUrlParameter('outstanding_1');
+            var amountRepaidAfter_1 = getUrlParameter('AmountRepaidAfter_1');
+            var amountRepaidBetween_1 = getUrlParameter('AmountRepaidBetween_1');
+            var amountWrittenOff_2a = getUrlParameter('amountWrittenOff_2a');
+            var amountWriteOff_1 = getUrlParameter('amountWriteOff_1');
+            var add_loan_1 = getUrlParameter('add_loan_1');
+
+            var b_day_1 = getUrlParameter('b_day_1');
+            var b_month_1 = getUrlParameter('b_month_1');
+            var b_year_1 = getUrlParameter('b_year_1');
+            var repaymentDate_1 = b_day_1 + "/" + b_month_1 + "/" + b_year_1;
+
+            $('#person_loan2').show();
+            $('#Loaned-to_1').text(name_1);
+            $('#repaymentAmount_2').text("£"+ amountRepaidBetween_1);
+            $('#outstanding-amount_2').text("£"+outstandingAmount_2);
+            $('#last_repayment_date_2').text(repaymentDate_1);
+        }
+
+        /* #### OPEN THE PANEL TO SHOW THE 3RD LOAN #### */
+        if(add_loan_2 == "yes"){
+            var name_3 = getUrlParameter('name_2');
+            var outstandingAmount_3 = getUrlParameter('outstanding_2');
+            var repayments_2 = getUrlParameter('repayments_2');
+
+            $('#person_loan3').show();
+            $('#Loaned-to_3').text(name_3);
+            $('#outstanding-amount_3').text("£"+outstandingAmount_3);
+
+            if(repayments_2 == "none"){
+                $('#repaymentAmount_3').text('None');
+                $('#last_repayment_date_3').text('N/A');
+                $('#row_relief_due_3').remove();
+            }
+
+        }
+
+
+
+        /* #### NAVIGATE TO ADD ANOTHER WRITE OFF #### */
+        $("#add_writeOff").click(function(){
+            window.location.href = "/cato/loan_writeOffs.html" + window.location.search + "&add_WriteOff=yes";
+        });
+
+        /* #### ADD ANOTHER REPAYMENT LINK #### */
+
+        $('#add_repayment').click(function(){
+            window.location.href = "/cato/loan_repayments.html" + window.location.search + "&add_loan=yes";
+        });
+
+
+
+
+
+
+        $('#edit_name_1').click(function(){
+
+            window.location.href="/cato/add_loan.html"+ window.location.search +"&update=loan1";
+        })
+
+
+        $('#edit_repayments').click(function(){
+
+//            window.location.href="/cato/add_loan.html"+ window.location.search +"&update=loan1";
+            window.location.href="/cato/loan_repayments_2_2.html"+ window.location.search +"&update=loan1";
+
+
+        })
+
+
+
+        /*$('#edit_repayments').click(function(){
+            window.location.href="/cato/loan_repayments.html"+ window.location.search +"&state=edit";
+        })
+
+        $('#edit_repay_date').click(function(){
+            window.location.href="/cato/loan_repayments.html"+ window.location.search +"&state=edit";
+        })
+
+        $('#edit_writeOffs').click(function(){
+            window.location.href="/cato/loan_writeOffs.html?name="+name+"&outstanding="+outstandingAmount+"&amountWriteOff="+amountWrittenOff+"&w_day="+w_day+"&w_month="+w_month+"&w_year="+w_year+"&repaidAmount="+repaidAmount+"&b_day="+r_day+"&r_month="+r_month+"&r_year="+r_year+"&state=edit";
+        })*/
+
+        $("#delete_repayments").click(function () {
+            $('#repayments').remove();
+        });
+
+        $("#delete_writeOffs").click(function () {
+            $('#writeOffs').remove();
+        });
+
+
+        $('#delete_loan').click(function(){
+            $('#person_loan_1').remove();
+        });
+
+
+
+
+    });
+
+</script>
+
+
+{{/pageScripts}}
+
+{{/cato_layout}}

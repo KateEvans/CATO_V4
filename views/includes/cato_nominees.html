@@ -1,0 +1,62 @@
+<form method="POST" action="/accountsapprove" class="form">
+
+          <br />
+
+          <h2>Details of individual authorised to receive the payment on behalf of ACME Widgets Ltd</h2>
+
+          <br />
+        
+          <div class="form-group">
+          <fieldset>
+            <label class="form-label" for="name"><a href="#nomineeHelp" class="help-link"  onclick="$('#nomineeHelp').toggle();return false;">Name</a></label>
+              <small class="hidden-help" id="nomineeHelp"><p>The name of the person you wish to receive your payment.</p></small>
+              <input class="form-control" id="name" type="text" onblur="console.log($('#nominee'));console.log(this.value);$('#nominee').text(this.value);">
+          </fieldset>
+        </div>
+
+      <p style="font-weight:bold;">Address</p>
+
+
+          <div class="address-group">
+
+            <div class="form-group">
+              <label class="form-label" for="building">Building and street</label>
+                <input class="form-control" id="building" type="text"><br />
+                <input class="form-control" id="" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="town">Town or city</label>
+              <input class="form-control" id="town" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="county">County</label>
+                <input class="form-control" id="county" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="postcode">Postcode</label>
+                <input class="form-control" id="postcode" type="text"><br />
+              </div>
+
+          </div>
+
+          <div class="form-group">
+          <fieldset>
+
+           <label class="form-label" for="ref"><a href="#nominatorHelp" class="help-link" onclick="$('#referenceHelp').toggle();return false;">Payment reference</a></label>
+          <small class="hidden-help" id="referenceHelp"><p>This reference will appear on the recipient’s bank statement. For example, if the recipient is an accountant or other agent, you may wish to provide an account number or company name.</p></small>
+
+             
+              <input class="form-control" id="ref" type="text">
+          </fieldset>
+        </div>
+
+
+</fieldset>
+
+
+        
+</form>
+  

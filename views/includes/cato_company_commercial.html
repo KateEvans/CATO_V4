@@ -1,0 +1,47 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+    <div class="form-group" id="q_3">
+        <fieldset class="form-group" id="3">
+            <legend class="form-label-bold">Is your company registered in the UK (or does it have permanent premises in the UK)?</legend>
+            <p class="form-hint">Permanent premises can be an office or a shop, for example.</p>
+            <ul>
+                <li>
+                    <label for="type5"  class="block-label" onclick="$('#q_4').show().visible()">Yes - my company is registered or has premises in the UK
+                        <input type="radio" id="type5" name="q3" value="1"/>
+                    </label>
+                </li>
+
+                <li style="clear:left;">
+                    <label for="type6"  class="block-label" onclick="$('#q_4').hide().invisible()">No - my company isn’t registered and doesn’t have premises in the UK
+                        <input type="radio" id="type6" name="q3" value="2"/>
+                    </label>
+                </li>
+
+            </ul>
+
+        </fieldset>
+    </div>
+        
+</form>
+  

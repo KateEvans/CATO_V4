@@ -1,0 +1,90 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_eligibility_property_header}}
+    {{>cato_eligibility_property}}
+    <div class="form-group">
+        <!--{{#isJoint}}
+        <a href="/cato/dormancy_q1.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isJoint}}
+        {{#isHMRC}}
+        <a href="/cato/eligibility_clubs_tax_period.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isHMRC}}
+        {{#isCoHo}}
+        <a href="/cato/eligibility_select_filing.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isCoHo}}-->
+
+        <a href="#" class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*$('#next-button').click(function(){
+
+                if($('#q2').is(':checked')){
+                    window.location.href = "application_exclusion.html" + window.location.search;
+                }
+
+            })*/
+
+
+            var getUrlParameter = function getUrlParameter(sParam) {
+                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                        sURLVariables = sPageURL.split('&'),
+                        sParameterName,
+                        i;
+
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : sParameterName[1];
+                    }
+                }
+            };
+
+            $('#next-button').click(function() {
+
+                var name = getUrlParameter('name');
+
+                if (name == "Joint") {
+                    if($('#q2').is(':checked')){
+                        var link = "/cato/still_CoHo.html";
+                        $('#next-button').attr("href", link);
+                    } else {
+                        var link = "/cato/dormancy_q1.html?name={{name}}";
+                        $('#next-button').attr("href", link);
+                    }
+
+                } else if(name == "CoHo"){
+                    if($('#q2').is(':checked')){
+                        var link = "/cato/eligibility_select_filing.html?name={{name}}";
+                        $('#next-button').attr("href", link);
+                    } else {
+                        var link = "/cato/still_CoHo.html";
+                        $('#next-button').attr("href", link);
+                    }
+
+                } else if( name == "HMRC"){
+                    if($('#q2').is(':checked')){
+                        var link = "/cato/eligibility_clubs_tax_period.html?name={{name}}";
+                        $('#next-button').attr("href", link);
+                    } else {
+                        var link = "/cato/still_CoHo.html";
+                        $('#next-button').attr("href", link);
+                    }
+                }
+
+            });
+        });
+    </script>
+{{/pageScripts}}
+
+{{/cato_layout}}

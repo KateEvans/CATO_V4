@@ -1,0 +1,107 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="form-label-bold">Are you a limited company registered in the UK?</legend>
+              <div class="form-group form-group-compound">
+                <label class="block-label" data-target="example-ni-number" for="radio-indent-1">
+                  <input id="radio-indent-1" type="radio" name="radio-indent-group" value="Yes" onclick="$('.ltd-only, #ineligible-orgs').show().visible();">
+                  Yes
+                </label>
+                <label class="block-label" for="radio-indent-2">
+                  <input id="radio-indent-2" type="radio" name="radio-indent-group" value="No" onclick="$('.ltd-only, #ineligible-orgs').hide().invisible();">
+                  No
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <fieldset>
+                <legend class="form-label-bold">Is your company any of the following?</legend>
+                <p>Select all that apply</p>
+                <label class="block-label ltd-only" for="checkbox-1">
+                  <input id="checkbox-1" class="not-yets" type="checkbox" value="waste-animal" onclick="$('#next-button').attr('href', '/cato/eligibility-not-yet.html'); $('#none').prop('checked', false); $('#ineligible-orgs').hide().invisible();">
+                  Limited by guarantee
+                </label>
+                <label class="block-label ltd-only" for="checkbox-2">
+                  <input id="checkbox-2" class="not-yets" type="checkbox" value="waste-mines" onclick="$('#next-button').attr('href', '/cato/eligibility-not-yet.html'); $('#none').prop('checked', false); $('#ineligible-orgs').hide().invisible();">
+                  A Community Amateur Sports Club (CASC)
+                </label>
+                <label class="block-label" for="checkbox-3">
+                  <input id="checkbox-3" class="not-yets" type="checkbox" value="farm-agricultural" onclick="$('#next-button').attr('href', '/cato/eligibility-not-yet.html'); $('#none').prop('checked', false); $('#ineligible-orgs').hide().invisible();">
+                  A members’ club or voluntary association
+                </label>
+                <label class="block-label" for="checkbox-4">
+                  <input id="checkbox-4" class="not-yets" type="checkbox" value="farm-agricultural" onclick="$('#next-button').attr('href', '/cato/eligibility-not-yet.html'); $('#none').prop('checked', false); $('#ineligible-orgs').hide().invisible();">
+                  A charity or owned by a charity
+                </label>
+                <label class="block-label" for="checkbox-5">
+                  <input id="checkbox-5" class="not-yets" type="checkbox" value="farm-agricultural" onclick="$('#next-button').attr('href', '/cato/eligibility-not-yet.html'); $('#none').prop('checked', false); $('#ineligible-orgs').hide().invisible();">
+                  In first year of liquidation
+                </label>
+                <label class="block-label" for="checkbox-6">
+                  <input id="checkbox-6" class="not-yets" type="checkbox" value="farm-agricultural" onclick="$('#next-button').attr('href', '/cato/eligibility-not-yet.html'); $('#none').prop('checked', false); $('#ineligible-orgs').hide().invisible();">
+                  A property management company
+                </label>
+                <label class="block-label ltd-only" for="checkbox-7">
+                  <input id="checkbox-7" class="not-yets" type="checkbox" value="farm-agricultural" onclick="$('#next-button').attr('href', '/cato/eligibility-not-yet.html'); $('#none').prop('checked', false); $('#ineligible-orgs').hide().invisible();">
+                  A public limited company
+                </label>
+                <label class="block-label" for="none" style="font-weight:bold;" onclick="$('.not-yets').prop('checked', false); if( $('#radio-indent-2').is(':checked') ){ $('#next-button').attr('href', '/cato/eligibility-no.html'); $('#ineligible-orgs').hide().invisible();} ">
+                  <input id="none" type="checkbox" value="farm-agricultural">
+                  None of the above
+                </label>
+              </fieldset>
+          </div>
+
+
+
+        <fieldset class="inline" id="ineligible-orgs">
+          <legend class="form-label-bold">Is your company any of the following?</legend>
+
+           <ul class="list-bullet">
+              <li>Involved in investment, financial holdings or insurance</li>
+              <li>A group company</li>
+              <li>A credit institution</li>
+            </ul>
+
+              <div class="form-group form-group-related">
+              <label data-target="" class="block-label" for="yes">
+                <input type="radio" value="Yes" name="ineligible-orgs" id="yes" onclick="$('#next-button').attr('href', '/cato/eligibility-no.html');">
+                Yes
+              </label>
+              <label class="block-label" for="no">
+                <input type="radio" value="No" name="ineligible-orgs" id="no" onclick="$('#next-button').attr('href', '/cato/eligibility-core.html');">
+                No
+              </label>
+            </div>
+
+        </fieldset>
+
+
+
+        
+</form>
+  

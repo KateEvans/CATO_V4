@@ -1,0 +1,151 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+td.row-label{
+    font-weight: bold;
+}
+
+button{
+    border: medium none;
+    border-radius: 0;
+    box-shadow: 0 2px 0 #003518;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 1.25;
+    margin: 0 15px 15px 0;
+    padding: 0.52632em 0.78947em 0.26316em;
+    position: relative;
+    text-decoration: none;
+    vertical-align: top;
+    background-color: #ccc
+}
+
+
+button:hover{
+    background-color: #eee
+}
+
+
+.secondaryTextColour{
+    color:#6F777B
+}
+
+
+
+</style>
+
+<br />
+
+
+    <div class="form-group">
+
+
+        {{#isJoint}}
+        <span>Our records show you need to file accounts and a Company Tax Return for:</span><br>
+        {{/isJoint}}
+        <!--{{#isHMRC}}
+
+        {{/isHMRC}}-->
+        {{#isCoHo}}
+        <span>Companies House records show you need to file accounts for:</span><br>
+        {{/isCoHo}}
+
+
+
+        <span class="form-label-bold secondaryTextColour">1 January 2014 to 31 December 2014</span>
+    </div>
+
+
+
+    <div>
+        {{#isJoint}}
+        <h2 class="heading-medium">Is this the period you want to file for?</h2>
+        {{/isJoint}}
+        {{#isCoHo}}
+        <h2 class="heading-medium">Is this the period you've prepared your accounts for?</h2>
+        {{/isCoHo}}
+
+
+
+        <ul>
+            <li>
+                <label for="yes"  class="block-label">Yes - this is the period I want to file for
+                    <input type="radio" id="yes" name="selectedType" value="1"/>
+                </label>
+            </li>
+
+            <li style="clear:left;">
+                <label for="no"  class="block-label">No - I want to enter other dates
+                    <input type="radio" id="no" name="selectedType" value="2"/>
+                </label>
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="form-group" id="dates" style="margin-top: 2em">
+        <div>
+            <p>You can change the end date of your account by up to 7 days.</p>
+        </div>
+         <fieldset id="paymentDate_2">
+            <legend class="heading-medium">End date</legend>
+            <div class="date-of-birth">
+                <div class="form-group">
+
+                    <label class=" label--dateField-group" for="userStartDate.day1">
+                                  <span class="label__text">
+                                      Day
+                                  </span>
+                    </label>
+                    <input type="text" value="31" id="userStartDate.day1" name="userStartDate.day" class="input--xxsmall form-control">
+
+                </div>
+
+                <div class="form-group flush--bottom">
+
+                    <label class=" label--dateField-group" for="userStartDate.month2">
+                                  <span class="label__text">
+                                      Month
+                                  </span>
+                    </label>
+                    <input type="text" value="12" id="userStartDate.month2" name="userStartDate.month" class="input--xxsmall form-control">
+
+                </div>
+
+                <div class="form-group form-group-year">
+                    <label class=" label--dateField-group" for="userStartDate.year3">
+                                  <span class="label__text">
+                                      Year
+                                  </span>
+                    </label>
+                    <input type="text" value="2014" id="userStartDate.year3" name="userStartDate.year" class="input--xsmall form-control">
+                </div>
+            </div>
+             <div class="form-group">
+                 <p>If you want to change the end date of your accounts by more than 7 days, or change the start date you need to
+                     <a href="http://www.gov.uk/contact-companies-house" rel="external" target="_blank">contact
+                 Companies House</a> and return to this service after they update your records.</p>
+             </div>
+        </fieldset>
+    </div>
+</section>
+
+
+
+  

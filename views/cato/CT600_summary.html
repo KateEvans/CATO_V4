@@ -1,0 +1,170 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+{{>cato_CT600_summary_header}}
+{{>cato_CT600_summary}}
+<div class="form-group">
+    <br>
+    <a href="#" class="next button" id="next-button">Save and continue</a>
+    <ul>
+        <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+    </ul>
+</div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        /* HIDE ARROWS FOR ACCORDION*/
+        $(".arrow-down").hide();
+        $(".arrow-down_1").hide();
+        $(".arrow-side_2").hide();
+        $(".arrow-down_3").hide();
+        $(".arrow-down_4").hide();
+        $(".arrow-down_5").hide();
+        $(".arrow-down_6").hide();
+        $(".arrow-down_7").hide();
+        $(".arrow-down_8").hide();
+        $(".arrow-down_9").hide();
+
+        $("#close").hide();
+
+
+        $("#open").click(function(){
+            $('#panel-indent').show();
+            $('#panel-indent_2').show();
+            $('#panel-indent_3').show();
+            $('#panel-indent_4').show();
+            $('#panel-indent_5').show();
+            $('#panel-indent_6').show();
+            $('#panel-indent_7').show();
+            $('#panel-indent_8').show();
+
+            $('#showHide').find("#close, #open").toggle();
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+            $('.arrows_2').find(".arrow-side_2, .arrow-down_2").toggle();
+            $('.arrows_3').find(".arrow-side_3, .arrow-down_3").toggle();
+            $('.arrows_4').find(".arrow-side_4, .arrow-down_4").toggle();
+            $('.arrows_5').find(".arrow-side_5, .arrow-down_5").toggle();
+            $('.arrows_6').find(".arrow-side_6, .arrow-down_6").toggle();
+            $('.arrows_7').find(".arrow-side_7, .arrow-down_7").toggle();
+            $('.arrows_8').find(".arrow-side_8, .arrow-down_8").toggle();
+
+        });
+
+        $("#close").click(function(){
+            $('#panel-indent').hide();
+            $('#panel-indent_2').hide();
+            $('#panel-indent_3').hide();
+            $('#panel-indent_4').hide();
+            $('#panel-indent_5').hide();
+            $('#panel-indent_6').hide();
+            $('#panel-indent_7').hide();
+            $('#panel-indent_8').hide();
+
+            $('#showHide').find("#close, #open").toggle();
+
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+            $('.arrows_2').find(".arrow-side_2, .arrow-down_2").toggle();
+            $('.arrows_3').find(".arrow-side_3, .arrow-down_3").toggle();
+            $('.arrows_4').find(".arrow-side_4, .arrow-down_4").toggle();
+            $('.arrows_5').find(".arrow-side_5, .arrow-down_5").toggle();
+            $('.arrows_6').find(".arrow-side_6, .arrow-down_6").toggle();
+            $('.arrows_7').find(".arrow-side_7, .arrow-down_7").toggle();
+            $('.arrows_8').find(".arrow-side_8, .arrow-down_8").toggle();
+        });
+
+
+        $( ".summary" ).click(function() {
+            $('#panel-indent').toggle( "fast", function() {
+            });
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+        });
+
+        $( ".summary_1" ).click(function() {
+            $('#panel-indent_1').toggle( "fast", function() {
+            });
+            $('.arrows_1').find(".arrow-side_1, .arrow-down_1").toggle();
+        });
+
+        $( ".summary_2" ).click(function() {
+            $('#panel-indent_2').toggle( "fast", function() {
+            });
+            $('.arrows_2').find(".arrow-side_2, .arrow-down_2").toggle();
+        });
+
+        $( ".summary_3" ).click(function() {
+            $('#panel-indent_3').toggle( "fast", function() {
+            });
+            $('.arrows_3').find(".arrow-side_3, .arrow-down_3").toggle();
+        });
+
+        $( ".summary_4" ).click(function() {
+            $('#panel-indent_4').toggle( "fast", function() {
+            });
+            $('.arrows_4').find(".arrow-side_4, .arrow-down_4").toggle();
+        });
+
+        $( ".summary_5" ).click(function() {
+            $('#panel-indent_5').toggle( "fast", function() {
+            });
+            $('.arrows_5').find(".arrow-side_5, .arrow-down_5").toggle();
+        });
+
+        $( ".summary_6" ).click(function() {
+            $('#panel-indent_6').toggle( "fast", function() {
+            });
+            $('.arrows_6').find(".arrow-side_6, .arrow-down_6").toggle();
+        });
+
+        $( ".summary_7" ).click(function() {
+            $('#panel-indent_7').toggle( "fast", function() {
+            });
+            $('.arrows_7').find(".arrow-side_7, .arrow-down_7").toggle();
+        });
+
+        $( ".summary_8" ).click(function() {
+            $('#panel-indent_8').toggle( "fast", function() {
+            });
+            $('.arrows_8').find(".arrow-side_8, .arrow-down_8").toggle();
+        });
+
+        $( ".summary_9" ).click(function() {
+            $('#panel-indent_9').toggle( "fast", function() {
+            });
+            $('.arrows_9').find(".arrow-side_9, .arrow-down_9").toggle();
+        });
+
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+        var name = getUrlParameter('name');
+
+
+
+    });
+</script>
+{{/pageScripts}}
+
+
+{{/cato_layout}}

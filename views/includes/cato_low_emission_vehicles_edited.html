@@ -1,0 +1,75 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/" class="form">
+
+    <div id="q_2">
+        <div class="form-group">
+            <fieldset class="form-group">
+                <legend class="form-label-bold">What is the car's registration number?</legend>
+                <input type="text" value="A983 VT0" />
+            </fieldset>
+        </div>
+
+
+        <div class="form-group">
+            <fieldset class="form-group">
+                <legend class="form-label-bold">Was it new or second hand?</legend>
+                <ul>
+                    <li>
+                        <label for="type7"  class="block-label">New
+                            <input type="radio" id="type7" name="q3" value="1"/>
+                        </label>
+                    </li>
+
+                    <li style="clear:left;">
+                        <label for="type8"  class="block-label">Second hand
+                            <input type="radio" id="type8" name="q3" value="2" checked="checked"/>
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+        </div>
+
+        <div class="form-group">
+            <fieldset class="form-group">
+                <legend class="form-label-bold">How much did you pay for it?</legend>
+                <input type="text" value="9800" />
+            </fieldset>
+        </div>
+
+
+        <div class="form-group">
+            <fieldset class="form-group">
+                <legend class="form-label-bold">What is its CO2 emissions level?</legend>
+                <span class="form-hint">This will be on your car's registration certificate (the 'V5C') or you can
+    <a href="https://www.gov.uk/get-vehicle-information-from-dvla" target="_blank">check it with the DVLA</a>.</span>
+                <input type="text" value="230" />
+            </fieldset>
+        </div>
+
+    </div>
+
+
+
+        
+</form>
+  

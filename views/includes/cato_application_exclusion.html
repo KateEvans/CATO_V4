@@ -1,0 +1,51 @@
+<br />
+<br />
+
+<form action="/advancesandcreditfootnote" method="POST" class="form" >
+
+
+
+    {{#isJoint}}
+    <div>
+        <p>You can <a href="https://www.gov.uk/government/publications/corporation-tax-commercial-software-suppliers#" target="_blank" rel="external">
+            use tax software to file your tax return</a> with HM Revenue and Customs.</p>
+
+        <p>You can <a href="https://www.gov.uk/file-an-annual-return-with-companies-house" target="_blank" rel="external">file your accounts on the
+            Companies House website</a>, or <a href="https://www.gov.uk/company-filing-software/overview" target="_blank" rel="external">use accounting software</a>.
+        </p>
+    </div>
+    {{/isJoint}}
+
+    {{#isCharities}}
+    <div>
+        <p>You can <a href="https://www.gov.uk/government/publications/corporation-tax-commercial-software-suppliers#" target="_blank" rel="external">
+            use tax software to file your tax return</a> with HM Revenue and Customs.</p>
+
+        <p>You can <a href="https://www.gov.uk/file-an-annual-return-with-companies-house" target="_blank" rel="external">file your accounts on the
+            Companies House website</a>, or <a href="https://www.gov.uk/company-filing-software/overview" target="_blank" rel="external">use accounting software</a>.
+        </p>
+    </div>
+    {{/isCharities}}
+
+
+    {{#isCoHo}}
+    <div class="form-group">
+        <p>You can’t use this service to file your company accounts and tax return. You can file separately with
+        <a href="https://gov.uk/file-an-annual-return-with-companies-house" target="_blank">Companies House</a>, or you can
+            <a href="https://www.gov.uk/company-filing-software/overview" target="_blank"> use accounting software</a>.</p>
+
+        <p>The following types of organisation will be able to use this service in the next few months:</p>
+
+        <ul class="list-bullet">
+            <li>charities with income below £6.5 million</li>
+            <li>community amateur sports clubs (CASCs)</li>
+            <li>members’ clubs</li>
+            <li>companies in liquidation</li>
+        </ul>
+
+    </div>
+    {{/isCoHo}}
+
+
+
+</form>

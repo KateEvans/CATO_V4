@@ -1,0 +1,47 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+
+    <div class="form-group" id="q_1b">
+        <fieldset class="form-group" id="1_b">
+            <!--<legend class="form-label-bold">Is your company an investment company?</legend>-->
+            <ul>
+                <li>
+                    <label for="type1_b"  class="block-label" onclick="$('#q_1c').hide().invisible()">Yes - my company is an investment company
+                        <input type="radio" id="type1_b" name="1_b" value="1"/>
+                    </label>
+                </li>
+
+                <li style="clear:left;">
+                    <label for="type1_bb"  class="block-label" onclick="$('#q_1c').show().visible()">No - my company isn't an investment company
+                        <input type="radio" id="type1_bb" name="1_b" value="2"/>
+                    </label>
+                </li>
+
+            </ul>
+
+        </fieldset>
+    </div>
+
+</form>
+  

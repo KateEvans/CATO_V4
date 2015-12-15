@@ -1,0 +1,65 @@
+<style>
+
+    .summary {
+        text-decoration: underline;
+    }
+    .summary:hover {
+        color: #2e8aca;
+    }
+    .summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    .arrow-down, .arrow-side{
+        margin-left:0px;
+        width:25px;
+        display:inline-block;
+        color:#005ea5;
+        cursor:pointer;
+    }
+
+    div.panel-indent{
+        display: none;
+    }
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+    <div class="form-group" id="q_5">
+        <p class="form-hint">This starts with 1 or 2 letters, followed by 5 numbers, eg XN12345.</p>
+
+        <fieldset class="form-group" id="5">
+            <ul>
+                <li>
+                    <input type="text" id="type1" name="q1" value=""/>
+                </li>
+    </ul>
+        </fieldset>
+
+
+        <section>
+
+        <span class="arrows" style="display: inline">
+            <span class="arrow-side">&#9658;</span><span class="arrow-down">&#9660;</span>
+        </span>
+            <span class="summary">Don't have an HMRC number?</span>
+
+            <div class="panel-indent" id="details-content-0" aria-hidden="false">
+                <p> You'll need to <a href="https://www.gov.uk/charity-recognition-hmrc" target="_blank" rel="external">
+                    apply to HMRC for a charity reference number</a>.</p>
+            </div>
+
+        </section>
+    </div>
+
+        
+</form>
+  

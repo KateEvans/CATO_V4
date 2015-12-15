@@ -1,0 +1,463 @@
+<style type="text/css">
+.help-link::after, .help-link:visited::after {display:none;}
+a.help-link {text-decoration:underline; color:#005ea5; font-size:0.9em; font-weight:normal; display:inline-block !important; }
+/*label.total a.help-link {text-decoration:none; color:#005ea5;}*/
+i.arrow {color:#005ea5; margin-left:0.5em; margin-bottom:1em;font-size:0.9em;}
+.cato-financial input {margin-bottom: 1em !important;}
+.cato-financial input.form-total {margin-top:0;}
+.cato-financial label.total {margin-top:0.4em;}
+hr {margin: 1em auto 2.5em auto;height: 1px;background-color:#DEE0E2;border: 0 none; }
+</style>
+
+
+
+<form method="POST" action="/profitandloss">
+    
+
+<div class="cato-financial"> <!-- Wrapping this div around P+L, Balance Sheet so we can target them specifically-->
+
+
+<div class="grid-wrapper">
+      <div class="grid grid-1-2">
+        <div class="inner-block">
+          &nbsp;
+        </div>
+      </div>
+<div class="grid grid-1-4">
+        <div class="inner-block">
+			<h3>2013<span class="currency">&pound;</span></h3>        </div>
+      </div>
+      <div class="grid grid-1-4">
+        <div class="inner-block">
+			<h3>2012<span class="currency">&pound;</span></h3>        </div>
+      </div>
+</div>
+
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+          <label for="turnover_current"><span class="visuallyhidden">2013</span>Turnover
+           <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#nomineeHelp" class="help-link"  onclick="$('#nomineeHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="nomineeHelp"><p>The total amount your company has received or is due from providing goods or services for the period. It should exclude VAT if VAT was charged on its supplies. Turnover may also be known as sales, revenue or income.</p></small>
+          </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+			<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current">
+      </div>
+      </div>
+      <div class="grid grid-1-4">
+        <div class="inner-block">
+         <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous">
+      </div>
+	</div>
+      
+</div>
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+          <label for="distributioncosts_current"><span class="visuallyhidden">2013</span> Cost of sales
+     		<i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#costOfSalesHelp" class="help-link"  onclick="$('#costOfSalesHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="costOfSalesHelp"><p>The cost of direct labour and materials used to produce the goods or services sold. It excludes any distribution costs and administrative costs, which have their own entries in profit and loss. </p></small>
+          </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+			<input type="text"size="12" maxlength="11" class="form-control" id="distributioncosts_current" name="distributioncosts_current">
+      </div>
+      </div>
+      
+      <div class="grid grid-1-4">
+        <div class="inner-block">
+                  <label for="distributioncosts_previous" class="visuallyhidden">2012 Distribution costs</label>
+
+        	<input type="text"size="12" maxlength="11" class="form-control" id="distributioncosts_previous" name="distributioncosts_previous">
+      </div>
+	</div>
+      
+</div>
+
+
+
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+    	<label for="grossprofit_current" class="financial total"><span class="visuallyhidden">2013</span>Gross profit or (loss)
+             		<i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#grossprofitHelp" class="help-link"  onclick="$('#grossprofitHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="grossprofitHelp"><p>This is calculated by subtracting your cost of sales from your turnover. </p></small>
+          </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_current" name="grossprofit_current" class="form-control form-total">
+      </div>
+    </div>
+    <div class="grid grid-1-4">
+        <div class="inner-block">
+        <label for="grossprofit_previous" class="visuallyhidden">2012 Gross profit or (loss)</label>
+
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_previous" name="grossprofit_previous" class="form-control form-total">
+      </div>
+	</div>
+      
+</div>
+ 
+<hr />
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+          <label for="turnover_current"><span class="visuallyhidden">2013</span>Distribution costs
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#distributionHelp" class="help-link"  onclick="$('#distributionHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="distributionHelp">	These are costs (expenses) generally associated with selling or dispatching your goods or services, such as:<ul class="list-bullet"><li>packaging</li><li>transport</li><li>warehousing</li></ul></small>
+          </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+			<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current">
+      </div>
+      </div>
+      <div class="grid grid-1-4">
+        <div class="inner-block">
+         <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous">
+      </div>
+	</div>
+      
+</div>
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+          <label for="distributioncosts_current"><span class="visuallyhidden">2013</span>Administrative expenses
+     		<i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#adminHelp" class="help-link"  onclick="$('#adminHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="adminHelp">	These are management expenses and overhead costs, such as:<ul class="list-bullet"><li>administrative salaries</li><li>rent, rates, utilities and insurance</li><li>repairs and renewals</li><li>print, post and stationary</li><li>legal and accounting fees</li><li>bad debts written off</li></ul></small>
+          </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+			<input type="text"size="12" maxlength="11" class="form-control" id="distributioncosts_current" name="distributioncosts_current">
+      </div>
+      </div>
+      
+      <div class="grid grid-1-4">
+        <div class="inner-block">
+                  <label for="distributioncosts_previous" class="visuallyhidden">2012 Distribution costs</label>
+
+        	<input type="text"size="12" maxlength="11" class="form-control" id="distributioncosts_previous" name="distributioncosts_previous">
+      </div>
+	</div>
+      
+</div>
+
+
+
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+    	<label for="grossprofit_current" class="financial "><span class="visuallyhidden">2013</span>Other operating income
+             		<i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#otherOperatingHelp" class="help-link"  onclick="$('#otherOperatingHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="otherOperatingHelp"><p>Any income from activities not related to your company's core activities that you have not included elsewhere in your profit and loss (such as turnover).</p></small>
+          </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_current" name="grossprofit_current" class="form-control ">
+      </div>
+    </div>
+    <div class="grid grid-1-4">
+        <div class="inner-block">
+        <label for="grossprofit_previous" class="visuallyhidden">2012 Gross profit or (loss)</label>
+
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_previous" name="grossprofit_previous" class="form-control">
+      </div>
+	</div>
+      
+</div>
+
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+    	<label for="grossprofit_current" class="financial total"><span class="visuallyhidden">2013</span>Operating profit or (loss)
+             		<i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#operatingprofitHelp" class="help-link"  onclick="$('#operatingprofitHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="operatingprofitHelp"><p>This is calculated by subtracting your distribution and administrative costs from your gross profit (or loss), then adding your other operating income. </p></small>
+          </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_current" name="grossprofit_current" class="form-control form-total">
+      </div>
+    </div>
+    <div class="grid grid-1-4">
+        <div class="inner-block">
+        <label for="grossprofit_previous" class="visuallyhidden">2012 Gross profit or (loss)</label>
+
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_previous" name="grossprofit_previous" class="form-control form-total">
+      </div>
+	</div>
+      
+</div>
+
+
+<hr />
+
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+          <label for="turnover_current"><span class="visuallyhidden">2013</span>Interest receivable and similar income
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#interestReceivableHelp" class="help-link"  onclick="$('#interestReceivableHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="interestReceivableHelp">	The total amount of interest (or similar) either received by or owed to the company on balances, such as:<ul class="list-bullet"><li>bank deposits</li><li>loans made by the company</li><li>gains from foreign exchange</li></ul></small>
+          </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+			<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current">
+      </div>
+      </div>
+      <div class="grid grid-1-4">
+        <div class="inner-block">
+         <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous">
+      </div>
+	</div>
+      
+</div>
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+          <label for="distributioncosts_current"><span class="visuallyhidden">2013</span>Interest payable and similar charges
+     		<i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#interestHelp" class="help-link"  onclick="$('#interestHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="interestHelp">	The total amount of interest (or similar) either paid by or owed by the company on balances, such as:<ul class="list-bullet"><li>bank loans or overdrafts</li><li>other loans made to the company</li><li>finance leases on equipment or property used in the business</li><li>losses from foreign exchange</li></ul></small>
+          </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+			<input type="text"size="12" maxlength="11" class="form-control" id="distributioncosts_current" name="distributioncosts_current">
+      </div>
+      </div>
+      
+      <div class="grid grid-1-4">
+        <div class="inner-block">
+                  <label for="distributioncosts_previous" class="visuallyhidden">2012 Distribution costs</label>
+
+        	<input type="text"size="12" maxlength="11" class="form-control" id="distributioncosts_previous" name="distributioncosts_previous">
+      </div>
+	</div>
+      
+</div>
+
+
+
+
+
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+    	<label for="grossprofit_current" class="financial total"><span class="visuallyhidden">2013</span>Profit (loss) on ordinary activities before taxation
+             		<i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#profitLossOrdinaryHelp" class="help-link"  onclick="$('#profitLossOrdinaryHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="profitLossOrdinaryHelp"><p>This is calculated by adding together your operating profit (or loss) and your interest receivable (or similar income), then subtracting your interest payable (or similar charges).</p></small>
+        </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_current" name="grossprofit_current" class="form-control form-total">
+      </div>
+    </div>
+    <div class="grid grid-1-4">
+        <div class="inner-block">
+        <label for="grossprofit_previous" class="visuallyhidden">2012 Gross profit or (loss)</label>
+
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_previous" name="grossprofit_previous" class="form-control form-total">
+      </div>
+	</div>
+      
+</div>
+
+
+<hr />
+
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+          <label for="distributioncosts_current"><span class="visuallyhidden">2013</span>Tax on profit or loss on ordinary activities
+     		<i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#taxHelp" class="help-link"  onclick="$('#taxHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="taxHelp">The total corporate tax charge for the period. If the total is a repayment (a credit), then enter a negative figure using a minus sign. </small>
+          </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+			<input type="text"size="12" maxlength="11" class="form-control" id="distributioncosts_current" name="distributioncosts_current">
+      </div>
+      </div>
+      
+      <div class="grid grid-1-4">
+        <div class="inner-block">
+                  <label for="distributioncosts_previous" class="visuallyhidden">2012 Distribution costs</label>
+
+        	<input type="text"size="12" maxlength="11" class="form-control" id="distributioncosts_previous" name="distributioncosts_previous">
+      </div>
+	</div>
+      
+</div>
+
+
+
+
+
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+    	<label for="grossprofit_current" class="financial total"><span class="visuallyhidden">2013</span>Profit (loss) for the financial year
+             		<i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#profitLossFinancialHelp" class="help-link"  onclick="$('#profitLossFinancialHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="profitLossFinancialHelp">This is calculated by subtracting your tax on ordinary activities from your profit (or loss) on ordinary activities before taxation. If you have received a tax repayment, the amount is calculated by adding the two figures together rather than subtracting. </small>
+          </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_current" name="grossprofit_current" class="form-control form-total">
+      </div>
+    </div>
+    <div class="grid grid-1-4">
+        <div class="inner-block">
+        <label for="grossprofit_previous" class="visuallyhidden">2012 Gross profit or (loss)</label>
+
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_previous" name="grossprofit_previous" class="form-control form-total">
+      </div>
+	</div>
+      
+</div>
+
+<hr />
+<p class="important-notice" id="statutoryDividendNote">Dividends and net balance transferred to reserves won't appear on the face of the profit and loss submitted.</p>
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+          <label for="distributioncosts_current"><span class="visuallyhidden">2013</span>Dividends
+     		<i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#dividendsHelp" class="help-link"  onclick="$('#dividendsHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="dividendsHelp">This is only the dividends chargeable for the financial period. It does not include dividends paid to satisfy an outstanding liability from the previous period. The dividends provided here won’t appear on the face of the profit and loss submitted. </small>
+          </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+			<input type="text"size="12" maxlength="11" class="form-control" id="distributioncosts_current" name="distributioncosts_current">
+      </div>
+      </div>
+      
+      <div class="grid grid-1-4">
+        <div class="inner-block">
+                  <label for="distributioncosts_previous" class="visuallyhidden">2012 Distribution costs</label>
+
+        	<input type="text"size="12" maxlength="11" class="form-control" id="distributioncosts_previous" name="distributioncosts_previous">
+      </div>
+	</div>
+      
+</div>
+
+
+
+
+
+
+
+<div class="grid-wrapper">
+
+	<div class="grid grid-1-2">
+        <div class="inner-block">
+    	<label for="grossprofit_current" class="financial total"><span class="visuallyhidden">2013</span>Net balance transferred to reserves
+             		<i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#netBalanceHelp" class="help-link"  onclick="$('#netBalanceHelp').toggle();return false;">Help</a>
+        	<small class="hidden-help" id="netBalanceHelp">This is calculated by subtracting your dividends from your profit (or loss) for the financial year. Your net balance transferred to reserves won’t appear on the face of the profit and loss submitted.</small>
+        </label>
+        </div>
+      </div>
+	<div class="grid grid-1-4">
+        <div class="inner-block">
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_current" name="grossprofit_current" class="form-control form-total">
+      </div>
+    </div>
+    <div class="grid grid-1-4">
+        <div class="inner-block">
+        <label for="grossprofit_previous" class="visuallyhidden">2012 Gross profit or (loss)</label>
+
+        <input type="text" tabindex="-1" readonly="readonly" data-bind="" size="12" maxlength="9" value="0" id="grossprofit_previous" name="grossprofit_previous" class="form-control form-total">
+      </div>
+	</div>
+      
+</div>
+
+
+
+</div><!-- End div class="cato-financial"-->
+        
+
+
+    
+   	
+    
+</form>

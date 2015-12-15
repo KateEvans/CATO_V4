@@ -1,0 +1,135 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 89%;
+}
+
+</style>
+
+<br />
+
+<form method="POST" class="form">
+
+    <div class="form-group" id="1">
+        <span>Enter the details of the company cars you bought this accounting period. You'll be able to add more cars if you bought more than one.</span>
+    </div>
+
+    <div class="form-group" id="2">
+        <fieldset class="form-group inline">
+            <p class="form-label-bold">What is the car’s registration number?</p>
+                <input type="text" />
+        </fieldset>
+    </div>
+
+    <div class="form-group" id="3">
+        <fieldset class="form-group">
+            <span class="form-label-bold">When did you buy it?</span>
+            <ul>
+                <li>
+                    <label for="q3"  class="block-label" onclick="$('#3').show().visible()">1 April 2013 to 31 March 2015
+                        <input type="radio" id="q3" name="q3" value="1"/>
+                    </label>
+                </li>
+
+                <li style="clear:left;">
+                    <label for="q31"  class="block-label" onclick="$('#3').hide().invisible()">1 April 2015 onwards
+                        <input type="radio" id="q31" name="q3" value="2"/>
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+    </div>
+
+    <div class="form-group" id="4">
+        <fieldset class="form-group">
+            <span class="form-label-bold">Was it new or second hand?</span>
+            <ul>
+                <li>
+                    <label for="q4"  class="block-label" onclick="$('#3').show().visible()">New
+                        <input type="radio" id="q4" name="q4" value="1"/>
+                    </label>
+                </li>
+
+                <li style="clear:left;">
+                    <label for="q41"  class="block-label" onclick="$('#3').hide().invisible()">Second hand
+                        <input type="radio" id="q41" name="q4" value="2"/>
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+    </div>
+
+
+
+    <div class="form-group" id="5">
+        <fieldset class="form-group inline">
+            <p class="form-label-bold">How much did you pay for it?</p>
+            <label for="input_1">£</label>
+            <input id="input_1" type="text" />
+        </fieldset>
+    </div>
+
+
+    <div class="form-group" id="6">
+        <fieldset class="form-group inline">
+            <p class="form-label-bold">What is its CO2 emissions level?</p>
+            <span class="form-hint">This will be on your car’s registration certificate (‘the V5C’) or you can <a href="https://www.gov.uk/get-vehicle-information-from-dvla" target="_blank">check it with the DVLA</a>.</span>
+            <input id="input_2" type="text" />
+            <label for="input_2">g/km</label>
+        </fieldset>
+    </div>
+
+</form>

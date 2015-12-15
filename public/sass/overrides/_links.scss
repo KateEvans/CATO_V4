@@ -1,0 +1,13 @@
+/**
+ * Overriding default link colour with the one from "_colours.scss" file.
+ */
+a,
+.link-style,
+.button--link-style,
+a:visited,
+.link-style:visited,
+.button--link-style:visited
+{
+    color: $link-colour;
+}
+

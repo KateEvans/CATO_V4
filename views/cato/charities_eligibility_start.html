@@ -1,0 +1,36 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_charities_eligibility_header}}
+    {{>cato_charities_eligibility_start}}
+    <div class="form-group">
+        <br>
+        <a class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('#next-button').click(function(){
+
+            if($('#2').prop('checked')){
+                window.location.href = "/cato/charities_poa.html" + window.location.search;
+            } else {
+                window.location.href = "/cato/filing_group_v2.html" + window.location.search + "&type=company";
+//                window.location.href = "/cato/dormancy_q1.html" + window.location.search + "&type=company";
+            }
+
+
+        })
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

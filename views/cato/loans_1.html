@@ -1,0 +1,65 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_loans_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_loans_header_1}}
+    {{>cato_loans_1}}
+
+    <div class="form-group">
+        <br>
+        <a class="next button" id="next-button">Save and continue</a>
+        <ul>
+            <li><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*$('#next-button').click(function(){
+            if($('#yes').is(':checked')){
+                window.location.href = "/cato/loans_1.html";
+            } else{
+                window.location.href = "/cato/loans_2.html";
+            }
+
+        })*/
+
+        var late_filing = "true";
+
+
+//        $('#return_date').hide();
+
+        $('#no').click(function(){
+            $('#return_date').show();
+        });
+
+        $('#yes').click(function(){
+            $('#return_date').hide();
+        });
+
+        $('#next-button').click(function(){
+            if($('#no').is(':checked')){
+                if($('#month').val() > 9 && $("#year").val() > 2015){
+                    window.location.href = "/cato/add_loan.html?late_filing=" + late_filing;
+                } else {
+                    window.location.href = "/cato/loans_1.html";
+                }
+            } else {
+//                window.location.href = "/cato/add_loan.html";
+                window.location.href = "/cato/add_loan_1.html";
+            }
+
+        })
+    });
+</script>
+{{/pageScripts}}
+
+
+{{/cato_layout}}

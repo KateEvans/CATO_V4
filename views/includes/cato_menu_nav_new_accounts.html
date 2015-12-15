@@ -1,0 +1,195 @@
+<style>
+/************************************************************************************
+This is NOT production ready CSS, it is only suitable for prototype use
+************************************************************************************/
+.grid-wrapper h2 {
+font-family: nta,Arial,sans-serif;
+font-size: 24px;
+line-height: 1.25;
+text-transform: none;
+font-weight: 700;
+}
+
+.flush--left {
+    margin-left: 0!important;
+}
+
+.progress-indicator__list-item--active:after, .progress-indicator__list-item--current:after {
+color: #00823b;
+}
+
+.progress-indicator__list-item--current a {
+font-weight: 700;
+color: #0b0c0c;
+}
+ul.progress-indicator__list {margin-top:1em; width:86%}
+ul.progress-indicator__list li {padding-bottom:0.5em; padding-top:0.5em; border-bottom:3px solid #ddd;}
+ul.progress-indicator__list li h2.progress-indicator__list__section__heading--current {padding-bottom:1em; border-bottom:none;}
+ul.progress-indicator__list li span {
+    background-color: black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    color: white;
+    display: inline-block;
+    font-size: 0.8em;
+    height: 1.3em;
+    padding-top: 2px;
+    text-align: center;
+    width: 1.4em;
+	top:-3px;
+	position:relative;
+}
+ul.progress-indicator__list li h2 {padding:1em 0;}
+
+ul.progress-indicator__list li h2 a  {padding-bottom:0;}
+ul.progress-indicator__list li h2 p  {font-size:0.7em;/* display:block; padding-left:1.8em;*/ margin-bottom:0;}
+ul.progress-indicator__list li ul li {border-bottom:1px solid #ddd; padding-bottom: 8px; padding-top: 8px; margin:0;}
+ul.progress-indicator__list li ul li.progress-indicator__list-item--current {border-bottom:none; padding-bottom: 8px; padding-top: 8px; margin:0;}
+
+ul.progress-indicator__list li ul {padding-bottom:1em; margin-top:-1em;}
+ul.progress-indicator__list li a {text-decoration: none; color:#005ea5;}
+ul.progress-indicator__list li a:hover, ul.progress-indicator__list li a:focus {text-decoration: underline;}
+ul li.progress-indicator__list-item--current {; font-weight:700; padding-bottom:0;}
+ul li.progress-indicator__list-item--current ul {margin-top:1em; font-size:0.9em; display:block; border-bottom:none; padding-bottom:0; margin-bottom:0;}
+ul li.progress-indicator__list-item--current ul li {padding-left:1em;}
+ul li.progress-indicator__list-item--current ul li a {font-weight:normal; color:#005ea5;}
+ul li.progress-indicator__list-item--current a {color:#000;}
+ul li.progress-indicator__list-item--inactive {color:#999999;}
+.progress-indicator__list-item--current {border-top:1px solid #6F777B; border-bottom:1px solid #6F777B !important; background-color:#DEE0E2; padding-left:1.4em; }
+ul li.progress-indicator__list-item--inactive { padding-left:1.4em; }
+ul.progress-indicator__list p { padding-left:1.4em; margin-top:0; color:#999; position:relative; top:-1.5em; font-weight:700; }
+h2.progress-indicator__list__section__heading--inactive {margin-left:-1em;}
+/*small.hidden-help {border:none; padding-left:0;}
+small.hidden-help ul {margin-bottom:0; padding-bottom:0; margin-top:-1em !important;}
+*/small ul li a {font-size:19px !important;}
+small ul li a {font-size:19px !important;}
+.progress-indicator__list-item--active::after, .progress-indicator__list-item--current::after {content:none;}
+/*.progress-indicator__list-item--active::before, .progress-indicator__list-item--current::before {content:"✔ "; color:#00692F; padding-right:3px; margin-left:-3px;}*/
+i.green-tick {color:#00692F; padding-right:10px; display:block; float:left;}
+i.green-tick.two-lines {margin-bottom:30px;}
+</style>
+
+<div class="inner-block flush--left">
+        <ul class="progress-indicator__list">
+            
+
+<!----------------------------------------------------------------------------------------------------------------
+                            This is NOT production ready HTML, it is only suitable for prototype use
+------------------------------------------------------------------------------------------------------------------>
+
+                     <li id="section-jump-1" class="progress-indicator__list__section">
+                        <h2 class="progress-indicator__list__section__heading--current">Accounts</h2>
+                            <ul>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-1-1">
+                                    <a href="#" data-nav-position="1 of 6:"><i class="green-tick">✔</i> Company details</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-1-2">
+                                    <a href="#" data-nav-position="2 of 6:"><i class="green-tick">✔</i> Officers of the company</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-1-3">
+                                    <a href="#" data-nav-position="3 of 6:"><i class="green-tick">✔</i> Directors' report</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--current" id="block-group-jump-1-4">
+                                    Profit and loss
+                           
+                                </li>
+                                <li class="progress-indicator__list-item--inactive" id="block-group-jump-1-5">
+                                 Balance sheet
+                        
+                                </li>
+                                <li class="progress-indicator__list-item--inactive" id="block-group-jump-1-6">
+                                 Footnotes
+                      
+                            
+                            </ul>              
+             
+                          <p class="form-hint">Accounts not yet submitted to Companies House</p>
+                        </h2>
+                        
+                      
+                        
+
+                                
+                            
+                        
+                    </li>
+                
+<!--
+                    <li id="section-jump-2" class="">
+                        <h2 class=""><a data-nav-position="2 of 5:" href="#">
+                            Companies House accounts submission
+                            
+                        </a></h2>
+                        
+                            
+                                
+                                    <ul>
+                                    
+                                        <li id="block-group-jump-2-1" class="progress-indicator__list-item--active" data-icon="✔">
+                                                
+                                                    
+                                                        <a data-nav-position="1 of 1:" href="#">
+                                                        Approve and submit accounts</a>
+                                                    
+                                                    
+                                                        <span class="visuallyhidden">completed</span>
+                                                    
+                                                
+                                        </li>
+                                    
+                                    </ul>
+                                
+                            
+                        
+                    </li>-->
+                
+
+                 <li id="section-jump-3" class="progress-indicator__list-item--inactive">
+                        <h2 class="progress-indicator__list__section__heading--inactive">
+     					Computations</label>
+                 
+                        </h2>
+                          
+                                
+                        
+                                
+                            
+                        
+                    </li>
+                
+
+                      <li id="section-jump-4" class="progress-indicator__list-item--inactive">
+                        <h2 class="progress-indicator__list__section__heading--inactive">
+                         Annual tax return (CT600)
+                            
+                         
+                            
+                      </h2>
+                        
+                            
+                                
+                                  
+                            
+                        
+                    </li>
+                
+
+                    <li id="section-jump-5" class="progress-indicator__list-item--inactive">
+                        <h2 class="progress-indicator__list__section__heading--inactive">
+                            Company Tax Submit
+                            </h2>
+                        
+                            
+                                
+                            
+                        
+                    </li>
+                
+            
+        </ul>
+    </div>

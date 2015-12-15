@@ -1,0 +1,74 @@
+{{<cato_layout_no_nav}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_eligibility_filing_group_header}}
+    {{>cato_filing_group_v2}}
+    <div class="form-group">
+        <br>
+
+        {{#isJoint}}
+        <a href="/cato/company_registered_v2.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isJoint}}
+        {{#isHMRC}}
+        <a href="/cato/eligibility_leased_cars.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isHMRC}}
+        {{#isCoHo}}
+        <a href="/cato/company_registered_v2.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isCoHo}}
+        {{#isCharities}}
+        <a href="#" class="next button" id="next-button">Continue</a>
+        {{/isCharities}}
+
+
+        <!--<a href="#" class="next button" id="next-button">Continue</a>-->
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+
+    {{#isCharities}}
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+
+                var getUrlParameter = function getUrlParameter(sParam) {
+                    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                            sURLVariables = sPageURL.split('&'),
+                            sParameterName,
+                            i;
+
+                    for (i = 0; i < sURLVariables.length; i++) {
+                        sParameterName = sURLVariables[i].split('=');
+
+                        if (sParameterName[0] === sParam) {
+                            return sParameterName[1] === undefined ? true : sParameterName[1];
+                        }
+                    }
+                };
+
+
+
+
+
+
+                $("#next-button").click(function(){
+
+                    if($('#type2').is(':checked')){
+                        window.location.href = "/cato/charities_poa.html" + window.location.search;
+                    } else {
+                        window.location.href = "/cato/company_registered_v2.html" + window.location.search;
+                    }
+                });
+
+            });
+        </script>
+    {{/isCharities}}
+
+{{/pageScripts}}
+
+{{/cato_layout_no_nav}}

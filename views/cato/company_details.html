@@ -1,0 +1,62 @@
+{{<cato_layout_no_nav}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_company_details_header}}
+    {{>cato_eligibility_company_details}}
+    <div class="form-group">
+        <br>
+        <br>
+        {{#isJoint}}
+        <a href="/cato/PoA_edit.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isJoint}}
+        <!--{{#isHMRC}}
+        <a href="/cato/eligibility_leased_cars.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isHMRC}}-->
+        {{#isCoHo}}
+        <a href="/cato/PoA_edit.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isCoHo}}
+        {{#isCharities}}
+        <a href="#" class="next button" id="next-button">Continue</a>
+        {{/isCharities}}
+
+        <!--<a href="PoA_edit.html" class="next button" id="next-button">Continue</a>-->
+
+    </div>
+{{/pageContent}}
+
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $(".arrow-down").hide();
+
+        $( ".summary" ).click(function() {
+            $('.panel-indent').toggle( "fast", function() {
+            });
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+            console.log('.arrows');
+        });
+
+    });
+</script>
+
+    {{#isCharities}}
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+                $("#next-button").click(function(){
+//                   window.location.href = "/cato/eligibility_select_filing.html" + window.location.search;
+                   window.location.href = "/cato/charities_poa.html" + window.location.search;
+                });
+
+            });
+        </script>
+    {{/isCharities}}
+
+{{/pageScripts}}
+
+
+{{/cato_layout_no_nav}}

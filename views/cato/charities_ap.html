@@ -1,0 +1,62 @@
+{{<cato_layout_no_nav}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    <div class="cato-header">
+        <h1 class="heading-xlarge">Accounting period</h1>
+    </div>
+
+    {{>cato_charities_ap}}
+    <div class="form-group">
+        <br>
+        <!--<a href="/cato/charities_income_declaration.html?name=Charities" class="next button" id="next-button">Continue</a>-->
+        <a href="#" class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+
+    {{#isCharities}}
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+                var getUrlParameter = function getUrlParameter(sParam) {
+                    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                            sURLVariables = sPageURL.split('&'),
+                            sParameterName,
+                            i;
+
+                    for (i = 0; i < sURLVariables.length; i++) {
+                        sParameterName = sURLVariables[i].split('=');
+
+                        if (sParameterName[0] === sParam) {
+                            return sParameterName[1] === undefined ? true : sParameterName[1];
+                        }
+                    }
+                };
+
+
+
+                var type = getUrlParameter('type');
+
+                $("#next-button").click(function(){
+
+                    if(type == undefined || type ==""){
+                        window.location.href = "charities_income_declaration.html" + window.location.search;
+                    } else {
+                        window.location.href = "dormancy_q1.html" + window.location.search;
+                    }
+
+                });
+
+            });
+        </script>
+    {{/isCharities}}
+
+{{/pageScripts}}
+
+{{/cato_layout_no_nav}}

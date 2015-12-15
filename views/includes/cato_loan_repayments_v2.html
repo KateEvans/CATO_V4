@@ -1,0 +1,90 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 89%;
+}
+
+</style>
+
+
+<form method="POST" class="form">
+    <br />
+    <div id="taxAvoidanceSummary" class="block-summary">
+        <div class="block-summary__text">
+            <span class="heading-small">Loan recipient:</span> <span id="Loaned-to"></span><br />
+            <span class="heading-small">Loan amount outstanding after 31 December 2015:</span> <span id="outstanding-amount"></span>
+        </div>
+    </div>
+
+    <div class="form-group" id="participators">
+        <legend class="form-label-bold" for="repaid_periodEnd"><span class="text--center box-number"><span class="visuallyhidden">Box</span> LP02.Q1</span>
+            Was any of the loan repaid between 01 January 2016 and 30 September 2016?</legend>
+        <fieldset id="questions">
+            <label class="block-label" for="yes-repayment">
+                <input id="yes-repayment" type="radio" name="repaid_part_loan" value="Yes">
+                Yes - some of the loan was repaid between 01 January 2016 and 30 September 2016?
+            </label>
+            <label class="block-label" for="no-repayment">
+                <input id="no-repayment" type="radio" name="repaid_part_loan" value="No">
+                No - none of the loan was repaid between 01 January 2016 and 30 September 2016?
+            </label>
+        </fieldset>
+    </div>
+
+
+
+</form>
+  

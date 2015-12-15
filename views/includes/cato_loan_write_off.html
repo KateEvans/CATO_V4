@@ -1,0 +1,84 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+</style>
+
+<br />
+
+<form method="POST" class="form">
+             
+          <div class="form-group">
+          <fieldset>
+            <legend class="form-label-bold"><a href="#taxPayableHelp" class="help-link" data-icon="" onclick="$('#participatorsHelp').toggle();">Were any of these loans written off or released during this period?</a></legend>
+              <small class="hidden-help" id="participatorsHelp"><p>A 'release' is similar to a write-off but is a more formal procedure, which takes place under seal for a consideration. This is a legal document, which outlines the circumstances under which the loan is being released.</p></small>
+
+             <fieldset class="inline">
+              <label class="block-label" for="radio-inline-1">
+                <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                Yes
+              </label>
+              <label class="block-label" for="radio-inline-2">
+                <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                No
+              </label>
+
+          </fieldset>
+        </div>
+          <div class="form-group">
+          <fieldset>
+
+            <legend class="form-label-bold"><a href="#taxPayableHelp" class="help-link" data-icon="" onclick="$('#participatorsHelp2').toggle();">Were any of these loans written off or released after the end of this period?</a></legend>
+              <small class="hidden-help" id="participatorsHelp2"><p>A 'release' is similar to a write-off but is a more formal procedure, which takes place under seal for a consideration. This is a legal document, which outlines the circumstances under which the loan is being released.</p></small>
+
+             <fieldset class="inline">
+              <label class="block-label" for="radio-inline-3">
+                <input id="radio-inline-3" type="radio" name="radio-inline-group2" value="Yes">
+                Yes
+              </label>
+              <label class="block-label" for="radio-inline-4">
+                <input id="radio-inline-4" type="radio" name="radio-inline-group2" value="No">
+                No
+              </label>
+            </fieldset>
+
+          </fieldset>
+        </div>
+        
+</form>
+  

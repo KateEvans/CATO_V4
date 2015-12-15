@@ -1,0 +1,162 @@
+/************************* CATO overrides to the common styles *************************/
+#content > article {
+  width: auto;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: $page-colour;
+  border-bottom: 1px solid $border-colour;
+}
+
+.block-indent {
+  margin-left: 2em;
+}
+
+.indented-summary {
+  margin-left: 2em;
+}
+
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+
+.block-summary__text {
+  width: 89%;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+
+.block-addition {
+  margin-bottom: 20px;
+}
+
+.block-addition__link {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.error-overview {
+  background-color: #fef7f7;
+  border: 3px solid #df3034;
+  margin-bottom: 20px;
+  padding: 0.75em 1em;
+}
+
+.error-overview__heading {
+  font-size: 22px;
+  margin: 0;
+}
+
+.error-overview__list-item {
+  color: #af1324;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.error-overview__list-item a {
+  color: #af1324;
+}
+
+.validation-message {
+  color: #af1324;
+}
+
+.cato-summary {
+  .summary-figures {
+    font-weight: 700;
+    text-align: right;
+    border: 0;
+    width: 100%;
+    color: #000000;
+
+  }
+
+  @media screen and (max-width: 640px) {
+    .summary-figures {
+      text-align: left;
+      margin-top: 0.4em;
+    }
+  }
+  .inner-block, .grid-wrapper {
+    margin-left: 0;
+  }
+  .form-group {
+    margin-left: 0;
+  }
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.display-block {
+  display: block;
+}
+
+$marginDirections: top, left, bottom, right;
+$marginValues: none 0, small 1em, medium 2em, large 4em;
+
+.margin-all-none {
+  margin: 0 !important;
+}
+
+@each $direction in $marginDirections {
+  @each $marginValue in $marginValues {
+    .margin-#{$direction}-#{nth($marginValue, 1)} {
+      margin-#{$direction}: nth($marginValue, 2) !important;
+    }
+  }
+}
+
+.service-info .logo {
+  display: none;
+  speak: none;
+}
+
+/**
+ * Hide content off-screen without resorting to `display:none;`, also provide
+ * breakpoint specific hidden elements.
+ */
+@mixin accessibility {
+  border:0!important;
+  clip:rect(0 0 0 0)!important;
+  height:1px!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  padding:0!important;
+  position: absolute!important;
+  width:1px!important;
+}
+
+.visuallyhidden {
+  left: 0 !important;
+  pointer-events: none;
+}
+
+.show-only-on-desktop {
+  @media (max-width: 768px) {
+    @include accessibility();
+  }
+}
+
+.show-only-on-tablet {
+  @media (max-width: 640px) {
+    @include accessibility();
+  }
+
+  @media (min-width: 768px) {
+    @include accessibility();
+  }
+}
+
+.show-only-on-mobile {
+  @media (min-width: 641px) {
+    @include accessibility();
+  }
+}

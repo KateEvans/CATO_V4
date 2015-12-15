@@ -1,0 +1,46 @@
+{{<govuk_template}}
+
+{{$cookieMessage}}
+    {{>cookie_message}}
+{{/cookieMessage}}
+
+{{$head}}
+    {{>cato_elements_head}}
+    {{>elements_tracking}}
+{{/head}}
+
+{{$propositionHeader}}
+    {{>cato_heading}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+    <main id="wrapper" role="main">
+        <div id="content">
+            {{>cato_beta_banner}}
+            <article class="content__body grid-wrapper">
+                {{>cato_company_info}}
+                <nav class="grid grid-1-3" role="navigation">
+                    {{$pageNavigation}}{{/pageNavigation}}
+                </nav>
+                <section id="main-content" aria-label="completedSummary" class="grid grid-2-3">
+                    {{$pageContent}}{{/pageContent}}
+                </section>
+
+                <section id="right-column" class="grid grid-1-3">
+                    {{$rightColumn}}{{/rightColumn}}
+                </section>
+
+            </article>
+        </div>
+    </main>
+{{/content}}
+
+{{$bodyEnd}}
+    {{>scripts}}
+
+    {{$pageScripts}}{{/pageScripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

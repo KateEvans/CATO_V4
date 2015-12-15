@@ -1,0 +1,100 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_eligibility_header}}
+    {{>cato_eligibility_start_v3}}
+    <div class="form-group">
+        <br>
+        <!--<a href="/cato/company_activity_v2.html" class="next button" id="next-button">Continue</a>-->
+        <a class="next button" id="next-button">Continue</a>
+        <ul>
+            <!--    <li><a href="/" target="_blank">Help on *page title* (opens in a new tab/window)</a></li>
+              <li><a href="/" target="_blank">Preview your accounts so far (opens in a new tab/window)</a></li>-->
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+
+
+{{#isCoHo}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+
+            if($('#4').prop('checked')){
+                window.location.href = "application_exclusion.html" + window.location.search;
+            }
+            else{
+                window.location.href = "company_activity_v2.html" + window.location.search;
+            }
+
+        })
+    });
+</script>
+{{/isCoHo}}
+
+
+{{#isHMRC}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+
+            if($('#4').prop('checked')){
+                window.location.href = "application_exclusion.html" + window.location.search;
+            }
+            else{
+                window.location.href = "company_activity_v2.html" + window.location.search;
+            }
+
+        })
+    });
+</script>
+{{/isHMRC}}
+
+
+{{#isJoint}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+
+            if($('#4').prop('checked')){
+                window.location.href = "application_exclusion.html" + window.location.search;
+            }
+            else{
+                window.location.href = "company_activity_v2.html" + window.location.search;
+            }
+
+        })
+    });
+</script>
+{{/isJoint}}
+
+
+{{#isCharities}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+
+            if($('#4').prop('checked')){
+                window.location.href = "application_exclusion.html" + window.location.search;
+            } else if($('#2').prop('checked')){
+//                window.location.href = "charities_eligibility_start.html" + window.location.search;
+                window.location.href = "charities_income.html" + window.location.search;
+            }
+            else{
+                window.location.href = "eligibility_company_type.html?name=Joint";
+            }
+
+        })
+    });
+</script>
+{{/isCharities}}
+
+
+{{/pageScripts}}
+
+{{/cato_layout}}

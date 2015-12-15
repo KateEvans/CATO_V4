@@ -1,0 +1,175 @@
+<style>
+
+    details .summary {
+         text-decoration: underline;
+     }
+    details summary:hover {
+        color: #2e8aca;
+    }
+    details summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    input.total_val, input[type="text"]{
+        display: inline-block;
+        border: 1px solid #bfc1c3;
+        text-align: right;
+        font-weight: bold;
+        width: 15%;
+        float: right;
+        padding: 4px;
+    }
+
+    input.total_val{
+        border-left: none;
+        border-right: none;
+    }
+
+
+
+    fieldset{
+        margin: 0 0 1em 0;
+    }
+
+
+</style>
+
+<div class="form-group" style="margin-top: 3em">
+
+        <div><a href="#" id="losses_help_link">What are trading losses?</a></div>
+
+    <!-- #### START OF HIDDEN PANEL-->
+
+        <div class="panel-indent" id="trading_losses_help" aria-hidden="false" style="display: block;">
+            <p class="help">You can pay less Corporation Tax if your company or organisation makes a loss.
+            You can offset the loss against profits from:</p>
+            <ul>
+                <li class="help list-bullet">the same accounting period</li>
+                <li class="help list-bullet">a previous accounting period</li>
+                <li class="help list-bullet">a future accounting period</li>
+            </ul>
+            <p class="help">
+            Find out more about trading losses
+            </p>
+        </div>
+
+    <!-- #### END OF HIDDEN PANEL-->
+
+</div>
+
+
+<br />
+
+<form method="POST" action="#" class="form">
+    
+
+      <div class="form-group">
+        <fieldset class="inline" id="losses_1">
+          <legend class="form-label-bold">Do you want to claim your trading losses for this accounting period
+              against your profits from this period?</legend>
+
+              <div class="form-group form-group-related">
+              <label data-target="" class="block-label" for="yes" onclick="$('#this_period').show().visible()">
+                <input type="radio" value="Yes" name="current" id="yes">
+                Yes
+              </label>
+              <label class="block-label" for="no" onclick="$('#this_period').hide().invisible()">
+                <input type="radio" value="No" name="current" id="no">
+                No
+              </label>
+            </div>
+          
+        </fieldset>
+
+          <div id="this_period" class="hidden">
+              <fieldset>
+                  <span>Losses carried forward</span>
+                  <input type="text" name="losses_forwards" class="" value="500">
+              </fieldset>
+          </div>
+      </div>
+
+      <div class="form-group">
+
+        <fieldset class="inline" id="losses_2">
+          <legend class="form-label-bold">Do you have any trading losses from previous accounting periods
+              that you haven't used?</legend>
+
+              <div class="form-group form-group-related">
+              <label data-target="" class="block-label" for="yes2" onclick="$('#losses_forwards').show().visible()">
+                <input type="radio" value="Yes" name="previous" id="yes2">
+                Yes
+              </label>
+              <label class="block-label" for="no2" onclick="$('#losses_forwards').hide().invisible()">
+                <input type="radio" value="No" name="previous" id="no2">
+                No
+              </label>
+            </div>
+          
+        </fieldset>
+
+          <div id="losses_forwards" class="hidden">
+              <fieldset>
+                  <span>Losses brought forward</span>
+                  <input type="text" name="losses_brought_forwards" class="" value="1000">
+              </fieldset>
+              <fieldset>
+                  <span>Adjusted trading profit for the period</span>
+                  <input type="text" name="adjusted_profit" class="total_val" value="18050">
+              </fieldset>
+              <fieldset>
+                  <span>Losses brought forward used against trading profit</span>
+                  <input type="text" name="losses_against_profit" class="total_val" value="1000">
+              </fieldset>
+              <fieldset>
+                  <span>Net trading profit</span>
+                  <input type="text" name="net_profit" class="total_val" value="17950">
+              </fieldset>
+              <fieldset>
+                  <span>Losses carried forward</span>
+                  <input type="text" name="losses_carried_forwards" class="total_val" value="0">
+              </fieldset>
+          </div>
+
+    </div>
+
+
+
+
+    <div class="form-group">
+
+        <fieldset class="inline" id="ineligible-orgs3">
+            <legend class="form-label-bold">Do you want to offset any predicted future trading losses against
+                the current accounting period?</legend>
+
+
+            <div class="form-group form-group-related">
+                <label data-target="" class="block-label" for="yes3" onclick="$('#future_period').show().visible()">
+                    <input type="radio" value="Yes" name="ineligible-orgs3" id="yes3">
+                    Yes
+                </label>
+                <label class="block-label" for="no3" onclick="$('#future_period').hide().invisible()">
+                    <input type="radio" value="No" name="ineligible-orgs3" id="no3">
+                    No
+                </label>
+            </div>
+
+        </fieldset>
+
+
+
+        <div id="future_period" class="hidden">
+            <fieldset>
+                <span>Losses carried backward</span>
+                <input type="text" name="losses_backwards" class="" value="500">
+            </fieldset>
+        </div>
+    </div>
+
+        
+</form>
+  

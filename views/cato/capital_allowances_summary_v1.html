@@ -1,0 +1,24 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    <div class="cato-header">
+        <h1 class="heading-xlarge">Capital allowances summary</h1>
+    </div>  <!-- / .cato-header -->
+
+    {{>cato_capital_allowances_summary_v1}}
+    <div class="form-group">
+        <br>
+        <a href="/cato/write-off-added.html" class="next button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{/cato_layout}}

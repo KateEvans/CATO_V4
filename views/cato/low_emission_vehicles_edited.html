@@ -1,0 +1,41 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>low_emissions_header}}
+    {{>cato_low_emission_vehicles_edited}}
+    <div class="form-group">
+        <br>
+        <a class="next button" id="next-button">Continue</a>
+        <ul>
+            <!--    <li><a href="/" target="_blank">Help on *page title* (opens in a new tab/window)</a></li>
+              <li><a href="/" target="_blank">Preview your accounts so far (opens in a new tab/window)</a></li>-->
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+
+            if($('#non-profit').prop('checked') || $('#limited-guarantee').prop('checked')){
+                window.location.href = "application_exclusion.html" + window.location.search;
+            }
+            else{
+                window.location.href = "vehicle_summary.html" + window.location.search;
+            }
+
+
+        })
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

@@ -1,0 +1,52 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form" style="padding-right: 5px">
+
+    <div class="form-group">
+        <fieldset class="form-group inline" id=1">
+            <ul>
+                <li>
+                    <label for="1"  class="block-label">Private limited company
+                        <!--<br />-->
+                        <input type="radio" id="1" name="selectedType" value="1"/>
+                    </label>
+                    <p style="clear: both" class="form-hint">It sells goods or services, and its shares aren't traded on the stock exchange</p>
+                </li>
+
+
+                <li style="clear:left;">
+                    <label for="2"  class="block-label">Company limited by guarantee
+                        <!--<br />-->
+                        <input type="radio" id="2" name="selectedType" value="2"/>
+                    </label>
+                    <p style="clear: both" class="form-hint">It has members instead of shares and shareholders</p>
+                </li>
+
+            </ul>
+
+        </fieldset>
+    </div>
+        
+</form>
+  

@@ -1,0 +1,431 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+#amount-repaid, #amount-repaid2, #write-off {
+  width: 25% !important;
+}
+
+.date-of-birth .form-group {
+  margin-bottom: 10px;
+}
+
+#loan-button {
+  margin-left: 0;
+}
+
+.summary-text {
+  width: 80%;
+  position: relative;
+}
+
+.summary-edit {
+  float: right;
+  width: 20%;
+  text-align: right;
+  vertical-align: top;
+}
+
+.summary-edit span {
+  text-decoration: none;
+  color: black;
+}
+
+.summary-text span {
+  left: 300px;
+  position: absolute;
+}
+</style>
+
+<script>
+
+ 
+document.onreadystatechange = function ( objElement ) {
+
+  $('#loan-continue-button').click( function() {
+    $('table.acc details').removeAttr('open');
+    $('#calcs-box').attr('open', 'open');
+    $('#loans-completed, #calcs').show();
+    $('#calcs-intro').hide();
+    $('html, body').scrollTop( 0 ); 
+
+  return false;
+
+  });
+
+}
+</script>
+
+<br />
+    
+            <div class="form-group" id="close1">
+            <fieldset>
+              <legend class="form-label">Is the company controlled by 5 or fewer participators none of whom are directors?</legend>
+              
+               <fieldset class="inline">
+                <label class="block-label" for="radio-inline-5">
+                  <input id="radio-inline-5" type="radio" name="radio-inline-group2" value="Yes" onclick="$('#close2').hide().invisible();$('#late1').show().visible();">
+                  Yes
+                </label>
+                <label class="block-label" for="radio-inline-6">
+                  <input id="radio-inline-6" type="radio" name="radio-inline-group2" value="No" onclick="$('#close2').show().visible();">
+                  No
+                </label>
+              </fieldset>
+
+            </fieldset>
+          </div>
+
+            <div class="form-group hidden" id="close2">
+            <fieldset>
+              <legend class="form-label">Is the company controlled by one or more participators who are also directors?</legend>
+               <fieldset class="inline">
+                <label class="block-label" for="radio-inline-7">
+                  <input id="radio-inline-7" type="radio" name="radio-inline-group3" value="Yes" onclick="$('#late1').show().visible();">
+                  Yes
+                </label>
+                <label class="block-label" for="radio-inline-8">
+                  <input id="radio-inline-8" type="radio" name="radio-inline-group3" value="No" onclick="$('#late1, #late2').hide().invisible();">
+                  No
+                </label>
+              </fieldset>
+            </fieldset>
+          </div>
+
+
+            <div class="form-group hidden" id="late1">
+            <fieldset>
+              <legend class="form-label">Do you expect to file your return before 30 June 2015?</legend>
+
+               <fieldset class="inline">
+                <label class="block-label" for="radio-inline-9">
+                  <input id="radio-inline-9" type="radio" name="radio-inline-group4" value="Yes" onclick="$('#late2').hide().invisible(); $('#add-loan').show().visible(); $( '#first-loan-button').hide();">
+                  Yes
+                </label>
+                <label class="block-label" for="radio-inline-10">
+                  <input id="radio-inline-10" type="radio" name="radio-inline-group4" value="No" onclick="$('#late2').show().visible(); $('#add-loan').show().visible(); $( '#first-loan-button').hide();">
+                  No
+                </label>
+              </fieldset>
+            </fieldset>
+          </div>
+
+            <fieldset class="form-group hidden" id="late2">
+        <legend class="form-label"><a href="#taxPayableHelp" class="help-link" data-icon="" onclick="$('#late2Help').toggle();">When do you intend to file your return?</a></legend>
+              <small class="hidden-help" id="late2Help"><p>Provide an estimated date when you expect file your return.</p></small>
+             <div class="help">For example, 31 03 2014</div>
+            <div class="date-of-birth">
+                <div class="form-group">
+       
+            <label for="userStartDate.day" class=" label--dateField-group">
+                <span class="label__text">
+                    Day
+                </span>
+            </label>
+            <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.day" init-value-on-scope="" name="userStartDate.day" id="userStartDate.day" value="">
+       
+                </div>
+
+                <div class="form-group flush--bottom">
+                    
+            <label for="userStartDate.month" class=" label--dateField-group">
+                <span class="label__text">
+                    Month
+                </span>
+            </label>
+            <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.month" init-value-on-scope="" name="userStartDate.month" id="userStartDate.month" value="">
+  
+                </div>
+
+                <div class="form-group form-group-year">
+            <label for="userStartDate.year" class=" label--dateField-group">
+                <span class="label__text">
+                    Year
+                </span>
+            </label>
+            <input type="text" class="input--xsmall form-control" ng-model="userStartDate.year" init-value-on-scope="" name="userStartDate.year" id="userStartDate.year" value="">
+                </div>
+            </div>
+        
+
+
+</fieldset>
+
+<div id="add-loan" class="nudger hidden">
+
+<hr />
+
+  <h2 class="heading-medium">Add a loan</h2>
+
+    <div class="help">You must only add loans that were:
+      <ul>
+        <li>made to participators or their associates</li>
+        <li>made during this accounting period</li>
+        <li>not fully repaid by the end of the accounting period</li>
+      </ul>
+    </div>
+
+      <div class="form-group">
+      <fieldset>
+        <label class="form-label" for="full-name-f1">Loan recipient</label>
+          <input class="form-control" id="full-name-f1" type="text">
+      </fieldset>
+    </div>
+
+      <div class="form-group">
+      <fieldset>
+      
+        <label class="form-label" for="full-name-f1"><a href="#" class="help-link" onclick="$('#amountHelp').toggle(); return false;">Total amount outstanding at the end of the period</a></label>
+          <small class="hidden-help" id="amountHelp" style="display: none;"><p>If the recipient received multiple loans in this accounting period, this would be the combined total of the amount not yet repaid across all loans, at the end of the accounting period.</p></small>
+          £<input class="form-control" id="amount-repaid2" type="text" style="width: 25%;">
+      </p></fieldset>
+    </div>
+
+      
+    <fieldset class="inline" style="margin-bottom:20px;">
+      <legend class="form-label"><a href="#" class="help-link" onclick="$('#repayHelp').toggle(); return false;">Has the recipient repaid <span class="strong">any</span> of the loan since the end of the accounting period?</a></legend>
+          <p class="hidden-help" id="repayHelp" style="display: none;">This includes partial repayments. We do not need to record any repayments made during this accounting period.</p>
+      </p><div class="form-group form-group-compound">
+        <label class="block-label" data-target="example-ni-number" for="radio-indent-1">
+          <input id="radio-indent-1" type="radio" name="radio-indent-group" value="Yes" onclick="$('#paymentDate, #paymentAmount').show().visible();">
+          Yes
+        </label>
+        <label class="block-label" for="radio-indent-2">
+          <input id="radio-indent-2" type="radio" name="radio-indent-group" value="No" onclick="$('#paymentDate, #paymentAmount').hide().invisible();">
+          No
+        </label>
+      </div>
+    </fieldset>
+    <br>
+
+      
+      <fieldset class="form-group hidden" id="paymentDate" style="margin-bottom: 20px;">
+      <legend class="form-label">When was the last repayment?</legend>
+        <small class="hidden-help" id="late2Help" style="display: none;"><p>We only need to know the date of the most recent repayment</p></small>
+      <div class="date-of-birth">
+          <div class="form-group">
+ 
+      <label for="userStartDate.day" class=" label--dateField-group">
+          <span class="label__text">
+              Day
+          </span>
+      </label>
+      <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.day" init-value-on-scope="" name="userStartDate.day" id="userStartDate.day" value="">
+ 
+          </div>
+
+          <div class="form-group flush--bottom">
+              
+      <label for="userStartDate.month" class=" label--dateField-group">
+          <span class="label__text">
+              Month
+          </span>
+      </label>
+      <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.month" init-value-on-scope="" name="userStartDate.month" id="userStartDate.month" value="">
+
+          </div>
+
+          <div class="form-group form-group-year">
+      <label for="userStartDate.year" class=" label--dateField-group">
+          <span class="label__text">
+              Year
+          </span>
+      </label>
+      <input type="text" class="input--xsmall form-control" ng-model="userStartDate.year" init-value-on-scope="" name="userStartDate.year" id="userStartDate.year" value="">
+          </div>
+      </div>
+      </fieldset>
+
+
+      <div class="form-group hidden" id="paymentAmount">
+      <fieldset>
+        <label class="form-label" for="amount-repaid">Total amount repaid</label>
+          £<input class="form-control" id="amount-repaid" type="text">
+      </fieldset>
+    </div>
+
+
+    <fieldset class="inline" id="has-write-offs">
+      <legend class="form-label"><a href="#" class="help-link" onclick="$('#writeOffHelp').toggle(); return false;">Has any of this loan been written off or released?</a></legend>
+          <p class="hidden-help" id="writeOffHelp" style="display: none;">A 'release' is similar to a write-off but is a more formal procedure, which takes place under seal for a consideration. This is a legal document, which outlines the circumstances under which the loan is being released.</p>
+          <div class="form-group form-group-compound">
+        <label class="block-label" data-target="example-ni-number" for="radio-indent-12">
+          <input id="radio-indent-12" type="radio" name="radio-indent-group1" value="Yes" onclick="$('#write-off-date, #write-off-amount, #write-off-button').show().visible(); $('#loan-button').hide();">
+          Yes
+        </label>
+        <label class="block-label" for="radio-indent-22">
+          <input id="radio-indent-22" type="radio" name="radio-indent-group1" value="No" onclick="$('#write-off-date, #write-off-amount, #write-off-button').hide().invisible(); $('#loan-button').show();">
+          No
+        </label>
+      </div>
+    </fieldset>
+    <br>
+
+
+    <fieldset id="write-off-summary" class="hidden">
+
+      <h4 class="heading-small">Write off or releases added</h4>
+
+        <div class="block-summary">
+            <span class="summary-edit"><a href="#">Edit</a> | <a href="#">Delete</a></span>
+            <div class="summary-text">
+              Amount written off <span>£122</span><br>
+              Date of write off or release <span>1 October 2014</span><br>
+              Relief due now <span>Yes</span>
+            </div>
+        </div>
+      <br/>
+        <div class="block-summary">
+            <span class="summary-edit"><a href="#">Edit</a> | <a href="#">Delete</a></span>
+            <div class="summary-text">
+              Amount written off <span>£43</span><br>
+              Date of write off or release <span>31 July 2013</span><br>
+              Relief due now <span>Yes</span>
+            </div>
+        </div>
+
+    <br />
+    <p>
+      <a href="#" onclick="$('#write-off-date, #write-off-amount, #write-off-button').show().visible(); $('#loan-button').hide(); $(this).hide(); return false;">Add another write-off</a>
+    </p>
+    
+    </fieldset> 
+
+  <fieldset class="form-group hidden" id="write-off-date" style="margin-top:20px; margin-bottom: 15px;">
+    
+    <hr />
+
+    <h3 class="heading-medium">Add a write off</h3>
+
+
+
+
+      <div class="form-label">When was this write off or release made?</div>
+      <div class="date-of-birth">
+          <div class="form-group">
+
+      <label for="userStartDate.day" class=" label--dateField-group">
+          <span class="label__text">
+              Day
+          </span>
+      </label>
+      <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.day" init-value-on-scope="" name="userStartDate.day" id="userStartDate.day" value="">
+
+          </div>
+
+          <div class="form-group flush--bottom">
+              
+      <label for="userStartDate.month" class=" label--dateField-group">
+          <span class="label__text">
+              Month
+          </span>
+      </label>
+      <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.month" init-value-on-scope="" name="userStartDate.month" id="userStartDate.month" value="">
+
+          </div>
+
+          <div class="form-group form-group-year">
+      <label for="userStartDate.year" class=" label--dateField-group">
+          <span class="label__text">
+              Year
+          </span>
+      </label>
+      <input type="text" class="input--xsmall form-control" ng-model="userStartDate.year" init-value-on-scope="" name="userStartDate.year" id="userStartDate.year" value="">
+          </div>
+      </div>
+      </fieldset>
+      
+
+      <div class="form-group hidden" id="write-off-amount">
+        <fieldset>
+          <label class="form-label" for="write-off">Amount written off or released</label>
+            £<input class="form-control" id="write-off" type="text" style="width: 25%;">
+        </fieldset>
+
+      </div>
+
+    <a href="#" class="next button hidden" id="write-off-button" onclick="$('#write-off-summary, #loan-button').show().visible(); $('#write-off-date, #write-off-amount, #has-write-offs, #write-off-button').hide(); return false;" style="margin-left: 0;">Add write off</a>
+
+    </fieldset>
+
+
+    <br />
+    <a href="/cato/v3-calcs.html" class="next button" id="loan-button" onclick="$('#add-loan').hide(); $('#loan-summary, #first-loan-button').show().visible(); $('loan-summary').show(); return false;">Add loan</a>
+
+<p>
+<a href="#">Cancel</a>
+</p>
+
+</div>
+
+<fieldset id="loan-summary" class="hidden">
+
+
+      <h4 class="heading-small">Loans added</h4>
+
+        <div class="block-summary">
+            <span class="summary-edit"><a href="#">Edit</a> | <a href="#">Delete</a></span>
+            <div class="summary-text">
+              Recipient <span>Jim Smith</span><br>
+              Amount outstanding <span>£295</span><br>
+              Amount written off <span>£165</span><br>
+              Amount repaid <span>£100</span><br>
+              Last repayment <span>1 October 2014</span><br>
+              Relief due now <span>Yes</span>
+            </div>
+        </div>
+      <br/>
+        <div class="block-summary">
+            <span class="summary-edit"><a href="#">Edit</a> | <a href="#">Delete</a></span>
+            <div class="summary-text">
+              Recipient <span>Joan Jones</span><br>
+              Amount outstanding <span>£1,295</span><br>
+              Amount written off <span>£1,165</span><br>
+              Amount repaid <span>£100</span><br>
+              Last repayment <span>31 April 2014</span><br>
+              Relief due now <span>Yes</span>
+            </div>
+        </div>
+<br />
+  <p>
+    <a href="#">Add another loan</a>
+  </p>
+
+</fieldset> 
+
+<br />

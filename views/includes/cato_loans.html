@@ -1,0 +1,73 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.red-text{
+    color: #bf1227;
+}
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+  
+  <div class="form-group" id="participators">
+      <fieldset>
+          <p><span class="text--center box-number"><span class="visuallyhidden">Box</span> LPQ03</span></p>
+          <p class="form-hint">
+              This includes loans to relatives and partners of shareholders or directors.
+          </p>
+
+         <fieldset id="questions">
+             <!--<label for="questions" class="form-label-bold">Did you make any loans in the period you’re filing for?</label>-->
+          <label class="block-label" for="yes">
+            <input id="yes" type="radio" name="radio-inline-group1" value="Yes">
+              Yes - I made one or more of these loans this period
+          </label>
+          <label class="block-label" for="no">
+            <input id="no" type="radio" name="radio-inline-group1" value="No">
+              No - I didn’t make one of these loans this period
+          </label>
+        </fieldset>
+
+      </fieldset>
+    </div>
+
+</form>
+  

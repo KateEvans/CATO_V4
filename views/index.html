@@ -1,0 +1,57 @@
+{{<govuk_template}}
+
+{{$cookieMessage}}
+  {{>cookie_message}}
+{{/cookieMessage}}
+
+{{$head}}
+  {{>head}}
+{{/head}}
+
+{{$propositionHeader}}
+  {{>cato_help_heading}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<link href="/public/stylesheets/cato_old.css"  rel="stylesheet" type="text/css">
+<main id="wrapper" role="main">
+  <div id="content">
+      <div class="grid-wrapper">
+        <div class="inner-block">
+          <h1 class="heading-xlarge">
+            CATO design prototypes
+          </h1>
+        </div>
+      </div>
+      <div class="grid-divider"></div>
+
+      <div class="grid-wrapper">
+        <ul class="inner-block">
+            <h2 class="heading-large">Cato prototypes</h2>
+
+            <h3 class="heading-medium">Recent prototypes</h3>
+
+            <li class="grid grid-2-3">
+                <ul>
+                  <li><a href="/cato/GOV_landing.html?name=Joint">Eligibility questions - Joint Happy Path</a></li>
+                  <li><a href="/cato/GOV_landing.html?name=HMRC">Eligibility questions - HMRC Happy Path</a></li>
+                  <li><a href="/cato/GOV_landing.html?name=CoHo">Eligibility questions - CoHo Happy Path</a></li>
+                  <li><a href="/cato/GOV_landing.html?name=Charities">Charities eligibility</a></li>
+                  <!--<li><a href="/cato/GOV_landing_charities.html">Charities eligibility</a></li>-->
+                  <li><a href="/cato/loans.html">Loans to Participators</a></li>
+                  <li><a href="/cato/CT600_summary.html">CT600 Summary</a></li>
+                  <li><a href="/cato/eligibility_start_v3.html?name=Charities">Downloadable templates</a></li>
+
+                </ul>
+            </li>
+        </ul>
+      </div>
+
+  </div><!-- /#content -->
+</main><!-- /#wrapper -->
+{{/content}}
+
+{{/govuk_template}}

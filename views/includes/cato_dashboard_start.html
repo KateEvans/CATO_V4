@@ -1,0 +1,37 @@
+<h2 class="heading-large">New submission</h2>
+
+<p>You are currently eligible to start a new filing to Companies House and/or HMRC for your latest period.</p> 
+<input type="submit" value="Start new filing" class="button">
+
+
+<p>Until you have finished your current submission, you cannot start a new filing to Companies House - however you can start a new HMRC filing.</p>
+<input type="submit" value="Start new HMRC filing" class="button">
+
+
+<p>Until you have finished your current submission, you cannot start a new filing to HMRC - however you can start a new Companies House filing.</p>
+<input type="submit" value="Start new Companies House filing" class="button">
+
+
+<!--
+
+VARIATIONS:
+Can start joint
+Can’t Can start CoHo
+Can start HMRC
+
+
+LOGIC:
+Nothing in progress
+You can start a joint/HMRC-only/Coho-only filing.
+
+Joint/CoHo only in progress
+Until you have submitted your in-progress submission, you can not start any further joint/coho-only filings, though you could start an HMRC only filing
+
+HMRC only in progress
+If the AP isn’t the ‘current one’, you can start a joint/HMRC-only/Coho-only filing.
+If it is the current AP, you can only start a CoHo only one.
+
+Joint in progress but have submitted CoHo part
+Can start a new joint/HMRC-only/Coho-only filing.
+
+-->

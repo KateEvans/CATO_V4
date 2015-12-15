@@ -1,0 +1,94 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 89%;
+}
+
+</style>
+
+<form method="POST" action="/accountsapprove" class="form">
+    
+    <br />
+
+      <div id="taxAvoidanceQuestionSummary" class="block-summary">
+            <div class="block-summary__text">
+                Value of your main pool at the start of this period: <span style="font-weight: bold">£4,800</span>
+            </div>
+            <a class="block-summary__edit-link" href="/cato/loans.html"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+      </div>
+
+      <h2 class="heading-medium">Money left in your main pool: £4,800</h2>
+
+      <span class="form-hint">This will be carried forward to your next reporting period.</span>
+
+    <div class="form-group">
+        <details>
+            <summary><span class="summary"><a href="#">Want to know how this figure is calculated?</a> </span></summary>
+            <div class="panel-indent">
+                <p>Your main pool is unchanged because you chose not to do any of the following for this period:</p>
+
+                <ul class="list-bullet">
+                    <li>report spending that qualifies for capital allowances</li>
+                    <li>report sales of assets you've claimed allowances on</li>
+                    <li>claim capital allowances</li>
+                </ul>
+
+                <p>Go back to the start of the capital allowances section if you do want to do one of these things. </p>
+            </div>
+        </details>
+    </div>
+        
+</form>

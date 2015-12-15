@@ -1,0 +1,151 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 89%;
+}
+
+</style>
+
+
+<form method="POST" action="/accountsapprove" class="form">
+    
+  <h2 class="heading-medium">Write off and release summary</h2>
+
+      <div id="taxAvoidanceQuestionSummary" class="block-summary">
+          <div class="block-summary__text">
+          Write offs to report: Yes
+      </div>
+    
+        <a class="block-summary__edit-link" href="/cato/loan-write-off.html"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+  
+      </div>
+
+<div id="taxAvoidanceSummary" class="block-summary block-indent">
+    <div class="block-summary__text">
+    <p>Write off or release added:</p>
+    Loan recipient: Clive Williams<br />
+    Loan amount: £10,000<br />
+    Amount written off or released: £2,000<br />
+    Date of write off or release: 2 June 2014
+</div>    
+        <a class="block-summary__edit-link" href="#"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+    </div>
+
+             <h2 class="heading-medium">Add write off or release</h2>
+          <div class="form-group">
+
+
+            <label class="form-label" for="full-name-f1">Loan written off or released</label>
+
+          <label class="block-label" for="radio-1">
+            <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland">
+            Clive Williams' £10,000 loan
+          </label>
+          <label class="block-label" for="radio-2">
+            <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">
+            Joan Smith's £25,000 loan
+          </label>
+
+        </div>
+
+        <p>If several write offs or releases have been made on this loan, enter each instance separately.</p>
+          
+          <fieldset class="form-group" id="paymentDate" style="margin-top:20px">
+            <legend class="form-label">When was this write off or release made?</legend>
+            <div class="date-of-birth">
+                <div class="form-group">
+       
+            <label for="userStartDate.day" class=" label--dateField-group">
+                <span class="label__text">
+                    Day
+                </span>
+            </label>
+            <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.day" init-value-on-scope="" name="userStartDate.day" id="userStartDate.day" value="">
+       
+                </div>
+
+                <div class="form-group flush--bottom">
+                    
+            <label for="userStartDate.month" class=" label--dateField-group">
+                <span class="label__text">
+                    Month
+                </span>
+            </label>
+            <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.month" init-value-on-scope="" name="userStartDate.month" id="userStartDate.month" value="">
+
+                </div>
+
+                <div class="form-group form-group-year">
+            <label for="userStartDate.year" class=" label--dateField-group">
+                <span class="label__text">
+                    Year
+                </span>
+            </label>
+            <input type="text" class="input--xsmall form-control" ng-model="userStartDate.year" init-value-on-scope="" name="userStartDate.year" id="userStartDate.year" value="">
+                </div>
+            </div>
+          </fieldset>
+
+
+          <div class="form-group">
+          <fieldset>
+            <label class="form-label" for="full-name-f1">Amount written off or released</label>
+              £<input class="form-control" id="full-name-f1" type="text" style="width: 25%;">
+          </fieldset>
+        </div>
+        
+</form>
+  

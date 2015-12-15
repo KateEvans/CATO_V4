@@ -1,0 +1,54 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$content}}
+
+<main id="wrapper" role="main">
+  <div id="content">
+
+	<div class="inner-block">
+    	<div class="phase-banner">
+        <p>
+          <strong class="phase-tag">BETA</strong>
+          <span>This is a <a data-sso="false" target="_blank" href="https://www.gov.uk/help/beta">trial service</a>. Help us improve it - send your <a data-sso="false" target="_blank" href="/beta-feedback" id="feedback-link">feedback</a>.</span>
+        </p>
+      	</div><!-- / .phase-banner --> 
+    	{{>cato_service_info}}
+ 	</div><!-- / .inner-block --> 
+
+
+
+    <div class="grid-wrapper">
+    
+      
+      	<div class="grid grid-2-3">
+        	<div class="inner-block">
+          	{{>cato_landing_header}}
+         	{{>cato_landing}}
+                <div class="form-group">
+                <br>
+				<a id="startHref" role="button" class="button button-get-started" href="/cato/no-nav-eligibility.html">Start company accounts and tax return</a>
+                </div>
+        	</div><!-- / .inner-block --> 
+      	</div><!-- / .grid .grid-2-3 -->
+        
+        
+            	<div class="grid grid-1-3">
+        	<div class="inner-block">
+                {{>cato_picture}}
+        	</div><!-- / .inner-block --> 
+      	</div><!-- / .grid .grid-1-3 -->
+      
+  	</div>
+    
+   </div><!-- / #content -->
+</main><!-- / #wrapper -->
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>scripts}}
+{{/bodyEnd}}
+
+{{/cato_layout}}

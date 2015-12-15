@@ -1,0 +1,97 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 89%;
+}
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+      <div class="form-group">
+
+      <fieldset class="inline" style="margin-bottom:30px;">
+
+        <legend class="form-label-bold"><a href="#taxPayableHelp" class="help-link" data-icon="" onclick="$('#participatorsHelp').toggle();">Do you have any other outstanding loans from earlier periods?</a></legend>
+          <small class="hidden-help" id="participatorsHelp"><p>This would be any loans made before 1 October 2013 that had not been paid back by 30 September 2014.</p></small>
+
+
+
+        <div class="form-group form-group-compound">
+          <label class="block-label" data-target="example-ni-number" for="radio-indent-1">
+            <input id="radio-indent-1" type="radio" name="radio-indent-group" value="Yes" onclick="$('#previousLoans').show().visible();">
+            Yes
+          </label>
+          <label class="block-label" for="radio-indent-2">
+            <input id="radio-indent-2" type="radio" name="radio-indent-group" value="No" onclick="$('#previousLoans').hide().invisible();">
+            No
+          </label>
+        </div>
+      </fieldset>
+      <br />
+
+      <div class="form-group hidden" id="previousLoans">
+      <fieldset>
+        <label class="form-label" for="full-name-f1">Total amount outstanding from earlier periods:</label>
+          £<input class="form-control" id="full-name-f1" type="text" style="width: 25%;">
+      </fieldset>
+    </div>
+
+        
+</form>
+  

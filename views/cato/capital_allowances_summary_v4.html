@@ -1,0 +1,55 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_capital_allowances_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    <div class="cato-header">
+        <h1 class="heading-xlarge">Capital allowances summary</h1>
+    </div>  <!-- / .cato-header -->
+
+    {{>cato_capital_allowances_summary_v4}}
+    <div class="form-group">
+        <br>
+        <a href="#" class="next button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+
+        $( "#table1").css("display", "none");
+        $( "#table2").css("display", "none");
+        $(".arrow-down").hide();
+
+        $( ".tableToggle" ).click(function() {
+            $( "#table1" ).toggle( "fast", function() {
+                // Animation complete.
+            });
+            $(this).find(".arrow-side, .arrow-down").toggle();
+            console.log(this);
+        });
+
+        $( ".tableToggle1" ).click(function() {
+            $( "#table2" ).toggle( "fast", function() {
+                $(this).find(".arrow-side, .arrow-down").toggle();
+                // Animation complete.
+            });
+            $(this).find(".arrow-side, .arrow-down").toggle();
+            console.log(this);
+        });
+
+
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

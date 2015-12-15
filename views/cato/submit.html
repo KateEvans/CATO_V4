@@ -1,0 +1,66 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    <div class="cato-header">
+        <h1 class="heading-xlarge">Accounts complete</h1>
+    </div>  <!-- / .cato-header -->
+    <p>
+        As you have completed your accounts, you can either submit them now or carry on and submit them to HMRC at the end of the process.
+        {{>cato_dashboard_current_submission_submit}}
+    <div class="form-group">
+        <br>
+
+        <p>
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" onclick="$('#submit-coho, #submit-or').toggle(); return false;">Submit Accounts to Companies House</a>
+        </p>
+
+        <div id="submit-coho" style="display:none;">
+            <h1 class="heading-medium">Companies House Authentication Details</h1>
+
+            <form action="/cato/filing/55435cbf3d0000c102b597bd/submit-to-c-h-section/-submit-group/accounts-submission#errors" method="POST" id="blockForm" name="blockForm" novalidate="" class="ng-pristine ng-valid">
+                <input type="hidden" name="csrfToken" value="d48b07280e7a839544dac4888dfdbc006c4c85b1-1432303693697-114bbed60be499a136ad7b18">
+                <fieldset id="submittoch" data-journey="accounts:navigate:submit-to-ch">
+                    <label for="authCode" class="form-label   ">
+                        Authentication code
+                    </label>
+                    <input type="password" class="form-control  " name="authCode" id="authCode" value="" style="margin-bottom: 10px">
+
+                    <p class="form-group">
+                        <a href="https://ewf.companieshouse.gov.uk" target="_blank">Forgot your authentication code?</a></p>
+
+                    <div class="form-group  ">
+
+
+            <span id="val_emailAddress">
+
+            </span>
+                        <label for="emailAddress" class="form-label   ">
+                            Email address
+                        </label>
+                        <input type="text" class="form-control  " name="emailAddress" id="emailAddress" value="">
+                    </div>
+                    <p class="form-block">Following submission you will receive an email from Companies House acknowledging receipt of the accounts, then a second email confirming if they have been accepted or rejected.</p>
+                </fieldset>
+                <div class="form-group">
+                    <input id="submit" type="submit" value="Submit accounts to Companies House" class="button button-continue">
+                </div>
+            </form>
+            <p>
+                <a href="#" onclick="$('#submit-coho, #submit-or').toggle(); return false;">Cancel</a>
+            </p>
+        </div>
+        <div id="submit-or">
+            <p>OR</p>
+            <a href="/cato/confirmation.html" class="next button">Start computations</a>
+        </div>
+    </div>
+{{/pageContent}}
+
+{{/cato_layout}}

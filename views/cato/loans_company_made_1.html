@@ -1,0 +1,117 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+{{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_loans_company_made_header}}
+    {{>cato_loans_company_made_1}}
+    <div class="form-group">
+        <br>
+        <a href="/cato/loan_earlier_periods.html" class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+
+        $(".arrow-down").hide();
+        $(".arrow-down_1").hide();
+        $(".arrow-down_2").hide();
+        $(".arrow-down_3").hide();
+
+
+
+        $( ".summary" ).click(function() {
+            $('#panel-indent').toggle( "fast", function() {
+            });
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+        });
+
+        $( ".summary_1" ).click(function() {
+            $('#panel-indent_1').toggle( "fast", function() {
+            });
+            $('.arrows_1').find(".arrow-side_1, .arrow-down_1").toggle();
+        });
+
+        $( ".summary_2" ).click(function() {
+            $('#panel-indent_2').toggle( "fast", function() {
+            });
+            $('.arrows_2').find(".arrow-side_2, .arrow-down_2").toggle();
+        });
+
+        $( ".summary_3" ).click(function() {
+            $('#panel-indent_3').toggle( "fast", function() {
+            });
+            $('.arrows_3').find(".arrow-side_3, .arrow-down_3").toggle();
+        });
+
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+
+        var name = getUrlParameter('name');
+        var outstandingAmount = getUrlParameter('outstanding');
+        var amountRepaidAfter = getUrlParameter('AmountRepaidAfter');
+        var amountRepaidBetween = getUrlParameter('AmountRepaidBetween');
+        var amountWrittenOff = getUrlParameter('amountWrittenOff');
+        var amountWriteOff = getUrlParameter('amountWriteOff');
+        var add_loan2 = getUrlParameter('add_loan2');
+//        console.log(amountWriteOff);
+
+        var b_day = getUrlParameter('b_day');
+        var b_month = getUrlParameter('b_month');
+        var b_year = getUrlParameter('b_year');
+        var repaymentDate = b_day + "/" + b_month + "/" + b_year;
+
+        var w_day = getUrlParameter('w_day');
+        var w_month = getUrlParameter('w_month');
+        var w_year = getUrlParameter('w_year');
+        var writtenOffDate = w_day + "/" + w_month + "/" + w_year;
+
+
+        var writeOff_1 = getUrlParameter('amountWrittenOff_1');
+        var writeOff_2a = getUrlParameter('amountWrittenOff_2a');
+
+
+        /* #### ADD ANOTHER LOAN LINK #### */
+
+        $('#add_loan').click(function(){
+            window.location.href = "/cato/add_loan_1.html?add_loan2=yes";
+        });
+
+
+
+
+
+
+
+    });
+
+</script>
+
+
+{{/pageScripts}}
+
+{{/cato_layout}}

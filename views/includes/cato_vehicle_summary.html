@@ -1,0 +1,108 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding-bottom: 0.5em !important;
+  margin: 0.5em 0;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 17%;
+  text-align: right;
+}
+a.block-addition__link {
+  padding: 0.5em 0.5em 0.3em 0.5em;
+  text-align: right;
+  background-color: #DEE0E2;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 2px solid #003518;
+    font-size: 0.9em;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 76%;
+}
+
+</style>
+
+
+<form method="POST" action="/accountsapprove" class="form">
+    
+  <h2 class="heading-medium">Your cars</h2>
+
+      <div id="taxAvoidanceQuestionSummary" class="block-summary">
+         <!-- <div class="block-summary__text">
+          Loans to report: Yes
+      </div>-->
+    
+        <!--<a class="block-summary__edit-link" href="/cato/loans.html"> <span class="visuallyhidden">@editHint.get</span> Edit</a>-->
+  
+      </div>
+
+
+<div id="taxAvoidanceSummary" class="block-summary block-indent">
+    <div class="block-summary__text">
+        Registration number: A983 VT0<br />
+        Date of purchase: 1 April 2015 onwards<br />
+        Second hand<br />
+        Cost: £9,800<br />
+        Emission level: 230g CO2<br />
+    </div>
+
+    <div class="block-summary__edit-link">
+        <a class="block-summary__edit-link" href="/cato/low_emission_vehicles_edited.html" style="padding-right: 2em"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+        <a class="block-summary__edit-link" href="/cato/vehicle_delete.html">Delete</a>
+    </div>
+
+</div>
+
+<div class="block-addition block-indent">
+    <a href="/cato/company_cars.html" class="block-addition__link" id="addAnother">Add another car</a>
+</div>
+</form>
+  

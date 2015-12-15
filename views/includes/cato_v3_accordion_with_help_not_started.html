@@ -1,0 +1,1688 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<style type="text/css">
+.progress {color: #6F777B; padding-bottom:2em; font-size:1.1em;}
+.progress a {float:none; display:block; font-size:0.9em;}
+.help-link::after, .help-link:visited::after {display:none;}
+a.help-link {text-decoration:underline; color:#005ea5; font-size:0.9em; font-weight:normal;}
+/*label.total a.help-link {text-decoration:none; color:#005ea5;}*/
+i.arrow {color:#005ea5; margin-left:0.5em; margin-bottom:1em;font-size:0.9em;}
+hr {margin: 1em auto 2.5em auto;height: 1px;background-color:#DEE0E2;border: 0 none; }
+.form-control {width:100%;}
+.cato-financial input {margin-bottom: 1em !important; text-align:inherit; width:auto !important;}
+.hidden-help, .hidden-help p {margin-top:0; clear:both;}
+label.total {margin-top:0 !important;}
+input.form-total {margin-top:0 !important;}
+.grid-label {width:50%}
+.grid-help {width:10%}
+.grid-input {width:20%;}
+#accordion a.accordion-toggle {
+	display:block; 	
+	border-bottom:5px solid #BFC1C3;	
+	text-decoration:none;
+	font-weight:normal;
+}
+#accordion a.not-ready { /*faking a disabled link*/
+	color:#BFC1C3;
+	 pointer-events: none;
+   	cursor: default;
+}
+#accordion span.completed {
+	float:right;
+	color:#00823B;
+}
+.hidden-text-summary {
+	border-bottom:1px solid #BFC1C3;
+	padding-bottom:0.5em;
+	margin-bottom:1em;
+}
+.hidden-text-summary a {
+	display:inline-block;
+	padding-left:1em;
+}
+.hidden-text-summary a.edit-add {
+	display:inline-block;
+}
+.hidden-text-summary ul {
+	padding-left:2em;
+}
+p.important {
+	font-weight:700;
+	background-image: url("../images/icons/icon-important.png");
+	background-repeat:no-repeat;
+	padding-left: 2.5em;
+}
+div.clear {
+	margin:0;
+}
+span.box-number {
+	display:block;
+	font-size:0.75em;
+	position:relative;
+	top:-1.3em;
+	color: #6F777B;
+}
+button.button-secondary {
+	background-color:#005ea5;	
+}
+button.button-secondary:hover, button.button-secondary:focus  {
+	background-color:#2e8aca !important;	
+}
+</style>
+
+
+
+<div class="cato-financial"> <!-- Wrapping this div around P+L, Balance Sheet so we can target them specifically-->
+
+
+
+
+
+<div class="grid-wrapper">
+<div id="accordion">
+    <h2 class="heading-large"><a href="#" class="accordion-toggle">Officers of the company</a></h2>
+	<div> <!--Start of hidden content-->
+
+
+
+	<div id="directors-served">
+<fieldset class="form-group inline">
+
+    <legend class="form-label-bold">
+        Have any directors served throughout the whole period?
+    </legend>
+        <label class="block-label" for="servedThroughout-true">Yes<input type="radio" value="true" name="servedThroughout" id="servedThroughout-true" onclick="$('#directors-served').hide().invisible();$('#appoint-director, #servedDirectorQuestionSummary').show().visible();"></label>
+    <label class="block-label" for="servedThroughout-false"> No <input type="radio" value="false" name="servedThroughout" id="servedThroughout-false"> </label>
+    </fieldset>
+    </div>
+    
+    
+    
+    <div class="block-summary hidden" id="servedDirectorQuestionSummary">
+    <div class="block-summary__text">
+    You have confirmed director(s) served throughout the whole period.  <a href="/cato/filing/556aad9f2a00004800483a42/full-accounts-section/officers-group/served-director-question#continue" class="block-summary__edit-link"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+    <p>&nbsp;</p>
+</div>
+    
+      
+    
+</div>
+    
+    
+       <div class="form-group hidden" id="appoint-director">
+    <fieldset data-journey="accounts:navigate:enter-served-director-name" id="servedDirector">
+    <div class="form-group  ">
+        <span id="val_directorName">
+        </span>
+<label class="form-label form-label-bold " for="directorName">Enter details of the director that served throughout the whole period:<span class="form-hint">For example, "John Smith"</span></label>
+<input type="text" value="" id="directorName" name="directorName" class="form-control  form-control ">
+ </div>
+</fieldset>
+
+<div class="form-group">
+                  <input type="submit" class="button button-continue" value="Save and continue" id="submit" onclick="$('#appoint-director').hide().invisible();$('#servedDirectorAdded').show().visible();">
+              </div>
+    </div>
+    
+    
+    
+    
+    
+        <div class="block-summary hidden" id="servedDirectorAdded">
+    <div class="block-summary__text">
+    The following director(s) served throughout the whole period:<br /><strong>John Smith</strong> <a href="/cato/filing/556aad9f2a00004800483a42/full-accounts-section/officers-group/served-director-question#continue" class="block-summary__edit-link"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+   <p><a href="#"> Add another director</a></p>
+    <p>&nbsp;</p>
+</div>
+    
+    
+    
+    <div class="form-group" id="continueToAppoint">
+                  <input type="submit" class="button button-continue" value="Continue" id="submit" onclick="$('#continueToAppoint').hide().invisible();$('#directors-appointed').show().visible();">
+              </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    	<div id="directors-appointed"  class="block-summary hidden" >
+
+<fieldset class="form-group inline">
+    <legend class="heading-medium">
+        Have any directors been appointed during the period?
+    </legend>
+        <label class="block-label" for="appointedDuring-true">Yes<input type="radio" value="true" name="appointedDuring" id="appointedDuring-true"></label>
+        <label class="block-label selected" for="appointedDuring-false"> No <input type="radio" checked="checked" value="false" name="appointedDuring" id="appointedDuring-false" onclick="$('#directors-appointed').hide().invisible();$('#noDirectorServed').show().visible();"></label>
+    </fieldset>
+</div>
+
+
+
+    
+    
+            <div class="block-summary hidden" id="noDirectorServed">
+    <div class="block-summary__text">
+    No directors were appointed during the period. <a href="/cato/filing/556aad9f2a00004800483a42/full-accounts-section/officers-group/served-director-question#continue" class="block-summary__edit-link"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+    <div class="form-group" id="continueToResign">
+                  <input type="submit" class="button button-continue" value="Continue" id="submit" onclick="$('#continueToResign').hide().invisible();$('#directors-resigned').show().visible();">
+              </div>
+    </div>
+    <p>&nbsp;</p>
+</div>
+
+
+
+
+    
+    
+    
+    
+        	<div id="directors-resigned"  class="block-summary hidden" >
+
+<fieldset class="form-group inline">
+    <legend class="heading-medium">
+        Have any directors resigned during the period?
+    </legend>
+    <label class="block-label" for="resignedDuring-true">Yes<input type="radio" value="true" name="resignedDuring" id="resignedDuring-true"></label>
+    <label class="block-label selected" for="resignedDuring-false">No<input type="radio" checked="checked" value="false" name="resignedDuring" id="resignedDuring-false" onclick="$('#directors-resigned').hide().invisible();$('#noDirectorResigned').show().visible();"></label>
+    </fieldset>
+</div>
+    
+    
+             <div class="block-summary hidden" id="noDirectorResigned">
+    <div class="block-summary__text">
+    No directors resigned during the period. <a href="/cato/filing/556aad9f2a00004800483a42/full-accounts-section/officers-group/served-director-question#continue" class="block-summary__edit-link"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+    <div class="form-group" id="continueToSecretary">
+                  <input type="submit" class="button button-continue" value="Continue" id="submit" onclick="$('#continueToSecretary').hide().invisible();$('#secretary').show().visible();">
+              </div>
+    </div>
+    <p>&nbsp;</p>
+</div>
+    
+    
+    
+    
+    
+    
+    	<div id="secretary"  class="block-summary hidden" >
+        
+    <fieldset data-journey="accounts:navigate:enter-company-secretary-name" id="secretary">
+    <div class="form-group  ">
+        <span id="val_name">
+        </span>
+<label class="form-label    form-label-bold " for="name">Enter the name of the company secretary (optional)
+<span class="form-hint">Not all companies will have a company secretary.</span>
+</label>
+ <input type="text" value="" id="name" name="name" class="form-control  form-control ">
+</div>
+</fieldset>
+</div>
+
+
+
+
+
+
+ <button class='next button disabled  button-secondary'>Continue to Director's report &#9660;</button>
+</div> <!--End of hidden content-->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <h2 class="heading-large"><a href="#" class="accordion-toggle not-ready">Directors' report</a></h2>
+        <div> <!--Start of hidden content-->
+
+        <p>The details previously entered about your company officers will be included in the directors' report.</p>
+     	<p class="important-notice" style="padding:0.25em 0 0.5em 2.5em;">The sections below are optional. Only use those you need to report.</p>
+		<p>If you're unsure which sections to complete, <a data-ng-click="directorsReportHelp= !directorsReportHelp" href="#directorsReportHelp">find out more about each section.</a></p>
+
+        <fieldset class="cato-accounts form-group" id="directorsReport">
+            <details open="open" role="group">
+                <summary tabindex="0" aria-controls="summary-0" role="button"><i class="arrow arrow-closed" aria-hidden="true">►</i>
+                <label class="form-label" for="principalActivities">
+                Principal activities of the company during the period  (optional)
+                </label>
+                </summary>
+                <div id="summary-0" class="form-group">
+                <p class="form-hint">For example, 'the company's principal activity during the period was the printing and distribution of newspapers'.</p>
+                <textarea class="form-control " id="principalActivities" name="principalActivities">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque bibendum, velit ac egestas interdum, ante nibh pretium ex, at bibendum ante ligula ut ipsum. Suspendisse accumsan tincidunt tortor in aliquam. Nunc convallis sit amet lectus ac luctus. </textarea>
+                </div>
+            </details>
+            <details open="open" role="group">
+                <summary tabindex="0" aria-controls="summary-1" role="button"><i class="arrow arrow-closed" aria-hidden="true">►</i>
+                <label class="form-label" for="donations">
+                Political and charitable donations (optional)
+                </label>
+                </summary>
+                <div id="summary-1" class="form-group">
+                <p class="form-hint">For example, 'the company's charitable donations during the period amounted to £2,043. No political donations were made'.</p>
+                <textarea class="form-control " id="donations" name="donations">Aenean vestibulum velit eu faucibus pharetra. In blandit tincidunt ante, quis finibus ante convallis ut. Mauris ut ultricies orci. Duis sed iaculis sem. Donec et velit a tortor consectetur accumsan sed vitae turpis. </textarea>
+                </div>
+            </details>
+            <details role="group">
+                <summary tabindex="0" aria-controls="summary-2" role="button" aria-expanded="false"><i class="arrow arrow-closed" aria-hidden="true">►</i>
+                <label class="form-label" for="disabilityPolicy">
+                Company policy on the employment of disabled persons (optional)
+                </label>
+                </summary>
+                <div id="summary-2" class="form-group" aria-hidden="true" style="display: none;">
+                <p class="form-hint">For example, 'the company policy is to employ disabled persons wherever practical. One full time member of staff is registered disabled'.</p>
+                <textarea class="form-control " id="disabilityPolicy" name="disabilityPolicy"></textarea>
+                </div>
+            </details>
+            <details role="group">
+                <summary tabindex="0" aria-controls="summary-3" role="button" aria-expanded="false"><i class="arrow arrow-closed" aria-hidden="true">►</i>
+                <label class="form-label" for="additionalInformation">
+                Additional information to include in the directors' report (optional)
+                </label>
+                </summary>
+                <div id="summary-3" class="form-group" aria-hidden="true" style="display: none;">
+                <p class="form-hint">Enter information not covered by the other sections. For example, if the company made an acquisition of its own shares.</p>
+                <textarea class="form-control " id="additionalInformation" name="additionalInformation"></textarea>
+                </div>
+            </details>
+        </fieldset>   
+
+        <button class="previous button button-secondary">&#9650; Back to Officers of the Company</button><br />
+        <button class="next button disabled button-secondary">Continue to Profit and loss &#9660;</button>
+    </div> <!--End of hidden content-->
+    
+    
+    
+    
+    
+    
+    <h2 class="heading-large"><a href="#" class="accordion-toggle not-ready">Profit and loss</a></h2>
+    <div> <!--Start of hidden content-->
+
+
+    <div class="grid grid-1-4 grid-label">
+		<div class="inner-block">
+ 		 	&nbsp;
+        </div> <!--/inner-block-->
+    </div> <!--/grid--> 
+    	<div class="grid grid-1-4 grid-help">
+ 		 	&nbsp;
+    </div> <!--/grid-->  
+    
+	<div class="grid grid-1-4 grid-input">
+		<div class="inner-block">
+    		<h3>2013<span class="currency">&pound;</span></h3>               
+      	</div> <!--/inner-block-->
+    </div> <!--/grid--> 
+    
+	<div class="grid grid-1-4 grid-input">
+		<div class="inner-block">
+    		<h3>2012<span class="currency">&pound;</span></h3>        
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->  
+
+
+
+
+
+
+
+<div class="grid-wrapper clear">
+
+
+
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Turnover</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#nomineeHelp" class="help-link"  onclick="$('#turnoverHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC12</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC13</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="turnoverHelp"><p>The total amount your company has received or is due from providing goods or services for the period. It should exclude VAT if VAT was charged on its supplies. Turnover may also be known as sales, revenue or income. </p></small>
+    
+
+
+
+
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span><!--<span class="box-number">AC12</span>-->Cost of sales</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#costSalesHelp" class="help-link"  onclick="$('#costSalesHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC14</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC15</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="costSalesHelp"><p>The cost of direct labour and materials used to produce the goods or services sold. It excludes any distribution costs and administrative costs, which have their own entries in profit and loss. </p></small>
+    
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current" class="total"><span class="visuallyhidden">2013</span>Gross profit or (loss) </label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#grossProfitHelp" class="help-link"  onclick="$('#grossProfitHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_current" name="turnover_current" disabled="disabled"><span class="box-number">AC16</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_previous" name="turnover_previous" disabled="disabled"><span class="box-number">AC17</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="grossProfitHelp"><p> This is calculated by subtracting your cost of sales from your turnover. </p></small>
+
+
+</div><!-- End div class clear-->
+
+
+<hr />
+
+
+
+
+<div class="grid-wrapper clear">
+
+
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Distribution costs</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#distributionHelp" class="help-link"  onclick="$('#distributionHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC18</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC19</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="distributionHelp">These are costs (expenses) generally associated with selling or dispatching your goods or services, such as:<ul class="list-bullet"><li>packaging</li><li>transport</li><li>warehousing</li></ul></small>
+    
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Administrative expenses </label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#adminHelp" class="help-link"  onclick="$('#adminHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC20</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC21</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="adminHelp">  	These are management expenses and overhead costs, such as:<ul class="list-bullet"><li>administrative salaries</li><li>rent, rates, utilities and insurance</li><li>repairs and renewals</li><li>print, post and stationary</li><li>legal and accounting fees</li><li>bad debts written off</li></ul></small>
+    
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Other operating income </label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#otherHelp" class="help-link"  onclick="$('#otherHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC22</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC23</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="otherHelp"><p>Any income from activities not related to your company's core activities that you have not included elsewhere in your profit and loss (such as turnover). </p></small>
+    
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current" class="total"><span class="visuallyhidden">2013</span>Operating profit or (loss)</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#operatingProfitHelp" class="help-link"  onclick="$('#operatingProfitHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_current" name="turnover_current" disabled="disabled"><span class="box-number">AC26</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_previous" name="turnover_previous" disabled="disabled"><span class="box-number">AC27</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="operatingProfitHelp"><p>This is calculated by subtracting your distribution and administrative costs from your gross profit (or loss), then adding your other operating income. </p></small>
+
+
+</div><!-- End div class clear-->
+
+<hr />
+
+
+
+<div class="grid-wrapper clear">
+
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Interest receivable and similar income</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#interestRecHelp" class="help-link"  onclick="$('#interestRecHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC28</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC29</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="interestRecHelp">  	The total amount of interest (or similar) either received by or owed to the company on balances, such as:<ul class="list-bullet"><li>bank deposits</li><li>loans made by the company</li><li>gains from foreign exchange</li></ul></small>
+    
+
+
+
+
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Interest payable and similar charges </label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#interestPayHelp" class="help-link"  onclick="$('#interestPayHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC30</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC31</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="interestPayHelp"> 	The total amount of interest (or similar) either paid by or owed by the company on balances, such as:<ul class="list-bullet"><li>bank loans or overdrafts</li><li>other loans made to the company</li><li>finance leases on equipment or property used in the business</li><li>losses from foreign exchange</li></ul></small>
+    
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current" class="total"><span class="visuallyhidden">2013</span> Profit (loss) on ordinary activities before taxation</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#profitOrdinaryHelp" class="help-link"  onclick="$('#profitOrdinaryHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_current" name="turnover_current" disabled="disabled"><span class="box-number">AC32</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_previous" name="turnover_previous" disabled="disabled"><span class="box-number">AC33</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="profitOrdinaryHelp"><p>This is calculated by adding together your operating profit (or loss) and your interest receivable (or similar income), then subtracting your interest payable (or similar charges). </p></small>
+
+
+
+</div><!-- End div class clear-->
+
+
+<hr />
+
+
+
+
+<div class="grid-wrapper clear">
+
+
+
+
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span> Tax on profit or loss on ordinary activities </label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#taxHelp" class="help-link"  onclick="$('#taxHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC34</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC35</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="taxHelp"><p>The total corporate tax charge for the period. If the total is a repayment (a credit), then enter a negative figure using a minus sign. </p></small>
+    
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current" class="total"><span class="visuallyhidden">2013</span>Profit (loss) for the financial year </label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#profitLossHelp" class="help-link"  onclick="$('#profitLossHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_current" name="turnover_current" disabled="disabled"><span class="box-number">AC36</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_previous" name="turnover_previous" disabled="disabled"><span class="box-number">AC37</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="profitLossHelp"><p>This is calculated by subtracting your tax on ordinary activities from your profit (or loss) on ordinary activities before taxation. If you have received a tax repayment, the amount is calculated by adding the two figures together rather than subtracting. </p></small>
+
+
+</div><!-- End div class clear-->
+
+
+<hr />
+
+<div class="grid-wrapper clear">
+
+
+
+<p class="important-notice">Dividends and net balance transferred to reserves won't appear on the face of the profit and loss submitted.</p>
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Dividends</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#dividendsHelp" class="help-link"  onclick="$('#dividendsHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC38</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC39</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="dividendsHelp"><p>This is only the dividends chargeable for the financial period. It does not include dividends paid to satisfy an outstanding liability from the previous period. The dividends provided here won’t appear on the face of the profit and loss submitted. </p></small>
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current" class="total"><span class="visuallyhidden">2013</span>Net balance transferred to reserves</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#netHelp" class="help-link"  onclick="$('#netHelp').toggle();return false;">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_current" name="turnover_current" disabled="disabled"><span class="box-number">AC40</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_previous" name="turnover_previous" disabled="disabled"><span class="box-number">AC41</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+      <small class="hidden-help" id="netHelp"><p>This is calculated by subtracting your dividends from your profit (or loss) for the financial year. Your net balance transferred to reserves won’t appear on the face of the profit and loss submitted. </p></small>
+  <button class="button">Confirm Profit and Loss</button>
+<hr />
+</div><!-- End div class clear-->
+
+
+        <button class="previous button button-secondary">&#9650; Back to Director's report</button><br />
+       	<button class="next button disabled button-secondary">Continue to Gains and losses &#9660;</button>
+    </div>
+
+
+
+
+
+
+
+   	<h2 class="heading-large"><a href="#" class="accordion-toggle not-ready">Gains and losses</a></h2>
+    <div> <!--Start of hidden content-->
+   
+	<p data-journey="accounts:navigate:gains-and-losses-question">If you are unsure if you need to report these, <a data-ng-click="gainsAndLossesHelp= !gainsAndLossesHelp" href="#gainsAndLossesHelp">find out more about gains and losses.</a></p>   
+   
+   <fieldset class="form-group inline">
+    <legend class="form-label-bold">Do you want to report any gains and losses not included in your profit and loss?</legend>
+	<label class="block-label" for="reportGainsAndLosses-true">Yes<input type="radio" data-ng-model="reportGainsAndLosses" value="true" name="reportGainsAndLosses" id="reportGainsAndLosses-true" class="ng-pristine ng-valid"></label>
+	<label class="block-label" for="reportGainsAndLosses-false">No<input type="radio" data-ng-model="reportGainsAndLosses" value="false" name="reportGainsAndLosses" id="reportGainsAndLosses-false" class="ng-pristine ng-valid"></label>
+    </fieldset>
+   
+   
+   
+   
+   
+   
+   
+        	<button class="previous button button-secondary">&#9650; Back to Profit and Loss</button><br />
+       		<button class="next button disabled button-secondary">Continue to Balance Sheet &#9660;</button>
+    </div>  
+
+
+
+
+
+    
+  	<h2 class="heading-large"><a href="#" class="accordion-toggle not-ready">Balance sheet</a></h2>
+    <div> <!--Start of hidden content-->
+ 
+ 
+ 
+ 
+ <div id="balanceSheetContent">
+ 
+     <div class="grid grid-1-4 grid-label">
+		<div class="inner-block">
+ 		 	&nbsp;
+        </div> <!--/inner-block-->
+    </div> <!--/grid--> 
+    	<div class="grid grid-1-4 grid-help">
+ 		 	&nbsp;
+    </div> <!--/grid-->  
+    
+	<div class="grid grid-1-4 grid-input">
+		<div class="inner-block">
+    		<h3>2013<span class="currency">&pound;</span></h3>               
+      	</div> <!--/inner-block-->
+    </div> <!--/grid--> 
+    
+	<div class="grid grid-1-4 grid-input">
+		<div class="inner-block">
+    		<h3>2012<span class="currency">&pound;</span></h3>        
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->  
+
+
+
+
+
+
+
+<div class="grid-wrapper clear">
+
+
+<h2 class="heading-medium">Fixed assets</h2>
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Intangible assets</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC42</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC43</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    
+
+
+
+
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span><!--<span class="box-number">AC12</span>-->Tangible assets</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC44</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC45</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current" class="total"><span class="visuallyhidden">2013</span>Total fixed assets</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_current" name="turnover_current" disabled="disabled"><span class="box-number">AC48</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_previous" name="turnover_previous" disabled="disabled"><span class="box-number">AC49</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+
+
+</div><!-- End div class clear-->
+
+
+<hr />
+
+
+
+
+<div class="grid-wrapper clear">
+
+<h2 class="heading-medium">Current assets</h2>
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Stocks</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC50</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC51</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Debtors</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC52</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC53</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Cash at bank and in hand</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC54</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC55</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+ 
+    
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current" class="total"><span class="visuallyhidden">2013</span>Total current assets</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_current" name="turnover_current" disabled="disabled"><span class="box-number">AC56</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_previous" name="turnover_previous" disabled="disabled"><span class="box-number">AC57</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Creditors - amounts falling due within one year
+</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC58</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC59</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    
+
+
+
+
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current" class="total"><span class="visuallyhidden">2013</span>Net current assets (liabilities)</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control  form-total" id="turnover_current" name="turnover_current"><span class="box-number">AC60</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control  form-total" id="turnover_previous" name="turnover_previous"><span class="box-number">AC61</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    
+    
+    
+        <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current" class="total"><span class="visuallyhidden">2013</span>Total assets less current liabilities</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control  form-total" id="turnover_current" name="turnover_current"><span class="box-number">AC62</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control  form-total" id="turnover_previous" name="turnover_previous"><span class="box-number">AC63</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    
+
+
+    
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Creditors - amounts falling due after more than one year </label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC64</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC65</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    
+
+
+
+
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Provision for liabilities </label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC66</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC67</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    
+    
+    
+        <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current" class="total"><span class="visuallyhidden">2013</span>Total net assets (liabilities)</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control  form-total" id="turnover_current" name="turnover_current"><span class="box-number">AC68</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control  form-total" id="turnover_previous" name="turnover_previous"><span class="box-number">AC69</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    
+
+
+
+</div><!-- End div class clear-->
+
+
+<hr />
+
+
+
+
+<div class="grid-wrapper clear">
+
+
+<h2 class="heading-medium">Capital and reserves</h2>
+
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Called up share capital </label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC70</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC71</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    
+    
+    
+        <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Revaluation reserve </label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC76</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC77</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    
+    
+    
+        
+        <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current"><span class="visuallyhidden">2013</span>Profit and loss account</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_current" name="turnover_current"><span class="box-number">AC74</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control" id="turnover_previous" name="turnover_previous"><span class="box-number">AC75</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+
+
+    <div class="grid grid-1-4 grid-label">
+		<label for="turnover_current" class="total"><span class="visuallyhidden">2013</span>Total shareholder funds</label>
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-help">
+        <div class="inner-block">
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#" class="help-link">Help</a>
+      	</div> <!--/inner-block-->
+    </div> <!--/grid-->    
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_current" name="turnover_current" disabled="disabled"><span class="box-number">AC80</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+    <div class="grid grid-1-4 grid-input">
+        <div class="inner-block">
+        <label for="turnover_previous" class="visuallyhidden">2012 Turnover</label>
+        	<input type="text"size="12" maxlength="11" class="form-control form-total" id="turnover_previous" name="turnover_previous" disabled="disabled"><span class="box-number">AC81</span>
+        </div> <!--/inner-block-->
+    </div> <!--/grid-->
+    
+  <input value="Confirm Balance Sheet" class="button" onclick="$('#balanceSheetContent').hide().invisible();$('#balanceSheetStatements').show().visible();"></input>
+<hr />
+
+</div><!-- End div class clear-->
+
+</div><!--End balanceSheetContent-->
+
+ 
+    <div class="block-summary hidden" id="balanceSheetStatements">
+    <div class="block-summary__text">
+    Balance sheet figures completed. <a href="/cato/filing/556aad9f2a00004800483a42/full-accounts-section/officers-group/served-director-question#continue" class="block-summary__edit-link">Edit</a>
+	</div>
+    
+    <fieldset data-journey="accounts:navigate:balance-sheet-statements" id="balanceSheetStatements">
+    <legend class="heading-large">Balance sheet statements</legend>
+    <p>These are legal statements that will appear in your accounts. </p>
+    <div id="balanceSheetStatementsHelpLink">
+        <p>Find out more about these statements.
+        <a data-ng-click="directorsReportHelp= !directorsReportHelp" href="#directorsReportHelp">find out more about each section.</a>
+        </p>
+    </div>
+    
+
+    <p>You must confirm all of the following statements to continue.</p>
+    <div class="form-group text">
+   <label class="form-checkbox block-label  flush--right  ">
+    <input type="checkbox" value="true" name="section477" class=" " id="section477">
+    For the year ending 31 March 2014 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.
+    </label>
+<label class="form-checkbox block-label  flush--right  ">
+    <input type="checkbox" value="true" name="section476" class=" " id="section476">
+    The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.
+    </label>
+<label class="form-checkbox block-label  flush--right  ">
+    <input type="checkbox" value="true" name="directorResponsibility" class=" " id="directorResponsibility">
+    The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.
+    </label>
+<fieldset class="form-group inline">
+    <legend class="heading-medium">Choose one of the following statements</legend>
+    <p>The first option - if you have adopted the Financial Reporting Standard for Smaller Entities (FRSSE).</p> <p>Second option - if you have not adopted FRSSE.</p>
+        <label class="block-label" for="preparedInAccordance-smallcompaniesandfrs">
+                 These accounts have been prepared in accordance with the provisions applicable to companies subject to the small companies regime and in accordance with the Financial Reporting Standard for Smaller Entities (effective April 2008). 
+            <input type="radio" data-init-value-on-scope="" data-ng-click="clearValues($event)" data-ng-model="preparedInAccordance" value="smallCompaniesAndFRS" name="preparedInAccordance" id="preparedInAccordance-smallcompaniesandfrs" class="ng-pristine ng-valid">
+        </label>
+        <label class="block-label" for="preparedInAccordance-smallcompanies">
+                 These accounts have been prepared in accordance with the provisions applicable to companies subject to the small companies regime. 
+            <input type="radio" data-init-value-on-scope="" data-ng-click="clearValues($event)" data-ng-model="preparedInAccordance" value="smallCompanies" name="preparedInAccordance" id="preparedInAccordance-smallcompanies" class="ng-pristine ng-valid">
+        </label>
+</fieldset>
+    </div>
+</fieldset>
+	</div>
+ 
+ 
+ 
+ 
+ 
+        	<button class="previous button button-secondary">&#9650; Back to Gains and losses</button><br />
+       		<button class="next button disabled button-secondary">Continue to Statutory accounts notes &#9660;</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <h2 class="heading-large"><a href="#" class="accordion-toggle not-ready">Statutory accounts notes</a></h2>
+    <div> <!--Start of hidden content-->
+
+
+
+
+<fieldset id="statutoryNotesMenu">
+    
+    
+        <h2 class="heading-medium">Select which notes you would like to include in your accounts</h2>
+        <p>All notes are optional unless indicated otherwise.</p>
+    
+
+
+    <div class="form-group">    
+    <label data-journey="accounts:navigate:statutory-notes" class="form-checkbox block-label flush--right" ng-init="accountingPoliciesNote=true">
+	    <input type="checkbox" disabled="" checked="" value="true" name="selections[0].selected" ng-model="accountingPoliciesNote" id="selections_0_selected" class="ng-pristine ng-valid">
+	    Accounting policies
+	     <span class="font-xsmall form-block">This note is mandatory for statutory accounts</span> 
+	    <span class="hidden">
+	      <input type="text" value="accountingPoliciesNote" id="selections_0_name" name="selections[0].name">
+	      <input type="text" value="true" id="selections_0_selected" name="selections[0].selected">
+	    </span>
+	  </label>
+    <label data-journey="accounts:navigate:statutory-notes" class="form-checkbox block-label flush--right" ng-init="turnoverNote=false">
+	    <input type="checkbox" value="true" name="selections[1].selected" ng-model="turnoverNote" id="selections_1_selected" class="ng-pristine ng-valid">
+	    Turnover
+	    <span class="hidden">
+	      <input type="text" value="turnoverNote" id="selections_1_name" name="selections[1].name">
+	    </span>
+	  </label>
+    <label data-journey="accounts:navigate:statutory-notes" class="form-checkbox block-label flush--right" ng-init="directorsRemunerationNote=false">
+	    <input type="checkbox" value="true" name="selections[2].selected" ng-model="directorsRemunerationNote" id="selections_2_selected" class="ng-pristine ng-valid">
+	    Directors' remuneration
+	    <span class="hidden">
+	      <input type="text" value="directorsRemunerationNote" id="selections_2_name" name="selections[2].name">
+	    </span>
+	  </label>
+    <label data-journey="accounts:navigate:statutory-notes" class="form-checkbox block-label flush--right" ng-init="employeesNote=false">
+	    <input type="checkbox" value="true" name="selections[3].selected" ng-model="employeesNote" id="selections_3_selected" class="ng-pristine ng-valid">
+	    Employees
+	    <span class="hidden">
+	      <input type="text" value="employeesNote" id="selections_3_name" name="selections[3].name">
+	    </span>
+	  </label>
+    <label data-journey="accounts:navigate:statutory-notes" class="form-checkbox block-label flush--right" ng-init="operatingProfitNote=false">
+	    <input type="checkbox" value="true" name="selections[4].selected" ng-model="operatingProfitNote" id="selections_4_selected" class="ng-pristine ng-valid">
+	    Operating profit or (loss)
+	    <span class="hidden">
+	      <input type="text" value="operatingProfitNote" id="selections_4_name" name="selections[4].name">
+	    </span>
+	  </label>
+	    <label data-journey="accounts:navigate:statutory-notes" class="form-checkbox block-label flush--right" ng-init="intangibleAssetsMenuNote=true">
+	    <input type="checkbox" disabled="" checked="" value="true" name="selections[5].selected" ng-model="intangibleAssetsMenuNote" id="selections_5_selected" class="ng-pristine ng-valid">
+	    Intangible assets
+	     <span class="font-xsmall form-block">This note is mandatory as you have entered a value for intangible assets on the balance sheet</span> 
+	    <span class="hidden">
+	      <input type="text" value="intangibleAssetsMenuNote" id="selections_5_name" name="selections[5].name">
+	      <input type="text" value="true" id="selections_5_selected" name="selections[5].selected">
+	    </span>
+	  </label>
+    <label data-journey="accounts:navigate:statutory-notes" class="form-checkbox block-label flush--right" ng-init="calledUpShareCapitalNote=true">
+	    <input type="checkbox" disabled="" checked="" value="true" name="selections[6].selected" ng-model="calledUpShareCapitalNote" id="selections_6_selected" class="ng-pristine ng-valid">
+	    Called up share capital
+	     <span class="font-xsmall form-block">This note is mandatory as you have entered a value for share capital on the balance sheet</span> 
+	    <span class="hidden">
+	      <input type="text" value="calledUpShareCapitalNote" id="selections_6_name" name="selections[6].name">
+	      <input type="text" value="true" id="selections_6_selected" name="selections[6].selected">
+	    </span>
+	  </label>
+
+    <label data-journey="accounts:navigate:statutory-notes" class="form-checkbox block-label flush--right" ng-init="relatedPartyDisclosuresNote=false">
+	    <input type="checkbox" value="true" name="selections[7].selected" ng-model="relatedPartyDisclosuresNote" id="selections_7_selected" class="ng-pristine ng-valid">
+	    Related party disclosures
+		    <span class="hidden">
+	      <input type="text" value="relatedPartyDisclosuresNote" id="selections_7_name" name="selections[7].name">
+	    </span>
+	  </label>
+    <label data-journey="accounts:navigate:statutory-notes" class="form-checkbox block-label flush--right" ng-init="transactionsWithDirectorsNote=false">
+	    <input type="checkbox" value="true" name="selections[8].selected" ng-model="transactionsWithDirectorsNote" id="selections_8_selected" class="ng-pristine ng-valid">
+	    Transactions with directors
+	    <span class="hidden">
+	      <input type="text" value="transactionsWithDirectorsNote" id="selections_8_name" name="selections[8].name">
+	    </span>
+	  </label>
+    <label data-journey="accounts:navigate:statutory-notes" class="form-checkbox block-label flush--right" ng-init="capitalCommitmentsNote=false">
+	    <input type="checkbox" value="true" name="selections[9].selected" ng-model="capitalCommitmentsNote" id="selections_9_selected" class="ng-pristine ng-valid">
+	    Capital commitments
+	    <span class="hidden">
+	      <input type="text" value="capitalCommitmentsNote" id="selections_9_name" name="selections[9].name">
+	    </span>
+	  </label>
+    <label data-journey="accounts:navigate:statutory-notes" class="form-checkbox block-label flush--right" ng-init="contingentLiabilitiesNote=false">
+	    <input type="checkbox" value="true" name="selections[10].selected" ng-model="contingentLiabilitiesNote" id="selections_10_selected" class="ng-pristine ng-valid">
+	    Contingent liabilities
+	    <span class="hidden">
+	      <input type="text" value="contingentLiabilitiesNote" id="selections_10_name" name="selections[10].name">
+	    </span>
+	  </label>
+    <label data-journey="accounts:navigate:statutory-notes" class="form-checkbox block-label flush--right" ng-init="postBalanceSheetEventsNote=false">
+	    <input type="checkbox" value="true" name="selections[11].selected" ng-model="postBalanceSheetEventsNote" id="selections_11_selected" class="ng-pristine ng-valid">
+	    Post balance sheet events
+	    <span class="hidden">
+	      <input type="text" value="postBalanceSheetEventsNote" id="selections_11_name" name="selections[11].name">
+	    </span>
+	  </label>
+    </div>
+</fieldset>
+<button class="button">Save and continue</button>
+<hr />
+
+
+        	<button class="previous button button-secondary">&#9650; Back to Balance Sheet</button><br />
+       		<button class="next button disabled button-secondary">Continue to Approve accounts &#9660;</button>
+    </div>    
+
+
+
+
+
+
+
+
+
+    
+   	<h2 class="heading-large"><a href="#" class="accordion-toggle not-ready">Approve accounts</a></h2>
+    <div class="text"> <!--Start of hidden content-->
+
+
+
+
+
+
+
+<form data-ng-controller="ApprovalController" novalidate="" name="blockForm" id="blockForm" method="POST" action="/cato/filing/556aad9f2a00004800483a42/full-accounts-section/approval-only-group/statutory-accounts-approval#errors" class="ng-scope ng-pristine ng-valid">
+    
+        <input type="hidden" value="00b251992ec57e7cc1fc43708b03f56fc9b81fa2-1433064248720-0274e52b3f9d5e512e9ca41c" name="csrfToken">
+            
+
+
+<fieldset data-journey="accounts:navigate:approve-submit-accounts" id="accountsApproval">
+    
+    <h2 class="heading-large flush--top">Statutory accounts</h2>
+    <p> Before approval<a href="/cato/view-filing/556aad9f2a00004800483a42/CH/true">view your statutory accounts</a> <span class="font-xsmall">(PDF, less than 100KB)</span></p>
+    <p>Approve your statutory accounts ready for submission.</p>
+ 
+<fieldset id="approvers" class="form-group">
+    <legend class="heading-medium">1. Select approver(s)</legend>
+    
+
+
+<div class=""> 
+     
+      <small class="form-field--hint">You must have at least one approver.  Choose from the list or provide a name.</small> 
+    <ul>
+            <li class="flush--left">
+                <label class="block-label">John Smith
+                    <input type="checkbox" value="true" name="approvers[0].selected" id="approvers_0_selected">
+                </label>
+                <span class="hidden">
+                <label class="  " for="approvers[0].name">
+                    <input type="text" value="John Smith" id="approvers[0].name" name="approvers[0].name">
+                    </label>
+                </span>
+            </li>
+    </ul>
+</div>
+
+</fieldset>
+
+<fieldset id="additionalApprovers" class="form-group">
+    <a data-ng-click="show_otherApprovers_0 = true" data-ng-show="!show_otherApprovers_0" id="addApproverInitialLink" href="#" data-unhide-with-js="" class="">Add additional or alternative approver</a>
+
+    
+ <fieldset id="confirmation" class="form-group">
+     <legend class="heading-medium">2. Agree to approval statement</legend>
+     
+
+
+
+
+<label class="form-checkbox block-label  ">
+    
+    <input type="checkbox" value="true" name="approval" class=" " id="approval">
+    The statutory accounts have been approved by the director/board of directors.
+    
+</label>
+
+ </fieldset>
+
+
+
+ <fieldset id="date">
+<fieldset id="dateOfApproval" class="form-group ">
+        <legend class="heading-medium"> 3. Enter the date of approval</legend>
+        <small class="form-hint">For example, 31 03 2014</small>
+            <div class="date-of-birth">
+                <div class="form-group">
+              <label class=" label--dateField-group" for="dateOfApproval.day">
+                <span class="label__text">
+                    Day
+                </span>
+            </label>
+            <input type="text" value="" id="dateOfApproval.day" style="width:50px !important; margin-right:5px;" name="dateOfApproval.day" data-init-value-on-scope="" data-ng-model="dateOfApproval.day" class="input--xxsmall form-control ng-pristine ng-valid">
+                </div>
+                <div class="form-group flush--bottom">
+                 <label class=" label--dateField-group" for="dateOfApproval.month">
+                <span class="label__text">
+                    Month
+                </span>
+            </label>
+            <input type="text" value="" id="dateOfApproval.month" style="width:50px !important; margin-right:5px;" name="dateOfApproval.month" data-init-value-on-scope="" data-ng-model="dateOfApproval.month" class="input--xxsmall form-control ng-pristine ng-valid">
+                </div>
+                <div class="form-group form-group-year">
+  
+            <label class=" label--dateField-group" for="dateOfApproval.year">
+                <span class="label__text">
+                    Year
+                </span>
+            </label>
+            <input type="text" value="" id="dateOfApproval.year" style="width:100px !important; margin-right:5px;" name="dateOfApproval.year" data-init-value-on-scope="" data-ng-model="dateOfApproval.year" class="input--xsmall form-control ng-pristine ng-valid">
+
+                </div>
+            </div>
+</fieldset>
+
+ </fieldset>
+
+</fieldset>
+              
+</form>
+<button class="button">Save and continue</button>
+<hr />
+
+        	<button class="previous button button-secondary">&#9650; Back to Statutory accounts notes</button><br />
+       		<button class="next button disabled button-secondary">Continue to Accounts submission &#9660;</button>
+    </div>   
+    
+   
+    
+    
+    
+</div><!--accordion-->
+</div> <!--/grid-wrapper-->
+
+<!--<div class="grid-wrapper">
+    <div class="form-group">
+     <button disabled="disabled" class="button">Finish accounts button</button>
+    </div>-->
+</div> <!--/grid-wrapper-->
+
+

@@ -1,0 +1,66 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+
+
+
+
+
+    <div class="form-group">
+        <fieldset class="form-group" id=2">
+            <legend class="form-label-bold">Do you need to report these things in your accounts?</legend>
+            <p>You can’t file to HM Revenue and Customs using this service if you need to include the following things in your accounts:</p>
+
+            <ul class="list-bullet">
+                <li>leased cars</li>
+                <li>assets you're claiming as capital allowances in your special or single asset pools</li>
+                <li>ancillary or non-trading income over £1,000 - income from activities that aren't related to your main trade</li>
+                <li>property income over £5,200 (gross), or a loss on a property</li>
+            </ul>
+            <ul>
+                <li>
+                    <label for="type1"  class="block-label" onclick="$('#exclusion').show().visible()">Yes - I need to include one or more of these in my accounts
+                        <input type="radio" id="type1" name="selectedType" value="1"/>
+                    </label>
+                </li>
+                <div id="exclusion" class="hidden" style="clear: both; padding:1em 0 0 0 ">
+                    <h2 style="font-weight: bold">You can’t file to HM Revenue and Customs with this service</h2>
+                    <p>You can still use this service to file with Companies House. You can file separately with <a href=”https://www.gov.uk/file-your-company-accounts-and-tax-return>HM Revenue and Customs</a>, or you can <a href=”https://www.gov.uk/company-filing-software/overview”>use accounting software</a>.</p>
+                </div>
+
+                <li style="clear:left;">
+                    <label for="type2"  class="block-label" onclick="$('#exclusion').hide().invisible()">No - I don’t need to report these
+                        <input type="radio" id="type2" name="selectedType" value="2"/>
+                    </label>
+                </li>
+            </ul>
+
+        </fieldset>
+        <!--<p>You can still file to Companies House even if these things apply to your company. You can also file to <a href="#">HM Revenue and Customs</a> separately.</p>-->
+    </div>
+
+
+
+        
+</form>
+  

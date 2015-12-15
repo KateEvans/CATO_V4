@@ -1,0 +1,169 @@
+
+.payments {
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .heading-xlarge {
+    font-size:36px;
+  }
+
+  p {
+    margin:8px 0 20px 0;
+  }
+
+  .vertical-space-top {
+    margin-top: 20px;
+  }
+
+  fieldset legend {
+    float:none; // all legends are floated left for some reason, so resetting this for payments
+  }
+
+  .button {
+    margin:0 0 12px 0;
+  }
+
+  .form-label-bold {
+    margin-bottom: 5px;
+  }
+
+  .form-hint {
+    margin-bottom: 5px;
+  }
+
+  .pay-now,
+  .pay-now + img {
+    display:inline-block;
+  }
+
+  .pay-now {
+    vertical-align:top;
+    margin:0 5px 0 0;
+  }
+
+  .tab {
+    width:160px;
+    padding:14px 0 6px;
+    text-align:center;
+    margin-bottom:0px;
+    margin-right:20px;
+    color: #005EA5;
+    cursor: pointer;
+    float: left;
+  }
+
+  .tab.ui-tabs-active {
+    border-bottom: 2px solid #6F777B;
+    color:#0B0C0C;
+    cursor: initial;
+  }
+
+  .table-label {
+    width: 100%;
+    margin: 0;
+    background-color: transparent;
+    border: 0;
+    box-sizing: border-box;
+    padding: 18px 30px 12px 45px;
+  }
+
+  .table-label.selected,
+  .table-label:hover {
+    outline:0;
+    background-color:$grey-8;
+  }
+
+  a.ui-tabs-anchor {
+    text-decoration: none;
+  }
+
+  table.calendar td {
+    padding: 0;
+  }
+
+  table.calendar label span {
+    float: right;
+    padding-left: 12px;
+  }
+
+  .how-to-pay {
+    border-bottom: 0px;
+  }
+
+  .min.summary {
+    border-bottom: 0px;
+  }
+
+  .survey__legend {
+    margin-bottom: 0;
+  }
+
+  .user-name {
+    margin: em(15) 0 0 0;
+    float: right;
+    text-align: right;
+
+    @include media(mobile) {
+      padding: em(10) 0 0 0;
+      float: left;
+      text-align: left;
+    }
+
+  }
+
+  .summary__amount-cell {
+    position:relative;
+  }
+
+  .summary__amounts {
+    position:absolute;
+    left:0;
+    top:0;
+  }
+
+  .summary__amounts__item {
+    @include core-16;
+    padding: em(14) em(20) em(12) 0;
+    margin:0;
+    text-align:right;
+    display:block;
+    height:19px;
+
+    @include media(mobile) {
+      padding: em(13) em(20) em(10) 0;
+      height:18px;
+    }
+
+    &.fee {
+      padding: em(26) em(20) em(24) 0;
+
+      @include media(mobile) {
+        padding: em(22) em(20) em(22) 0;
+      }
+        
+    }
+
+  }
+
+  // Chrome only hack to resolve differences in padding cross-browser
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    .summary__amounts__item {
+      padding: em(13) em(20) em(12) 0;
+
+      &.fee {
+        padding-top: em(25);
+
+        @include media(mobile) {
+          padding-top: em(16);
+        }
+
+      }
+
+    }
+  }
+
+}

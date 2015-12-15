@@ -1,0 +1,26 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    <div class="cato-header">
+        <h1 class="heading-xlarge">Loans to participators</h1>
+    </div>  <!-- / .cato-header -->
+
+    {{>cato_add_write_off}}
+    <div class="form-group">
+        <br>
+        <a href="/cato/write-off-added.html" class="next button">Save and continue</a>
+        <ul>
+            <!--    <li><a href="/" target="_blank">Help on *page title* (opens in a new tab/window)</a></li>
+              <li><a href="/" target="_blank">Preview your accounts so far (opens in a new tab/window)</a></li>-->
+            <li><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{/cato_layout}}

@@ -1,0 +1,137 @@
+<style>
+    details .summary {
+        text-decoration: underline;
+    }
+    details summary:hover {
+        color: #2e8aca;
+    }
+    details summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    table thead th {
+        border-bottom: 2px solid #000;
+    }
+
+
+    .header_numbers {
+        color:#116C84;
+        font-size:1.3em;
+        font-weight: 700;
+    }
+
+
+    summary span label{
+        display: inline-block;
+    }
+
+    summary span label:last-child{
+        float: right;
+    }
+
+    .theTable{
+        display:table;
+        width:100%; /* or whatever width for your table*/
+    }
+    .theRow{display:table-row}
+
+    .theRow .theCell:last-child {
+        width: 4em;
+        text-align: right;
+    }
+
+    .theCell{
+        display:table-cell;
+        padding:5px 2px; /* just some padding, if needed*/
+        /*white-space: pre;*/ /* this will avoid line breaks*/
+        border-bottom:1px solid #ccc;
+        vertical-align:bottom;
+    }
+
+    .theCellGroup {
+        display: table-row-group;
+    }
+
+    /*.theTable .theRow:last-child .theCell{
+        border-bottom:2px solid #000;
+        font-weight: bold;
+    }*/
+
+
+    /*.theTable .theRow:nth-last-child(3) .theCell {
+        border-bottom:2px solid #000;
+    }*/
+
+
+
+    .cellMinHeight {
+        min-height: 2em;
+        height: 2em;
+    }
+
+    .bigCell{
+        width:100%; /* this will shrink other cells */
+    }
+
+    .table_numbers {
+        margin-right: 1em;
+    }
+
+    .categoryHeader {
+        padding-top: 0.5em;
+        font-size: 0.9em;
+        font-weight: 600;
+    }
+
+    #table1, #table2 {
+        visibility:visible;
+    }
+
+    .arrow-down, .arrow-side{
+        margin-left:0px;
+        width:25px;
+        display:inline-block;
+        color:#005ea5;
+        cursor:pointer;
+    }
+
+</style>
+
+
+
+<br />
+<br />
+
+<form method="POST" class="form">
+
+    <div class="form-group">
+        <h2 class="form-label-medium">Balancing allowance <span class="header_numbers">£6,400</span></h2>
+        <span> This will be deducted from the profit you need to pay Corporation Tax on</span>
+
+        <div class='theTable' id="theTable1" style="margin-top: 2em">
+            <div class='theRow'>
+                <div class='theCell cellMinHeight'>Value of your main pool at the start of this period:<span class="table_numbers">£2,400</span> </div>
+                <div class='theCell'><a href="#">Edit</a></div>
+            </div>
+
+            <div class='theRow'>
+                <div class='theCell cellMinHeight'>Plus total spending this period that qualifies for capital allowances:<span class="table_numbers">£2,400</span> </div>
+                <div class='theCell'><a href="#">Edit</a></div>
+            </div>
+
+            <div class='theRow'>
+                <div class='theCell cellMinHeight'>Less money received for sales of assets you claimed capital allowances on: <span class="table_numbers">£2,400</span> </div>
+                <div class='theCell'><a href="#">Edit</a></div>
+            </div>
+
+            <div class='theRow'>
+                <div class='theCell cellMinHeight'>Less the market value of assets you haven’t sold: <span class="table_numbers">£2,400</span> </div>
+                <div class='theCell'><a href="#">Edit</a></div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,125 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+    <div class="form-group">
+        <fieldset class="form-group" id="1">
+
+          <p>You can’t use this service if you need to report the following things in your accounts:</p>
+           <ul class="list-bullet">
+              <li>a gain or loss from a capital asset, like an investment (but you can report gains and losses on assets you use for your business)</li>
+              <li>transactions and income from outside the UK</li>
+              <li>adjustments for something you reported in a previous year</li>
+              <li>financial instruments - a contract or binding agreement to buy or sell something</li>
+              <li>costs of restructuring - for example, costs of laying off staff or closing down an office</li>
+            </ul>
+
+            <span class="form-label-bold">Do you need to report any of these?</span>
+            <ul>
+                <li>
+                    <label for="type1"  class="block-label" onclick="$('#q_1a').show().visible(); $('#q_2').hide().invisible()">Yes - I need to report one or more of these things
+                        <input type="radio" id="type1" name="q1" value="1"/>
+                    </label>
+
+
+                    <div class="form-group hidden" style="margin:1em 0 -1.5em 0" id="q_1a">
+                        <fieldset class="form-group" id="1a">
+                            <span class="form-label-bold">You can't file to HM Revenue and Customs with this service</span>
+                            You can still use this service to file with Companies House.
+
+                            To file to HMRC, you can either:
+                            <ul class="list-bullet">
+                                <li><a href="https://www.gov.uk/corporation-tax-use-hmrcs-free-filing-software">download filing software in PDF format</a> (check that you're eligible to use it at the beginning of the PDF)</li>
+                                <li><a href="https://www.gov.uk/company-filing-software/overview">use accounting software</a></li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                </li>
+
+                <li style="clear:left;">
+                    <label for="type2"  class="block-label" onclick="$('#q_2').show().visible(); $('#q_1a').hide().invisible()">No - I don’t need to report these
+                        <input type="radio" id="type2" name="q1" value="2"/>
+                    </label>
+                </li>
+            </ul>
+
+        </fieldset>
+    </div>
+
+
+    <div class="form-group hidden" id="q_2">
+        <fieldset class="form-group" id="2">
+            <legend class="form-label-bold">Do you need to report income or expenditure from shares?</legend>
+            <p>You can use this service to report dividends, but you can't report the following types of income or expenditure from shares:</p>
+            <ul class="list-bullet">
+                <li>called up share capital not paid - the amount still due from people who've bought shares</li>
+                <li>share-based payments - payments for employees if they've been given a share of the company</li>
+                <li>share premium - the difference between a share's price (printed on the certificate) and how much it sold for</li>
+            </ul>
+            <ul>
+                <li>
+                    <label for="type3"  class="block-label" onclick="$('#q_3').hide().invisible()">Yes - I need to report income or expenditure from shares
+                        <input type="radio" id="type3" name="q2" value="1"/>
+                    </label>
+                </li>
+
+                <li style="clear:left;">
+                    <label for="type4"  class="block-label" onclick="$('#q_3').show().visible()">No - I don’t need to report these
+                        <input type="radio" id="type4" name="q2" value="2"/>
+                    </label>
+                </li>
+            </ul>
+
+        </fieldset>
+    </div>
+
+
+    <div class="form-group hidden" id="q_3">
+        <fieldset class="form-group" id="3">
+            <legend class="form-label-bold">Do you need to report these types of assets?</legend>
+            <p>You can’t use this service to report the following types of assets:</p>
+            <ul class="list-bullet">
+                <li>contingent assets - assets or income you're expecting but can't predict at the moment (for example, the outcome of a court case)</li>
+                <li>investment assets - for example, property or stocks and shares</li>
+                <li>profits or loss from selling fixed (physical) assets</li>
+            </ul>
+
+            <ul>
+                <li>
+                    <label for="type5"  class="block-label">Yes - I need to report one or more of these assets
+                        <input type="radio" id="type5" name="q3" value="1"/>
+                    </label>
+                </li>
+
+                <li style="clear:left;">
+                    <label for="type6"  class="block-label">No - I don’t need to report these
+                        <input type="radio" id="type6" name="q3" value="2"/>
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+    </div>
+
+
+        
+</form>
+  

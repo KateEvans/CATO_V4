@@ -1,0 +1,44 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_club_accounts_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_uploads_header}}
+    {{>cato_upload_accounts}}
+
+    <div class="form-group">
+        <br>
+        <a class="button">Save and continue</a>
+        <ul>
+            <li><a href="javascript:history.back(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $(".arrow-down").hide();
+
+
+        $( ".summary" ).click(function() {
+
+            $('.panel-indent').toggle( "fast", function() {
+            });
+
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+
+            console.log('.arrows');
+        });
+
+
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

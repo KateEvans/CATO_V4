@@ -1,0 +1,426 @@
+<style>
+input[disabled] {
+  border: 0;
+  text-align: right;
+  cursor: default;
+}
+h3 {
+  font-weight: bold;
+}
+div.headed-summary {
+  margin-bottom: 0;
+}
+div.grid-1-4 {
+  text-align: right;
+}
+input {
+ text-align: right;  
+ width: 100% !important;
+}
+
+.form-total {
+  border-top: 1px solid #bfc1c3 !important;
+  border-bottom: 1px solid #bfc1c3 !important;
+  border-left: none;
+  border-right: none;
+  font-weight: 700;
+  text-align: right;
+  width: 100%;
+}
+
+</style>
+<form method="POST" action="/accountsapprove" class="form">
+
+<fieldset id="ct600TaxCalculation" class="cato-calculation-form" data-journey="ct600:navigate:tax-calculation-summary">
+
+
+<h3 class="heading-large">Tax calculations</h3>
+
+    <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+            <label for="profitsChargeableToCt" class="form-label     ">
+                
+                Total turnover from trading
+                
+            </label>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£254">
+        
+            </div>
+        </div> 
+        </div>
+        
+    </div>
+    
+
+
+
+    <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="profitsChargeableToCt" class="form-label     ">
+    
+    
+    Taxable profit
+    
+    
+<!--    <div class="help">Profit you'll need to pay Corporation Tax on.</div> -->
+</label>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£95">
+        
+            </div>
+        </div> 
+        </div>
+        
+      
+    
+    </div>
+
+
+
+    <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+            <label for="profitsChargeableToCt" class="form-label     ">
+                Tax chargeable
+                
+            </label>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£20">
+        
+            </div>
+        </div> 
+        </div>
+        
+    </div>
+    
+
+<!--
+        <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        <span id="val_taxDeductedFromGrossIncomeIncludedInProfits">
+            
+        </span>
+        
+            
+                <div class="grid grid-3-4">
+                    <div class="inner-block"> 
+                        
+<label for="taxDeductedFromGrossIncomeIncludedInProfits" class="form-label   ">
+    
+    Tax already paid
+    <div class="help">Not including anything you've overpaid and been paid back.</div>
+</label>
+                    </div>
+                </div> 
+            
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£95">
+            
+                </div>
+            </div> 
+    
+                  
+    
+    </div>
+    
+    </div>
+
+
+
+
+        <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        <span id="val_taxDeductedFromGrossIncomeIncludedInProfits">
+            
+        </span>
+        
+            
+                <div class="grid grid-3-4">
+                    <div class="inner-block"> 
+                        
+<label for="taxDeductedFromGrossIncomeIncludedInProfits" class="form-label   ">
+    Income tax deducted from gross income included in profits
+</label>
+                    </div>
+                </div> 
+            
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£95">
+            
+                </div>
+            </div> 
+    
+                  
+    
+    </div>
+    
+    </div>
+
+
+-->
+
+
+<div class="form-group">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="taxRepayable" class="form-label strong" data-ng-hide="false">
+    
+Total tax to pay
+      
+</label>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-total  form-control " name="taxRepayable" id="taxRepayable" value="£8">
+        
+            </div>
+        </div> 
+        </div>
+    
+    </div>
+
+
+
+
+<h3 class="heading-large">Allowances and expenditure</h3>
+
+
+
+    <div class="form-group">
+        <div class="grid-wrapper flush--right">
+            <div class="grid grid-3-4">
+                <label for="profitsChargeableToCt" class="form-label inner-block">
+                    Annual investment allowance used to calculate your trading profit
+                </label>
+            </div> 
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                    <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£18">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="grid-wrapper flush--right">
+            <div class="grid grid-3-4">
+                <label for="profitsChargeableToCt" class="form-label inner-block">
+                    Total capital allowances claimed in the main pool
+                </label>
+            </div> 
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                    <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£21">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="grid-wrapper flush--right">
+            <div class="grid grid-3-4">
+                <label for="profitsChargeableToCt" class="form-label inner-block">
+                    Capital allowances: balancing charges claimed in the main pool
+                </label>
+            </div> 
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                    <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£26">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="grid-wrapper flush--right">
+            <div class="grid grid-3-4">
+                <label for="profitsChargeableToCt" class="form-label inner-block">
+                    Machinery and plant on which first year allowance is claimed
+                </label>
+            </div> 
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                    <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£52">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="grid-wrapper flush--right">
+            <div class="grid grid-3-4">
+                <label for="profitsChargeableToCt" class="form-label inner-block">
+                    Capital allowances from the energy technology list
+                </label>
+            </div> 
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                    <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£92">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="grid-wrapper flush--right">
+            <div class="grid grid-3-4">
+                <label for="profitsChargeableToCt" class="form-label inner-block">
+                    Other capital allowances
+                </label>
+            </div> 
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                    <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£65">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+
+
+
+
+<h3 class="heading-large">Losses</h3>
+
+
+
+    <div class="form-group">
+        <div class="grid-wrapper flush--right">
+            <div class="grid grid-3-4">
+                <label for="profitsChargeableToCt" class="form-label inner-block">
+                    Losses from trade
+                    <div class="help">Only includes losses from trade that happened in the UK.</div>
+                </label>
+            </div> 
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                    <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£25">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+
+
+
+<h3 class="heading-large">Repayments</h3>
+
+
+
+    <div class="form-group">
+        <div class="grid-wrapper flush--right">
+            <div class="grid grid-3-4">
+                <label for="profitsChargeableToCt" class="form-label inner-block">
+                    The minimum amount you'd want repaid
+                </label>
+            </div> 
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                    <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£100">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="grid-wrapper flush--right">
+            <div class="grid grid-3-4">
+                <label for="profitsChargeableToCt" class="form-label inner-block">
+                    Payment recipient
+                </label>
+            </div> 
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                    <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="Smith Ltd">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="grid-wrapper flush--right">
+            <div class="grid grid-3-4">
+                <label for="profitsChargeableToCt" class="form-label inner-block">
+                    Sort code
+                </label>
+            </div> 
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                    <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="123456">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-group">
+        <div class="grid-wrapper flush--right">
+            <div class="grid grid-3-4">
+                <label for="profitsChargeableToCt" class="form-label inner-block">
+                    Bank account number
+                </label>
+            </div> 
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                    <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="12345678">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+</form>
+  

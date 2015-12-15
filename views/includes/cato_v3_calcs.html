@@ -1,0 +1,625 @@
+<style>
+input[disabled] {
+  border: 0;
+  text-align: right;
+  cursor: default;
+}
+h3 {
+  font-weight: bold;
+}
+div.headed-summary {
+  margin-bottom: 0;
+}
+div.grid-1-4 {
+  text-align: right;
+}
+input {
+ text-align: right;  
+ width: 100% !important;
+}
+
+.form-total {
+  border-top: 1px solid #bfc1c3 !important;
+  border-bottom: 1px solid #bfc1c3 !important;
+  border-left: none;
+  border-right: none;
+  font-weight: 700;
+  text-align: right;
+  width: 100%;
+}
+
+</style>
+<form method="POST" action="/accountsapprove" class="form">
+<br />
+<fieldset id="ct600TaxCalculation" class="cato-calculation-form" data-journey="ct600:navigate:tax-calculation-summary">
+
+
+    <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="profitsChargeableToCt" class="form-label     ">
+    
+    
+    Taxable profit
+    
+
+    <div class="help">Profit you'll need to pay Corporation Tax on.</div>
+</label>
+                
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="profitsChargeableToCt" id="profitsChargeableToCt" value="£95">
+        
+            </div>
+        </div> 
+        </div>
+        
+      
+    
+    </div>
+    
+<!--
+    <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="frankedInvestmentIncome" class="form-label     ">
+    
+    <a href="#frankedInvestmentIncomeHelp" class="help-link" onclick="$('#frankedInvestmentIncomeHelp-help').toggle(); return false;">
+    
+    
+    Franked investment income
+    
+    
+    </a>
+</label>
+        
+       <div class="hidden-help" id="frankedInvestmentIncomeHelp-help">
+        block.ct600TaxCalculation.frankedInvestmentIncome.helpText
+       </div>
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="frankedInvestmentIncome" id="frankedInvestmentIncome" value="£0">
+        
+            </div>
+        </div> 
+        </div>
+        
+    
+                  
+    
+    </div>
+    
+    <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="b39" class="form-label     ">
+    
+    
+    
+    
+    Number of associated companies in this period
+    
+    
+    
+</label>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="b39" id="b39" value="0">
+        
+            </div>
+        </div> 
+        </div>
+        
+    
+    </div>
+    -->
+    <h3 class="medium-heading" style="margin-bottom: 5px;">2013 financial year</h3>
+    <!--
+    <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="financialYear1" class="form-label     ">
+    
+    
+    
+    
+    Financial Year
+    
+    
+    
+</label>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="financialYear1" id="financialYear1" value="2013">
+        
+            </div>
+        </div> 
+        </div>
+        
+    
+    </div>
+    
+    -->
+    <div class="form-group headed-summary ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="amountOfProfit1" class="form-label     ">
+    
+    <a href="#amountOfProfit1Help" class="help-link" onclick="$('#amountOfProfit1Help-help').toggle(); return false;">
+    
+    
+    Amount of profit
+    
+    
+    </a>
+</label>
+    
+       <div class="hidden-help" data-ng-class="{ 'visuallyhidden': !amountOfProfit1Help }" id="amountOfProfit1Help-help">
+        This value is calculated based on the information you entered in your return
+       </div>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="amountOfProfit1" id="amountOfProfit1" value="£50">
+        
+            </div>
+        </div> 
+        </div>
+        
+                  
+    
+    </div>
+    
+    <div class="form-group  headed-summary">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="rateOfTax1" class="form-label     ">
+    
+    <a href="#rateOfTax1Help" class="help-link" onclick="$('#rateOfTax1Help-help').toggle(); return false;">
+    
+    
+    Rate of tax
+    
+    
+    </a>
+</label>
+       <div class="hidden-help" data-ng-class="{ 'visuallyhidden': !rateOfTax1Help }" id="rateOfTax1Help-help">
+        <p>This is the rate of Corporation Tax applied to your company’s profits. It is dependent on:</p><ul class="list-bullet"><li>amount of profit</li><li>eligibility for marginal relief claimed</li></ul><p>This service automatically calculates the amount of profit that should be allocated to each financial year. It apportions by days rather than by months. It then applies the correct rate of tax to calculate the tax chargeable for each financial year.</p>
+       </div>
+                  
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="rateOfTax1" id="rateOfTax1" value="20%">
+        
+            </div>
+        </div> 
+        </div>
+        
+    
+    
+    </div>
+    
+    <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="tax1" class="form-label     ">
+    
+    <a href="#tax1Help" class="help-link" onclick="$('#tax1Help-help').toggle(); return false;">
+    
+    
+    Tax
+    
+    
+    </a>
+</label>
+    
+       <div class="hidden-help" data-ng-class="{ 'visuallyhidden': !tax1Help }" id="tax1Help-help">
+        The amount of tax your company must pay. This is calculated by multiplying the amount of profit your company has made by its rate of tax.
+       </div>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="tax1" id="tax1" value="£10">
+        
+            </div>
+        </div> 
+        </div>
+        
+                  
+    
+    </div>
+    
+    <h3 class="medium-heading" style="margin-bottom: 5px;">2014 financial year</h3>
+    <!--
+    <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="financialYear1" class="form-label     ">
+    
+    
+    
+    
+    Financial Year
+    
+    
+    
+</label>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="financialYear1" id="financialYear1" value="2013">
+        
+            </div>
+        </div> 
+        </div>
+        
+    
+    </div>
+    
+    -->
+    <div class="form-group headed-summary ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="amountOfProfit1" class="form-label     ">
+    
+    Amount of profit
+</label>
+    
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="amountOfProfit1" id="amountOfProfit1" value="£45">
+        
+            </div>
+        </div> 
+        </div>
+        
+                  
+    
+    </div>
+    
+    <div class="form-group  headed-summary">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="rateOfTax1" class="form-label     ">
+    
+    
+    Rate of tax
+    
+    
+</label>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="rateOfTax1" id="rateOfTax1" value="20%">
+        
+            </div>
+        </div> 
+        </div>
+        
+    
+    
+    </div>
+    
+    <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="tax1" class="form-label     ">
+    
+    
+    Tax
+    
+    
+</label>
+    
+       <div class="hidden-help" data-ng-class="{ 'visuallyhidden': !tax1Help }" id="tax1Help-help">
+        The amount of tax your company must pay. This is calculated by multiplying the amount of profit your company has made by its rate of tax.
+       </div>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="tax1" id="tax1" value="£9">
+        
+            </div>
+        </div> 
+        </div>
+        
+                  
+    
+    </div>
+    
+    
+    
+    <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="corporationTaxChargeable" class="form-label     ">
+    
+    Total Corporation Tax
+    
+
+</label>
+            
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="corporationTaxChargeable" id="corporationTaxChargeable" value="£19">
+        
+            </div>
+        </div> 
+        </div>
+        
+                  
+    
+    </div>
+</fieldset>
+    
+    <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="b39" class="form-label     ">
+    
+    
+    
+    
+    Tax payable on loans to participators
+    
+    
+    
+</label>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="b39" id="b39" value="£1">
+        
+            </div>
+        </div> 
+        </div>
+      </div>
+        
+<div class="form-group">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="taxRepayable" class="form-label" data-ng-hide="false">
+    
+Tax chargeable
+      
+</label>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-total  form-control " name="taxRepayable" id="taxRepayable" value="£20">
+        
+            </div>
+        </div> 
+        </div>
+    
+    </div>
+
+
+
+        <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        <span id="val_taxDeductedFromGrossIncomeIncludedInProfits">
+            
+        </span>
+        
+            
+                <div class="grid grid-3-4">
+                    <div class="inner-block"> 
+                        
+<label for="taxDeductedFromGrossIncomeIncludedInProfits" class="form-label   ">
+    
+    <a href="#taxDeductedFromGrossIncomeIncludedInProfitsHelp" class="help-link" onclick="$('#taxDeductedFromGrossIncomeIncludedInProfitsHelp-help').toggle(); return false;">
+    Income Tax deducted from gross income included in profits
+    </a>
+</label>
+       <div class="hidden-help" data-ng-class="{ 'visuallyhidden': !taxDeductedFromGrossIncomeIncludedInProfitsHelp }" id="taxDeductedFromGrossIncomeIncludedInProfitsHelp-help">
+        The amount of Income Tax already paid by your company on investment income.  This must not include amounts paid in connection with the Construction Industry Scheme.
+       </div>
+          
+                    </div>
+                </div> 
+            
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                <input type="text" class="form-control  form-control  ng-pristine ng-valid" data-init-value-on-scope="taxDeductedFromGrossIncomeIncludedInProfits" data-ng-model="taxDeductedFromGrossIncomeIncludedInProfits" data-ng-change="updateTaxesPayableAndRepayable()" name="taxDeductedFromGrossIncomeIncludedInProfits" id="taxDeductedFromGrossIncomeIncludedInProfits" value="5">
+            
+                </div>
+            </div> 
+    
+                  
+    
+    </div>
+    
+    </div>
+
+
+<!--
+    <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="repayable" class="form-label     ">
+    
+    <a href="#repayable" class="help-link" onclick="$('#repayable-help').toggle(); return false;">
+    
+    
+    Self-assessment of tax payable
+    
+    
+    </a>
+</label>
+        
+       <div class="hidden-help" id="repayable-help">
+        Xxxxxxxxxxx
+       </div>
+                
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-control form-display " name="repayable" id="repayable" value="£15">
+        
+            </div>
+        </div> 
+        </div>
+        
+      
+    
+    </div>
+    
+-->
+
+        <div class="form-group  ">
+        <div class="grid-wrapper flush--right">
+        <span id="val_taxDeductedFromGrossIncomeIncludedInProfits">
+            
+        </span>
+        
+            
+                <div class="grid grid-3-4">
+                    <div class="inner-block"> 
+                        
+<label for="taxDeductedFromGrossIncomeIncludedInProfits" class="form-label   ">
+    
+    Tax already paid
+    <div class="help">Not including anything you've overpaid and been paid back.</div>
+</label>
+
+                    </div>
+                </div> 
+            
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                <input type="text" class="form-control  form-control  ng-pristine ng-valid" data-init-value-on-scope="taxDeductedFromGrossIncomeIncludedInProfits" data-ng-model="taxDeductedFromGrossIncomeIncludedInProfits" data-ng-change="updateTaxesPayableAndRepayable()" name="taxDeductedFromGrossIncomeIncludedInProfits" id="taxDeductedFromGrossIncomeIncludedInProfits" value="7">
+            
+                </div>
+            </div> 
+    
+                  
+    
+    </div>
+    
+    </div>
+
+
+<div class="form-group">
+        <div class="grid-wrapper flush--right">
+        
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+                
+<label for="taxRepayable" class="form-label" data-ng-hide="false">
+    
+    
+Total tax to pay
+      
+</label>
+        
+            </div>
+        </div> 
+        
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right"> 
+                <input disabled="disabled" type="text" class=" form-total  form-control " name="taxRepayable" id="taxRepayable" value="£8">
+        
+            </div>
+        </div> 
+        </div>
+    
+    </div>
+
+
+
+
+</form>
+  

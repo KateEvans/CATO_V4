@@ -1,0 +1,230 @@
+<style>
+    details .summary {
+        text-decoration: underline;
+    }
+    details summary:hover {
+        color: #2e8aca;
+    }
+    details summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    table thead th {
+        border-bottom: 2px solid #000;
+    }
+
+
+    .header_numbers {
+        color:#116C84;
+        font-size:1.3em;
+        font-weight: 700;
+    }
+
+
+    summary span label{
+        display: inline-block;
+    }
+
+    summary span label:last-child{
+        float: right;
+    }
+
+    .theTable{
+        display:table;
+        width:100%; /* or whatever width for your table*/
+    }
+    .theRow{display:table-row}
+
+    .theRow .theCell:last-child {
+        width: 10em;
+    }
+
+    .theCell{
+        display:table-cell;
+        padding:5px 2px; /* just some padding, if needed*/
+        white-space: pre; /* this will avoid line breaks*/
+        border-bottom:1px solid #ccc;
+        vertical-align:bottom;
+    }
+
+    .theCellGroup {
+        display: table-row-group;
+    }
+
+    .theTable .theRow:last-child .theCell{
+        border-bottom:2px solid #000;
+        font-weight: bold;
+    }
+
+    #theTable1 .theRow:first-child .theCell{
+        border-bottom: 2px solid #000;
+    }
+
+    /*.theTable .theRow:nth-last-child(3) .theCell {
+        border-bottom:2px solid #000;
+    }*/
+
+
+
+    .cellMinHeight {
+        min-height: 2em;
+        height: 2em;
+    }
+
+    .bigCell{
+        width:100%; /* this will shrink other cells */
+    }
+
+    .table_numbers {
+        margin-right: 1em;
+    }
+
+    .categoryHeader {
+        padding-top: 0.5em;
+        font-size: 0.9em;
+        font-weight: 600;
+    }
+
+    #table1, #table2 {
+        visibility:visible;
+    }
+
+    .arrow-down, .arrow-side{
+        margin-left:0px;
+        width:25px;
+        display:inline-block;
+        color:#005ea5;
+        cursor:pointer;
+    }
+
+    span.table_numbers {
+        display: inline-block;
+        width:3em;
+    }
+
+</style>
+
+
+
+<br />
+<br />
+
+<form method="POST" class="form">
+
+    <div class="form-group">
+        <h2 class="form-label-medium">Total carried forward to next period</h2>
+        <div class='theTable' id="theTable1">
+            <div class='theRow bold-small'>
+                <div class='theCell'>Main pool<br /><span class="header_numbers">£1,200</span></div>
+                <div class='theCell'>Special rate pool<br /><span class="header_numbers">£1,200</span></div>
+            </div>
+
+            <div style="margin-top: 2em">
+                <h1 class="bold-medium">
+                    How this is calculated
+                </h1>
+            </div>
+
+            <div class='theRow tableToggle'>
+                <div class='theCell'><span class="arrow-side">&#9658;</span><span class="arrow-down">&#9660;</span><span class="bold-small">First year allowance</span></div>
+                <div class='theCell'><span class="bold-small">Annual<br />investment allowance</span></div>
+            </div>
+
+            <div class="theCellGroup" id="table1">
+                <div class="categoryHeader">Qualifying spending on cars</div>
+                <div class='theRow'>
+                    <div class='theCell cellMinHeight'><span class="table_numbers">£1,200</span> <a href="#">Edit</a></div>
+                    <div class='theCell'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                </div>
+
+                <div class="categoryHeader">Other qualifying spending</div>
+                <div class='theRow'>
+                    <div class='theCell cellMinHeight'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                    <div class='theCell'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                </div>
+
+                <div class="categoryHeader">Amount you can claim</div>
+                <div class='theRow'>
+                    <div class='theCell cellMinHeight'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                    <div class='theCell'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                </div>
+
+                <div class="categoryHeader">Amount you're claiming</div>
+                <div class='theRow'>
+                    <div class='theCell cellMinHeight'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                    <div class='theCell'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                </div>
+            </div>
+
+
+            <div class="categoryHeader">Amount carried forward to the next period in main pool</div>
+            <div class='theRow'>
+                <div class='theCell cellMinHeight'><span class="table_numbers">£1,200</span></div>
+                <div class='theCell'><span class="table_numbers">£0</span></div>
+            </div>
+        </div>
+
+
+
+        <!-- #### Main pool #### -->
+        <div class='theTable' style="margin-top: 3em">
+            <div class='theRow'>
+                <div class='theCell tableToggle1'><span class="arrow-side">&#9658;</span><span class="arrow-down">&#9660;</span><span class="bold-small">Main Pool</span></div>
+                <div class='theCell'><span class="bold-small">Special rate pool</span></div>
+            </div>
+
+            <div class="theCellGroup" id="table2">
+                <div class="categoryHeader">Pool value at start of the period</div>
+                <div class='theRow'>
+                    <div class='theCell cellMinHeight'><span class="table_numbers">£1,200</span> <a href="#">Edit</a></div>
+                    <div class='theCell'><span class="table_numbers">£1,200</span> <a href="#">Edit</a></div>
+                </div>
+
+                <div class="categoryHeader">Qualifying spending on cars</div>
+                <div class='theRow'>
+                    <div class='theCell cellMinHeight'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                    <div class='theCell'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                </div>
+
+                <div class="categoryHeader">Other qualifying spending</div>
+                <div class='theRow'>
+                    <div class='theCell cellMinHeight'><span class="table_numbers">£2,400</span> <a href="#">Edit</a></div>
+                    <div class='theCell'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                </div>
+
+                <div class="categoryHeader">Income from sale of assets in this pool</div>
+                <div class='theRow'>
+                    <div class='theCell cellMinHeight'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                    <div class='theCell'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                </div>
+
+                <div class="categoryHeader">Amount you can claim from this pool</div>
+                <div class='theRow'>
+                    <div class='theCell cellMinHeight'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                    <div class='theCell'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                </div>
+
+                <div class="categoryHeader">Amount you're claiming</div>
+                <div class='theRow'>
+                    <div class='theCell cellMinHeight'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                    <div class='theCell'><span class="table_numbers">£0</span> <a href="#">Edit</a></div>
+                </div>
+            </div>
+
+            <div class="categoryHeader">Amount left in pool at end of period</div>
+            <div class='theRow'>
+                <div class='theCell cellMinHeight'><span class="table_numbers">£1,200</span></div>
+                <div class='theCell'><span class="table_numbers">£1,200</span></div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</form>

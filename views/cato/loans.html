@@ -1,0 +1,35 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_loans_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_loans_new_header}}
+    {{>cato_loans}}
+
+    <div class="form-group">
+        <br>
+        <a class="next button" id="next-button">Save and continue</a>
+        <ul>
+            <li><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+            if($('#yes').is(':checked')){
+                window.location.href = "/cato/loans_2.html";
+            }
+        })
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

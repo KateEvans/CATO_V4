@@ -1,0 +1,21 @@
+.info-box {
+  display: inline-block;
+  background-color: $panel-colour;
+  font-size: 1.2em;
+  padding: 0 1.1em 0 1.1em;
+  text-align: left;
+  margin-bottom: 1.5em;
+  width: 100%;
+}
+
+.info-box__heading {
+  font-weight: 400;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 1em;
+  img {
+    position: relative;
+    top: 10px;
+    left: -10px;
+  }
+}

@@ -1,0 +1,104 @@
+<style type="text/css">
+.help-link::after, .help-link:visited::after {display:none;}
+a.help-link {text-decoration:underline; color:#005ea5;}
+i.arrow {color:#005ea5;}
+</style>
+
+
+<form method="POST" action="/accountsapprove" class="form">
+
+          <br />
+
+          <h2>Details of individual authorised to receive the payment on behalf of ACME Widgets Ltd</h2>
+
+          <br />
+        
+          <div class="form-group">
+          <fieldset>
+            <label class="form-label" for="name">Name<br />
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#nomineeHelp" class="help-link"  onclick="$('#nomineeHelp').toggle();return false;">Help with name</a></label>
+              <small class="hidden-help" id="nomineeHelp"><p>The name of the person you wish to receive your payment.</p></small>
+              <input class="form-control" id="name" type="text" onblur="console.log($('#nominee'));console.log(this.value);$('#nominee').text(this.value);">
+          </fieldset>
+        </div>
+
+      <p style="font-weight:bold;">Address</p>
+
+
+          <div class="address-group">
+
+            <div class="form-group">
+              <label class="form-label" for="building">Building and street<br />
+            <i class="arrow arrow-closed" aria-hidden="true">►</i>
+            <a href="#addressHelp" class="help-link"  onclick="$('#addressHelp').toggle();return false;">Help with building and street</a></label>
+            <small class="hidden-help" id="addressHelp"><p>Text goes here.</p></small>
+
+                <input class="form-control" id="building" type="text"><br />
+                <input class="form-control" id="" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="town">Town or city</label>
+              <input class="form-control" id="town" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="county">County</label>
+                <input class="form-control" id="county" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="postcode">Postcode</label>
+                <input class="form-control" id="postcode" type="text"><br />
+              </div>
+
+          </div>
+
+          <div class="form-group">
+          <fieldset>
+
+           <label class="form-label" for="ref">
+                       <i class="arrow arrow-closed" aria-hidden="true">►</i>
+
+<a href="#nominatorHelp" class="help-link" onclick="$('#referenceHelp').toggle();return false;">Payment reference</a></label>
+          <small class="hidden-help" id="referenceHelp"><p>This reference will appear on the recipient’s bank statement. For example, if the recipient is an accountant or other agent, you may wish to provide an account number or company name.</p></small>
+
+             
+              <input class="form-control" id="ref" type="text">
+          </fieldset>
+        </div>
+<!--
+     <h2>Details of authoriser</h2>
+    <br />
+
+          <div class="form-group">
+          <fieldset>
+            <label class="form-label" for="nom-name"><a href="#nominatorHelp" class="help-link" onclick="$('#nominatorHelp').toggle();return false;">Name</a></label>
+          <small class="hidden-help" id="nominatorHelp"><p>The name of the person authorising the payment from ACME Widgets Ltd.</p></small>
+              <input class="form-control" id="nom-name" type="text">
+          </fieldset>
+        </div>
+
+          <div class="form-group">
+          <fieldset>
+           <label class="form-label" for="position"><a href="#positionHelp" class="help-link" onclick="$('#positionHelp').toggle();return false;">Position within company</a></label>
+          <small class="hidden-help" id="positionHelp"><p>The job title of the person authorising the payment from ACME Widgets Ltd. For example, company secretary or director.</p></small>
+              <input class="form-control" id="position" type="text">
+          </fieldset>
+        </div>
+          <div class="form-group">
+        <label class="form-checkbox block-label">
+            <input type="checkbox" id="declarationAgreement" class=" " name="declarationAgreement" value="true">
+            I authorise the payment to <span id="nominee">the individual</span> on behalf of ACME Widgets Ltd.
+        </label>
+        </div>
+-->
+
+
+</fieldset>
+
+
+        
+</form>
+  

@@ -1,0 +1,313 @@
+<style>
+
+    .summary, .summary_1, .summary_2, .summary_3  {
+        text-decoration: underline;
+    }
+    .summary:hover, .summary_1:hover, .summary_2:hover, .summary_3:hover  {
+        color: #2e8aca;
+    }
+    .summary, .summary_1, .summary_2, .summary_3 {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    .arrow-down, .arrow-side, .arrow-down_1, .arrow-side_1, .arrow-down_2, .arrow-side_2, .arrow-down_3, .arrow-side_3{
+        margin-left:0px;
+        width:25px;
+        display:inline-block;
+        color:#005ea5;
+        cursor:pointer;
+    }
+
+    div#panel-indent, div#panel-indent_1, div#panel-indent_2, div#panel-indent_3{
+        display: none;
+    }
+
+
+    .div-table{
+        display:table;
+        width:100%;
+        background-color:#fff;
+        border-top:0px solid  #666666;
+        border-bottom:0px solid  #666666;
+        border-spacing:0px;/*cellspacing:poor IE support for  this*/
+    }
+    .div-table-row{
+        display:table-row;
+        width:auto;
+        clear:both;
+    }
+    .div-table-col{
+        float:left;/*fix for  buggy browsers*/
+        display:table-column;
+        width:25%;
+        /*background-color:#fff;*/
+        padding: 0.5em 0;
+    }
+    .div-table-col:nth-child(1){
+        white-space: nowrap;
+        width:45%;
+        padding-left:0.5em;
+    }
+    .div-table-col:nth-child(3){
+        white-space: nowrap;
+        width:15%;
+    }
+
+    .div-table-col:nth-child(2){
+        float:left;/*fix for  buggy browsers*/
+        display:table-column;
+        width:25%;
+        /*background-color:#fff;*/
+
+    }
+
+
+    .div-table-col:nth-child(4){
+        text-align: right;
+    }
+
+    .div-table-col:nth-child(4){
+        float:left;/*fix for  buggy browsers*/
+        display:table-column;
+        width:13%;
+        /*background-color:#fff;*/
+    }
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+    <div class="form-group"></div>
+
+    <!-- #### ROBERT JONES #### -->
+    <section class="block-summary" id="person_loan_1">
+
+        <div id="loan_1">
+            <span class="arrows" style="display: inline">
+                <span class="arrow-side">&#9658;</span><span class="arrow-down">&#9660;</span>
+            </span>
+            <span class="summary heading-small" style="margin-top: 0"><span id="Loaned-to_1">Robert Jones</span> - <span id="outstanding-amount_1">£1500</span></span>
+            <div style="display: inline; float: right;"><a class="block-summary__edit-link" href="#"> <span class="visuallyhidden">@editHint.get</span> Remove</a></div>
+            <div style="display: inline; float: right; margin:0 0.7em 0 2.35em"><a href="#" class="block-summary__edit-link" id="edit_name_1"> Change</a></div>
+
+        </div>
+
+        <div class="panel-indent_1" id="panel-indent" aria-hidden="false">
+
+            <div class="div-table">
+                <div class="div-table" id="repayments_1">
+                    <div class="div-table-col" align="left" style="padding-left: 0.5em; font-weight: bold">Total repayments between 1 January 2016 and 30 September 2016</div>
+                    <div class="div-table-row" id="row_repayment">
+                        <div class="div-table-col" align="left">Repayment</div>
+                        <div class="div-table-col"><span id="repaymentAmount_1">£500</span></div>
+                        <div class="div-table-col"><a href="#" id="edit_repayments_1"></a></div>
+                        <div class="div-table-col"><a href="#" id="delete_repayments_1">Remove</a></div>
+                    </div>
+
+                    <div class="div-table-row" id="row_repay_date">
+                        <div class="div-table-col" align="left">Last repayment</div>
+                        <div class="div-table-col"><span id="last_repayment_date_1">01/02/2016</span></div>
+                        <div class="div-table-col" align="right"><a href="#" id="edit_repay_date_1"></a></div>
+                        <div class="div-table-col"></div>
+                    </div>
+
+                    <div class="div-table-row" id="row_relief_due_a">
+                        <div class="div-table-col" align="left">Relief due now</div>
+                        <div class="div-table-col">Yes</div>
+                        <div class="div-table-col"></div>
+                        <div class="div-table-col" align="right"></div>
+                    </div>
+
+                </div>
+
+                <div style="border-bottom: 1px dotted grey"></div>
+
+                <div class="div-table" id="writeOffs_1a" style="background-color:#F8F8F8">
+
+                    <div class="div-table-row" id="row_write_off_1a">
+                        <div class="div-table-col" align="left"><strong>Write offs or releases</strong></div>
+                        <div class="div-table-col"><span id="writtenOffAmount1a">£1000</span></div>
+                        <div class="div-table-col" align="right"><a href="#" id="edit_writeOffs_1a"></a></div>
+                        <div class="div-table-col"><a href="#" id="delete_writeOffs_1a">Remove</a></div>
+                    </div>
+
+                    <div class="div-table-row" id="row_writeOff_date_1a">
+                        <div class="div-table-col" align="left">Write off or release date</div>
+                        <div class="div-table-col"><span id="writeOff_date_1a">01/03/2016</span></div>
+                        <div class="div-table-col" align="right"><a href="#" id="edit_writeOff_date_1a"></a></div>
+                        <div class="div-table-col"></div>
+                    </div>
+
+                    <div class="div-table-row" id="row_relief_due_b">
+                        <div class="div-table-col" align="left">Relief due now</div>
+                        <div class="div-table-col">Yes</div>
+                        <div class="div-table-col"></div>
+                        <div class="div-table-col" align="right"></div>
+                    </div>
+
+                </div>
+
+                <div style="padding:0.5em 0 0.5em 0.5em; background-color:#F8F8F8"><a href="#" id="add_writeOff_1">Add another write off</a></div>
+            </div>
+            <!-- #### END OF TABLE###-->
+        </div>
+
+    </section>
+    <!-- #### END OF SECTION #### -->
+
+
+
+    <!-- #### SAM JONES #### -->
+
+    <section class="block-summary" id="person_loan_2">
+
+        <div id="loan_2">
+            <span class="arrows_2" style="display: inline">
+                <span class="arrow-side_2">&#9658;</span><span class="arrow-down_2">&#9660;</span>
+            </span>
+            <span class="summary_2 heading-small" style="margin-top: 0"><span id="Loaned-to_2">Sam Jones</span> - <span id="outstanding-amount_2">£5000</span></span>
+            <div style="display: inline; float: right;"><a class="block-summary__edit-link" href="#"> <span class="visuallyhidden">@editHint.get</span> Remove</a></div>
+            <div style="display: inline; float: right; margin:0 0.7em 0 2.35em"><a href="#" class="block-summary__edit-link" id="edit_name_2"> Change</a></div>
+
+        </div>
+
+        <div class="panel-indent_2" id="panel-indent_2" aria-hidden="false">
+
+            <div class="div-table">
+                <div class="div-table" id="repayments_2">
+                    <div class="div-table-col" align="left" style="padding-left: 0.5em; font-weight: bold">Total repayments between 1 January 2016 and 30 September 2016</div>
+                    <div class="div-table-row" id="row_repayment_2">
+                        <div class="div-table-col" align="left">Repayment</div>
+                        <div class="div-table-col"><span id="repaymentAmount_2">£4000</span></div>
+                        <div class="div-table-col"><a href="#" id="edit_repayments_2"></a></div>
+                        <div class="div-table-col"><a href="#" id="delete_repayments_2">Remove</a></div>
+                    </div>
+
+                    <div class="div-table-row" id="row_repay_date_2">
+                        <div class="div-table-col" align="left">Last repayment</div>
+                        <div class="div-table-col"><span id="last_repayment_date_2">31/01/2016</span></div>
+                        <div class="div-table-col" align="right"><a href="#" id="edit_repay_date_2"></a></div>
+                        <div class="div-table-col"></div>
+                    </div>
+
+                    <div class="div-table-row" id="row_relief_due_2a">
+                        <div class="div-table-col" align="left">Relief due now</div>
+                        <div class="div-table-col">Yes</div>
+                        <div class="div-table-col"></div>
+                        <div class="div-table-col" align="right"></div>
+                    </div>
+
+                </div>
+
+                <div style="border-bottom: 1px dotted grey"></div>
+
+
+                <div class="div-table" id="writeOffs_2a"  style="background-color:#F8F8F8">
+
+                    <div class="div-table-row" id="row_write_off_2a">
+                        <div class="div-table-col" align="left"><strong>Write offs or releases</strong></div>
+                        <div class="div-table-col"><span id="writtenOffAmount_2a">£1000</span></div>
+                        <div class="div-table-col" align="right"><a href="#" id="edit_writeOffs_2a  "></a></div>
+                        <div class="div-table-col"><a href="#" id="delete_writeOffs_2a">Remove</a></div>
+                    </div>
+
+                    <div class="div-table-row" id="row_writeOff_date_2a">
+                        <div class="div-table-col" align="left">Write off or release date</div>
+                        <div class="div-table-col"><span id="writeOff_date_2a">15/02/2016</span></div>
+                        <div class="div-table-col" align="right"><a href="#" id="edit_writeOff_date_2a"></a></div>
+                        <div class="div-table-col"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="div-table" id="writeOffs_2b" style="background-color:#F8F8F8">
+
+                    <div class="div-table-row" id="row_write_off_2b">
+                        <div class="div-table-col" align="left"><strong>Write offs or releases</strong></div>
+                        <div class="div-table-col"><span id="writtenOffAmount_2b">£1000</span></div>
+                        <div class="div-table-col" align="right"><a href="#" id="edit_writeOffs_2b"></a></div>
+                        <div class="div-table-col"><a href="#" id="delete_writeOffs_2b">Remove</a></div>
+                    </div>
+
+                    <div class="div-table-row" id="row_writeOff_date_2b">
+                        <div class="div-table-col" align="left">Write off or release date</div>
+                        <div class="div-table-col"><span id="writeOff_date_2b">20/03/2016</span></div>
+                        <div class="div-table-col" align="right"><a href="#" id="edit_writeOff_date_2"></a></div>
+                        <div class="div-table-col"></div>
+                    </div>
+
+                </div>
+
+                <div style="padding:0.5em 0 0.5em 0.5em; background-color:#F8F8F8"><a href="#" id="add_writeOff_2b">Add another write off</a></div>
+
+
+            </div>
+
+            <!-- #### END OF TABLE###-->
+        </div>
+
+    </section>
+    <!-- #### END OF SECTION #### -->
+
+
+
+
+    <!-- #### HENRY JONES #### -->
+
+    <!--<section class="block-summary" id="person_loan_3">
+
+        <div id="loan_3">
+            <span class="arrows_3" style="display: inline">
+                <span class="arrow-side_3">&#9658;</span><span class="arrow-down_3">&#9660;</span>
+            </span>
+            <span class="summary_3 heading-small" style="margin-top: 0"><span id="Loaned-to_3">Henry Jones</span> - <span id="outstanding-amount_3">£5000</span></span>
+            <div style="display: inline; float: right;"><a class="block-summary__edit-link" href="#"> <span class="visuallyhidden">@editHint.get</span> Remove</a></div>
+            <div style="display: inline; float: right; margin:0 0.7em 0 2.35em"><a href="#" class="block-summary__edit-link" id="edit_name_3"> Change</a></div>
+
+        </div>
+
+        <div class="panel-indent_3" id="panel-indent_3" aria-hidden="false">
+
+            <div class="div-table">
+                <div class="div-table" id="repayments_3">
+
+                    <div class="div-table-row" id="row_repayment_3" style="background-color:#dbe6ec">
+                        <div class="div-table-col" align="left">Repayment</div>
+                        <div class="div-table-col"><span id="repaymentAmount_3">None</span></div>
+                        <div class="div-table-col"><a href="#" id="edit_repayments_3"></a></div>
+                        <div class="div-table-col"><a href="#" id="delete_repayments_3">Remove</a></div>
+                    </div>
+
+                    <div class="div-table-row" id="row_repay_date_3" style="background-color:#dbe6ec">
+                        <div class="div-table-col" align="left">&bullet; Last repayment</div>
+                        <div class="div-table-col"><span id="last_repayment_date_3">N/A</span></div>
+                        <div class="div-table-col" align="right"><a href="#" id="edit_repay_date_3"></a></div>
+                        <div class="div-table-col"></div>
+                    </div>
+
+
+                </div>
+
+
+                <div><a href="#" id="add_writeOff_3">Add another write off</a></div>
+            </div>
+        </div>
+
+    </section>-->
+    <!-- #### END OF SECTION #### -->
+
+    <div class="form-group">
+        <p>
+            <a id="add_loan" href="#">Add another loan</a>
+        </p>
+    </div>
+
+</form>
+  

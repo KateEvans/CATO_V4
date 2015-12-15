@@ -1,0 +1,359 @@
+<style>
+/************************************************************************************
+This is NOT production ready CSS, it is only suitable for prototype use
+************************************************************************************/
+.grid-wrapper h2 {
+font-family: nta,Arial,sans-serif;
+font-size: 24px;
+line-height: 1.25;
+text-transform: none;
+font-weight: 700;
+}
+
+.flush--left {
+    margin-left: 0!important;
+}
+
+.progress-indicator__list-item--active:after, .progress-indicator__list-item--current:after {
+color: #00823b;
+}
+
+ul.progress-indicator__list {margin-top:1em; width:85%}
+ul.progress-indicator__list li h2 {padding-bottom:0; padding-top:0; border-bottom:2px solid #ddd;}
+ul.progress-indicator__list li h2.progress-indicator__list__section__heading--current {padding-bottom:1em; border-bottom:none;}
+ul.progress-indicator__list li span {
+    background-color: black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    color: white;
+    display: inline-block;
+    font-size: 0.8em;
+    height: 1.3em;
+    padding-top: 2px;
+    text-align: center;
+    width: 1.4em;
+	top:-3px;
+	position:relative;
+}
+ul.progress-indicator__list li h2 {padding:0.5em 0;}
+
+/*ul.progress-indicator__list li h2 a  {padding-bottom:0;}*/
+ul.progress-indicator__list li h2 p  {font-size:0.7em;/* display:block; padding-left:1.8em; margin-bottom:0;*/}
+ul.progress-indicator__list li ul li {padding-bottom: 5px; padding-top: 5px; margin:0; line-height: 23px; }
+ul.progress-indicator__list li ul li.progress-indicator__list-item--current {border-bottom:none; padding-bottom: 8px; padding-top: 8px; margin:0;}
+
+ul.progress-indicator__list li ul {padding-bottom:1em; margin-top:-1em;}
+ul.progress-indicator__list li a {text-decoration: none; color:#005ea5;}
+ul.progress-indicator__list li a:hover, ul.progress-indicator__list li a:focus {text-decoration: underline;}
+ul li.progress-indicator__list-item--current {; font-weight:700; padding-bottom:0;}
+ul li.progress-indicator__list-item--current ul {margin-top:0.2em; font-size:0.9em; display:block; border-bottom:none; padding-bottom:0; margin-bottom:0;}
+ul li.progress-indicator__list-item--current ul li {padding-left:0;}
+ul li.progress-indicator__list-item--current ul li a {font-weight:normal; color:#005ea5;}
+ul li.progress-indicator__list-item--current ul li.progress-indicator__list-item--inactive {font-weight:normal;}
+ul li.progress-indicator__list-item--current a {color:#000;}
+ul li.progress-indicator__list-item--inactive {color:#999999;}
+ul li.second-level-accordion  {margin-left:1.4em !important;}
+ul.progress-indicator__list-item--active::after, .progress-indicator__list-item--current, ul.progress-indicator__list li.progress-indicator__list-item--inactive  {padding-left:1.2em;}
+ul.progress-indicator__list-item--active::after, .progress-indicator__list-item--inactive {padding-left:0;}
+ul.progress-indicator__list-item--active::after, .progress-indicator__list-item--inactive {padding-left:0;}
+ul.progress-indicator__list li.progress-indicator__list-item--current > ul li.progress-indicator__list-item--current {margin-left:1.3em; }
+ul.progress-indicator__list li.progress-indicator__list-item--current > ul li.progress-indicator__list-item--inactive {margin-left:0; }
+
+small.hidden-help {border:none; padding-left:0;}
+small.hidden-help ul {margin-bottom:-1em; padding-bottom:0; margin-top:1em !important; margin-right:-0.5em;}
+/*small ul li a {font-size:19px !important;}
+small ul li a {font-size:19px !important;}*/
+.progress-indicator__list-item--active::after, .progress-indicator__list-item--current::after {content:none;}
+/*.progress-indicator__list-item--active::before, .progress-indicator__list-item--current::before {content:"✔ "; color:#00692F; padding-right:3px; margin-left:-3px;}*/
+i.green-tick {color:#00692F; padding-right:10px; display:block; float:left;}
+i.green-tick.two-lines {margin-bottom:30px;}
+</style>
+
+<div class="inner-block flush--left">
+        <ul class="progress-indicator__list">
+
+
+<!----------------------------------------------------------------------------------------------------------------
+                            This is NOT production ready HTML, it is only suitable for prototype use
+------------------------------------------------------------------------------------------------------------------>
+
+
+
+                    <li id="section-jump-1" class="">
+                        <h2 class="">
+                        
+                        <a href="#accounts" class=""  onclick="$('#accounts').toggle();return false;">Accounts</a> </label>
+                        <small class="hidden-help" id="accounts">
+                            <ul>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-1-1">
+                                    <a href="#" data-nav-position="1 of 7:"><i class="green-tick">✔</i> Company details</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-1-2">
+                                    <a href="#" data-nav-position="2 of 7:"><i class="green-tick">✔</i> Officers of the company</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-1-3">
+                                    <a href="#" data-nav-position="3 of 7:"><i class="green-tick">✔</i> Directors' report</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-1-4">
+                                    <a href="#" data-nav-position="4 of 7:"><i class="green-tick">✔</i> Profit and loss</a>
+                                <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-1-5">
+                                    <a href="#" data-nav-position="5 of 7:"><i class="green-tick">✔</i> Balance sheet</a>
+                                <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-1-6">
+                                    <a href="#" data-nav-position="6 of 7:"><i class="green-tick">✔</i> Footnotes</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                 <li data-icon="✔" class="progress-indicator__list-item--active second-level-accordion" id="block-group-jump-1-7">
+                                                                 
+                              	<a href="#additionalNotes" class=""  onclick="$('#additionalNotes').toggle();return false;">Additional notes</a> </label>
+                        				<small class="hidden-help" id="additionalNotes">
+                                    
+                                    <ul>
+                                        <li data-icon="" class="progress-indicator__list-item--active" id="block-jump-1-6-1">
+                                        <a href="" data-nav-position="1 of 9:"><i class="green-tick">✔</i> 
+                                        Accounting policies</a><span class="visuallyhidden">completed</span></li>
+                                        <li data-icon="" class="progress-indicator__list-item--active" id="block-jump-1-6-2">
+                                        <a href="" data-nav-position="2 of 9:"><i class="green-tick">✔</i> 
+                                        Turnover</a><span class="visuallyhidden">completed</span></li>
+                                        <li data-icon="" class="progress-indicator__list-item--active" id="block-jump-1-6-3">
+                                        <a href="" data-nav-position="3 of 9:"><i class="green-tick">✔</i> 
+                                        Directors' remuneration</a><span class="visuallyhidden">completed</span></li>
+                                        <li data-icon="" class="progress-indicator__list-item--active" id="block-jump-1-6-4">
+                                        <a href="" data-nav-position="4 of 9:"><i class="green-tick">✔</i> 
+                                        Employees</a><span class="visuallyhidden">completed</span></li>
+                                        <li class="progress-indicator__list-item--active" id="block-jump-1-6-5">
+                                        <a data-nav-position="5 of 9:"><i class="green-tick">✔</i> 
+                                        Operating profit or (loss)</a><span class="visuallyhidden"> - current step</span></li>
+                                        <li class="progress-indicator__list-item--active" id="block-jump-1-6-6">
+                                        <i class="green-tick">✔</i> <a href="" data-nav-position="6 of 9:">Dividends</a></li>
+                                        <li class="progress-indicator__list-item--active" id="block-jump-1-6-7">
+                                        <i class="green-tick">✔</i> <a href="" data-nav-position="7 of 9:">Related party disclosures</a></li>
+                                        <li class="progress-indicator__list-item--active" id="block-jump-1-6-8">
+                                        <i class="green-tick">✔</i> <a href="" data-nav-position="8 of 9:">Transactions with directors</a></li>
+                                        <li class="progress-indicator__list-item--active" id="block-jump-1-6-9">
+                                        <i class="green-tick">✔</i> <a href="" data-nav-position="9 of 9:">Post balance sheet events</a></li>
+                                    </ul>
+
+                                    </small>
+                                    
+                                    
+                                    
+                                </li>
+                            </ul>              
+                        </small>
+                          <p class="form-hint">Not yet submitted to Companies House</p>
+                        </h2>
+                        
+                      
+                        
+
+                                
+                            
+                        
+                    </li>
+                
+<!--
+                    <li id="section-jump-2" class="">
+                        <h2 class=""><a data-nav-position="2 of 5:" href="#">
+                            Companies House accounts submission
+                            
+                        </a></h2>
+                        
+                            
+                                
+                                    <ul>
+                                    
+                                        <li id="block-group-jump-2-1" class="progress-indicator__list-item--active" data-icon="✔">
+                                                
+                                                    
+                                                        <a data-nav-position="1 of 1:" href="#">
+                                                        Approve and submit accounts</a>
+                                                    
+                                                    
+                                                        <span class="visuallyhidden">completed</span>
+                                                    
+                                                
+                                        </li>
+                                    
+                                    </ul>
+                                
+                            
+                        
+                    </li>-->
+                
+
+                    <li id="section-jump-3" class="progress-indicator__list__section">
+                        <h2 class="progress-indicator__list__section__heading--active">
+     					<a href="#computations" class=""  onclick="$('#computations').toggle();return false;">Computations</a> </label>
+                        <small class="hidden-help" id="computations">
+                            <ul>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-3-1">
+                                    <a href="#" data-nav-position="1 of 10:"><i class="green-tick">✔</i> Computations Apportionment</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-3-2">
+                                    <a href="#" data-nav-position="2 of 10:"><i class="green-tick">✔</i> Trading account details</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-3-3">
+                                    <a href="#" data-nav-position="3 of 10:"><i class="green-tick">✔</i> Expenses</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-3-4">
+                                    <a href="#" data-nav-position="4 of 10:"><i class="green-tick">✔</i> Detailed profit and loss</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-3-5">
+                                    <a href="#" data-nav-position="5 of 10:"><i class="green-tick two-lines">✔</i> Capital allowances / balancing charges</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-3-6">
+                                    <a href="#" data-nav-position="6 of 10:"><i class="green-tick">✔</i> Income from property</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-3-7">
+                                    <a href="#" data-nav-position="7 of 10:"><i class="green-tick">✔</i> Trading losses</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-3-8">
+                                    <a href="#" data-nav-position="8 of 10:"><i class="green-tick">✔</i> Charitable donations</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-3-9">
+                                    <a href="#" data-nav-position="9 of 10:"><i class="green-tick two-lines">✔</i> Profits chargeable to Corporation Tax</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                                <li data-icon="✔" class="progress-indicator__list-item--active" id="block-group-jump-3-10">
+                                    <a href="#" data-nav-position="10 of 10:"><i class="green-tick">✔</i> Summary</a>
+                                    <span class="visuallyhidden">completed</span>
+                                </li>
+                            </ul>              
+    					</small>
+                        </h2>
+                          
+                                
+                        
+                                
+                            
+                        
+                    </li>
+                
+
+                    <li id="section-jump-4" class="progress-indicator__list__section">
+                        <h2 class="progress-indicator__list__section__heading--current">
+                           <!-- <span class="number">3</span>--> Annual tax return (CT600)
+                            
+                                <span class="visuallyhidden"> - current step</span>
+                            
+                      </h2>
+                        
+                            
+                                
+                                    <ul>
+                                    
+                                        <li id="block-group-jump-4-1" class="progress-indicator__list-item--active">
+                                         	<i class="green-tick two-lines">✔</i> <a data-nav-position="1 of 10:" href="/cato/block-group/claimingMrrOrScr">
+                                        	Claiming Marginal Rate Relief (MRR) or Small Companies Rate (SCR)</a>
+                                         	<span class="visuallyhidden">completed</span>
+                                        </li>
+                                    
+                                        <li id="block-group-jump-4-2" class="progress-indicator__list-item--current">
+                                                
+                                                    <a data-nav-position="2 of 10:">
+                                                    Loans to Participators</a>
+                                                    <span class="visuallyhidden"> - current step</span>
+                                              <ul>
+                                              <li id="" class="progress-indicator__list-item--active" data-icon="✔"><i class="green-tick">✔</i> <a href="#">Sub-menu item 1</a></li>
+                                              <li class="progress-indicator__list-item--current">Sub-menu item 2</li>
+                                              <li class="progress-indicator__list-item--inactive">Very long sub-menu item that goes over two or three lines</li>
+                                              </ul>  
+                                        </li>
+                                    
+                                        <li id="block-group-jump-4-3" class="progress-indicator__list-item--inactive">
+                                                
+                                                    Tax calculation
+                                                
+                                        </li>
+                                    
+                                        <li id="block-group-jump-4-4" class="progress-indicator__list-item--inactive">
+                                                
+                                                        Final calculation
+                                                    
+                                                    
+                                                
+                                        </li>
+                                    
+                                        <li id="block-group-jump-4-5" class="progress-indicator__list-item--inactive">
+                                                
+                                                    
+                                                        Corporation Tax already paid
+                                                    
+                                                
+                                        </li>
+                                    
+                                        <li id="block-group-jump-4-6" class="progress-indicator__list-item--inactive">
+                                                
+                                                    
+                                                        Tax avoidance this is what a long label would look like over two or three lines
+                                                    
+                                                    
+                                                
+                                        </li>
+                                    
+                                        <li id="block-group-jump-4-7" class="progress-indicator__list-item--inactive">
+                                                
+                                                    
+                                                        Return statements questions
+                                                    
+                                                
+                                        </li>
+                                    
+                                        <li id="block-group-jump-4-8" class="progress-indicator__list-item--inactive">
+                                                
+                                                    
+                                                        Small repayments
+                                                    
+                                                
+                                        </li>
+                                    
+                                        <li id="block-group-jump-4-9" class="progress-indicator__list-item--inactive">
+                                                
+                                                    
+                                                        Bank Details
+                                                    
+                                                    
+                                                
+                                        </li>
+                                    
+                                        <li id="block-group-jump-4-10" class="progress-indicator__list-item--inactive">
+                                                
+                                                    
+                                                        CT600 summary
+                                                    
+                                                    
+                                                
+                                        </li>
+                                        
+                                         <li id="section-jump-5" class="progress-indicator__list-item--inactive">
+                            Company Tax Submit
+                                    
+                                    </ul>
+                                
+                            
+                        
+                    </li>
+                
+
+                  
+                
+            
+        </ul>
+    </div>

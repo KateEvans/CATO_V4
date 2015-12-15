@@ -1,0 +1,34 @@
+{{<cato_layout_no_nav}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_eligibility_clubs_income_header}}
+    {{>cato_eligibility_clubs_income}}
+    <div class="form-group">
+        <br>
+        <a href="#" class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+
+            if($('#yes').prop('checked')){
+                window.location.href = "clubs_exclusion_2.html" + window.location.search;
+            }
+            else{
+                window.location.href = "/cato/eligibility_clubs_tax_period.html" + window.location.search;
+            }
+
+        })
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout_no_nav}}

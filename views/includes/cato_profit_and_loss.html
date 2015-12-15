@@ -1,0 +1,1515 @@
+<style>
+    details .summary {
+        text-decoration: underline;
+    }
+
+    details summary:hover {
+        color: #2e8aca;
+    }
+
+    details summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    
+    
+    .ng-hide{
+        display: none;
+    }
+</style>
+
+<br/>
+
+
+<section>
+    <p class="box-number-explanation">The boxes on this screen are numbered, for example
+
+        <span class="text&#45;&#45;center box-number"><span class="visuallyhidden">Box</span> AC01</span>
+
+        . If you need help, tell us the number of the box you're having trouble with.</p>
+</section>
+
+
+<section>
+    <p class="box-number-explanation">If your accounts don't look like this, align them to a <a href="/cato/download_template_accounts_1.html">template</a> you'll find it easier to file your return. </p>
+</section>
+
+
+<section>
+    <input type="hidden" value="56682c081b00004200ec021a" id="filingId">
+
+
+    <div>
+
+
+        <form name="blockForm" id="blockForm" action="#">
+
+            <div data-journey="accounts:navigate:enter-statutory-profit-and-loss-figures"
+                 class="cato-calculation-form has-help" id="statutoryProfitAndLoss">
+
+
+               <!-- <p class="box-number-explanation">The boxes on this screen are numbered, for example
+
+                    <span class="text&#45;&#45;center box-number"><span class="visuallyhidden">Box</span> AC01</span>
+
+                    . If you need help, tell us the number of the box you're having trouble with.</p>-->
+
+
+                <div class="grid-wrapper">
+                    <div class="grid grid-1-2">
+                        <div class="inner-block">
+                            &nbsp;
+                        </div>
+                    </div>
+                    <div class="grid grid-1-4">
+                        <p class="heading-small"><span class="date-header">  2013</span>
+
+                            <span class="currency">£</span>
+
+                        </p>
+                    </div>
+
+                    <div class="grid grid-1-4">
+                        <p class="heading-small"><span class="date-header"> 2012</span>
+
+                            <span class="currency">£</span>
+
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group box-number-spacer">
+                    <div class="grid-wrapper  flush ">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button" aria-controls="turnoverHelp"
+                                             tabindex="0" aria-expanded="false"><i class="arrow arrow-closed"
+                                                                                   aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="turnoverHelp" class="accordion-group--summary-label    ">
+
+                <span class="visuallyhidden">2013</span>
+                Turnover
+            </span>
+
+                                    </summary>
+                                    <div id="turnoverHelp" class="hidden-help" aria-hidden="true"
+                                         style="display: none;">
+                                        Also called sales, revenue or income. The total amount this period from selling
+                                        goods or services, excluding VAT.
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="turnover_current" id="turnover_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Turnover
+                                </label>
+
+                            </div>
+                        </div>
+                        <div data-ng-class="{ error: blockForm['turnover.current'].$dirty &amp;&amp; blockForm['turnover.current'].$error.number }"
+                             class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC12
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC12</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?"
+                                       aria-labelledby="turnover_currentLabel" maxlength="15" data-ng-change="update()"
+                                       data-init-value-on-scope="turnover.current" data-ng-model="turnover.current"
+                                       class="form-control form-control-3-4  ng-pristine ng-valid ng-valid-number"
+                                       value="1000" name="turnover.current" id="turnover_current" tabindex="0"
+                                       aria-invalid="false">
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_turnover_current" class="error-message">
+                                    <span data-ng-show="blockForm['turnover.current'].$dirty &amp;&amp; blockForm['turnover.current'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div data-ng-class="{ error: blockForm['turnover.previous'].$dirty &amp;&amp; blockForm['turnover.previous'].$error.number }"
+                             class="grid grid-1-4 ">
+
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile" for="turnover_previous">2012 Turnover</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC13
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC13</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?" maxlength="15"
+                                       data-ng-change="update()" data-init-value-on-scope="turnover.previous"
+                                       data-ng-model="turnover.previous"
+                                       class="form-control form-control-3-4   form-control--is-previous ng-pristine ng-valid ng-valid-number"
+                                       value="" name="turnover.previous" id="turnover_previous" tabindex="0"
+                                       aria-invalid="false">
+
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_turnover_previous" class="error-message">
+                                    <span data-ng-show="blockForm['turnover.previous'].$dirty &amp;&amp; blockForm['turnover.previous'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--<div class="contains-warning ng-hide" data-ng-show="turnover.removalWarning==true"
+                         aria-hidden="true">
+                        <p class="form-field&#45;&#45;warning"><span class="bold-xsmall">Warning:</span>&nbsp;Any notes relating
+                            to this field will be removed.</p>
+                    </div>-->
+
+                </div>
+
+
+                <div class="form-group box-number-spacer">
+                    <div class="grid-wrapper  flush ">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button" aria-controls="costOfSalesHelp"
+                                             tabindex="0" aria-expanded="false"><i class="arrow arrow-closed"
+                                                                                   aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="costOfSalesHelp" class="accordion-group--summary-label    ">
+
+                <span class="visuallyhidden">2013</span>
+                Cost of sales
+            </span>
+
+                                    </summary>
+                                    <div id="costOfSalesHelp" class="hidden-help" aria-hidden="true"
+                                         style="display: none;">
+                                        The costs directly involved in producing or delivering goods and services, eg
+                                        materials, shipping.
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="costOfSales_current" id="costOfSales_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Cost of sales
+                                </label>
+
+                            </div>
+                        </div>
+                        <div data-ng-class="{ error: blockForm['costOfSales.current'].$dirty &amp;&amp; blockForm['costOfSales.current'].$error.number }"
+                             class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC14
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC14</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?"
+                                       aria-labelledby="costOfSales_currentLabel" maxlength="15"
+                                       data-ng-change="update()" data-init-value-on-scope="costOfSales.current"
+                                       data-ng-model="costOfSales.current"
+                                       class="form-control form-control-3-4  ng-pristine ng-valid ng-valid-number"
+                                       value="" name="costOfSales.current" id="costOfSales_current" tabindex="0"
+                                       aria-invalid="false">
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_costOfSales_current" class="error-message">
+                                    <span data-ng-show="blockForm['costOfSales.current'].$dirty &amp;&amp; blockForm['costOfSales.current'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div data-ng-class="{ error: blockForm['costOfSales.previous'].$dirty &amp;&amp; blockForm['costOfSales.previous'].$error.number }"
+                             class="grid grid-1-4 ">
+
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile" for="costOfSales_previous">2012 Cost of sales</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC15
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC15</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?" maxlength="15"
+                                       data-ng-change="update()" data-init-value-on-scope="costOfSales.previous"
+                                       data-ng-model="costOfSales.previous"
+                                       class="form-control form-control-3-4   form-control--is-previous ng-pristine ng-valid ng-valid-number"
+                                       value="" name="costOfSales.previous" id="costOfSales_previous" tabindex="0"
+                                       aria-invalid="false">
+
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_costOfSales_previous" class="error-message">
+                                    <span data-ng-show="blockForm['costOfSales.previous'].$dirty &amp;&amp; blockForm['costOfSales.previous'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group form-group--total box-number-spacer">
+                    <div class="grid-wrapper  flush">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button" aria-controls="grossProfitHelp"
+                                             tabindex="0" aria-expanded="false"><i class="arrow arrow-closed"
+                                                                                   aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="grossProfitHelp" class="accordion-group--summary-label form-total-label   ">
+
+                <span class="visuallyhidden">2013</span>
+                Gross profit (loss)
+            </span>
+
+                                    </summary>
+                                    <div id="grossProfitHelp" class="hidden-help" aria-hidden="true"
+                                         style="display: none;">
+                                        'Turnover' minus 'cost of sales'.
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="grossProfit_current" id="grossProfit_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Gross profit (loss)
+                                </label>
+
+                            </div>
+                        </div>
+                        <div class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC16
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC16</span>
+
+
+                                <input type="text" aria-labelledby="grossProfit_currentLabel" data-total-field=""
+                                       data-ng-change="update()" size="12" maxlength="15"
+                                       class="form-total form-control form-control-3-4 form-total--user ng-pristine ng-valid"
+                                       data-init-value-on-scope="grossProfit.current"
+                                       data-ng-model="grossProfit.current" value="1000" name="grossProfit.current"
+                                       id="grossProfit_current" readonly="readonly" aria-readonly="true" tabindex="0"
+                                       aria-invalid="false">
+
+                            </div>
+                        </div>
+
+                        <div class="grid grid-1-4 ">
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile" for="grossProfit_previous"
+                                       id="grossProfit_previousPreviousLabel">2012 Gross profit (loss)</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC17
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC17</span>
+
+
+                                <input type="text" aria-labelledby="grossProfit_previousPreviousLabel"
+                                       data-total-field="" data-ng-change="update()" size="12" maxlength="15"
+                                       class="form-total form-control form-control-3-4 form-total--user ng-pristine ng-valid"
+                                       data-init-value-on-scope="grossProfit.previous"
+                                       data-ng-model="grossProfit.previous" value="0" name="grossProfit.previous"
+                                       id="grossProfit_previous" readonly="readonly" aria-readonly="true" tabindex="0"
+                                       aria-invalid="false">
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="form-group box-number-spacer">
+                    <div class="grid-wrapper  flush ">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button"
+                                             aria-controls="distributionCostsHelp" tabindex="0" aria-expanded="false"><i
+                                            class="arrow arrow-closed" aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="distributionCostsHelp" class="accordion-group--summary-label    ">
+
+                <span class="visuallyhidden">2013</span>
+                Distribution costs
+            </span>
+
+                                    </summary>
+                                    <div id="distributionCostsHelp" class="hidden-help" aria-hidden="true"
+                                         style="display: none;">
+                                        Costs like packaging, transporting or storing the goods or services sold.
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="distributionCosts_current"
+                                       id="distributionCosts_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Distribution costs
+                                </label>
+
+                            </div>
+                        </div>
+                        <div data-ng-class="{ error: blockForm['distributionCosts.current'].$dirty &amp;&amp; blockForm['distributionCosts.current'].$error.number }"
+                             class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC18
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC18</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?"
+                                       aria-labelledby="distributionCosts_currentLabel" maxlength="15"
+                                       data-ng-change="update()" data-init-value-on-scope="distributionCosts.current"
+                                       data-ng-model="distributionCosts.current"
+                                       class="form-control form-control-3-4  ng-pristine ng-valid ng-valid-number"
+                                       value="" name="distributionCosts.current" id="distributionCosts_current"
+                                       tabindex="0" aria-invalid="false">
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_distributionCosts_current" class="error-message">
+                                    <span data-ng-show="blockForm['distributionCosts.current'].$dirty &amp;&amp; blockForm['distributionCosts.current'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div data-ng-class="{ error: blockForm['distributionCosts.previous'].$dirty &amp;&amp; blockForm['distributionCosts.previous'].$error.number }"
+                             class="grid grid-1-4 ">
+
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile" for="distributionCosts_previous">2012 Distribution
+                                    costs</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC19
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC19</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?" maxlength="15"
+                                       data-ng-change="update()" data-init-value-on-scope="distributionCosts.previous"
+                                       data-ng-model="distributionCosts.previous"
+                                       class="form-control form-control-3-4   form-control--is-previous ng-pristine ng-valid ng-valid-number"
+                                       value="" name="distributionCosts.previous" id="distributionCosts_previous"
+                                       tabindex="0" aria-invalid="false">
+
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_distributionCosts_previous" class="error-message">
+                                    <span data-ng-show="blockForm['distributionCosts.previous'].$dirty &amp;&amp; blockForm['distributionCosts.previous'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group box-number-spacer">
+                    <div class="grid-wrapper  flush ">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button"
+                                             aria-controls="adminExpensesHelp" tabindex="0" aria-expanded="false"><i
+                                            class="arrow arrow-closed" aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="adminExpensesHelp" class="accordion-group--summary-label    ">
+
+                <span class="visuallyhidden">2013</span>
+                Administrative expenses
+            </span>
+
+                                    </summary>
+                                    <div id="adminExpensesHelp" class="hidden-help" aria-hidden="true"
+                                         style="display: none;">
+                                        The costs of managing and running the business eg rent, utilities, print,
+                                        stationary, legal and accounting fees.
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="adminExpenses_current"
+                                       id="adminExpenses_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Administrative expenses
+                                </label>
+
+                            </div>
+                        </div>
+                        <div data-ng-class="{ error: blockForm['adminExpenses.current'].$dirty &amp;&amp; blockForm['adminExpenses.current'].$error.number }"
+                             class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC20
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC20</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?"
+                                       aria-labelledby="adminExpenses_currentLabel" maxlength="15"
+                                       data-ng-change="update()" data-init-value-on-scope="adminExpenses.current"
+                                       data-ng-model="adminExpenses.current"
+                                       class="form-control form-control-3-4  ng-pristine ng-valid ng-valid-number"
+                                       value="" name="adminExpenses.current" id="adminExpenses_current" tabindex="0"
+                                       aria-invalid="false">
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_adminExpenses_current" class="error-message">
+                                    <span data-ng-show="blockForm['adminExpenses.current'].$dirty &amp;&amp; blockForm['adminExpenses.current'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div data-ng-class="{ error: blockForm['adminExpenses.previous'].$dirty &amp;&amp; blockForm['adminExpenses.previous'].$error.number }"
+                             class="grid grid-1-4 ">
+
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile" for="adminExpenses_previous">2012 Administrative
+                                    expenses</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC21
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC21</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?" maxlength="15"
+                                       data-ng-change="update()" data-init-value-on-scope="adminExpenses.previous"
+                                       data-ng-model="adminExpenses.previous"
+                                       class="form-control form-control-3-4   form-control--is-previous ng-pristine ng-valid ng-valid-number"
+                                       value="" name="adminExpenses.previous" id="adminExpenses_previous" tabindex="0"
+                                       aria-invalid="false">
+
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_adminExpenses_previous" class="error-message">
+                                    <span data-ng-show="blockForm['adminExpenses.previous'].$dirty &amp;&amp; blockForm['adminExpenses.previous'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group box-number-spacer">
+                    <div class="grid-wrapper  flush ">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button"
+                                             aria-controls="otherOperatingIncomeHelp" tabindex="0"
+                                             aria-expanded="false"><i class="arrow arrow-closed"
+                                                                      aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="otherOperatingIncomeHelp" class="accordion-group--summary-label    ">
+
+                <span class="visuallyhidden">2013</span>
+                Other operating income
+            </span>
+
+                                    </summary>
+                                    <div id="otherOperatingIncomeHelp" class="hidden-help" aria-hidden="true"
+                                         style="display: none;">
+                                        Income from other trading activities, eg subletting a property, or selling goods
+                                        as a sideline to the main business.
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="otherOperatingIncome_current"
+                                       id="otherOperatingIncome_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Other operating income
+                                </label>
+
+                            </div>
+                        </div>
+                        <div data-ng-class="{ error: blockForm['otherOperatingIncome.current'].$dirty &amp;&amp; blockForm['otherOperatingIncome.current'].$error.number }"
+                             class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC22
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC22</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?"
+                                       aria-labelledby="otherOperatingIncome_currentLabel" maxlength="15"
+                                       data-ng-change="update()" data-init-value-on-scope="otherOperatingIncome.current"
+                                       data-ng-model="otherOperatingIncome.current"
+                                       class="form-control form-control-3-4  ng-pristine ng-valid ng-valid-number"
+                                       value="" name="otherOperatingIncome.current" id="otherOperatingIncome_current"
+                                       tabindex="0" aria-invalid="false">
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_otherOperatingIncome_current" class="error-message">
+                                    <span data-ng-show="blockForm['otherOperatingIncome.current'].$dirty &amp;&amp; blockForm['otherOperatingIncome.current'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div data-ng-class="{ error: blockForm['otherOperatingIncome.previous'].$dirty &amp;&amp; blockForm['otherOperatingIncome.previous'].$error.number }"
+                             class="grid grid-1-4 ">
+
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile" for="otherOperatingIncome_previous">2012 Other
+                                    operating income</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC23
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC23</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?" maxlength="15"
+                                       data-ng-change="update()"
+                                       data-init-value-on-scope="otherOperatingIncome.previous"
+                                       data-ng-model="otherOperatingIncome.previous"
+                                       class="form-control form-control-3-4   form-control--is-previous ng-pristine ng-valid ng-valid-number"
+                                       value="" name="otherOperatingIncome.previous" id="otherOperatingIncome_previous"
+                                       tabindex="0" aria-invalid="false">
+
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_otherOperatingIncome_previous" class="error-message">
+                                    <span data-ng-show="blockForm['otherOperatingIncome.previous'].$dirty &amp;&amp; blockForm['otherOperatingIncome.previous'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group form-group--total box-number-spacer">
+                    <div class="grid-wrapper  flush">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button"
+                                             aria-controls="operatingProfitHelp" tabindex="0" aria-expanded="false"><i
+                                            class="arrow arrow-closed" aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="operatingProfitHelp" class="accordion-group--summary-label form-total-label   ">
+
+                <span class="visuallyhidden">2013</span>
+                Operating profit (loss)
+            </span>
+
+                                    </summary>
+                                    <div id="operatingProfitHelp" class="hidden-help" aria-hidden="true"
+                                         style="display: none;">
+                                        'Gross profit' minus 'distribution costs', minus 'administrative expenses', plus
+                                        'other operating income'.
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="operatingProfit_current"
+                                       id="operatingProfit_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Operating profit (loss)
+                                </label>
+
+                            </div>
+                        </div>
+                        <div class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC26
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC26</span>
+
+
+                                <input type="text" aria-labelledby="operatingProfit_currentLabel" data-total-field=""
+                                       data-ng-change="update()" size="12" maxlength="15"
+                                       class="form-total form-control form-control-3-4 form-total--user ng-pristine ng-valid"
+                                       data-init-value-on-scope="operatingProfit.current"
+                                       data-ng-model="operatingProfit.current" value="1000"
+                                       name="operatingProfit.current" id="operatingProfit_current" readonly="readonly"
+                                       aria-readonly="true" tabindex="0" aria-invalid="false">
+
+                            </div>
+                        </div>
+
+                        <div class="grid grid-1-4 ">
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile" for="operatingProfit_previous"
+                                       id="operatingProfit_previousPreviousLabel">2012 Operating profit (loss)</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC27
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC27</span>
+
+
+                                <input type="text" aria-labelledby="operatingProfit_previousPreviousLabel"
+                                       data-total-field="" data-ng-change="update()" size="12" maxlength="15"
+                                       class="form-total form-control form-control-3-4 form-total--user ng-pristine ng-valid"
+                                       data-init-value-on-scope="operatingProfit.previous"
+                                       data-ng-model="operatingProfit.previous" value="0"
+                                       name="operatingProfit.previous" id="operatingProfit_previous" readonly="readonly"
+                                       aria-readonly="true" tabindex="0" aria-invalid="false">
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="form-group box-number-spacer">
+                    <div class="grid-wrapper  flush ">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button"
+                                             aria-controls="interestReceivableHelp" tabindex="0" aria-expanded="false">
+                                        <i class="arrow arrow-closed" aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="interestReceivableHelp" class="accordion-group--summary-label    ">
+
+                <span class="visuallyhidden">2013</span>
+                Interest receivable and similar income
+            </span>
+
+                                    </summary>
+                                    <div id="interestReceivableHelp" class="hidden-help" aria-hidden="true"
+                                         style="display: none;">
+                                        Interest earned or owed to the company eg bank interest, interest from loans.
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="interestReceivable_current"
+                                       id="interestReceivable_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Interest receivable and similar income
+                                </label>
+
+                            </div>
+                        </div>
+                        <div data-ng-class="{ error: blockForm['interestReceivable.current'].$dirty &amp;&amp; blockForm['interestReceivable.current'].$error.number }"
+                             class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC28
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC28</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?"
+                                       aria-labelledby="interestReceivable_currentLabel" maxlength="15"
+                                       data-ng-change="update()" data-init-value-on-scope="interestReceivable.current"
+                                       data-ng-model="interestReceivable.current"
+                                       class="form-control form-control-3-4  ng-pristine ng-valid ng-valid-number"
+                                       value="" name="interestReceivable.current" id="interestReceivable_current"
+                                       tabindex="0" aria-invalid="false">
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_interestReceivable_current" class="error-message">
+                                    <span data-ng-show="blockForm['interestReceivable.current'].$dirty &amp;&amp; blockForm['interestReceivable.current'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div data-ng-class="{ error: blockForm['interestReceivable.previous'].$dirty &amp;&amp; blockForm['interestReceivable.previous'].$error.number }"
+                             class="grid grid-1-4 ">
+
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile" for="interestReceivable_previous">2012 Interest
+                                    receivable and similar income</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC29
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC29</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?" maxlength="15"
+                                       data-ng-change="update()" data-init-value-on-scope="interestReceivable.previous"
+                                       data-ng-model="interestReceivable.previous"
+                                       class="form-control form-control-3-4   form-control--is-previous ng-pristine ng-valid ng-valid-number"
+                                       value="" name="interestReceivable.previous" id="interestReceivable_previous"
+                                       tabindex="0" aria-invalid="false">
+
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_interestReceivable_previous" class="error-message">
+                                    <span data-ng-show="blockForm['interestReceivable.previous'].$dirty &amp;&amp; blockForm['interestReceivable.previous'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group box-number-spacer">
+                    <div class="grid-wrapper  flush ">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button"
+                                             aria-controls="interestPayableHelp" tabindex="0" aria-expanded="false"><i
+                                            class="arrow arrow-closed" aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="interestPayableHelp" class="accordion-group--summary-label    ">
+
+                <span class="visuallyhidden">2013</span>
+                Interest payable and similar charges
+            </span>
+
+                                    </summary>
+                                    <div id="interestPayableHelp" class="hidden-help" aria-hidden="true"
+                                         style="display: none;">
+                                        Interest paid by the company eg on loans or overdrafts.
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="interestPayable_current"
+                                       id="interestPayable_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Interest payable and similar charges
+                                </label>
+
+                            </div>
+                        </div>
+                        <div data-ng-class="{ error: blockForm['interestPayable.current'].$dirty &amp;&amp; blockForm['interestPayable.current'].$error.number }"
+                             class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC30
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC30</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?"
+                                       aria-labelledby="interestPayable_currentLabel" maxlength="15"
+                                       data-ng-change="update()" data-init-value-on-scope="interestPayable.current"
+                                       data-ng-model="interestPayable.current"
+                                       class="form-control form-control-3-4  ng-pristine ng-valid ng-valid-number"
+                                       value="" name="interestPayable.current" id="interestPayable_current" tabindex="0"
+                                       aria-invalid="false">
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_interestPayable_current" class="error-message">
+                                    <span data-ng-show="blockForm['interestPayable.current'].$dirty &amp;&amp; blockForm['interestPayable.current'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div data-ng-class="{ error: blockForm['interestPayable.previous'].$dirty &amp;&amp; blockForm['interestPayable.previous'].$error.number }"
+                             class="grid grid-1-4 ">
+
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile" for="interestPayable_previous">2012 Interest payable
+                                    and similar charges</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC31
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC31</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?" maxlength="15"
+                                       data-ng-change="update()" data-init-value-on-scope="interestPayable.previous"
+                                       data-ng-model="interestPayable.previous"
+                                       class="form-control form-control-3-4   form-control--is-previous ng-pristine ng-valid ng-valid-number"
+                                       value="" name="interestPayable.previous" id="interestPayable_previous"
+                                       tabindex="0" aria-invalid="false">
+
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_interestPayable_previous" class="error-message">
+                                    <span data-ng-show="blockForm['interestPayable.previous'].$dirty &amp;&amp; blockForm['interestPayable.previous'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group form-group--total box-number-spacer">
+                    <div class="grid-wrapper  flush">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button"
+                                             aria-controls="profitOrLossOnOrdinaryActivitiesBeforeTaxHelp" tabindex="0"
+                                             aria-expanded="false"><i class="arrow arrow-closed"
+                                                                      aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="profitOrLossOnOrdinaryActivitiesBeforeTaxHelp"
+                  class="accordion-group--summary-label form-total-label   ">
+
+                <span class="visuallyhidden">2013</span>
+                Profit (loss) on ordinary activities before taxation
+            </span>
+
+                                    </summary>
+                                    <div id="profitOrLossOnOrdinaryActivitiesBeforeTaxHelp" class="hidden-help"
+                                         aria-hidden="true" style="display: none;">
+                                        'Operating profit' plus 'interest receivable', minus 'interest payable'.
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="profitOrLossOnOrdinaryActivitiesBeforeTax_current"
+                                       id="profitOrLossOnOrdinaryActivitiesBeforeTax_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Profit (loss) on ordinary activities before taxation
+                                </label>
+
+                            </div>
+                        </div>
+                        <div class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC32
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC32</span>
+
+
+                                <input type="text"
+                                       aria-labelledby="profitOrLossOnOrdinaryActivitiesBeforeTax_currentLabel"
+                                       data-total-field="" data-ng-change="update()" size="12" maxlength="15"
+                                       class="form-total form-control form-control-3-4 form-total--user ng-pristine ng-valid"
+                                       data-init-value-on-scope="profitOrLossOnOrdinaryActivitiesBeforeTax.current"
+                                       data-ng-model="profitOrLossOnOrdinaryActivitiesBeforeTax.current" value="1000"
+                                       name="profitOrLossOnOrdinaryActivitiesBeforeTax.current"
+                                       id="profitOrLossOnOrdinaryActivitiesBeforeTax_current" readonly="readonly"
+                                       aria-readonly="true" tabindex="0" aria-invalid="false">
+
+                            </div>
+                        </div>
+
+                        <div class="grid grid-1-4 ">
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile"
+                                       for="profitOrLossOnOrdinaryActivitiesBeforeTax_previous"
+                                       id="profitOrLossOnOrdinaryActivitiesBeforeTax_previousPreviousLabel">2012 Profit
+                                    (loss) on ordinary activities before taxation</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC33
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC33</span>
+
+
+                                <input type="text"
+                                       aria-labelledby="profitOrLossOnOrdinaryActivitiesBeforeTax_previousPreviousLabel"
+                                       data-total-field="" data-ng-change="update()" size="12" maxlength="15"
+                                       class="form-total form-control form-control-3-4 form-total--user ng-pristine ng-valid"
+                                       data-init-value-on-scope="profitOrLossOnOrdinaryActivitiesBeforeTax.previous"
+                                       data-ng-model="profitOrLossOnOrdinaryActivitiesBeforeTax.previous" value="0"
+                                       name="profitOrLossOnOrdinaryActivitiesBeforeTax.previous"
+                                       id="profitOrLossOnOrdinaryActivitiesBeforeTax_previous" readonly="readonly"
+                                       aria-readonly="true" tabindex="0" aria-invalid="false">
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="form-group box-number-spacer">
+                    <div class="grid-wrapper  flush ">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button"
+                                             aria-controls="taxOnOrdinaryActivitiesHelp" tabindex="0"
+                                             aria-expanded="false"><i class="arrow arrow-closed"
+                                                                      aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="taxOnOrdinaryActivitiesHelp" class="accordion-group--summary-label    ">
+
+                <span class="visuallyhidden">2013</span>
+                Tax on profit or loss on ordinary activities
+            </span>
+
+                                    </summary>
+                                    <div id="taxOnOrdinaryActivitiesHelp" class="hidden-help" aria-hidden="true"
+                                         style="display: none;">
+                                        <p>Taxable income is 'profit or loss on ordinary activities before tax' minus
+                                            any reliefs due.</p>
+
+                                        <p>Work out the Corporation Tax due on taxable income using the <a
+                                                rel="external" target="_blank"
+                                                href="https://www.gov.uk/corporation-tax-rates">latest rates</a>.</p>
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="taxOnOrdinaryActivities_current"
+                                       id="taxOnOrdinaryActivities_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Tax on profit or loss on ordinary activities
+                                </label>
+
+                            </div>
+                        </div>
+                        <div data-ng-class="{ error: blockForm['taxOnOrdinaryActivities.current'].$dirty &amp;&amp; blockForm['taxOnOrdinaryActivities.current'].$error.number }"
+                             class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC34
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC34</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?"
+                                       aria-labelledby="taxOnOrdinaryActivities_currentLabel" maxlength="15"
+                                       data-ng-change="update()"
+                                       data-init-value-on-scope="taxOnOrdinaryActivities.current"
+                                       data-ng-model="taxOnOrdinaryActivities.current"
+                                       class="form-control form-control-3-4  ng-pristine ng-valid ng-valid-number"
+                                       value="10" name="taxOnOrdinaryActivities.current"
+                                       id="taxOnOrdinaryActivities_current" tabindex="0" aria-invalid="false">
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_taxOnOrdinaryActivities_current" class="error-message">
+                                    <span data-ng-show="blockForm['taxOnOrdinaryActivities.current'].$dirty &amp;&amp; blockForm['taxOnOrdinaryActivities.current'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div data-ng-class="{ error: blockForm['taxOnOrdinaryActivities.previous'].$dirty &amp;&amp; blockForm['taxOnOrdinaryActivities.previous'].$error.number }"
+                             class="grid grid-1-4 ">
+
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile" for="taxOnOrdinaryActivities_previous">2012 Tax on
+                                    profit or loss on ordinary activities</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC35
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC35</span>
+
+
+                                <input type="number" data-ensure-positive-numbers="w1" data-ensure-numeric-only=""
+                                       title="Enter numbers only" step="any" pattern="\d+(?:\.\d+)?" maxlength="15"
+                                       data-ng-change="update()"
+                                       data-init-value-on-scope="taxOnOrdinaryActivities.previous"
+                                       data-ng-model="taxOnOrdinaryActivities.previous"
+                                       class="form-control form-control-3-4   form-control--is-previous ng-pristine ng-valid ng-valid-number"
+                                       value="" name="taxOnOrdinaryActivities.previous"
+                                       id="taxOnOrdinaryActivities_previous" tabindex="0" aria-invalid="false">
+
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_taxOnOrdinaryActivities_previous" class="error-message">
+                                    <span data-ng-show="blockForm['taxOnOrdinaryActivities.previous'].$dirty &amp;&amp; blockForm['taxOnOrdinaryActivities.previous'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contains-warning ng-hide" data-ng-show="taxOnOrdinaryActivities.removalWarning==true"
+                         aria-hidden="true">
+                        <p class="form-field--warning"><span class="bold-xsmall">Warning:</span>&nbsp;Any notes relating
+                            to this field will be removed.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group form-group--total box-number-spacer">
+                    <div class="grid-wrapper  flush">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button"
+                                             aria-controls="profitOrLossForTheFinancialYearHelp" tabindex="0"
+                                             aria-expanded="false"><i class="arrow arrow-closed"
+                                                                      aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="profitOrLossForTheFinancialYearHelp"
+                  class="accordion-group--summary-label form-total-label   ">
+
+                <span class="visuallyhidden">2013</span>
+                Profit (loss) for the financial year
+            </span>
+
+                                    </summary>
+                                    <div id="profitOrLossForTheFinancialYearHelp" class="hidden-help" aria-hidden="true"
+                                         style="display: none;">
+                                        'Profit or loss on ordinary activities before tax' minus 'tax on profit or loss
+                                        ordinary activities'.
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="profitOrLossForTheFinancialYear_current"
+                                       id="profitOrLossForTheFinancialYear_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Profit (loss) for the financial year
+                                </label>
+
+                            </div>
+                        </div>
+                        <div class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC36
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC36</span>
+
+
+                                <input type="text" aria-labelledby="profitOrLossForTheFinancialYear_currentLabel"
+                                       data-total-field="" data-ng-change="update()" size="12" maxlength="15"
+                                       class="form-total form-control form-control-3-4 form-total--user ng-pristine ng-valid"
+                                       data-init-value-on-scope="profitOrLossForTheFinancialYear.current"
+                                       data-ng-model="profitOrLossForTheFinancialYear.current" value="990"
+                                       name="profitOrLossForTheFinancialYear.current"
+                                       id="profitOrLossForTheFinancialYear_current" readonly="readonly"
+                                       aria-readonly="true" tabindex="0" aria-invalid="false">
+
+                            </div>
+                        </div>
+
+                        <div class="grid grid-1-4 ">
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile" for="profitOrLossForTheFinancialYear_previous"
+                                       id="profitOrLossForTheFinancialYear_previousPreviousLabel">2012 Profit (loss) for
+                                    the financial year</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC37
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC37</span>
+
+
+                                <input type="text"
+                                       aria-labelledby="profitOrLossForTheFinancialYear_previousPreviousLabel"
+                                       data-total-field="" data-ng-change="update()" size="12" maxlength="15"
+                                       class="form-total form-control form-control-3-4 form-total--user ng-pristine ng-valid"
+                                       data-init-value-on-scope="profitOrLossForTheFinancialYear.previous"
+                                       data-ng-model="profitOrLossForTheFinancialYear.previous" value="0"
+                                       name="profitOrLossForTheFinancialYear.previous"
+                                       id="profitOrLossForTheFinancialYear_previous" readonly="readonly"
+                                       aria-readonly="true" tabindex="0" aria-invalid="false">
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <p class="important-notice" id="statutoryDividendNote">Dividends and net balance transferred to
+                        reserves won't appear on the face of the profit and loss submitted.</p>
+                </div>
+
+
+                <div class="form-group box-number-spacer">
+                    <div class="grid-wrapper  flush ">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button" aria-controls="dividendsHelp"
+                                             tabindex="0" aria-expanded="false"><i class="arrow arrow-closed"
+                                                                                   aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="dividendsHelp" class="accordion-group--summary-label    ">
+
+                <span class="visuallyhidden">2013</span>
+                Dividends
+            </span>
+
+                                    </summary>
+                                    <div id="dividendsHelp" class="hidden-help" aria-hidden="true"
+                                         style="display: none;">
+                                        This is only the dividends chargeable for the financial period. It does not
+                                        include dividends paid to satisfy an outstanding liability from the previous
+                                        period. The dividends provided here won’t appear on the face of the profit and
+                                        loss submitted.
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="dividends_current" id="dividends_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Dividends
+                                </label>
+
+                            </div>
+                        </div>
+                        <div data-ng-class="{ error: blockForm['dividends.current'].$dirty &amp;&amp; blockForm['dividends.current'].$error.number }"
+                             class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC38
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC38</span>
+
+
+                                <input type="number" data-ensure-numeric-only="" title="Enter numbers only" step="any"
+                                       pattern="\d+(?:\.\d+)?" aria-labelledby="dividends_currentLabel" maxlength="15"
+                                       data-ng-change="update()" data-init-value-on-scope="dividends.current"
+                                       data-ng-model="dividends.current"
+                                       class="form-control form-control-3-4  ng-pristine ng-valid ng-valid-number"
+                                       value="10" name="dividends.current" id="dividends_current" tabindex="0"
+                                       aria-invalid="false">
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_dividends_current" class="error-message">
+                                    <span data-ng-show="blockForm['dividends.current'].$dirty &amp;&amp; blockForm['dividends.current'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div data-ng-class="{ error: blockForm['dividends.previous'].$dirty &amp;&amp; blockForm['dividends.previous'].$error.number }"
+                             class="grid grid-1-4 ">
+
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile" for="dividends_previous">2012 Dividends</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC39
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC39</span>
+
+
+                                <input type="number" data-ensure-numeric-only="" title="Enter numbers only" step="any"
+                                       pattern="\d+(?:\.\d+)?" maxlength="15" data-ng-change="update()"
+                                       data-init-value-on-scope="dividends.previous" data-ng-model="dividends.previous"
+                                       class="form-control form-control-3-4   form-control--is-previous ng-pristine ng-valid ng-valid-number"
+                                       value="" name="dividends.previous" id="dividends_previous" tabindex="0"
+                                       aria-invalid="false">
+
+                            </div>
+                            <div class="inner-block">
+                                <p id="val_dividends_previous" class="error-message">
+                                    <span data-ng-show="blockForm['dividends.previous'].$dirty &amp;&amp; blockForm['dividends.previous'].$error.number"
+                                          class="ng-hide" aria-hidden="true">Enter numbers only</span>
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contains-warning ng-hide" data-ng-show="dividends.removalWarning==true"
+                         aria-hidden="true">
+                        <p class="form-field--warning"><span class="bold-xsmall">Warning:</span>&nbsp;Any notes relating
+                            to this field will be removed.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group form-group--total box-number-spacer">
+                    <div class="grid-wrapper  flush">
+                        <div class="grid grid-1-2">
+                            <div class="inner-block">
+
+
+                                <details class="accordion-group field-help" role="group">
+                                    <summary class="summary no-underline" role="button"
+                                             aria-controls="netBalanceTransferredToReservesHelp" tabindex="0"
+                                             aria-expanded="false"><i class="arrow arrow-closed"
+                                                                      aria-hidden="true">►</i>
+                                        <span class="visuallyhidden">Help for</span>
+            <span aria-controls="netBalanceTransferredToReservesHelp"
+                  class="accordion-group--summary-label form-total-label   ">
+
+                <span class="visuallyhidden">2013</span>
+                Net balance transferred to reserves
+            </span>
+
+                                    </summary>
+                                    <div id="netBalanceTransferredToReservesHelp" class="hidden-help" aria-hidden="true"
+                                         style="display: none;">
+                                        This is calculated by subtracting your dividends from your profit or (loss) for
+                                        the financial year. Your net balance transferred to reserves won’t appear on the
+                                        face of the profit and loss submitted.
+                                    </div>
+                                </details>
+
+                                <label style="display: none" for="netBalanceTransferredToReserves_current"
+                                       id="netBalanceTransferredToReserves_currentLabel">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Net balance transferred to reserves
+                                </label>
+
+                            </div>
+                        </div>
+                        <div class="grid grid-1-4 ">
+                            <div class="inner-block">
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC40
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC40</span>
+
+
+                                <input type="text" aria-labelledby="netBalanceTransferredToReserves_currentLabel"
+                                       data-total-field="" data-ng-change="update()" size="12" maxlength="15"
+                                       class="form-total form-control form-control-3-4 form-total--user ng-pristine ng-valid"
+                                       data-init-value-on-scope="netBalanceTransferredToReserves.current"
+                                       data-ng-model="netBalanceTransferredToReserves.current" value="980"
+                                       name="netBalanceTransferredToReserves.current"
+                                       id="netBalanceTransferredToReserves_current" readonly="readonly"
+                                       aria-readonly="true" tabindex="0" aria-invalid="false">
+
+                            </div>
+                        </div>
+
+                        <div class="grid grid-1-4 ">
+                            <div class="inner-block">
+                                <label class="show-only-on-mobile" for="netBalanceTransferredToReserves_previous"
+                                       id="netBalanceTransferredToReserves_previousPreviousLabel">2012 Net balance
+                                    transferred to reserves</label>
+
+                                <div data-ng-show="referenceNumHelp" class="field-reference ng-hide" aria-hidden="true">
+                                    AC41
+                                </div>
+
+
+                                <span class="text--center box-number"><span
+                                        class="visuallyhidden">Box</span> AC41</span>
+
+
+                                <input type="text"
+                                       aria-labelledby="netBalanceTransferredToReserves_previousPreviousLabel"
+                                       data-total-field="" data-ng-change="update()" size="12" maxlength="15"
+                                       class="form-total form-control form-control-3-4 form-total--user ng-pristine ng-valid"
+                                       data-init-value-on-scope="netBalanceTransferredToReserves.previous"
+                                       data-ng-model="netBalanceTransferredToReserves.previous" value="0"
+                                       name="netBalanceTransferredToReserves.previous"
+                                       id="netBalanceTransferredToReserves_previous" readonly="readonly"
+                                       aria-readonly="true" tabindex="0" aria-invalid="false">
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <span id="w1" class="hidden"><span class="bold-xsmall">Warning:</span>&nbsp;This figure is usually positive.  Are you sure you wish to enter a negative value?  Please check your data.</span>
+
+            <div class="form-group">
+                <input type="submit" class="button button-continue" value="Save and continue" id="submit">
+            </div>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+
+

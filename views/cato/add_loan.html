@@ -1,0 +1,126 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_add_loan_header}}
+    {{>cato_add_loan}}
+    <div class="form-group">
+        <br>
+        <a class="next button" id="next-button">Save and continue</a>
+        <!--<a href="/cato/loan-repayments.html" class="next button">Save and continue</a>-->
+        <ul>
+            <li><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+        var update = getUrlParameter('update');
+        var add_loan = getUrlParameter('add_loan');
+        var add_loan2 = getUrlParameter('add_loan2');
+        var name = getUrlParameter('name');
+        var outstanding = getUrlParameter('outstanding');
+        var newUrlString = null;
+
+
+//        console.log($('#full-name').val());
+
+        if(update == "loan1"){
+//            $('#full-name_1').attr('id', 'full-name');
+//            $('#full-name_2').attr('id', 'full-name');
+//            $('#full-name').remove();
+
+            $('#full-name').val(name);
+            $('#outstanding-amount').val(outstanding);
+
+        }
+
+
+        /*if(add_loan == "1"){
+            $('#full-name').attr('id', 'full-name_1');
+            $('#outstanding-amount').attr('id', 'outstanding-amount_1');
+        }
+
+        if(add_loan2 == "yes" || add_loan2 != undefined){
+            $('#full-name_1').attr('id', 'full-name_2');
+            $('#outstanding-amount_1').attr('id', 'outstanding-amount_2');
+        }*/
+
+
+
+
+
+
+        $('#next-button').click(function(){
+
+            if(update == "loan1"){
+//                window.alert('this');
+                var editedName = $('#full-name').val();
+                var editedOutstandingAmount = $('#outstanding-amount').val();
+//                window.location.href = "/cato/loan_repayments_v2.html?name=" + editedName + "&outstanding=" +  editedOutstandingAmount + newUrlString;
+
+                var str = window.location.search;
+//                console.log(str.substring(1));
+
+                window.location.href = "/cato/loans_company_made.html?name="+editedName+"&outstanding="+editedOutstandingAmount+"&"+str;
+
+                console.log("/cato/loans_company_made.html?name="+editedName+"&outstanding="+editedOutstandingAmount+"&"+str);
+                /*console.log(editedName);
+                console.log(editedOutstandingAmount);*/
+
+
+//                window.location.href = "/cato/loan_repayments_v2.html?name=" + editedName + "&outstanding=" +  editedOutstandingAmount + newUrlString;
+
+            }else{
+
+                if(add_loan == "1" && add_loan2 == undefined){
+//                    window.alert('1');
+                    var name_1 = $("#full-name_1").val();
+                    var outstandingAmount_1 = $("#outstanding-amount_1").val();
+                    window.location.href = "/cato/loan_repayments_v2.html" + window.location.search + "&name_1="+ name_1 +"&outstanding_1="+outstandingAmount_1;
+                } else if(add_loan2 == "yes") {
+//                    window.alert('2');
+                    var name_2 = $("#full-name_2").val();
+                    var outstandingAmount_2 = $("#outstanding-amount_2").val();
+                    window.location.href = "/cato/loan_repayments_v2.html" + window.location.search + "&name_2="+ name_2 +"&outstanding_2="+outstandingAmount_2;
+                } else {
+//                    window.alert('3');
+                    var name = $('#full-name').val();
+                    var outstandingAmount = $('#outstanding-amount').val();
+
+                    window.location.href = "/cato/loan_repayments_v2.html?name="+name+"&outstanding="+outstandingAmount+"&AP_date=31/12/2015";
+                }
+            }
+
+
+        })
+
+
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

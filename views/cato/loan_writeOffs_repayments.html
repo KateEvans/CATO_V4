@@ -1,0 +1,92 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_loan_writeOffs_repayments_header}}
+    {{>cato_loan_writeOffs_repayments}}
+    <div class="form-group">
+        <br>
+        <a class="next button" id="next-button">Save and continue</a>
+        <ul>
+            <li><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('#writeOffs').hide();
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+
+        var name = getUrlParameter('name');
+        var outstandingAmount = getUrlParameter('outstanding');
+        var amountWrittenOff = getUrlParameter('amountWriteOff');
+
+        var r_day = getUrlParameter('r_day');
+        var r_month = parseInt(getUrlParameter('r_month'));
+        var r_year = parseInt(getUrlParameter('r_year'));
+        var repaymentDate = r_day+"/"+r_month+"/"+r_year;
+        var repayment = getUrlParameter('repayments');
+
+
+        var day = $('#day').val();
+        var month = $('#month').val();
+        var year = $('#year').val();
+
+        if(amountWrittenOff == 0 || amountWrittenOff == "undefined"){
+            $('#row_writeOff').remove();
+
+        } else if(repayment == 0 || repayment == "undefined") {
+            $('#row_repayments').remove();
+        } else if(amountWrittenOff != "undefined" || amountWrittenOff != "0"){
+            var w_day = getUrlParameter('w_day');
+            var w_month = getUrlParameter('w_month');
+            var w_year = getUrlParameter('w_year');
+            var writeOffDate = w_day+"/"+w_month+"/"+w_year;
+            document.getElementById('writeOffDate').innerHTML= writeOffDate;
+        }
+
+
+        if(r_month < 9 && r_year < 2015){
+            $('#row_repayments').remove();
+        }
+
+
+        $('#Loaned-to').text(name);
+        $('#outstanding-amount').text(name);
+        $('#Loaned-to').text(name);
+//        document.getElementById('Loaned-to').innerHTML=name;
+        document.getElementById('outstanding-amount').innerHTML="£"+outstandingAmount;
+        document.getElementById('repaymentDate').innerHTML= repaymentDate;
+
+        $('#next-button').click(function(){
+//            window.location.href = "/cato/loan_file_return.html?name="+name+"&outstanding="+outstandingAmount+"&amountWriteOff"+amountWrittenOff+"&day="+day+"&month="+month+"&year="+year;
+            window.location.href = "/cato/loans_company_made.html"+window.location.search;
+        })
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

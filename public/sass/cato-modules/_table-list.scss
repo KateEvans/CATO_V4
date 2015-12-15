@@ -1,0 +1,105 @@
+/************************* Styling for Dashboard *************************/
+.table-list {
+	margin-bottom: 1.57em;
+	border-bottom: none;
+	
+	caption {
+		text-align: left;
+	}
+	
+	thead {
+		position: relative;
+		clip: auto;
+		width: auto;
+		height: auto;
+		overflow: auto;
+	}
+ 
+    tr {
+    	&.revealProgress {
+    		td{
+    			border-bottom: none;
+    		}
+    	}
+	    td.status {
+	        border-top:2px solid $page-colour !important;
+	        padding-top:0;
+	    }
+ 	}
+    th, td {
+        //padding-bottom: 0.5em !important;
+        //padding-top: 0.8em !important;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+		background-color: $page-colour !important;
+		line-height: 1.25;
+		padding-bottom: 0.6em;
+		padding-left: 0;
+		padding-right: 1em;
+		padding-top: 0.6em;
+    }
+    th[scope="row"] {
+    	font-weight: 700;
+    	background-color: $page-colour;
+	}
+
+ 
+    strong {
+        font-weight:700;
+    }
+    .continue-filing-column {
+        a {
+            width: 99%;
+        }
+    }
+
+    .text-top {
+        vertical-align: text-top;
+    }
+}
+/* @include media(mobile) {     Mobile queries not yet set in application.css, */
+@media (max-width: 640px) {
+	.table-list {
+		thead, tbody, th, td, tr {
+			display: block; 
+			border:none;
+			font-size:1em;
+		}
+		thead {
+			position: absolute;
+			padding: 0;
+			border: 0;
+			height: 1px;
+			width: 1px;
+		}
+		tr {
+			border-bottom: 1px solid $grey-2;
+			&.progress-status {
+				td{
+					text-align: left;
+				}
+			}
+		}
+		td { 
+
+			margin:0.5em 0;
+			text-align: right;
+			&:before {
+				content: attr(data-title);
+				float:left;
+				font-weight:700;
+			}
+			&.continue-filing-column {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		.from-to {
+			text-align: right;
+		}
+		.button {
+			text-align: left;
+		}
+	}	
+}

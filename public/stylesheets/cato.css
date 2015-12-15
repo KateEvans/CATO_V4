@@ -1,0 +1,948 @@
+/* Styling from application.scss Currently we need to redefine them here as application.scss is housed in another project */
+/**
+ * Overriding default link colour with the one from "_colours.scss" file.
+ */
+a,
+.link-style,
+.button--link-style,
+a:visited,
+.link-style:visited,
+.button--link-style:visited {
+  color: #005ea5;
+}
+
+/************************* CATO overrides to the common styles *************************/
+#content > article {
+  width: auto;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-indent {
+  margin-left: 2em;
+}
+
+.indented-summary {
+  margin-left: 2em;
+}
+
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+
+.block-summary__text {
+  width: 89%;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+
+.block-addition {
+  margin-bottom: 20px;
+}
+
+.block-addition__link {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.error-overview {
+  background-color: #fef7f7;
+  border: 3px solid #df3034;
+  margin-bottom: 20px;
+  padding: 0.75em 1em;
+}
+
+.error-overview__heading {
+  font-size: 22px;
+  margin: 0;
+}
+
+.error-overview__list-item {
+  color: #af1324;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.error-overview__list-item a {
+  color: #af1324;
+}
+
+.validation-message {
+  color: #af1324;
+}
+
+.cato-summary .summary-figures {
+  font-weight: 700;
+  text-align: right;
+  border: 0;
+  width: 100%;
+  color: #000000;
+}
+
+@media screen and (max-width: 640px) {
+  .cato-summary .summary-figures {
+    text-align: left;
+    margin-top: 0.4em;
+  }
+}
+
+.cato-summary .inner-block, .cato-summary .grid-wrapper {
+  margin-left: 0;
+}
+
+.cato-summary .form-group {
+  margin-left: 0;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.display-block {
+  display: block;
+}
+
+.margin-all-none {
+  margin: 0 !important;
+}
+
+.margin-top-none {
+  margin-top: 0 !important;
+}
+
+.margin-top-small {
+  margin-top: 1em !important;
+}
+
+.margin-top-medium {
+  margin-top: 2em !important;
+}
+
+.margin-top-large {
+  margin-top: 4em !important;
+}
+
+.margin-left-none {
+  margin-left: 0 !important;
+}
+
+.margin-left-small {
+  margin-left: 1em !important;
+}
+
+.margin-left-medium {
+  margin-left: 2em !important;
+}
+
+.margin-left-large {
+  margin-left: 4em !important;
+}
+
+.margin-bottom-none {
+  margin-bottom: 0 !important;
+}
+
+.margin-bottom-small {
+  margin-bottom: 1em !important;
+}
+
+.margin-bottom-medium {
+  margin-bottom: 2em !important;
+}
+
+.margin-bottom-large {
+  margin-bottom: 4em !important;
+}
+
+.margin-right-none {
+  margin-right: 0 !important;
+}
+
+.margin-right-small {
+  margin-right: 1em !important;
+}
+
+.margin-right-medium {
+  margin-right: 2em !important;
+}
+
+.margin-right-large {
+  margin-right: 4em !important;
+}
+
+.service-info .logo {
+  display: none;
+  speak: none;
+}
+
+/**
+ * Hide content off-screen without resorting to `display:none;`, also provide
+ * breakpoint specific hidden elements.
+ */
+.visuallyhidden {
+  left: 0 !important;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .show-only-on-desktop {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .show-only-on-tablet {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .show-only-on-tablet {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+  }
+}
+
+@media (min-width: 641px) {
+  .show-only-on-mobile {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+  }
+}
+
+/************************* Styling for forms using GDS grid *************************/
+fieldset {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+fieldset legend {
+  float: none;
+}
+
+fieldset legend > details > summary > * {
+  font-size: 19px;
+  font-weight: normal;
+}
+
+.form-field--error {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/** stop labels from being too close to their input elements **/
+.form-label-bold {
+  margin-bottom: 1em;
+}
+
+label.form-checkbox.block-label.form-field--error input {
+  /* Fixes an issue where checkboxes are out of position when an error message is being displayed */
+  position: static;
+}
+
+.cato-calculation-form h3 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.cato-calculation-form .currency, .cato-calculation-form .date-header {
+  display: block;
+}
+
+.cato-calculation-form .form-control {
+  text-align: right;
+  width: 100%;
+}
+
+.cato-calculation-form .form-group {
+  margin-bottom: 15px;
+}
+
+.cato-calculation-form .form-group--total {
+  margin-bottom: 5em;
+}
+
+.js .cato-calculation-form .form-total {
+  border-left: none;
+  border-right: none;
+}
+
+.cato-calculation-form .form-total-label {
+  font-weight: bold;
+}
+
+.cato-calculation-form .inner-block, .cato-calculation-form .grid-wrapper {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 15px 0 0;
+}
+
+@media screen and (min-width: 641px) {
+  .cato-calculation-form .inner-block.has-help > label {
+    margin-left: 1.25em;
+  }
+}
+
+.cato-calculation-form input.form-readonly[readonly] {
+  border: none;
+}
+
+.cato-calculation-form .form-total {
+  font-weight: 700;
+}
+
+.cato-calculation-form .box-number-spacer .inner-block > details {
+  margin-top: 1em;
+}
+
+.cato-calculation-form .box-number-spacer .inner-block > label {
+  margin-top: 1.6em;
+}
+
+@media (max-width: 640px) {
+  .cato-calculation-form input[type="text"],
+  .cato-calculation-form input[type="password"],
+  .cato-calculation-form input[type="color"],
+  .cato-calculation-form input[type="date"],
+  .cato-calculation-form input[type="datetime"],
+  .cato-calculation-form input[type="email"],
+  .cato-calculation-form input[type="month"],
+  .cato-calculation-form input[type="number"],
+  .cato-calculation-form input[type="range"],
+  .cato-calculation-form input[type="search"],
+  .cato-calculation-form input[type="tel"],
+  .cato-calculation-form input[type="time"],
+  .cato-calculation-form input[type="url"],
+  .cato-calculation-form input[type="week"] {
+    margin-bottom: 1em !important;
+    width: 100% !important;
+    min-height: 3em;
+  }
+  .cato-calculation-form h3, .cato-calculation-form .currency {
+    left: -9999px;
+    position: absolute;
+  }
+  .cato-calculation-form .form-control {
+    text-align: left;
+  }
+}
+
+/****** Allow button elements to span entire width on mobile view *****/
+@media screen and (max-width: 640px) {
+  .button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.7em 0 0.5em 0;
+    width: 100%;
+  }
+}
+
+/************************* Styling for textareas *************************/
+textarea.form-control {
+  width: 99.8%;
+  min-height: 150px;
+}
+
+/************************* Show .date-of-birth elements on mobile devices *************************/
+.touchevents .date-of-birth {
+  display: block;
+}
+
+.radio-button-with-hint {
+  display: inline-block;
+  float: none;
+}
+
+.form-field--error {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+table td.break-words,
+table th.break-words {
+  word-break: break-all;
+}
+
+/*Warning styles*/
+.warning-overview {
+  background-color: #ffffcc;
+  border-left: 3px solid #ffbf47;
+  padding: 0.75em 1em;
+  border: 3px solid #ffbf47;
+  margin-bottom: 20px;
+}
+
+.warning-overview__heading {
+  font-size: 22px;
+  margin: 0;
+}
+
+.warning-overview__list-item {
+  color: #0B0C0C;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.warning-overview__list-item a {
+  color: inherit;
+}
+
+.form-field--warning {
+  background-color: #ffffcc;
+  border-left: 3px solid #ffbf47;
+  padding: 0.75em 1em;
+  padding: 0.75em 1em 0.75em 1em;
+}
+
+.form-field--warning.numbered {
+  margin-left: 22px !important;
+  width: 90%;
+}
+
+.contains-warning .form-field--warning {
+  clear: both;
+}
+
+.warning-notification {
+  display: block;
+  font-family: nta,Arial,sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  color: #0B0C0C;
+  margin-top: 1em;
+}
+
+#cato-help {
+  float: left;
+  margin-top: 3em;
+}
+
+#cato-help
+.hidden-help, #cato-help
+.hidden-help--no-border, #cato-help
+.hidden-help--details-summary, #cato-help
+.js-disabled-hidden-help {
+  color: #000;
+}
+
+#cato-help
+.report-error {
+  margin-top: 0;
+}
+
+#cato-help
+.report-error__toggle.js-visible {
+  display: none;
+}
+
+#cato-help
+.report-error__content {
+  display: block !important;
+}
+
+.cato-help--phone {
+  float: left;
+}
+
+.cato-help--links-list li {
+  list-style: disc inside;
+  word-wrap: normal;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192 dpi), only screen and (min-resolution: 2dppx) {
+  .icon-download {
+    background-size: 30px auto !important;
+  }
+}
+
+/************************* Styling for Dashboard *************************/
+.table-list {
+  margin-bottom: 1.57em;
+  border-bottom: none;
+}
+
+.table-list caption {
+  text-align: left;
+}
+
+.table-list thead {
+  position: relative;
+  clip: auto;
+  width: auto;
+  height: auto;
+  overflow: auto;
+}
+
+.table-list tr.revealProgress td {
+  border-bottom: none;
+}
+
+.table-list tr td.status {
+  border-top: 2px solid #fff !important;
+  padding-top: 0;
+}
+
+.table-list th, .table-list td {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: #fff !important;
+  line-height: 1.25;
+  padding-bottom: 0.6em;
+  padding-left: 0;
+  padding-right: 1em;
+  padding-top: 0.6em;
+}
+
+.table-list th[scope="row"] {
+  font-weight: 700;
+  background-color: #fff;
+}
+
+.table-list strong {
+  font-weight: 700;
+}
+
+.table-list .continue-filing-column a {
+  width: 99%;
+}
+
+.table-list .text-top {
+  vertical-align: text-top;
+}
+
+/* @include media(mobile) {     Mobile queries not yet set in application.css, */
+@media (max-width: 640px) {
+  .table-list thead, .table-list tbody, .table-list th, .table-list td, .table-list tr {
+    display: block;
+    border: none;
+    font-size: 1em;
+  }
+  .table-list thead {
+    position: absolute;
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+  }
+  .table-list tr {
+    border-bottom: 1px solid #bfc1c3;
+  }
+  .table-list tr.progress-status td {
+    text-align: left;
+  }
+  .table-list td {
+    margin: 0.5em 0;
+    text-align: right;
+  }
+  .table-list td:before {
+    content: attr(data-title);
+    float: left;
+    font-weight: 700;
+  }
+  .table-list td.continue-filing-column {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .table-list .from-to {
+    text-align: right;
+  }
+  .table-list .button {
+    text-align: left;
+  }
+}
+
+/************************* Styling for left nav/menu *************************/
+.company-navigation {
+  padding: 0.5em 0 1em 0;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.company-navigation span {
+  font-weight: bold;
+}
+
+.cato-header h2.heading-medium {
+  display: block;
+  margin-top: 0;
+}
+
+.cato-header .heading-xlarge {
+  margin: 0.85em 0 0;
+}
+
+.cato-header p {
+  /* This style is just to reproduce the "answer build" look and feel, and not for final production*/
+  padding: 0.5em;
+  background-color: #dee0e2;
+}
+
+.cato-header a {
+  /* This style is just to reproduce the "answer build" look and feel, and not for final production*/
+  float: right;
+}
+
+ul.question-status a.current, ul.question-status a.current:visited {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+ul.question-status .tick {
+  color: #00823b;
+  /*$green is too dark, button-colour gives a nice, bright green*/
+}
+
+.not-started, a.disabled, a.disabled:visited {
+  text-decoration: none;
+  color: #6f777b;
+  cursor: default !important;
+  pointer-events: none;
+}
+
+.submission {
+  display: inline-block;
+  background-color: #DEE0E2;
+  font-size: 1.2em;
+  padding: 1em 0;
+  text-align: center;
+  margin-bottom: 1.5em;
+  width: 100%;
+}
+
+.submission__heading {
+  font-weight: 400;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.submission__heading img {
+  position: relative;
+  top: 10px;
+  left: -10px;
+}
+
+.submission-download-link {
+  margin: 0 0 1.5em 0 !important;
+}
+
+/**** progress indicator list *****/
+.progress-indicator__list a {
+  word-wrap: break-word;
+}
+
+.progress-indicator__list-item--active:after, .progress-indicator__list-item--current:after {
+  color: #00823b;
+}
+
+.progress-indicator__list-item--inactive {
+  color: #6f777b;
+}
+
+.progress-indicator__list-item--current > a {
+  font-weight: 700;
+  color: #0b0c0c;
+}
+
+.progress-indicator__list__section__heading--current a,
+.progress-indicator__list__section__heading--current span {
+  color: #0b0c0c;
+}
+
+.progress-indicator__list__section__heading--inactive a,
+.progress-indicator__list__section__heading--inactive span {
+  color: #6f777b;
+}
+
+/* Sub-menu items in the left-hand nav menu */
+ul.progress-indicator__list li ul li ul li {
+  margin-left: 1em;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-icon] {
+  position: relative;
+}
+
+[data-icon]:after {
+  position: absolute;
+  left: -1.5em;
+  top: 1px;
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.download-links {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  height: auto;
+  margin: 2em 0 !important;
+  padding-left: 2.5em;
+  width: auto;
+}
+
+/************************* Styling for hidden help *************************/
+.help-link,
+.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+  cursor: pointer;
+}
+
+.help-link:hover,
+.help-link:focus,
+.help-link:visited:hover, .help-link:visited:focus {
+  text-decoration: underline;
+  color: #005ea5;
+  cursor: pointer;
+}
+
+.help-link:after,
+.help-link:visited:after {
+  color: #2e8aca;
+  left: 0.4em;
+  position: relative;
+  top: 0.1em;
+}
+
+.hidden-help, .hidden-help--no-border, .hidden-help--details-summary, .js-disabled-hidden-help {
+  margin: 1em 0;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: none;
+  color: #6f777b;
+}
+
+.no-js .hidden-help, .no-js .hidden-help--no-border, .no-js .hidden-help--details-summary, .no-js .js-disabled-hidden-help {
+  display: block;
+}
+
+.hidden-help--no-border {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.hidden-help--no-border p, .hidden-help--no-border a, .hidden-help--no-border ul li {
+  font-size: 16px;
+}
+
+.hidden-help--details-summary {
+  margin-left: 1.4em;
+}
+
+/***** help content displaed when Javascript is disabled *****/
+.box-number, .box-number--inline {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #DEE0E2;
+  border: 0;
+  color: #0B0C0C;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  min-width: 60px;
+  padding: 0.1em 0.5em;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .box-number, .box-number--inline {
+    width: 100%;
+  }
+}
+
+.box-number--inline {
+  display: inline;
+}
+
+.box-number-explanation .box-number, .box-number-explanation .box-number--inline {
+  width: auto;
+}
+
+.info-box {
+  display: inline-block;
+  background-color: #DEE0E2;
+  font-size: 1.2em;
+  padding: 0 1.1em 0 1.1em;
+  text-align: left;
+  margin-bottom: 1.5em;
+  width: 100%;
+}
+
+.info-box__heading {
+  font-weight: 400;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.info-box__heading img {
+  position: relative;
+  top: 10px;
+  left: -10px;
+}
+
+.period-of-accounts {
+  border-bottom: 1px solid #6f777b;
+  margin-bottom: 1em;
+}
+
+.period-of-accounts__label {
+  display: inline-block;
+  font-weight: bold;
+  width: 45%;
+}
+
+.accordion-group {
+  margin: 0;
+  padding: 15px 0 15px 10px;
+  border-top: 1px solid #bfc1c3;
+}
+
+.accordion-group.no-border {
+  border-top: none;
+}
+
+.accordion-group.field-help {
+  border-top: none;
+  padding: 15px 0 5px 0;
+}
+
+.accordion-group.field-help summary,
+.accordion-group.field-help .accordion-group--summary {
+  font-weight: 400;
+}
+
+.accordion-group[__native="false"]
+summary {
+  padding-left: 1.35em;
+  position: relative;
+}
+
+.accordion-group[__native="false"]
+summary i.arrow {
+  left: 0;
+  position: absolute;
+}
+
+.accordion-group summary i.arrow {
+  font-size: 0.9em;
+  margin-right: 0.2em;
+}
+
+.accordion-group
+> div {
+  margin-top: 1em;
+}
+
+.accordion-group
+summary {
+  font-weight: 700;
+  margin: 0;
+}
+
+.accordion-group
+summary.no-underline {
+  text-decoration: none;
+}
+
+.accordion-group--summary-label {
+  display: inline;
+  text-decoration: underline;
+}
+
+.accordion-group--summary-label.form-field {
+  float: none;
+  width: auto;
+}
+
+.accordion-group--summary-label .box-number, .accordion-group--summary-label .box-number--inline {
+  width: auto;
+}
+
+.file-picker {
+  display: inline-block;
+  position: relative;
+  width: auto;
+}
+
+.file-picker
+input[type=file] {
+  display: none;
+}
+
+.eligibility-dates {
+  font-weight: bold;
+  color: cadetblue;
+}

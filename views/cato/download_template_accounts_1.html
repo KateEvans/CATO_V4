@@ -1,0 +1,31 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_download_template_accounts_header}}
+    {{>cato_download_template_accounts_1}}
+    <div class="form-group">
+        <br>
+        <!--<a href="/cato/eligibility-core_v2.html" class="next button" id="next-button">Continue</a>-->
+        <a href="/cato/profit_and_loss.html" class="next button" id="next-button">Continue</a>
+    </div>
+{{/pageContent}}
+
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('#download_template').click(function(){
+            setTimeout(function(){ window.location.href = "/cato/cato_login.html?name=Joint"; }, 10000);
+        });
+
+
+//        THIS IS FOR GIT
+
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

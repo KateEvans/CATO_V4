@@ -1,0 +1,146 @@
+<style>
+
+    .summary {
+        text-decoration: underline;
+    }
+    .summary:hover {
+        color: #2e8aca;
+    }
+    .summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    .arrow-down, .arrow-side{
+        margin-left:0px;
+        width:25px;
+        display:inline-block;
+        color:#005ea5;
+        cursor:pointer;
+    }
+
+    div.panel-indent{
+        display: none;
+    }
+
+    .button_grey {
+        background-color: #999;
+        position: relative;
+        display: -moz-inline-stack;
+        display: inline-block;
+        padding: 0.3em 0.6em 0.2em 0.6em;
+        border: none;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        -webkit-appearance: none;
+        -webkit-box-shadow: 0 2px 0 #003518;
+        -moz-box-shadow: 0 2px 0 #003518;
+        box-shadow: 0 2px 0 #003518;
+        font-size: 1em;
+        line-height: 1.25;
+        text-decoration: none;
+        -webkit-font-smoothing: antialiased;
+        cursor: pointer;
+        color: #fff;
+        margin: 0 15px 15px 0;
+        padding: 0.5263157895em 0.7894736842em 0.2631578947em 0.7894736842em;
+        vertical-align: top;
+    }
+
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+    <section id="dates">
+        <div>
+            <p>These are the dates you've prepared your accounts to. You must enter a date range of 12 months or less.</p>
+        </div>
+
+        <div class="form-group">
+            <fieldset id="paymentDate" >
+                <legend class="heading-medium">Start date</legend>
+                <div class="date-of-birth">
+                    <div class="form-group">
+
+                        <label class=" label--dateField-group" for="userStartDate.day">
+                                  <span class="label__text">
+                                      Day
+                                  </span>
+                        </label>
+                        <input type="text" value="" id="userStartDate.day" name="userStartDate.day" class="input--xxsmall form-control">
+
+                    </div>
+
+                    <div class="form-group flush--bottom">
+
+                        <label class=" label--dateField-group" for="userStartDate.month">
+                                  <span class="label__text">
+                                      Month
+                                  </span>
+                        </label>
+                        <input type="text" value="" id="userStartDate.month" name="userStartDate.month" class="input--xxsmall form-control">
+
+                    </div>
+
+                    <div class="form-group form-group-year">
+                        <label class=" label--dateField-group" for="userStartDate.year">
+                                  <span class="label__text">
+                                      Year
+                                  </span>
+                        </label>
+                        <input type="text" value="" id="userStartDate.year" name="userStartDate.year" class="input--xsmall form-control">
+                    </div>
+                </div>
+            </fieldset>
+
+
+
+
+            <fieldset id="paymentDate_2">
+                <legend class="heading-medium">End date</legend>
+                <div class="date-of-birth">
+                    <div class="form-group">
+
+                        <label class=" label--dateField-group" for="userStartDate.day1">
+                                  <span class="label__text">
+                                      Day
+                                  </span>
+                        </label>
+                        <input type="text" value="" id="userStartDate.day1" name="userStartDate.day" class="input--xxsmall form-control">
+
+                    </div>
+
+                    <div class="form-group flush--bottom">
+
+                        <label class=" label--dateField-group" for="userStartDate.month2">
+                                  <span class="label__text">
+                                      Month
+                                  </span>
+                        </label>
+                        <input type="text" value="" id="userStartDate.month2" name="userStartDate.month" class="input--xxsmall form-control">
+
+                    </div>
+
+                    <div class="form-group form-group-year">
+                        <label class=" label--dateField-group" for="userStartDate.year3">
+                                  <span class="label__text">
+                                      Year
+                                  </span>
+                        </label>
+                        <input type="text" value="" id="userStartDate.year3" name="userStartDate.year" class="input--xsmall form-control">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </section>
+
+</form>
+  

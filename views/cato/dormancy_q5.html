@@ -1,0 +1,79 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_dormancy_header_q5}}
+    {{>cato_dormancy_q5}}
+    <div class="form-group">
+        <br>
+
+        <a class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+
+{{#isJoint}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+
+            if($('#q1').is(':checked')){
+                window.location.href = "eligibility_select_filing.html" + window.location.search;
+            }
+            else{
+//                #### user goes to exit survey
+//                window.location.href = "eligibility_select_filing.html" + window.location.search;
+            }
+
+
+        })
+    });
+</script>
+{{/isJoint}}
+
+
+{{#isCoHo}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+
+            if($('#q1').is(':checked')){
+                window.location.href = "eligibility_select_filing.html" + window.location.search;
+            }
+            else{
+                window.location.href = "#";
+            }
+
+
+        })
+    });
+</script>
+{{/isCoHo}}
+
+
+{{#isCharities}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+
+            if($('#q1').is(':checked')){
+                window.location.href = "eligibility_select_filing.html" + window.location.search;
+            }
+            else{
+                window.location.href = "#";
+            }
+
+
+        })
+    });
+</script>
+{{/isCharities}}
+
+{{/pageScripts}}
+
+{{/cato_layout}}

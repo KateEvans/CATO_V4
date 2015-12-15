@@ -1,0 +1,36 @@
+/**** progress indicator list *****/
+
+.progress-indicator__list {
+    a {
+        word-wrap: break-word;
+    }
+}
+.progress-indicator__list-item--active, .progress-indicator__list-item--current {
+    &:after {
+        color: $button-colour;
+    }
+}
+.progress-indicator__list-item--inactive {
+    color: $grey-1;
+}
+.progress-indicator__list-item--current > a {
+    font-weight: 700;
+    color: $black;
+}
+.progress-indicator__list__section__heading--current {
+    a,
+    span {
+        color: $black;
+    }
+}
+.progress-indicator__list__section__heading--inactive {
+    a,
+    span{
+        color: $grey-1;
+    }
+}
+
+/* Sub-menu items in the left-hand nav menu */
+ul.progress-indicator__list li ul li ul li {
+        margin-left:1em;
+}

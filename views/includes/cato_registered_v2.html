@@ -1,0 +1,114 @@
+<style>
+
+    .summary {
+        text-decoration: underline;
+    }
+    .summary:hover {
+        color: #2e8aca;
+    }
+    .summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    .arrow-down, .arrow-side{
+        margin-left:0px;
+        width:25px;
+        display:inline-block;
+        color:#005ea5;
+        cursor:pointer;
+    }
+
+    div.panel-indent{
+        display: none;
+    }
+
+    .button_grey {
+        background-color: #999;
+        position: relative;
+        display: -moz-inline-stack;
+        display: inline-block;
+        padding: 0.3em 0.6em 0.2em 0.6em;
+        border: none;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        -webkit-appearance: none;
+        -webkit-box-shadow: 0 2px 0 #003518;
+        -moz-box-shadow: 0 2px 0 #003518;
+        box-shadow: 0 2px 0 #003518;
+        font-size: 1em;
+        line-height: 1.25;
+        text-decoration: none;
+        -webkit-font-smoothing: antialiased;
+        cursor: pointer;
+        color: #fff;
+        margin: 0 15px 15px 0;
+        padding: 0.5263157895em 0.7894736842em 0.2631578947em 0.7894736842em;
+        vertical-align: top;
+    }
+
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+
+        <div class="form-group">
+            <h2 class="form-bold">
+                Where was the company registered?
+            </h2>
+            <fieldset class="form-group inline" id="selectedPeriod">
+
+                        <label for="type1"  class="block-label">England/Wales
+                            <input type="radio" id="type1" name="selectedType" value="1"/>
+                        </label>
+                        <label for="type2"  class="block-label">Scotland
+                            <input type="radio" id="type2" name="selectedType" value="2"/>
+                        </label>
+                        <label for="type3"  class="block-label">Northern Ireland
+                            <input type="radio" id="type3" name="selectedType" value="3"/>
+                        </label>
+
+            </fieldset>
+        </div>
+
+    <div>
+
+        <div class="form-group">
+            <label class="form-label" for="town">Company registration number</label>
+            <input class="form-control" id="town" type="text">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="county">Companies House authentication code</label>
+            <input class="form-control" id="county" type="text">
+        </div>
+
+    </div>
+
+
+    <section>
+
+        <span class="arrows" style="display: inline">
+            <span class="arrow-side">&#9658;</span><span class="arrow-down">&#9660;</span>
+        </span>
+        <span class="summary">Where to find your authentication code</span>
+
+        <div class="panel-indent" id="details-content-0" aria-hidden="false">
+            <p>This was sent to you by post. You can request a new authentication code -
+                <a href="https://ewf.companieshouse.gov.uk//seclogin?tc=1" target="_blank" rel="external">log into your Companies House account</a>.</p>
+        </div>
+
+    </section>
+
+
+        
+</form>
+  

@@ -1,0 +1,49 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+    <div class="form-group" id="q_4">
+        <fieldset class="form-group" id="4">
+            <!--<legend class="form-label-bold">Is your company in liquidation or receivership?</legend>-->
+
+            <p>Your company is in liquidation if it's being wound up, and its assets are being sold to pay off its debts.
+            The company is in receivership if another person or organisation has taken control of it.</p>
+
+            <ul>
+                <li style="clear:left;">
+                    <label for="type8"  class="block-label" onclick="$('#q_5').hide().invisible()">Yes - my company is in liquidation or receivership
+                        <input type="radio" id="type8" name="q4" value="2"/>
+                    </label>
+                </li>
+                <li>
+                    <label for="type7"  class="block-label" onclick="$('#q_5').show().visible()">No - my company isn't in liquidation or receivership
+                        <input type="radio" id="type7" name="q4" value="1"/>
+                    </label>
+                </li>
+
+            </ul>
+
+        </fieldset>
+    </div>
+        
+</form>
+  

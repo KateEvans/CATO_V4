@@ -1,0 +1,30 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+{{>cato_triage_header}}
+{{>cato_triage}}
+    <div class="form-group">
+        <br>
+
+
+        {{#isJoint}}
+        <a href="/cato/eligibility-start_v3.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isJoint}}
+        {{#isHMRC}}
+        <a href="/cato/eligibility-start_v3.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isHMRC}}
+        {{#isCoHo}}
+        <a href="/cato/eligibility-start_v3.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isCoHo}}
+        <ul>
+
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+
+
+{{/cato_layout}}

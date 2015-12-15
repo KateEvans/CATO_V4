@@ -1,0 +1,34 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_eligibility_capital_allowances_header}}
+    {{>cato_eligibility_capital_allowances}}
+    <div class="form-group">
+        <a href="#" class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#next-button').click(function(){
+
+                if($('#q21').is(':checked')){
+                    window.location.href = "eligibility_not_maintrade.html" + window.location.search;
+                }
+                else{
+                    window.location.href = "eligibility_capital_allowances_2.html" + window.location.search;
+                }
+
+
+            })
+        });
+    </script>
+{{/pageScripts}}
+
+{{/cato_layout}}

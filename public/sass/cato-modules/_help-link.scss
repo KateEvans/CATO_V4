@@ -1,0 +1,50 @@
+/************************* Styling for hidden help *************************/
+.help-link,
+.help-link:visited {
+    text-decoration: none;
+    color: $text-colour;
+    cursor: pointer;
+    &:hover, &:focus {
+        text-decoration: underline;
+        color: $link-colour;
+        cursor: pointer;
+    }
+    &:after {
+        color: #2e8aca;
+        left: 0.4em;
+        position: relative;
+        top: 0.1em;
+    }
+}
+
+.hidden-help {
+    margin: 1em 0;
+    border-left: 0.3em solid $border-colour;
+    padding-left: 1em;
+    display: none;
+    color: $secondary-text-colour;
+    .no-js & {
+        display: block;
+    }
+}
+
+.hidden-help--no-border {
+    @extend .hidden-help;
+    border-left: 0;
+    padding-left: 0;
+    //not ideal but necessary due to specificity issues on assets frontend :(
+    p, a, ul li {
+        font-size: 16px;
+    }
+}
+
+.hidden-help--details-summary {
+    @extend .hidden-help;
+    margin-left: 1.4em;
+}
+
+/***** help content displaed when Javascript is disabled *****/
+
+.js-disabled-hidden-help {
+    @extend .hidden-help;
+}

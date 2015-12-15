@@ -1,0 +1,37 @@
+{{<cato_layout_no_nav}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+
+
+{{$pageContent}}
+    {{>cato_2_header}}
+    {{>cato_2}}
+    <div class="form-group">
+        <!--<a href="cato_v2.html?name={{name}}" class="next button" id="next-button">Continue</a>-->
+        <a class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#next-button').click(function(){
+
+                if($('#yes').is(':checked')){
+                    window.location.href = "commercial_software.html" + window.location.search;
+                }
+                else{
+                    window.location.href = "cato_v2.html" + window.location.search;
+                }
+
+
+            })
+        });
+    </script>
+{{/pageScripts}}
+
+{{/cato_layout_no_nav}}

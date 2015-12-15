@@ -1,0 +1,167 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+td.row-label{
+    font-weight: bold;
+}
+
+button{
+    border: medium none;
+    border-radius: 0;
+    box-shadow: 0 2px 0 #003518;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 1.25;
+    margin: 0 15px 15px 0;
+    padding: 0.52632em 0.78947em 0.26316em;
+    position: relative;
+    text-decoration: none;
+    vertical-align: top;
+    background-color: #ccc
+}
+
+
+button:hover{
+    background-color: #eee
+}
+
+
+.turquoise{
+    color:#116C84
+}
+
+
+
+</style>
+
+<br />
+
+
+    <fieldset style="margin-top: 1em" id="input_dates" class="form-group inline">
+        <p>You can change the end date of your Companies House period of accounts by up to 7 days using this service. </p>
+        <div style="float: left; padding: 0 3em 0 0">
+            <legend class="form-label-bold">Start date</legend>
+            <div class="date-of-birth">
+                <div class="form-group">
+
+                    <label for="userStartDate.day1" class=" label--dateField-group">
+                          <span class="label__text">
+                              Day
+                          </span>
+                    </label>
+                    <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.day" init-value-on-scope="" name="userStartDate.month" id="userStartDate.day1" disabled="disabled" value="01">
+
+                </div>
+
+                <div class="form-group flush--bottom">
+
+                    <label for="userStartDate.month1" class=" label--dateField-group">
+                          <span class="label__text">
+                              Month
+                          </span>
+                    </label>
+                    <input type="text" class="input--xxsmall form-control" ng-model="userStartDate.month" init-value-on-scope="" name="userStartDate.month" id="userStartDate.month1" disabled="disabled" value="12">
+
+                </div>
+
+                <div class="form-group form-group-year">
+                    <label for="userStartDate.year1" class=" label--dateField-group">
+                          <span class="label__text">
+                              Year
+                          </span>
+                    </label>
+                    <input type="text" class="input--xsmall form-control" ng-model="userStartDate.year" init-value-on-scope="" name="userStartDate.year" id="userStartDate.year1" disabled="disabled" value="2014">
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div>
+            <legend class="form-label-bold">End date</legend>
+            <div class="date-of-birth">
+                <div class="form-group">
+
+                    <label class=" label--dateField-group" for="userStartDate.day2">
+                        <span class="label__text">
+                            Day
+                        </span>
+                    </label>
+                    <input type="text" id="userStartDate.day2" name="userStartDate.day" init-value-on-scope="" ng-model="userStartDate.day" class="input--xxsmall form-control" value="31">
+
+                </div>
+
+                <div class="form-group flush--bottom">
+
+                    <label class=" label--dateField-group" for="userStartDate.month2">
+                        <span class="label__text">
+                          Month
+                        </span>
+                    </label>
+                    <input type="text" id="userStartDate.month2" name="userStartDate.month" init-value-on-scope="" ng-model="userStartDate.month" class="input--xxsmall form-control" value="05">
+
+                </div>
+
+                <div class="form-group form-group-year">
+                    <label class=" label--dateField-group" for="userStartDate.year2">
+                        <span class="label__text">
+                          Year
+                        </span>
+                    </label>
+                    <input type="text" id="userStartDate.year2" name="userStartDate.year" init-value-on-scope="" ng-model="userStartDate.year" class="input--xsmall form-control" value="2016">
+                </div>
+
+                <!--<div style="padding-top:30px" class="form-group">
+                    <button id="confirm_0" onclick="$('#timeline_image').attr('src', '/public/images/lpoa_timeline_1.png')">Confirm</button>
+                </div>-->
+            </div>
+
+        </div>
+
+    </fieldset>
+
+
+<div class="form-group">
+    <details>
+        <summary><span class="summary">Change your end date by more than 7 days </span></summary>
+        <div class="panel-indent">
+            <p>You can <a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house#before-you-start" target="_blank"> change
+                the end date of your period of accounts by more than 7 days</a> through Companies House.</p>
+            <p> You can come back to this service once your end date has been updated.</p>
+        </div>
+    </details>
+
+    <br />
+
+</div>
+
+
+
+<!-- #### static input dates #### -->
+<!--<fieldset class="form-group hidden" id="period0_end_dates" style="margin-top: 1em">
+    <div style="float: left; margin-right: 4em">
+        <legend class="form-label-bold">End date</legend>
+        <span id="period0_end_date" class="turquoise bold-large"></span>
+    </div>
+    <div style="padding-top:25px">
+        <button id="edit_dates0">Edit dates</button>
+    </div>
+</fieldset>-->
+
+  

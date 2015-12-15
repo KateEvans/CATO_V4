@@ -1,0 +1,91 @@
+
+<p>HMRC require submission of 'full' micro-entity accounts i.e. Directors Report, Profit & Loss Account, Balance Sheet, and Footnotes (if provided). </p>
+<p>However, Companies House will accept 'basic' micro-entity accounts i.e. Balance Sheet and Footnotes (if provided). </p>
+<p>These 'basic' Micro-entity Accounts are extracted from the 'full' Micro-entity Accounts that you have already entered.  </p>
+<p>The following pages are copied exactly into the Micro-entity Accounts:</p>
+<ul class="list-bullet">
+  <li> About the company</li>
+  <li>Balance sheet</li>
+  <li>Footnotes (if provided) </li>
+</ul>
+
+<p>In addition, the Balance Sheet will contain a statement that the accounts have been prepared and delivered in accordance with the provisions of the small companies regime applicable to micro-entities.  </p>
+
+<p>If you need to change any of the figures or text in these pages you can go back to the appropriate page in the Micro-entity Accounts. You will have to approve the revised version.  </p>
+
+<div class="form-group important-notice">
+<p>Companies House recommend that you <a href="#">review and print the Accounts</a> before you submit them, to be sure that the appropriate information will be placed on the public record. </p>
+</div>
+
+
+<form method="POST" action="/accountsapprove" class="form">
+    
+            <input type="hidden" value="6fc5b372f0f7b79d57fcf47c482971b3f08aa2bc-1399121072583-db1bbe51ab97fa47bfcdeb0f" name="csrf">
+
+            <h3 class="heading-medium">1. Agree to approval statement</h3>
+            
+            
+            
+               <div class="form-group">
+            <fieldset>
+                <legend class="form-label-bold visuallyhidden">Agree to approval statement</legend>
+                <label class="block-label" for="accountsApproved">
+                   <input type="checkbox" id="accountsApproved" name="accountsApproved"> 
+                  The micro-entity accounts have been approved by the director/board of directors.
+                </label>
+             </fieldset>
+             </div>
+             
+             
+             <div class="form-group">
+          <fieldset>
+            <legend class="form-label-bold">2. Select date of approval</legend>
+
+            <div class="date-of-birth">
+              <p class="form-hint">For example, 31 03 2014</p>
+
+              <div class="form-group form-group-day">
+                <label for="dob-day">Day</label>
+                <input type="text" id="dob-day" class="form-control">
+              </div>
+              <div class="form-group form-group-month">
+                <label for="dob-month">Month</label>
+                <input type="text" id="dob-month" class="form-control">
+              </div>
+              <div class="form-group form-group-year">
+                <label for="dob-year">Year</label>
+                <input type="text" id="dob-year" class="form-control">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+            
+
+
+            <h3 class="heading-medium">3. Select approver(s)</h3>
+  <div class="form-group">
+    	  <fieldset>
+                <legend class="form-label-bold visuallyhidden">Select approver(s)</legend>
+
+                <p>You must select at least one of the following approvers:</p>
+                <label class="block-label" for="name1">
+                   <input type="checkbox" id="name1" name=""> 
+                  John Smith
+                </label>
+                 <label class="block-label" for="name2">
+                   <input type="checkbox" id="name2" name=""> 
+                  James Smith
+                </label>
+              
+              </fieldset>
+</div>
+     
+       <h3  class="heading-medium">4. Save a copy</h3>
+            <p><a href="/" target="_blank">Save the approved accounts as a PDF</a> copy for your records.</p>
+            
+
+
+
+        
+</form>
+  

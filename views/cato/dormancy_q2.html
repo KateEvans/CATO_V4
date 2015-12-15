@@ -1,0 +1,62 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_dormancy_header_q2}}
+    {{>cato_dormancy_q2}}
+    <div class="form-group">
+        <br>
+
+        <a class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+
+{{#isCoHo}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+            window.location.href = "dormancy_q3.html" + window.location.search;
+        })
+    });
+</script>
+{{/isCoHo}}
+
+{{#isHMRC}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+            window.location.href = "dormancy_q3.html" + window.location.search;
+        })
+    });
+</script>
+{{/isHMRC}}
+
+{{#isJoint}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+            window.location.href = "dormancy_q3.html" + window.location.search;
+        })
+    });
+</script>
+{{/isJoint}}
+
+{{#isCharities}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+            window.location.href = "dormancy_q3.html" + window.location.search;
+        })
+    });
+</script>
+{{/isCharities}}
+
+{{/pageScripts}}
+
+{{/cato_layout}}

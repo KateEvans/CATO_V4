@@ -1,0 +1,12 @@
+$is-ie: true;
+$ie-version: 7;
+
+@import "cato";
+
+label.block-label {
+	width:100% !important;
+} /*Fixes IE7 bug where labels are being displayed with a very narrow width*/
+
+.inline label.block-label {
+	width:auto !important;
+} /*Overrides the above fix, not needed on inline form elements*/

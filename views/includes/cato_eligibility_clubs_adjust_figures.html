@@ -1,0 +1,49 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+    <div class="form-group">
+        <fieldset class="form-group inline" id=1">
+            <!--<legend class="form-label-bold">Do you want to adjust any figures you reported in a previous year?</legend>-->
+
+            <ul>
+                <li>
+                    <label for="yes"  class="block-label">Yes - I need to make an adjustment
+                        <input type="radio" id="yes" name="selectedType" value="1"/>
+                    </label>
+                </li>
+
+                <li style="clear:left;">
+                    <label for="no"  class="block-label">No - I don’t need to make an adjustment
+                        <input type="radio" id="no" name="selectedType" value="2"/>
+                    </label>
+                </li>
+
+            </ul>
+
+        </fieldset>
+    </div>
+        
+</form>
+  

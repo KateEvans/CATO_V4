@@ -1,0 +1,60 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+label.small {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 7px; 
+  padding-bottom: 6px; 
+}
+
+label.small input {
+  top: auto;
+}
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+
+  <legend class="form-label-bold">You are eligible to jointly file to both HMRC and Companies House</legend>
+
+  <p>This means you can make one filing which contains everything HMRC and Companies House need for both your annual tax return and your company accounts.</p>
+  
+    <div class="form-group form-group-compound">
+    <label class="block-label" for="radio-1">
+      <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland" checked="checked">
+      Joint filing - to HMRC & Companies House
+    </label>
+    </div>
+    <p class="form-block">or</p>
+    <p>You can file to a single organisation instead, though you may be legally obliged to file to both.</p>
+
+
+    <label class="block-label small" for="radio-2">
+      <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">
+      Single filing - HMRC only
+    </label>
+    <label class="block-label small" for="radio-3">
+      <input id="radio-3" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">
+      Single filing - Companies House only
+    </label>
+
+
+</form>
+  

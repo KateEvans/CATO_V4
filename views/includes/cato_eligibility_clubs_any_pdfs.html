@@ -1,0 +1,77 @@
+<style>
+
+.summary {
+  text-decoration: underline;
+}
+.summary:hover {
+  color: #2e8aca;
+}
+.summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+.arrow-down, .arrow-side{
+    margin-left:0px;
+    width:25px;
+    display:inline-block;
+    color:#005ea5;
+    cursor:pointer;
+}
+
+div.panel-indent{
+    display: none;
+}
+
+
+</style>
+
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+    <div class="form-group">You'll need to upload a PDF file containing your organisation's accounts. <br />
+        If you can't get your accounts into a PDF file, you can use HMRC's <a href="?">PDF filing software</a>.</div>
+
+    <a href="/cato/eligibility_clubs_adjust_figures.html" class="next button" id="next-button">My accounts are in PDF - continue</a>
+
+
+    <br />
+    <br />
+
+    <section>
+        <span class="arrows" style="display: inline">
+            <span class="arrow-side">&#9658;</span><span class="arrow-down">&#9660;</span>
+        </span>
+        <span class="summary">How to create a PDF of your accounts</span>
+
+        <div class="panel-indent" id="details-content-0" aria-hidden="false">
+            <p>
+                If your accounts are on paper, you can either:
+            </p>
+
+            <ul class="list-bullet">
+                <li>scan your paper accounts and save the scanned file as a PDF</li>
+                <li>type your accounts into a document or spreadsheet, the save the file as a PDF</li>
+            </ul>
+
+            <p>
+                If your accounts are in a file that's not a PDF, you can usually save it as a PDF. Open the file and
+                look for a 'PDF' option in these menus:
+            </p>
+
+            <ul class="list-bullet">
+                <li>'File' then 'Save'</li>
+                <li>'File' then 'Export'</li>
+                <li>'File' then 'Print'</li>
+            </ul>
+        </div>
+
+    </section>
+        
+</form>
+  

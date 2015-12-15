@@ -1,0 +1,26 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>low_emissions_header}}
+    {{>cato_vehicle_delete}}
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#addAnother').click(function(){
+            window.location.href = "/cato/low_emission_vehicles_q2.html" + window.location.search;
+
+        })
+    });
+</script>
+
+{{/pageScripts}}
+
+{{/cato_layout}}

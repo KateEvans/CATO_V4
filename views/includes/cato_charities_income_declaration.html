@@ -1,0 +1,94 @@
+<style>
+
+    .summary {
+        text-decoration: underline;
+    }
+    .summary:hover {
+        color: #2e8aca;
+    }
+    .summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    .arrow-down, .arrow-side{
+        margin-left:0px;
+        width:25px;
+        display:inline-block;
+        color:#005ea5;
+        cursor:pointer;
+    }
+
+    div.panel-indent{
+        display: none;
+    }
+
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+    <p>Answer for the period you're filing for.</p>
+
+    <div class="form-group">
+        <fieldset class="inline" id=1">
+            <ul>
+                <li>
+                    <label for="1"  class="block-label">Yes - all the income was used for charitable purposes
+                        <input type="radio" id="1" name="selectedType" value="1"/>
+                    </label>
+                </li>
+
+
+                <li style="clear:left;">
+                    <label for="3"  class="block-label">No - some was used for non-charitable purposes
+                        <input type="radio" id="3" name="selectedType" value="3"/>
+                    </label>
+                </li>
+
+
+                <li style="clear:left;">
+                    <label for="2"  class="block-label">The charity had no income this period
+                        <input type="radio" id="2" name="selectedType" value="2"/>
+                    </label>
+                </li>
+            </ul>
+
+        </fieldset>
+    </div>
+
+
+    <section>
+
+        <span class="arrows" style="display: inline">
+            <span class="arrow-side">&#9658;</span><span class="arrow-down">&#9660;</span>
+        </span>
+        <span class="summary">What are charitable purposes?</span>
+
+        <div class="panel-indent" id="details-content-0" aria-hidden="false">
+            <p> Charitable purposes are activities that help your charity’s aims and objectives.
+                <a href="https://www.gov.uk/government/publications/charitable-purposes/charitable-purposes" rel="external"
+                   target="_blank">Find out more about charitable purposes</a></p>
+        </div>
+
+    </section>
+
+    <br />
+
+    <div id="declaration">
+        <h2 class="heading-medium">Declaration</h2>
+        <p>Charities are exempt from paying tax if all their income is used for charitable purposes.</p>
+        <p><input id="chk_bx_filter" type="checkbox" style="margin-right: 0.5em" value="1" name="selectedType">
+            I confirm my charity is exempt from paying tax for this period.
+            <p>(I understand HMRC will complete the tax calculation section of my tax return with zeros.)</p>
+    </div>
+
+
+        
+</form>
+  

@@ -1,0 +1,104 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+    
+
+      <div class="form-group">
+        <fieldset class="inline" id="ineligible-orgs1">
+          <legend class="form-label-bold">Do you need to report any of the following?</legend>
+
+           <ul class="list-bullet">
+              <li>Capital gains and losses</li>
+              <li>Called up share capital not paid</li>
+              <li>Capital instruments</li>
+              <li>Cash flow statements</li>
+              <li>Contingent assets</li>
+              <li>Current asset investments</li>
+              <li>Defined benefit pension scheme</li>
+              <li>Exceptional items</li>
+              <li>Financial instruments</li>
+              <li>Fixed asset investments</li>
+              <li>Foreign income and currency transactions</li>
+              <li>The costs of restructuring</li>
+              <li>Other reserves</li>
+              <li>A revaluation deficit</li>
+              <li>Prior-year adjustments</li>
+              <li>Profit or loss on disposal of fixed assets of a material nature</li>
+              <li>Share-based payments</li>
+              <li>Share premium</li>
+              <li>Turnover above £6.5 million</li>
+            </ul>
+
+              <div class="form-group form-group-related">
+              <label data-target="" class="block-label" for="yes" onclick="$('#ineligible-orgs2').hide().invisible(); $('#next-button').attr( 'href', '/cato/eligibility-no.html');">
+                <input type="radio" value="Yes" name="ineligible-orgs1" id="yes">
+                Yes
+              </label>
+              <label class="block-label" for="no" onclick="$('#ineligible-orgs2').show().visible(); $('#next-button').attr( 'href', '/cato/eligibility-who.html');">
+                <input type="radio" value="No" name="ineligible-orgs1" id="no">
+                No
+              </label>
+            </div>
+          
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+
+        <fieldset class="inline" id="ineligible-orgs2">
+          <legend class="form-label-bold">Do you need to report any of the following?</legend>
+
+           <ul class="list-bullet">
+              <li>A turnover above £6.5 million, as a charity</li>
+              <li>A turnover above £632,000, as a company</li>
+              <li>Capital allowances, except Annual Investment Allowance, and plant and machinery included in general and small pools</li>
+              <li>Miscellaneous income over £1000, including all HMRC incentives</li>
+              <li>Non-trading income</li>
+              <li>Complex loan-relationship entries</li>
+              <li>Leased cars</li>
+              <li>Group or consortium relief</li>
+              <li>Gross income from property over £5,200 or where the expenses exceed the income from property</li>
+              <li>Loans to participators</li>
+              <li>Franked investments</li>
+              <li>Associated companies</li>
+              <li>Losses brought back from later periods</li>
+              <li>PDF attachments</li>
+            </ul>
+
+              <div class="form-group form-group-related">
+              <label data-target="" class="block-label" for="yes2" onclick="$('#next-button').attr( 'href', '/cato/eligibility-coho.html');">
+                <input type="radio" value="Yes" name="ineligible-orgs2" id="yes2">
+                Yes
+              </label>
+              <label class="block-label" for="no2" onclick="$('#next-button').attr( 'href', '/cato/eligibility-who.html');">
+                <input type="radio" value="No" name="ineligible-orgs2" id="no2">
+                No
+              </label>
+            </div>
+          
+        </fieldset>
+
+        </div>
+
+        
+</form>
+  

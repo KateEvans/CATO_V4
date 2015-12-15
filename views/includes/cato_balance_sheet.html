@@ -1,0 +1,784 @@
+<style>
+    .help-link:after, .help-link:visited:after {
+        background-color: #2e8aca;
+        color: #fff;
+        content: '?';
+        position: relative;
+        width: 24px;
+        height: 22px;
+        display: inline-block;
+        top: 1px;
+        text-align: center;
+        border-radius: 12px;
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 4px;
+        vertical-align: top;
+        padding-top: 2px;
+
+    }
+
+    a.help-link, a.help-link:visited {
+        text-decoration: none;
+        color: #0B0C0C;
+    }
+
+    a.help-link:hover {
+        text-decoration: underline;
+        color: #2e8aca;
+    }
+
+    .hidden-help, .js-disabled-hidden-help {
+        font-size: 16px;
+        margin-top: 1em;
+        border-left: 0.3em solid #bfc1c3;
+        padding-left: 1em;
+        display: block;
+        color: #6f777b;
+    }
+
+    .block-summary, .block-addition {
+        padding: 10px 0 !important;
+        margin-bottom: 1em;
+        clear: both;
+        background-color: #fff;
+        border-bottom: 1px solid #bfc1c3;
+    }
+
+    .block-summary__edit-link, .block-summary__text {
+        display: inline-block;
+    }
+
+    .block-summary__edit-link {
+        width: 10%;
+        text-align: right;
+    }
+
+    .block-summary__text {
+        display: inline-block;
+        width: 89%;
+    }
+
+</style>
+
+<br/>
+
+<form method="POST" class="form">
+
+    <div data-journey="accounts:navigate:balance-sheet" class="cato-calculation-form form-group" id="microBalanceSheet">
+
+
+        <div class="grid-wrapper">
+            <div class="grid grid-3-4">
+                <div class="inner-block">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="grid grid-1-4">
+                <h3><span class="date-header">  2013</span>
+
+                    <span class="currency">£</span>
+
+                </h3>
+            </div>
+
+        </div>
+
+
+        <div class="form-group box-number-spacer">
+
+
+            <div class="grid-wrapper  flush--left ">
+                <div class="grid grid-3-4">
+                    <div class="inner-block">
+
+
+                        <details class="accordion-group field-help" role="group">
+                            <summary class="summary no-underline" role="button" aria-controls="shareCapitalHelp"
+                                     tabindex="0" aria-expanded="false"><i class="arrow arrow-closed"
+                                                                           aria-hidden="true">►</i>
+                                <label aria-controls="shareCapitalHelp" class="accordion-group--summary-label    "
+                                       for="shareCapital_current">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Called up share capital not paid
+
+                                </label>
+                            </summary>
+                            <div id="shareCapitalHelp" class="hidden-help" aria-hidden="true" style="display: none;">
+
+
+                                This is the amount of share capital called for when shares were allotted, not yet
+                                received at the date of the balance sheet.
+
+
+                            </div>
+                        </details>
+
+
+                    </div>
+                </div>
+                <div class="grid grid-1-4 ">
+                    <div class="inner-block">
+
+
+                        <span class="text--center box-number">AC460</span>
+
+
+                        <input type="text" maxlength="15" data-ng-change="update()"
+                               data-init-value-on-scope="shareCapital.current" data-ng-model="shareCapital.current"
+                               class="form-control form-control-3-4  ng-pristine ng-valid" value="100"
+                               name="shareCapital.current" id="shareCapital_current" tabindex="0" aria-invalid="false">
+                    </div>
+                    <div class="inner-block">
+                <span id="val_shareCapital_current" class="error-notification">
+
+                </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group box-number-spacer">
+
+
+            <div class="grid-wrapper  flush--left ">
+                <div class="grid grid-3-4">
+                    <div class="inner-block">
+
+
+                        <details class="accordion-group field-help" role="group">
+                            <summary class="summary no-underline" role="button" aria-controls="fixedAssetsHelp"
+                                     tabindex="0" aria-expanded="false"><i class="arrow arrow-closed"
+                                                                           aria-hidden="true">►</i>
+                                <label aria-controls="fixedAssetsHelp" class="accordion-group--summary-label    "
+                                       for="fixedAssets_current">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Fixed assets
+
+                                </label>
+                            </summary>
+                            <div id="fixedAssetsHelp" class="hidden-help" aria-hidden="true" style="display: none;">
+
+
+                                Assets that are purchased for long-term use and are not likely to be converted quickly
+                                into cash. For example, land, buildings, and equipment.
+
+
+                            </div>
+                        </details>
+
+
+                    </div>
+                </div>
+                <div class="grid grid-1-4 ">
+                    <div class="inner-block">
+
+
+                        <span class="text--center box-number">AC450</span>
+
+
+                        <input type="text" maxlength="15" data-ng-change="update()"
+                               data-init-value-on-scope="fixedAssets.current" data-ng-model="fixedAssets.current"
+                               class="form-control form-control-3-4  ng-pristine ng-valid" value=""
+                               name="fixedAssets.current" id="fixedAssets_current" tabindex="0" aria-invalid="false">
+                    </div>
+                    <div class="inner-block">
+                <span id="val_fixedAssets_current" class="error-notification">
+
+                </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group box-number-spacer">
+
+
+            <div class="grid-wrapper  flush--left ">
+                <div class="grid grid-3-4">
+                    <div class="inner-block">
+
+
+                        <details class="accordion-group field-help" role="group">
+                            <summary class="summary no-underline" role="button" aria-controls="currentAssetsHelp"
+                                     tabindex="0" aria-expanded="false"><i class="arrow arrow-closed"
+                                                                           aria-hidden="true">►</i>
+                                <label aria-controls="currentAssetsHelp" class="accordion-group--summary-label    "
+                                       for="currentAssets_current">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Current assets
+
+                                </label>
+                            </summary>
+                            <div id="currentAssetsHelp" class="hidden-help" aria-hidden="true" style="display: none;">
+
+
+                                Assets that will be converted into cash within one year. For example, stock, debtors and
+                                cash.
+
+
+                            </div>
+                        </details>
+
+
+                    </div>
+                </div>
+                <div class="grid grid-1-4 ">
+                    <div class="inner-block">
+
+
+                        <span class="text--center box-number">AC455</span>
+
+
+                        <input type="text" maxlength="15" data-ng-change="update()"
+                               data-init-value-on-scope="currentAssets.current" data-ng-model="currentAssets.current"
+                               class="form-control form-control-3-4  ng-pristine ng-valid" value=""
+                               name="currentAssets.current" id="currentAssets_current" tabindex="0"
+                               aria-invalid="false">
+                    </div>
+                    <div class="inner-block">
+                <span id="val_currentAssets_current" class="error-notification">
+
+                </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group box-number-spacer">
+
+
+            <div class="grid-wrapper  flush--left ">
+                <div class="grid grid-3-4">
+                    <div class="inner-block">
+
+
+                        <details class="accordion-group field-help" role="group">
+                            <summary class="summary no-underline" role="button" aria-controls="prepaymentsHelp"
+                                     tabindex="0" aria-expanded="false"><i class="arrow arrow-closed"
+                                                                           aria-hidden="true">►</i>
+                                <label aria-controls="prepaymentsHelp" class="accordion-group--summary-label    "
+                                       for="prepayments_current">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Prepayments and accrued income
+
+                                </label>
+                            </summary>
+                            <div id="prepaymentsHelp" class="hidden-help" aria-hidden="true" style="display: none;">
+
+
+                                Prepayments are goods or services paid for by the company, but not received at the end
+                                of the accounting period. Accrued income is income earned by the company and so included
+                                in turnover, but not yet invoiced.
+
+
+                            </div>
+                        </details>
+
+
+                    </div>
+                </div>
+                <div class="grid grid-1-4 ">
+                    <div class="inner-block">
+
+
+                        <span class="text--center box-number">AC465</span>
+
+
+                        <input type="text" maxlength="15" data-ng-change="update()"
+                               data-init-value-on-scope="prepayments.current" data-ng-model="prepayments.current"
+                               class="form-control form-control-3-4  ng-pristine ng-valid" value=""
+                               name="prepayments.current" id="prepayments_current" tabindex="0" aria-invalid="false">
+                    </div>
+                    <div class="inner-block">
+                <span id="val_prepayments_current" class="error-notification">
+
+                </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group box-number-spacer">
+
+
+            <div class="grid-wrapper  flush--left ">
+                <div class="grid grid-3-4">
+                    <div class="inner-block">
+
+
+                        <details class="accordion-group field-help" role="group">
+                            <summary class="summary no-underline" role="button"
+                                     aria-controls="creditorsWithinOneYearHelp" tabindex="0" aria-expanded="false"><i
+                                    class="arrow arrow-closed" aria-hidden="true">►</i>
+                                <label aria-controls="creditorsWithinOneYearHelp"
+                                       class="accordion-group--summary-label    " for="creditorsWithinOneYear_current">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Creditors: amounts falling due within one year
+
+                                </label>
+                            </summary>
+                            <div id="creditorsWithinOneYearHelp" class="hidden-help" aria-hidden="true"
+                                 style="display: none;">
+
+
+                                These are short-term liabilities, which the company expects to settle within one year.
+                                Examples include bank loans and overdrafts, capital amounts due under finance leases and
+                                hire purchase contracts, trade creditors, taxation and security creditors, and accruals
+                                and deferred income.
+
+
+                            </div>
+                        </details>
+
+
+                    </div>
+                </div>
+                <div class="grid grid-1-4 ">
+                    <div class="inner-block">
+
+
+                        <span class="text--center box-number">AC58</span>
+
+
+                        <input type="text" maxlength="15" data-ng-change="update()"
+                               data-init-value-on-scope="creditorsWithinOneYear.current"
+                               data-ng-model="creditorsWithinOneYear.current"
+                               class="form-control form-control-3-4  ng-pristine ng-valid" value=""
+                               name="creditorsWithinOneYear.current" id="creditorsWithinOneYear_current" tabindex="0"
+                               aria-invalid="false">
+                    </div>
+                    <div class="inner-block">
+                <span id="val_creditorsWithinOneYear_current" class="error-notification">
+
+                </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group form-group--total box-number-spacer">
+            <div class="grid-wrapper  flush--left">
+                <div class="grid grid-3-4">
+                    <div class="inner-block">
+
+
+                        <details class="accordion-group field-help" role="group">
+                            <summary class="summary no-underline" role="button" aria-controls="netAssetsHelp"
+                                     tabindex="0" aria-expanded="false"><i class="arrow arrow-closed"
+                                                                           aria-hidden="true">►</i>
+                                <label aria-controls="netAssetsHelp"
+                                       class="accordion-group--summary-label form-total-label   "
+                                       for="netAssets_current">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Net current assets (liabilities)
+
+                                </label>
+                            </summary>
+                            <div id="netAssetsHelp" class="hidden-help" aria-hidden="true" style="display: none;">
+
+
+                                Total current assets less Creditors: amounts falling due within one year.
+
+
+                            </div>
+                        </details>
+
+
+                    </div>
+                </div>
+                <div class="grid grid-1-4 ">
+                    <div class="inner-block">
+
+
+                        <span class="text--center box-number">AC60</span>
+
+
+                        <input type="text" data-total-field="" data-ng-change="update()" size="12" maxlength="15"
+                               class="form-total form-control form-control-3-4  ng-pristine ng-valid"
+                               data-init-value-on-scope="netAssets.previous" data-ng-model="netAssets.current" value="0"
+                               name="netAssets.current" id="netAssets_current" readonly="readonly" tabindex="-1"
+                               aria-invalid="false">
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="form-group form-group--total box-number-spacer">
+            <div class="grid-wrapper  flush--left">
+                <div class="grid grid-3-4">
+                    <div class="inner-block">
+
+
+                        <details class="accordion-group field-help" role="group">
+                            <summary class="summary no-underline" role="button"
+                                     aria-controls="netAssetsLessLiabilitiesHelp" tabindex="0" aria-expanded="false"><i
+                                    class="arrow arrow-closed" aria-hidden="true">►</i>
+                                <label aria-controls="netAssetsLessLiabilitiesHelp"
+                                       class="accordion-group--summary-label form-total-label   "
+                                       for="netAssetsLessLiabilities_current">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Total assets less current liabilities
+
+                                </label>
+                            </summary>
+                            <div id="netAssetsLessLiabilitiesHelp" class="hidden-help" aria-hidden="true"
+                                 style="display: none;">
+
+
+                                Total fixed assets plus Net current assets (liabilities).
+
+
+                            </div>
+                        </details>
+
+
+                    </div>
+                </div>
+                <div class="grid grid-1-4 ">
+                    <div class="inner-block">
+
+
+                        <span class="text--center box-number">AC62</span>
+
+
+                        <input type="text" data-total-field="" data-ng-change="update()" size="12" maxlength="15"
+                               class="form-total form-control form-control-3-4  ng-pristine ng-valid"
+                               data-init-value-on-scope="netAssetsLessLiabilities.previous"
+                               data-ng-model="netAssetsLessLiabilities.current" value="100"
+                               name="netAssetsLessLiabilities.current" id="netAssetsLessLiabilities_current"
+                               readonly="readonly" tabindex="-1" aria-invalid="false">
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="form-group box-number-spacer">
+
+
+            <div class="grid-wrapper  flush--left ">
+                <div class="grid grid-3-4">
+                    <div class="inner-block">
+
+
+                        <details class="accordion-group field-help" role="group">
+                            <summary class="summary no-underline" role="button"
+                                     aria-controls="creditorsAfterOneYearHelp" tabindex="0" aria-expanded="false"><i
+                                    class="arrow arrow-closed" aria-hidden="true">►</i>
+                                <label aria-controls="creditorsAfterOneYearHelp"
+                                       class="accordion-group--summary-label    " for="creditorsAfterOneYear_current">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Creditors: amounts falling due after more than one year
+
+                                </label>
+                            </summary>
+                            <div id="creditorsAfterOneYearHelp" class="hidden-help" aria-hidden="true"
+                                 style="display: none;">
+
+
+                                These are long-term liabilities, which the company expects to settle after more than one
+                                year from the balance sheet date. Examples include bank loans, overdrafts, amounts due
+                                under finance leases and hire purchase contracts.
+
+
+                            </div>
+                        </details>
+
+
+                    </div>
+                </div>
+                <div class="grid grid-1-4 ">
+                    <div class="inner-block">
+
+
+                        <span class="text--center box-number">AC64</span>
+
+
+                        <input type="text" maxlength="15" data-ng-change="update()"
+                               data-init-value-on-scope="creditorsAfterOneYear.current"
+                               data-ng-model="creditorsAfterOneYear.current"
+                               class="form-control form-control-3-4  ng-pristine ng-valid" value=""
+                               name="creditorsAfterOneYear.current" id="creditorsAfterOneYear_current" tabindex="0"
+                               aria-invalid="false">
+                    </div>
+                    <div class="inner-block">
+                <span id="val_creditorsAfterOneYear_current" class="error-notification">
+
+                </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group box-number-spacer">
+
+
+            <div class="grid-wrapper  flush--left ">
+                <div class="grid grid-3-4">
+                    <div class="inner-block">
+
+
+                        <details class="accordion-group field-help" role="group">
+                            <summary class="summary no-underline" role="button" aria-controls="liabilityProvisionHelp"
+                                     tabindex="0" aria-expanded="false"><i class="arrow arrow-closed"
+                                                                           aria-hidden="true">►</i>
+                                <label aria-controls="liabilityProvisionHelp" class="accordion-group--summary-label    "
+                                       for="liabilityProvision_current">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Provision for liabilities
+
+                                </label>
+                            </summary>
+                            <div id="liabilityProvisionHelp" class="hidden-help" aria-hidden="true"
+                                 style="display: none;">
+
+
+                                A provision is an amount set-aside by the business for probable, but uncertain,
+                                liabilities. Provisions are sometimes made for deferred tax, restructuring costs and
+                                onerous lease contracts.
+
+
+                            </div>
+                        </details>
+
+
+                    </div>
+                </div>
+                <div class="grid grid-1-4 ">
+                    <div class="inner-block">
+
+
+                        <span class="text--center box-number">AC66</span>
+
+
+                        <input type="text" maxlength="15" data-ng-change="update()"
+                               data-init-value-on-scope="liabilityProvision.current"
+                               data-ng-model="liabilityProvision.current"
+                               class="form-control form-control-3-4  ng-pristine ng-valid" value=""
+                               name="liabilityProvision.current" id="liabilityProvision_current" tabindex="0"
+                               aria-invalid="false">
+                    </div>
+                    <div class="inner-block">
+                <span id="val_liabilityProvision_current" class="error-notification">
+
+                </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group box-number-spacer">
+
+
+            <div class="grid-wrapper  flush--left ">
+                <div class="grid grid-3-4">
+                    <div class="inner-block">
+
+
+                        <details class="accordion-group field-help" role="group">
+                            <summary class="summary no-underline" role="button" aria-controls="accrualsHelp"
+                                     tabindex="0" aria-expanded="false"><i class="arrow arrow-closed"
+                                                                           aria-hidden="true">►</i>
+                                <label aria-controls="accrualsHelp" class="accordion-group--summary-label    "
+                                       for="accruals_current">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Accruals and deferred income
+
+                                </label>
+                            </summary>
+                            <div id="accrualsHelp" class="hidden-help" aria-hidden="true" style="display: none;">
+
+
+                                Accruals are expenses already incurred by the company, for which no invoice has been
+                                received, or for which the date of payment by standing order has not yet passed at the
+                                end of the accounting period. Deferred income is income that has been invoiced but has
+                                not yet been earned, and so is not included in turnover.
+
+
+                            </div>
+                        </details>
+
+
+                    </div>
+                </div>
+                <div class="grid grid-1-4 ">
+                    <div class="inner-block">
+
+
+                        <span class="text--center box-number">AC470</span>
+
+
+                        <input type="text" maxlength="15" data-ng-change="update()"
+                               data-init-value-on-scope="accruals.current" data-ng-model="accruals.current"
+                               class="form-control form-control-3-4  ng-pristine ng-valid" value=""
+                               name="accruals.current" id="accruals_current" tabindex="0" aria-invalid="false">
+                    </div>
+                    <div class="inner-block">
+                <span id="val_accruals_current" class="error-notification">
+
+                </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group form-group--total box-number-spacer">
+            <div class="grid-wrapper  flush--left">
+                <div class="grid grid-3-4">
+                    <div class="inner-block">
+
+
+                        <details class="accordion-group field-help" role="group">
+                            <summary class="summary no-underline" role="button" aria-controls="totalNetAssetsHelp"
+                                     tabindex="0" aria-expanded="false"><i class="arrow arrow-closed"
+                                                                           aria-hidden="true">►</i>
+                                <label aria-controls="totalNetAssetsHelp"
+                                       class="accordion-group--summary-label form-total-label   "
+                                       for="totalNetAssets_current">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Total net assets (liabilities)
+
+                                </label>
+                            </summary>
+                            <div id="totalNetAssetsHelp" class="hidden-help" aria-hidden="true" style="display: none;">
+
+
+                                Total assets less current liabilities less Creditors: amounts falling due after more
+                                than one year less Provision for liabilities. Total net assets (liabilities) must equal
+                                Capital and reserves.
+
+
+                            </div>
+                        </details>
+
+
+                    </div>
+                </div>
+                <div class="grid grid-1-4 ">
+                    <div class="inner-block">
+
+
+                        <span class="text--center box-number">AC68</span>
+
+
+                        <input type="text" data-total-field="" data-ng-change="update()" size="12" maxlength="15"
+                               class="form-total form-control form-control-3-4  ng-pristine ng-valid"
+                               data-init-value-on-scope="totalNetAssets.previous" data-ng-model="totalNetAssets.current"
+                               value="100" name="totalNetAssets.current" id="totalNetAssets_current" readonly="readonly"
+                               tabindex="-1" aria-invalid="false">
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="form-group box-number-spacer">
+
+
+            <div class="grid-wrapper  flush--left ">
+                <div class="grid grid-3-4">
+                    <div class="inner-block">
+
+
+                        <details class="accordion-group field-help" role="group">
+                            <summary class="summary no-underline" role="button" aria-controls="capitalReservesHelp"
+                                     tabindex="0" aria-expanded="false"><i class="arrow arrow-closed"
+                                                                           aria-hidden="true">►</i>
+                                <label aria-controls="capitalReservesHelp" class="accordion-group--summary-label    "
+                                       for="capitalReserves_current">
+
+                                    <span class="visuallyhidden">2013</span>
+                                    Capital and reserves
+
+                                </label>
+                            </summary>
+                            <div id="capitalReservesHelp" class="hidden-help" aria-hidden="true" style="display: none;">
+
+
+                                Capital is the owners monetary investment into the business. This is usually the money
+                                owned by the owners of the business, or money owed to the owners. Reserves are excess
+                                funds set aside by the business that are not required to meet a liability. Capital and
+                                reserves must equal Total net assets (liabilities).
+
+
+                            </div>
+                        </details>
+
+
+                    </div>
+                </div>
+                <div class="grid grid-1-4 ">
+                    <div class="inner-block">
+
+
+                        <span class="text--center box-number">AC490</span>
+
+
+                        <input type="text" maxlength="15" data-ng-change="update()"
+                               data-init-value-on-scope="capitalReserves.current"
+                               data-ng-model="capitalReserves.current"
+                               class="form-control form-control-3-4  ng-pristine ng-valid" value="100"
+                               name="capitalReserves.current" id="capitalReserves_current" tabindex="0"
+                               aria-invalid="false">
+                    </div>
+                    <div class="inner-block">
+                <span id="val_capitalReserves_current" class="error-notification">
+
+                </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</form>

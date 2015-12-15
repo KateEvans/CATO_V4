@@ -1,0 +1,173 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+<br />
+<br />
+
+<div class="form-group" style="border-bottom: 1px solid #000">
+<strong>Current period of accounts: </strong>1 April 2013 to 31 March 2014
+</div>
+
+<form method="POST" action="/accountsapprove" class="form">
+
+
+
+    <fieldset class="inline">
+        <div class="form-group">
+            <fieldset class="form-group" id="selectedPeriod">
+
+                <legend class="form-label-bold">Select your accounting period</legend>
+
+          <ul>
+            <li>
+                <label for="selectedPeriod-2015-01-01--2016-12-31"  class="block-label">1 October 2012 - 30 September 2013
+                    <input type="radio" id="selectedPeriod-2015-01-01--2016-12-31" name="selectedPeriod" value=""/>
+                </label>
+            </li>
+
+            <li style="clear:left;">
+                <label for="selectedPeriod-2014-01-01--2014-12-31"  class="block-label">1 October 2011 - 30 September 2012
+                    <input type="radio" id="selectedPeriod-2014-01-01--2014-12-31" name="selectedPeriod" value=""/>
+                </label>
+            </li>
+            
+          </ul>
+      </fieldset>
+
+
+
+
+  <fieldset class=" form-group" id="userStartDate1">
+
+        <legend class="form-label-bold">If you wish to change your accounting period start date, enter your date here
+
+
+        </legend>
+            <div class="date-of-birth">
+                <div class="form-group">
+
+
+
+
+            <label for="userStartDate.day" class=" label--dateField-group">
+                <span class="label__text">
+                    Day
+                </span>
+            </label>
+            <input type="text" class="input--xxsmall form-control" data-ng-model="userStartDate.day" data-init-value-on-scope="" name="userStartDate.day" id="userStartDate.day" value="">
+
+
+                </div>
+
+                <div class="form-group flush--bottom">
+
+
+
+
+            <label for="userStartDate.month" class=" label--dateField-group">
+                <span class="label__text">
+                    Month
+                </span>
+            </label>
+            <input type="text" class="input--xxsmall form-control" data-ng-model="userStartDate.month" data-init-value-on-scope="" name="userStartDate.month" id="userStartDate.month" value="">
+
+
+                </div>
+
+                <div class="form-group form-group-year">
+
+
+
+
+            <label for="userStartDate.year" class=" label--dateField-group">
+                <span class="label__text">
+                    Year
+                </span>
+            </label>
+            <input type="text" class="input--xsmall form-control" data-ng-model="userStartDate.year" data-init-value-on-scope="" name="userStartDate.year" id="userStartDate.year" value="">
+
+
+                </div>
+            </div>
+
+</fieldset>
+
+
+ <fieldset class=" form-group" id="userStartDate">
+
+     <legend class="form-label-bold">If you wish to change your accounting period end date, enter your date here
+
+
+        </legend>
+            <div class="date-of-birth">
+                <div class="form-group">
+
+
+
+
+            <label for="userStartDate.day" class=" label--dateField-group">
+                <span class="label__text">
+                    Day
+                </span>
+            </label>
+            <input type="text" class="input--xxsmall form-control" data-ng-model="userStartDate.day" data-init-value-on-scope="" name="userStartDate.day" id="userStartDate.day1" value="">
+
+
+                </div>
+
+                <div class="form-group flush--bottom">
+
+
+
+
+            <label for="userStartDate.month" class=" label--dateField-group">
+                <span class="label__text">
+                    Month
+                </span>
+            </label>
+            <input type="text" class="input--xxsmall form-control" data-ng-model="userStartDate.month" data-init-value-on-scope="" name="userStartDate.month" id="userStartDate.month1" value="">
+
+
+                </div>
+
+                <div class="form-group form-group-year">
+
+
+
+
+            <label for="userStartDate.year" class=" label--dateField-group">
+                <span class="label__text">
+                    Year
+                </span>
+            </label>
+            <input type="text" class="input--xsmall form-control" data-ng-model="userStartDate.year" data-init-value-on-scope="" name="userStartDate.year" id="userStartDate.year1" value="">
+
+
+                </div>
+            </div>
+
+</fieldset>
+
+</div>
+
+
+
+</form>
+  

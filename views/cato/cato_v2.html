@@ -1,0 +1,36 @@
+{{<cato_layout_no_nav}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+
+
+{{$pageContent}}
+    {{>cato_3_header}}
+    {{>cato_3}}
+    <div class="form-group">
+        <a class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#next-button').click(function(){
+
+                if($('#yes').is(':checked')){
+                    window.location.href = "commercial_software.html" + window.location.search;
+                }
+                else{
+                    window.location.href = "eligibility_start_v3.html" + window.location.search;
+                }
+
+
+            })
+        });
+    </script>
+{{/pageScripts}}
+
+{{/cato_layout_no_nav}}

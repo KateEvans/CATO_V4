@@ -1,0 +1,976 @@
+<style>
+
+    .summary, .summary_2, .summary_3, .summary_4 , .summary_5, .summary_6, .summary_7, .summary_8, .summary_9  {
+        text-decoration: underline;
+    }
+
+    .summary:hover, .summary_2:hover, .summary_3:hover, .summary_4:hover , .summary_5:hover, .summary_6:hover,
+    .summary_7:hover, .summary_8:hover, .summary_9:hover,
+    {
+        color: #2e8aca;
+    }
+
+    .summary, .summary_2, .summary_3, .summary_4 , .summary_5, .summary_6, .summary_7, .summary_8, .summary_9 {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    .disabled_header{
+        color:#999;
+        margin-left: 1.5em;
+    }
+
+    .header_state{
+        font-size: 0.9em;
+    }
+
+    .arrow-down, .arrow-side, .arrow-down_2, .arrow-side_2, .arrow-down_3, .arrow-side_3
+    , .arrow-down_4, .arrow-side_4, .arrow-down_5, .arrow-side_5, .arrow-down_6, .arrow-side_6
+    , .arrow-down_7, .arrow-side_7, .arrow-down_8, .arrow-side_8, .arrow-down_9, .arrow-side_9
+    {
+        margin-left:0px;
+        width:25px;
+        display:inline-block;
+        color:#005ea5;
+        cursor:pointer;
+    }
+
+    div#panel-indent, div#panel-indent_3, div#panel-indent_4, div#panel-indent_5, div#panel-indent_6
+    , div#panel-indent_7, div#panel-indent_8, div#panel-indent_9
+    {
+        display: none;
+    }
+
+
+    .div-table{
+        display:table;
+        width:100%;
+        background-color:#fff;
+        border-top:0px solid  #666666;
+        border-bottom:0px solid  #666666;
+        border-spacing:0px;/*cellspacing:poor IE support for  this*/
+    }
+
+    .div-table-row{
+        display:table-row;
+        width:auto;
+        clear:both;
+    }
+
+    /*.div-table-col{
+        float:left;/!*fix for  buggy browsers*!/
+        display:table-column;
+        width:25%;
+        /!*background-color:#fff;*!/
+        padding: 0.5em 0;
+    }*/
+
+    .div-table-col:nth-child(1){
+        width:73%;
+        padding-left:0.5em;
+        float:left;/*fix for  buggy browsers*/
+        margin-bottom: 1.75em;
+    }
+
+
+    .div-table-col:nth-child(2){
+        float:left;/*fix for  buggy browsers*/
+        margin-bottom: 1.75em;
+        display:table-column;
+        width:25%;
+        text-align: right;
+        font-weight: bold;
+
+    }
+
+
+    .inline{
+        display: inline;
+    }
+
+    .float_right{
+        float: right;
+    }
+
+
+    p.heading{
+        font-weight:bold;
+        padding-left: 0.5em;
+    }
+
+</style>
+
+
+<br />
+
+<span id="showHide" style="float:right">
+    <span id="open"><a href="#">Show all</a></span>
+    <span id="close"><a href="#">Hide all</a></span>
+</span>
+
+
+<form method="POST" action="/accountsapprove" class="form">
+
+    <div class="form-group"></div>
+
+    <!-- #### ABOUT YOUR RETURN ACCORDION #### -->
+    <section class="block-summary" id="accordion_1">
+
+        <div>
+            <span class="arrows inline">
+                <span class="arrow-side">&#9658;</span><span class="arrow-down">&#9660;</span>
+            </span>
+            <span class="summary heading-small" style="margin-top: 0">
+                <span id="link">About your return</span>
+            </span>
+            <div class="inline float_right"><a class="block-summary__edit-link" href="#">Edit</a></div>
+            <div class="inline float_right" style="margin:0.2em 1em 0 2.35em; font-size: 0.9em; font-weight: bold; color: #999">Completed</div>
+
+        </div>
+
+        <div class="panel-indent" id="panel-indent" aria-hidden="false" style="margin-top: 1em">
+            <fieldset>
+                <div class="div-table">
+
+                    <!-- BOX B40 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B40</span>
+                            Are you owed a repayment for this period?
+                        </div>
+                        <div class="div-table-col">No</div>
+                    </div>
+
+                    <!-- BOX B45 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B45</span>
+                            Are you owed a repayment for an earlier period?
+                        </div>
+                        <div class="div-table-col">No</div>
+                    </div>
+
+                    <!-- BOX B55 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B55</span>
+                            Are any of your figures estimated?
+                        </div>
+                        <div class="div-table-col">No</div>
+                    </div>
+
+                    <!-- BOX BFQ1 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>BFQ1</span>
+                            Did you receive any franked investment income?
+                        </div>
+                        <div class="div-table-col">No</div>
+                    </div>
+
+
+                </div>
+            </fieldset>
+        </div>
+
+    </section>
+    <!-- #### END OF SECTION #### -->
+
+    <!-- #### LOANS TO PARTICIPATORS #### -->
+    <a name="loans"></a>
+    <section class="block-summary" id="accordion_2">
+
+        <div>
+            <span class="arrows_2 inline">
+                <span class="arrow-side_2">&#9658;</span><span class="arrow-down_2">&#9660;</span>
+            </span>
+            <span class="summary_2 heading-small" style="margin-top: 0">
+                <span id="link_2">Loans to participators</span>
+            </span>
+            <div class="inline float_right"><a class="block-summary__edit-link" href="http://localhost:3000/cato/loans_company_made.html?name=James&outstanding=2000&AP_date=31/12/2015&AmountRepaidBetween_1=100&b_day_1=01&b_month_1=01&b_year_1=2016&AmountRepaidAfter1=150&repaidAfter_day1=15&repaidAfter_month1=1&repaidAfter_year1=2016&AmountRepaidAfter2=125&repaidAfter_day2=16&repaidAfter_month2=01&repaidAfter_year2=2016&Rcounter=2&amountWrittenOff1=200&w_day1=01&w_month1=02&w_year1=2016&amountWrittenOff2=180&w_day2=02&w_month2=02&w_year2=2016&Wcounter=2">Edit</a></div>
+            <div class="inline float_right" style="margin:0.2em 1em 0 2.35em; font-size: 0.9em; font-weight: bold; color: #999">Completed</div>
+
+        </div>
+
+        <div class="panel-indent" id="panel-indent_2" aria-hidden="false" style="margin-top: 1em">
+            <fieldset>
+
+                <div class="div-table">
+
+                    <!--<p class="heading">Calculations</p>-->
+
+                    <!-- BOX A5 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A5</span>
+                            Have loans made during the period been released, or written off before the end of the period?
+                        </div>
+                        <div class="div-table-col">No</div>
+                    </div>
+
+                    <!-- BOX A15 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A15</span>
+                            Total loans within S419 ICTA 1988 made during the period which have not been repaid, released or written off before the end of the period
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!--<p class="heading">In the 9 months after the period</p>-->
+
+                    <!-- BOX A20 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A20</span>
+                            Tax due before any relief for loans repaid, released or written off after the end of the period
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX A30 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A30</span>
+                            Total amount repaid
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX A35 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A35</span>
+                            Total amount released or written off
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX A40 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A40</span>
+                            Total loans
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX A45 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A45</span>
+                            Tax relief due
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX A55 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A55</span>
+                            Total amount repaid
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX A60 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A60</span>
+                            Total amount released or written off
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX A65 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A65</span>
+                            Total loans
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX A70 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A70</span>
+                            Tax relief due
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX A75 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A75</span>
+                            Total loans outstanding
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX A80 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A80</span>
+                            Tax payable
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+
+                </div>
+            </fieldset>
+        </div>
+
+    </section>
+    <!-- #### END OF SECTION #### -->
+
+    <!-- #### TAX CALCULATIONS #### -->
+    <section class="block-summary" id="accordion_3">
+
+        <div>
+            <span class="arrows_3 inline">
+                <span class="arrow-side_3">&#9658;</span><span class="arrow-down_3">&#9660;</span>
+            </span>
+            <span class="summary_3 heading-small" style="margin-top: 0">
+                <span id="link_3">Tax calculations</span>
+            </span>
+            <div class="inline float_right"><a class="block-summary__edit-link" href="#">Edit</a></div>
+            <div class="inline float_right" style="margin:0.2em 1em 0 2.35em; font-size: 0.9em; font-weight: bold; color: #999">Completed</div>
+
+        </div>
+
+        <div class="panel-indent" id="panel-indent_3" aria-hidden="false" style="margin-top: 1em">
+            <fieldset>
+
+                <div class="div-table">
+
+                    <!--<p class="heading">Calculations</p>-->
+
+                    <!-- BOX B145 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B145</span>
+                            Total turnover from trade
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B155 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B155</span>
+                            Total profit from trading
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!--<p class="heading">In the 9 months after the period</p>-->
+
+                    <!-- BOX B160 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B160</span>
+                            Trading losses brought forward and claimed against profits
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX A30 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>A30</span>
+                            Total amount repaid
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B165 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B165</span>
+                            Net trading profits
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B170 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B170</span>
+                            Bank, building society or other interest, and profits from non-trading loan relationships
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B190 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B190</span>
+                            Income from a property business
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B235 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B235</span>
+                            Profits before other deductions and reliefs
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B275 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B275</span>
+                            Total trading losses in this period, or a later period
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B295 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B295</span>
+                            Total deductions and reliefs
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B300 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B300</span>
+                            Profits before qualifying donations and group relief
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B305 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B305</span>
+                            Qualifying donations
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B315 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B315</span>
+                            Profits chargeable to Corporation Tax taxable profit (profit you'll need to pay Corporation Tax on)
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B430 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B430</span>
+                            Corporation Tax
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B440 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B440</span>
+                            Corporation Tax chargeable
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B475 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B475</span>
+                            Net Corporation Tax liability
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B480 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B480</span>
+                            Tax payable on loans to participators (directors and shareholders)
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B510 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B510</span>
+                            Tax chargeable
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B515 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B515</span>
+                            Income Tax deducted from gross income included in profits
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B520 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B520</span>
+                            Income Tax repayable to the company
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B525 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B525</span>
+                            Self assessment of tax payable
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B595 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B595</span>
+                            Tax already paid (and not already repaid) Tax already paid (not including anything you've overpaid and been paid back)
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B600 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B600</span>
+                            Tax outstanding
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B605 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B605</span>
+                            Tax overpaid including surplus or payable credits
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+
+                </div>
+            </fieldset>
+        </div>
+
+    </section>
+    <!-- #### END OF SECTION #### -->
+
+    <!-- #### ALLOWANCES AND EXPENDITURE #### -->
+    <section class="block-summary" id="accordion_4">
+
+        <div>
+            <span class="arrows_4 inline">
+                <span class="arrow-side_4">&#9658;</span><span class="arrow-down_4">&#9660;</span>
+            </span>
+            <span class="summary_4 heading-small" style="margin-top: 0">
+                <span id="link_4">Allowances and expenditure</span>
+            </span>
+            <div class="inline float_right"><a class="block-summary__edit-link" href="#">Edit</a></div>
+            <div class="inline float_right" style="margin:0.2em 1em 0 2.35em; font-size: 0.9em; font-weight: bold; color: #999">Completed</div>
+
+        </div>
+
+        <div class="panel-indent" id="panel-indent_4" aria-hidden="false" style="margin-top: 1em">
+            <fieldset>
+
+                <div class="div-table">
+
+                    <!--<p class="heading">Calculations</p>-->
+
+                    <!-- BOX B620 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B620</span>
+                            Franked investment income (income from dividends received from another company)
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B690 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B690</span>
+                            Capital allowance, annual investment allowance / Annual investment allowance used to calculate your trading profit
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B695 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B695</span>
+                            Total capital allowances claimed in the special rate pool
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B700 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B700</span>
+                            Balancing charges in the special rate pool
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B705 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B705</span>
+                            Total capital allowances claimed in the main pool
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B710 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B710</span>
+                            Balancing charges in the main pool
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B760 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B760</span>
+                            First year allowance claimed on machinery and plant
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B765 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B765</span>
+                            Designated environmentally friendly machinery and plant Capital allowances from the energy technology list
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B775 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B775</span>
+                            Other machinery and plant Other capital allowances
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+
+    </section>
+    <!-- #### END OF SECTION #### -->
+
+    <!-- #### LOSSES #### -->
+    <section class="block-summary" id="accordion_5">
+
+        <div>
+            <span class="arrows_5 inline">
+                <span class="arrow-side_5">&#9658;</span><span class="arrow-down_5">&#9660;</span>
+            </span>
+            <span class="summary_5 heading-small" style="margin-top: 0">
+                <span id="link_5">Losses</span>
+            </span>
+            <div class="inline float_right"><a class="block-summary__edit-link" href="#">Edit</a></div>
+            <div class="inline float_right" style="margin:0.2em 1em 0 2.35em; font-size: 0.9em; font-weight: bold; color: #999">Completed</div>
+
+        </div>
+
+        <div class="panel-indent" id="panel-indent_5" aria-hidden="false" style="margin-top: 1em">
+            <fieldset>
+
+                <div class="div-table">
+
+                    <!-- BOX B780 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B780</span>
+                            Losses from trade Only include losses from trade that happened in the UK
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+
+    </section>
+    <!-- #### END OF SECTION #### -->
+
+    <!-- #### REPAYMENTS #### -->
+    <section class="block-summary" id="accordion_6">
+
+        <div>
+            <span class="arrows_6 inline">
+                <span class="arrow-side_6">&#9658;</span><span class="arrow-down_6">&#9660;</span>
+            </span>
+            <span class="summary_6 heading-small" style="margin-top: 0">
+                <span id="link_6">Repayments</span>
+            </span>
+            <div class="inline float_right"><a class="block-summary__edit-link" href="#">Edit</a></div>
+            <div class="inline float_right" style="margin:0.2em 1em 0 2.35em; font-size: 0.9em; font-weight: bold; color: #999">Completed</div>
+
+        </div>
+
+        <div class="panel-indent" id="panel-indent_6" aria-hidden="false" style="margin-top: 1em">
+            <fieldset>
+
+                <div class="div-table">
+
+                    <!-- BOX B860 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B860</span>
+                            Do not repay sums of <strong>xxx</strong> or less
+                        </div>
+                        <!--<div class="div-table-col">£0</div>-->
+                    </div>
+
+                    <!-- BOX B865 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B865</span>
+                            Repayment of Corporation Tax
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                    <!-- BOX B870 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B870</span>
+                            Repayment of Income Tax
+                        </div>
+                        <div class="div-table-col">£0</div>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+
+    </section>
+    <!-- #### END OF SECTION #### -->
+
+    <!-- #### PAYEE #### -->
+    <section class="block-summary" id="accordion_7">
+
+        <div>
+            <span class="arrows_7 inline">
+                <span class="arrow-side_7">&#9658;</span><span class="arrow-down_7">&#9660;</span>
+            </span>
+            <span class="summary_7 heading-small" style="margin-top: 0">
+                <span id="link_7">Payee</span>
+            </span>
+            <div class="inline float_right"><a class="block-summary__edit-link" href="#">Edit</a></div>
+            <div class="inline float_right" style="margin:0.2em 1em 0 2.35em; font-size: 0.9em; font-weight: bold; color: #999">Completed</div>
+
+        </div>
+
+        <div class="panel-indent" id="panel-indent_7" aria-hidden="false" style="margin-top: 1em">
+            <fieldset>
+
+                <div class="div-table">
+
+                    <!-- BOX PayeeQ01 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <!--<span class="text&#45;&#45;center box-number"><span class="visuallyhidden">Box</span>B860</span>-->
+                            Who do you want repayments to be paid to?
+                        </div>
+                        <div class="div-table-col">Sharon Shepherd</div>
+                    </div>
+
+                    <!-- BOX B955 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B955</span>
+                            Name
+                        </div>
+                        <div class="div-table-col">Sharon Shepherd</div>
+                    </div>
+
+                    <!-- BOX B960 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B960</span>
+                            Address
+                        </div>
+                        <div class="div-table-col">1 Grosvenor Square, London SW1 2HR</div>
+                    </div>
+
+                    <!-- BOX B965 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B965</span>
+                            Payment reference
+                        </div>
+                        <div class="div-table-col">PR-12345</div>
+                    </div>
+
+                    <p class="heading">'Bank details of the person to be paid' IF REPAYMENT MADE TO A NOMINATED PERSON</p>
+
+
+                    <!-- BOX B920 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B920</span>
+                            Name of bank or building society
+                        </div>
+                        <div class="div-table-col">Halifax</div>
+                    </div>
+
+                    <!-- BOX B925 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B925</span>
+                            Sort code
+                        </div>
+                        <div class="div-table-col">112233</div>
+                    </div>
+
+                    <!-- BOX B930 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B930</span>
+                            Account number
+                        </div>
+                        <div class="div-table-col">12345678</div>
+                    </div>
+
+                    <!-- BOX B935 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B935</span>
+                            If repayment to be made to nominated person: "Name of the account holder". If repayment to be made to company: "Name of the company"'
+                        </div>
+                        <div class="div-table-col">ACME Limited</div>
+                    </div>
+
+                    <!-- BOX B940 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>B940</span>
+                            Building society roll/reference number (if applicable)
+                        </div>
+                        <div class="div-table-col">TC445321</div>
+                    </div>
+
+
+                </div>
+            </fieldset>
+        </div>
+
+    </section>
+    <!-- #### END OF SECTION #### -->
+
+    <!-- #### TAX AVOIDANCE #### -->
+    <section class="block-summary" id="accordion_8">
+
+        <div>
+            <span class="arrows_8 inline">
+                <span class="arrow-side_8">&#9658;</span><span class="arrow-down_8">&#9660;</span>
+            </span>
+            <span class="summary_8 heading-small" style="margin-top: 0">
+                <span id="link_8">Tax avoidance</span>
+            </span>
+            <div class="inline float_right"><a class="block-summary__edit-link" href="#">Edit</a></div>
+            <div class="inline float_right" style="margin:0.2em 1em 0 2.35em; font-size: 0.9em; font-weight: bold; color: #999">Completed</div>
+
+        </div>
+
+        <div class="panel-indent" id="panel-indent_8" aria-hidden="false" style="margin-top: 1em">
+            <fieldset>
+
+                <div class="div-table">
+
+                    <!-- BOX J5 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>J5</span>
+                            Scheme reference number
+                        </div>
+                        <div class="div-table-col">Ref123456</div>
+                    </div>
+
+                    <!-- BOX J5A -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>J5A</span>
+                            Accounting period in which the expected advantage arises
+                        </div>
+                        <div class="div-table-col">31/12/2015</div>
+                    </div>
+
+                    <!-- BOX J10 -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>J10</span>
+                            Scheme reference number
+                        </div>
+                        <div class="div-table-col">Ref6543</div>
+                    </div>
+
+                    <!-- BOX J10A -->
+                    <div class="div-table-row">
+                        <div class="div-table-col">
+                            <span class="text--center box-number"><span class="visuallyhidden">Box</span>J10A</span>
+                            Accounting period in which the expected advantage arises
+                        </div>
+                        <div class="div-table-col">Ref6543</div>
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+
+    </section>
+    <!-- #### END OF SECTION #### -->
+
+
+
+    <!-- #### BANK DETAILS #### -->
+    <!--<section class="block-summary" id="accordion_8">
+
+        <div>
+            <span class="arrows inline">
+                &lt;!&ndash;<span class="arrow-side_1">&#9658;</span><span class="arrow-down_1">&#9660;</span>&ndash;&gt;
+            </span>
+            <span class="heading-small disabled_header" style="margin-top: 0">
+                <span id="link_8">Bank details</span>
+            </span>
+            <div class="inline float_right"><span class="header_state">Not started</span></div>
+
+        </div>
+
+    </section>-->
+    <!-- #### END OF SECTION #### -->
+
+
+</form>
+  

@@ -1,0 +1,28 @@
+.box-number {
+    @include box-sizing(border-box);
+    background-color: $panel-colour;
+    border: 0;
+    color: $text-colour;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    min-width: 60px;
+    padding: 0.1em 0.5em;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .box-number {
+        width: 100%;
+    }
+}
+
+.box-number--inline {
+    @extend .box-number;
+    display: inline;
+}
+
+.box-number-explanation .box-number {
+    width: auto;
+}

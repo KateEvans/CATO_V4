@@ -1,0 +1,180 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+{{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_loans_company_made_header}}
+    {{>cato_loans_company_made_2}}
+    <div class="form-group">
+        <br>
+        <a href="/cato/loan_earlier_periods.html" class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+
+        $(".arrow-down").hide();
+        $(".arrow-down_1").hide();
+        $(".arrow-down_2").hide();
+        $(".arrow-down_3").hide();
+        $('#writeOffs_2b').hide();
+
+        /*$('#writeOffs').hide();
+        $('#writeOffs_1b').hide();
+        $('#person_loan2').hide();
+        $('#writeOffs_2a').hide();
+        $('#person_loan3').hide();*/
+
+
+        $( ".summary" ).click(function() {
+            $('#panel-indent').toggle( "fast", function() {
+            });
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+        });
+
+        $( ".summary_1" ).click(function() {
+            $('#panel-indent_1').toggle( "fast", function() {
+            });
+            $('.arrows_1').find(".arrow-side_1, .arrow-down_1").toggle();
+        });
+
+        $( ".summary_2" ).click(function() {
+            $('#panel-indent_2').toggle( "fast", function() {
+            });
+            $('.arrows_2').find(".arrow-side_2, .arrow-down_2").toggle();
+        });
+
+        $( ".summary_3" ).click(function() {
+            $('#panel-indent_3').toggle( "fast", function() {
+            });
+            $('.arrows_3').find(".arrow-side_3, .arrow-down_3").toggle();
+        });
+
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+
+        var name = getUrlParameter('name');
+        var outstandingAmount = getUrlParameter('outstanding');
+        var amountRepaidAfter = getUrlParameter('AmountRepaidAfter');
+        var amountRepaidBetween = getUrlParameter('AmountRepaidBetween');
+        var amountWrittenOff = getUrlParameter('amountWrittenOff');
+        var amountWriteOff = getUrlParameter('amountWriteOff');
+
+        var b_day = getUrlParameter('b_day');
+        var b_month = getUrlParameter('b_month');
+        var b_year = getUrlParameter('b_year');
+        var repaymentDate = b_day + "/" + b_month + "/" + b_year;
+
+        var w_day = getUrlParameter('w_day');
+        var w_month = getUrlParameter('w_month');
+        var w_year = getUrlParameter('w_year');
+        var writtenOffDate = w_day + "/" + w_month + "/" + w_year;
+
+        var add_WriteOff = getUrlParameter('add_WriteOff');
+        var type = getUrlParameter('type');
+
+
+        if(add_WriteOff == "2b" || add_WriteOff != undefined){
+            $('#writeOffs_2b').show();
+        }
+
+
+        if(type == "edit" || type != undefined){
+            $('#repaymentAmount_2').text("£5000");
+        }
+
+
+        /* #### NAVIGATE TO ADD ANOTHER WRITE OFF #### */
+        $("#add_writeOff").click(function(){
+            window.location.href = "/cato/loan_writeOffs.html" + window.location.search + "&add_WriteOff=1";
+        });
+
+        /* #### ADD ANOTHER LOAN LINK #### */
+
+        $('#add_loan').click(function(){
+
+            window.location.href = "/cato/add_loan_1.html?addLoan=HenryJones"
+
+        });
+
+        /* #### ADD WRITE OFF FOR 2ND LOAN #### */
+        $('#add_writeOff_2b').click(function(){
+            window.location.href = "/cato/loan_writeOffs.html?add_WriteOff=2b&name="+name+"&outstanding="+outstandingAmount;
+        })
+
+
+        /* #### CHANGE PAYMENT LINK #### */
+        $('#edit_name_2').click(function(){
+//            window.location.href="/cato/add_loan_1.html?name=Sam Jones&outstanding=11000&type=edit";
+            window.location.href="/cato/add_loan_1.html?&name=Sam Jones&outstanding=5000&AP_date=31/12/2015&" +
+                    "AmountRepaidBetween_1=4000&b_day_1=31&b_month_1=01&b_year_1=2016&AmountRepaidAfter=1000&" +
+                    "repaidAfter_day=31&repaidAfter_month=02&repaidAfter_year=2016&amountWrittenOff=1000&w_day=15" +
+                    "&w_month=2&w_year=2016&type=edit";
+        });
+
+
+        $('#edit_name').click(function(){
+
+            window.location.href="/cato/add_loan.html"+ window.location.search +"&update=loan1";
+        })
+
+        /*$('#edit_repayments').click(function(){
+            window.location.href="/cato/loan_repayments.html"+ window.location.search +"&state=edit";
+        })
+
+        $('#edit_repay_date').click(function(){
+            window.location.href="/cato/loan_repayments.html"+ window.location.search +"&state=edit";
+        })
+
+        $('#edit_writeOffs').click(function(){
+            window.location.href="/cato/loan_writeOffs.html?name="+name+"&outstanding="+outstandingAmount+"&amountWriteOff="+amountWrittenOff+"&w_day="+w_day+"&w_month="+w_month+"&w_year="+w_year+"&repaidAmount="+repaidAmount+"&b_day="+r_day+"&r_month="+r_month+"&r_year="+r_year+"&state=edit";
+        })
+
+        $("#delete_repayments").click(function () {
+            $('#repayments').remove();
+        });
+
+        $("#delete_writeOffs").click(function () {
+            $('#writeOffs').remove();
+        });*/
+
+        $('#delete_writeOffs_2b').click(function(){
+            $('#writeOffs_2b').remove();
+        });
+
+
+
+
+
+    });
+
+</script>
+
+
+{{/pageScripts}}
+
+{{/cato_layout}}

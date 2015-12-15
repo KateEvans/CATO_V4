@@ -1,0 +1,172 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_loan_repayments_header}}
+    {{>cato_loan_repayments_2_2}}
+    <div class="form-group">
+        <br>
+        <a class="next button" id="next-button">Save and continue</a>
+        <ul>
+            <li><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        /* #### hide the AP date panel #### */
+        $('#late_paymentDate').hide();
+
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+        var name = getUrlParameter('name');
+        var outstandingAmount = getUrlParameter('outstanding');
+        var amountRepaidBetween = getUrlParameter('AmountRepaidBetween_1');
+        var state = getUrlParameter('state');
+        var add_loan = getUrlParameter('add_loan');
+        var type = getUrlParameter('type');
+        var late_b_payment = null;
+        var between_day = getUrlParameter('b_day_1');
+        var between_month = getUrlParameter('b_month_1');
+        var between_year = getUrlParameter('b_year_1');
+        var update = getUrlParameter('update');
+
+
+
+
+        if(update == "loan1"){
+//            console.log(amountRepaidBetween);
+            $('#repaid_between').val(amountRepaidBetween);
+            $('#b_day').val(between_day);
+            $('#b_month').val(between_month);
+            $('#b_year').val(between_year);
+
+        }
+
+
+
+        if(type == "edit" || type != undefined){
+            $('#repaid_between').val(amountRepaidBetween);
+            $("#b_day").val(between_day);
+            $("#b_month").val(between_month);
+            $("#b_year").val(between_year);
+        }
+
+
+
+        if(add_loan != undefined){
+            $('#repaid_between').attr('id', 'repaid_between_1');
+            $('#b_day').attr('id', 'b_day_1');
+            $('#b_month').attr('id', 'b_month_1');
+            $('#b_year').attr('id', 'b_year_1');
+            $('#day').attr('id', 'day_1');
+            $('#month').attr('id', 'month_1');
+            $('#year').attr('id', 'year_1');
+        }
+
+
+        /* #### POPULATE THE LOAN RECIPIENT AND OUTSTANDING AMOUNT AT TOP OF PAGE #### */
+        $('#Loaned-to').text(name);
+        $('#outstanding-amount').text(outstandingAmount);
+
+
+
+        /* #### CHECK TO SEE IF DATE IS OUT OF RANGE THEN SHOW THE PANEL BELOW #### */
+        $("#b_month").on("keyup", function(){
+
+            if(parseInt(this.value) > 9 && parseInt($('#b_year').val( )) > 2015){
+                $('#late_paymentDate').show();
+                late_b_payment = "yes";
+            } else {
+                $('#late_paymentDate').hide();
+                late_b_payment = null;
+            }
+
+        });
+
+
+
+        $("#b_year").on("keyup", function(){
+
+            if(parseInt(this.value) > 2015 && parseInt($('#b_month').val( )) > 9){
+                $('#late_paymentDate').show();
+                late_b_payment = "yes";
+            } else {
+                $('#late_paymentDate').hide();
+                late_b_payment = null;
+            }
+
+        });
+
+
+
+        $('#next-button').click(function(){
+            var repaidBetween_1 = $('#repaid_between').val();
+            var b_day_1 = $('#b_day').val();
+            var b_month_1 = $('#b_month').val();
+            var b_year_1 = $    ('#b_year').val();
+
+
+            if(update == "loan1"){
+                var AmountRepaidBetween = $('#repaid_between').val();
+//                window.alert(AmountRepaidBetween);
+                var b_day_1 = $('#b_day').val();
+                var b_month_1 = $('#b_month').val();
+                var b_year_1 = $('#b_year').val();
+//                window.location.href = "/cato/loan_repayments_v2.html?name=" + editedName + "&outstanding=" +  editedOutstandingAmount + newUrlString;
+
+                var str = window.location.search;
+//                console.log(str.substring(1));
+
+//                console.log("/cato/loans_company_made.html?AmountRepaidBetween_1"+AmountRepaidBetween+"&b_day_1="+b_day_1+"&b_month_1="+b_month_1+"&b_year_1="+b_year_1+"&"+str);
+
+                window.location.href = "/cato/loans_company_made.html?AmountRepaidBetween_1="+AmountRepaidBetween+"&b_day_1="+b_day_1+"&b_month_1="+b_month_1+"&b_year_1="+b_year_1+"&"+str;
+
+            } else if(type == "edit" || type != undefined){
+                /*window.location.href = "/cato/loan_repayments.html?name="+name+"&outstanding="+outstandingAmount+"&AP_date=31/12/2015" +
+                        "&AmountRepaidBetween_1="+repaidBetween_1+"&b_day_1="+b_day_1+"&b_month_1="+b_month_1+"&b_year_1="+b_year_1+"&AmountRepaidAfter=1000&" +
+                        "repaidAfter_day=31&repaidAfter_month=02&repaidAfter_year=2016&amountWrittenOff=1000&w_day=15" +
+                        "&w_month=2&w_year=2016&type=edit";*/
+
+                window.location.href = "/cato/loan_writeOffs.html?name="+name+"&outstanding="+outstandingAmount+"&AP_date=31/12/2015" +
+                        "&AmountRepaidBetween_1="+repaidBetween_1+"&b_day_1="+b_day_1+"&b_month_1="+b_month_1+"&b_year_1="+b_year_1+"&AmountRepaidAfter=1000&" +
+                        "repaidAfter_day=31&repaidAfter_month=02&repaidAfter_year=2016&amountWrittenOff=1000&w_day=15" +
+                        "&w_month=2&w_year=2016&type=edit";
+            } else {
+                window.location.href = "/cato/loan_repayments_v1.html" + window.location.search +
+                        "&AmountRepaidBetween_1="+repaidBetween_1+"&b_day_1="+b_day_1+"&b_month_1="+b_month_1+
+                        "&b_year_1="+b_year_1;
+            }
+
+
+        });
+
+
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

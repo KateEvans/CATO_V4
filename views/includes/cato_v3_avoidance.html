@@ -1,0 +1,79 @@
+<form>
+    <br />
+                <fieldset id="taxAvoidance" class="cato-accounts" data-journey="ct600:navigate:tax-avoidance">
+
+
+
+
+
+
+    <div class="form-group  ">
+        <span id="val_schemeReferenceNumber">
+            
+        </span>
+        <label for="schemeReferenceNumber" class="form-label">
+            <a href="#schemeReferenceNumberHelp" class="help-link" onclick="$('#schemeReferenceNumberHelp').toggle(); return false;">
+            Scheme/Promoter reference number
+            </a>
+        </label>
+
+       <div class="hidden-help" data-ng-class="{ 'visuallyhidden': !schemeReferenceNumberHelp }" id="schemeReferenceNumberHelp">
+        <p>Enter the reference number given to you by the promoter or by HMRC for each notifiable proposal or notifiable arrangement if you have either:</p><ul class="list-bullet"><li>implemented the arrangement in the accounting period affected by this return and expect Corporation Tax advantage in this or a later period.</li><li>previously implemented the scheme and expect a Corporation Tax advantage in this or a later accounting period.</li></ul><p>You should enter the reference number even if you have already entered the number on a return covering an earlier period, unless you no longer expect any tax advantage to arise from the notifiable arrangements either in this accounting period or in any later accounting period.</p>
+       </div>
+
+      <input type="text" class="form-control  form-control form-control-3-4 " name="schemeReferenceNumber" id="schemeReferenceNumber" value="">
+
+    </div>
+
+
+<fieldset class=" form-group" id="advantagedInAccountingPeriod">
+        <legend class="form-label">
+        Accounting period in which the expected advantage arises
+            
+        </legend>
+             <div class="help">For example, 31 03 2014</div>
+             <br />
+            <div class="date-of-birth">
+                <div class="form-group">
+             
+            <label for="advantagedInAccountingPeriod.day" class=" label--dateField-group">
+                <span class="label__text">
+                    Day
+                </span>
+            </label>
+            <input type="text" class="input--xxsmall form-control ng-pristine ng-valid" data-ng-model="advantagedInAccountingPeriod.day" data-init-value-on-scope="" name="advantagedInAccountingPeriod.day" id="advantagedInAccountingPeriod.day" value="">
+        
+    
+                </div>
+
+                <div class="form-group flush--bottom">
+                  
+            <label for="advantagedInAccountingPeriod.month" class=" label--dateField-group">
+                <span class="label__text">
+                    Month
+                </span>
+            </label>
+            <input type="text" class="input--xxsmall form-control ng-pristine ng-valid" data-ng-model="advantagedInAccountingPeriod.month" data-init-value-on-scope="" name="advantagedInAccountingPeriod.month" id="advantagedInAccountingPeriod.month" value="">
+        
+    
+                </div>
+
+                <div class="form-group form-group-year">
+                    
+
+            <label for="advantagedInAccountingPeriod.year" class=" label--dateField-group">
+                <span class="label__text">
+                    Year
+                </span>
+            </label>
+            <input type="text" class="input--xsmall form-control ng-pristine ng-valid" data-ng-model="advantagedInAccountingPeriod.year" data-init-value-on-scope="" name="advantagedInAccountingPeriod.year" id="advantagedInAccountingPeriod.year" value="">
+        
+    
+                </div>
+            </div>
+        
+</fieldset>
+
+</fieldset>
+
+</form>

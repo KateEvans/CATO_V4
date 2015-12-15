@@ -1,0 +1,90 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 89%;
+}
+
+</style>
+
+<br />
+
+<form method="POST" class="form">
+
+
+    <div class="form-group">
+        <fieldset class="form-group" id="2">
+            <p>You can't use this service for capital allowances in your special rate or single asset pools, except cars.</p>
+
+            <p><a href="https://www.gov.uk/work-out-capital-allowances/rates-and-pools" target="_blank" rel="external">Find out what assets go into
+            your special rate or single asset pools</a></p>
+
+            <ul>
+                <li>
+                    <label for="q2"  class="block-label">Yes - I have capital allowances in my special rate or single asset pools
+                        <input type="radio" id="q2" name="q2" value="1"/>
+                    </label>
+                </li>
+
+                <li style="clear:left;">
+                    <label for="q21"  class="block-label">No - I don't have allowances in these pools
+                        <input type="radio" id="q21" name="q2" value="2"/>
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+    </div>
+
+</form>

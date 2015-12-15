@@ -1,0 +1,48 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+    <div class="form-group" id="q_2">
+        <fieldset class="form-group" id="2">
+            <!--<legend class="form-label-bold">Is your company part of a group?</legend>-->
+            <p class="form-hint">For example, it has parent or subsidiary companies, or it pools resources
+                with another company.</p>
+            <ul>
+                <li>
+                    <label for="type3"  class="block-label" onclick="$('#q_3').hide().invisible()">Yes - my company’s part of a group
+                        <input type="radio" id="type3" name="q2" value="1"/>
+                    </label>
+                </li>
+
+                <li style="clear:left;">
+                    <label for="type4"  class="block-label" onclick="$('#q_3').show().visible()">No - my company isn’t part of a group
+                        <input type="radio" id="type4" name="q2" value="2"/>
+                    </label>
+                </li>
+
+            </ul>
+
+        </fieldset>
+    </div>
+
+</form>
+  

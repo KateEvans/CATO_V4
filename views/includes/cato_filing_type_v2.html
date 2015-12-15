@@ -1,0 +1,66 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+
+
+
+        <div class="form-group">
+            <fieldset class="form-group" id="selectedPeriod">
+
+                <legend class="form-label-bold">Select your type of organisation or company</legend>
+
+                <ul>
+                    <li>
+                        <label for="type1"  class="block-label">Limited company (you sell goods or services)
+                            <input type="radio" id="type1" name="selectedType" value="1"/>
+                        </label>
+                    </li>
+
+                    <li style="clear:left;">
+                        <label for="type2"  class="block-label">Non-profit organisation (charity, community amateur sports club, members’
+                            club or voluntary association)
+                            <input type="radio" id="type2" name="selectedType" value="2"/>
+                        </label>
+                    </li>
+
+                    <li style="clear:left;">
+                        <label for="type3"  class="block-label">Company limited by guarantee (your company has members instead
+                            of shareholders)
+                            <input type="radio" id="type3" name="selectedType" value="3"/>
+                        </label>
+                    </li>
+
+                </ul>
+            </fieldset>
+        </div>
+
+        <div class="form-group">
+            <p>Not every type of organisation can use this service to file the accounts and tax return.</p>
+
+                <p>If your type of organisation isn’t listed here, you’ll need to use a different service to file your company accounts and tax return.</p>
+        </div>
+
+
+        
+</form>
+  

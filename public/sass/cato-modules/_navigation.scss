@@ -1,0 +1,39 @@
+/************************* Styling for left nav/menu *************************/
+.company-navigation {
+    padding: 0.5em 0 1em 0;
+	border-bottom: 1px solid $grey-2;
+    span {
+		font-weight:bold;
+    }
+}
+.cato-header {
+	h2.heading-medium {
+		display:block;
+		margin-top:0;
+	}
+	.heading-xlarge {
+		margin:0.85em 0 0;
+	}
+	p { /* This style is just to reproduce the "answer build" look and feel, and not for final production*/
+	padding:0.5em;
+	background-color:$grey-3;
+	}
+	a { /* This style is just to reproduce the "answer build" look and feel, and not for final production*/
+	float:right;
+	}
+}
+ul.question-status {
+	a.current, a.current:visited {
+		font-weight: bold;
+		text-decoration:none;
+	}
+	.tick {
+		color: $button-colour;  /*$green is too dark, button-colour gives a nice, bright green*/
+	}
+}
+.not-started, a.disabled, a.disabled:visited {
+	text-decoration:none;
+	color: $grey-1;
+	cursor: default !important;
+	pointer-events: none;
+}

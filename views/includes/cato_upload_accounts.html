@@ -1,0 +1,250 @@
+<script type="text/javascript">
+
+
+    function show_table(){
+        if($('#upload_table').hide()){
+            $('#upload_table').show();
+            $('#file_description').show();
+        }
+    }
+
+
+
+
+    function makeFileList() {
+        var input = document.getElementById("filesToUpload");
+
+        var table = document.getElementById("fileList");
+        while (table.hasChildNodes()) {
+            table.removeChild(table.firstChild);
+        }
+        for (var i = 0; i < input.files.length; i++) {
+            var row = document.createElement("tr");
+            var td = document.createElement("td");
+            td.innerHTML = input.files[i].name;
+            var cell1 = document.createElement("td");
+            cell1.innerHTML = "<img id='progressBar' src='/public/images/progress_bar.gif' width='30' height='20'> <span id='percentage'>20%</span>";
+            var cell2 = document.createElement("td");
+            cell2.innerHTML = "(1,360KB)";
+            var cell3 = document.createElement("td");
+            cell3.innerHTML = "<a href='#' onclick='deleteRow(this)'>Remove</a>";
+            row.appendChild(td);
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            row.appendChild(cell3);
+
+            table.appendChild(row);
+
+            $("#selectFile").addClass("disabled");
+            $("#filesToUpload").attr("disabled", "disabled");
+
+
+            var a = document.getElementById("uploadedSize");
+            setTimeout(function(){ a.innerHTML = '1,360KB'}, 6000);
+
+
+            var x = document.getElementById("progressBar");
+            setTimeout(function(){ x.setAttribute('width', '90')}, 2000);
+            setTimeout(function(){ x.setAttribute('width', '145')}, 4000);
+            setTimeout(function(){ x.setAttribute('width', '193')}, 6000);
+
+            var y = document.getElementById("percentage");
+            setTimeout(function(){ y.innerHTML = '45%'}, 2000);
+            setTimeout(function(){ y.innerHTML = '75%'}, 4000);
+            setTimeout(function(){ y.innerHTML = 'Uploaded'}, 6000);
+
+            var z = document.getElementById('progressBar');
+            setTimeout(function(){z.parentNode.removeChild(z)}, 6000);
+
+
+        }
+    }
+
+
+    function deleteRow(o){
+        var table = document.getElementById("fileList");
+        var remove = o.parentNode.parentNode;
+        remove.parentNode.removeChild(remove);
+
+        if(!table.hasChildNodes()) {
+            var row = document.createElement("tr");
+            var cell1 = document.createElement("td");
+            cell1.innerHTML = 'No files selected';
+            var cell2 = document.createElement("td");
+            var cell3 = document.createElement("td");
+            var cell4 = document.createElement("td");
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            row.appendChild(cell3);
+            row.appendChild(cell4);
+            table.appendChild(row);
+            $('#file_description').hide();
+        }
+
+
+        $("#selectFile").removeClass("disabled");
+        $("#filesToUpload").removeAttr("disabled", "disabled");
+    }
+</script>
+
+<style>
+    .fileUpload {
+        position: relative;
+        overflow: hidden;
+        margin: 10px;
+    }
+    .fileUpload input.upload {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    .upload_button{
+        background-color: #ccc;
+        border: medium none;
+        border-radius: 0;
+        box-shadow: 0 2px 0 #003518;
+        color: #000;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 0.8em;
+        line-height: 1.25;
+        margin: 0 15px 15px 0;
+        padding: 0.52632em 0.78947em 0.26316em;
+        position: relative;
+        text-decoration: none;
+        vertical-align: top;
+    }
+
+
+    .upload_button.disabled,
+    .upload_button[disabled="disabled"],
+    .upload_button[disabled] {
+        zoom: 1;
+        filter: alpha(opacity=50);
+        opacity: 0.5;
+    }
+
+    .upload_button:hover {
+        background-color: #aaa;
+    }
+
+
+    .summary {
+        text-decoration: underline;
+    }
+    .summary:hover {
+        color: #2e8aca;
+    }
+    .summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    .arrow-down, .arrow-side{
+        margin-left:0px;
+        width:25px;
+        display:inline-block;
+        color:#005ea5;
+        cursor:pointer;
+    }
+
+    div.panel-indent{
+        display: none;
+    }
+
+
+</style>
+
+<br />
+
+
+<table id="upload_table">
+    <thead>
+        <tr>
+            <td>File name</td>
+            <td width="220">Status</td>
+            <td>Size</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody id="fileList">
+        <tr>
+            <td>No files uploaded</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div style="background-color:#F8F8F8; padding:0.5em">
+
+            <div style="float: left; margin-right: 0.5em"><img src="/public/images/icon-important-2x.png" width="24em"></div>
+    Your answers will be saved at the end of every page. If you need to leave, you can return to the last saved page.
+
+</div>
+
+
+<div style="margin: 20px 0 0 0">
+    <form method="post" action="/" enctype="multipart/form-data">
+
+        <br />
+        <div>
+            <p><span class="heading-small">Upload limit:</span> 5,000KB</p>
+            <p><span class="heading-small">Total uploaded:</span> <span id="uploadedSize">0KB</span> </p>
+        </div>
+
+
+        <div id="selectFile" class="fileUpload upload_button">
+            <span>Select a file</span>
+            <input type="file" id="filesToUpload" multiple="" onChange="makeFileList(); show_table()" class="upload" />
+        </div>
+
+    </form>
+
+
+    <section style="margin-top: 2em">
+        <span class="arrows" style="display: inline">
+            <span class="arrow-side">&#9658;</span><span class="arrow-down">&#9660;</span>
+        </span>
+        <span class="summary">How do I create a PDF of my accounts?</span>
+
+        <div class="panel-indent" id="details-content-0" aria-hidden="false">
+            <p>
+                If your accounts are on paper, you can either:
+            </p>
+
+            <ul class="list-bullet">
+                <li>scan your paper accounts and save the scanned file as a PDF</li>
+                <li>type your accounts into a document or spreadsheet, the save the file as a PDF</li>
+            </ul>
+
+            <p>
+                If your accounts are in a file that's not a PDF, you can usually save it as a PDF. Open the file and
+                look for a 'PDF' option in these menus:
+            </p>
+
+            <ul class="list-bullet">
+                <li>'File' then 'Save'</li>
+                <li>'File' then 'Export'</li>
+                <li>'File' then 'Print'</li>
+            </ul>
+            <!--<p>If you can't get your accounts into a PDF file, you can use HMRC's <a href="?" rel="external">PDF filing software</a>.</p>-->
+            <p><strong>If you sign out here, all your answers so far will be saved.</strong></p>
+        </div>
+
+
+    </section>
+</div>
+
+

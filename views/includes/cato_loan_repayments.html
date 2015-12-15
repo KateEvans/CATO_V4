@@ -1,0 +1,183 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 89%;
+}
+
+.secondary{
+    background-color: grey !important;
+}
+</style>
+
+
+<form method="POST" action="/accountsapprove" class="form">
+    <br />
+    <div id="taxAvoidanceSummary" class="block-summary">
+        <div class="block-summary__text">
+            <span class="heading-small">Loan recipient:</span> <span id="Loaned-to"></span><br />
+            <span class="heading-small">Loan amount outstanding after 31 December 2015:</span> <span id="outstanding-amount"></span>
+            <!--<span class="heading-small">Less already repaid:</span> £3,000-->
+        </div>
+    </div>
+
+    <div id="banner_repayment" style="background-color:#eaf4f3; padding:0.5em; border-left:4px solid #41a096">
+        <span>Repayment for <span id="repay_date"></span> has been successfully added.</span>
+    </div>
+
+    <p>Enter details of a repayment that took place after 30 September 2016.<br />If there was more than 1, you'll be able to add more later.</p>
+
+
+    <div class="form-group">
+        <fieldset id="paymentDate">
+            <p class="form-label-bold">
+                <span class="text--center box-number"><span class="visuallyhidden">Box</span> LP02.3</span>
+                What date was the repayment?
+            </p>
+            <small class="hidden-help" id="late2Help"><p>We only need to know the date of the most recent repayment</p></small>
+            <div class="date-of-birth">
+                <div class="form-group">
+
+                    <label for="day" class=" label--dateField-group">
+              <span class="label__text">
+                  Day
+              </span>
+                    </label>
+                    <input type="text" class="input--xxsmall form-control" name="day" id="r_day" value="">
+
+                </div>
+
+                <div class="form-group flush--bottom">
+
+                    <label for="month" class=" label--dateField-group">
+              <span class="label__text">
+                  Month
+              </span>
+                    </label>
+                    <input type="text" class="input--xxsmall form-control" name="month" id="r_month" value="">
+
+                </div>
+
+                <div class="form-group form-group-year">
+                    <label for="year" class=" label--dateField-group">
+              <span class="label__text">
+                  Year
+              </span>
+                    </label>
+                    <input type="text" class="input--xsmall form-control" name="year" id="r_year" value="">
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="form-group">
+        <fieldset>
+            <p class="form-label-bold" for="repaid_periodEnd">
+                <span class="text--center box-number"><span class="visuallyhidden">Box</span> LP02.5</span>
+                How much was repaid after 30 September 2016?
+            </p>
+            <!--<p class="form-hint">Leave this empty or enter 0 if you didn’t receive any repayments.</p>-->
+            £<input class="form-control" id="repaid_after" type="text" style="width: 25%;">
+        </fieldset>
+    </div>
+
+
+
+
+    <div class="form-group" id="late_paymentDate">
+        <fieldset>
+            <p class="form-label-bold">
+                <span class="text--center box-number"><span class="visuallyhidden">Box</span> LP02.4</span>
+                What's the end date of the accounting period in which this repayment took place?
+            </p>
+            <div class="date-of-birth">
+                <div class="form-group">
+
+                    <label for="day" class=" label--dateField-group">
+              <span class="label__text">
+                  Day
+              </span>
+                    </label>
+                    <input type="text" class="input--xxsmall form-control" name="day" id="day" value="">
+
+                </div>
+
+                <div class="form-group flush--bottom">
+
+                    <label for="month" class=" label--dateField-group">
+              <span class="label__text">
+                  Month
+              </span>
+                    </label>
+                    <input type="text" class="input--xxsmall form-control" name="month" id="month" value="">
+
+                </div>
+
+                <div class="form-group form-group-year">
+                    <label for="year" class=" label--dateField-group">
+              <span class="label__text">
+                  Year
+              </span>
+                    </label>
+                    <input type="text" class="input--xsmall form-control" name="year" id="year" value="">
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+
+
+</form>
+  

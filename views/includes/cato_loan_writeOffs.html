@@ -1,0 +1,179 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 89%;
+}
+
+.secondary{
+    background-color: grey !important;
+}
+
+</style>
+
+
+<form method="POST" action="/accountsapprove" class="form">
+    <br />
+    <div id="taxAvoidanceSummary" class="block-summary">
+        <div class="block-summary__text">
+            <span class="heading-small">Loan recipient:</span> <span id="Loaned-to"></span><br />
+            <span class="heading-small">Loan amount outstanding after 31 December 2015:</span> <span id="outstanding-amount"></span>
+        </div>
+    </div>
+
+
+
+    <div id="banner_writeOffs" style="background-color:#eaf4f3; padding:0.5em; border-left:4px solid #41a096">
+        <span>Write off for <span id="repay_date"></span> has been successfully added.</span>
+    </div>
+
+
+    <div class="form-group" id="writeOffs">
+        <p>Enter details of each time you wrote off or released any part of these loans after 31 December 2015.
+        If there was more than 1 write off or release, you'll be able to add more.</p>
+
+        <fieldset id="paymentDate">
+            <label class="form-label-bold">
+                <span class="text--center box-number"><span class="visuallyhidden">Box</span> LP03.1</span>
+                Date written off
+            </label>
+            <div class="date-of-birth">
+                <div class="form-group">
+
+                    <label for="w_day" class=" label--dateField-group">
+              <span class="label__text">
+                  Day
+              </span>
+                    </label>
+                    <input type="text" class="input--xxsmall form-control" name="day" id="w_day" value="">
+
+                </div>
+
+                <div class="form-group flush--bottom">
+
+                    <label for="w_month" class=" label--dateField-group">
+              <span class="label__text">
+                  Month
+              </span>
+                    </label>
+                    <input type="text" class="input--xxsmall form-control" name="month" id="w_month" value="">
+
+                </div>
+
+                <div class="form-group form-group-year">
+                    <label for="w_year" class=" label--dateField-group">
+              <span class="label__text">
+                  Year
+              </span>
+                    </label>
+                    <input type="text" class="input--xsmall form-control" name="year" id="w_year" value="">
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset style="margin-top: 2em">
+            <label class="form-label-bold" for="amount_writeOff">
+                <span class="text--center box-number"><span class="visuallyhidden">Box</span> LP03.3</span>
+                Amount written off or released
+            </label>
+            £<input class="form-control" id="amount_writeOff" type="text" style="width: 25%;">
+        </fieldset>
+
+    </div>
+
+
+
+    <div class="form-group" id="late_paymentDate" style="margin-top: 2em">
+        <fieldset>
+            <label class="form-label-bold">
+                <span class="text--center box-number"><span class="visuallyhidden">Box</span> LP03.2</span>
+                What's the end date of the accounting period in which this write off or release took place?
+            </label>
+            <div class="date-of-birth">
+                <div class="form-group">
+
+                    <label for="lw_day" class=" label--dateField-group">
+              <span class="label__text">
+                  Day
+              </span>
+                    </label>
+                    <input type="text" class="input--xxsmall form-control" name="lw_day" id="lw_day" value="">
+
+                </div>
+
+                <div class="form-group flush--bottom">
+
+                    <label for="lw_month" class=" label--dateField-group">
+              <span class="label__text">
+                  Month
+              </span>
+                    </label>
+                    <input type="text" class="input--xxsmall form-control" name="lw_month" id="lw_month" value="">
+
+                </div>
+
+                <div class="form-group form-group-year">
+                    <label for="lw_year" class=" label--dateField-group">
+              <span class="label__text">
+                  Year
+              </span>
+                    </label>
+                    <input type="text" class="input--xsmall form-control" name="lw_year" id="lw_year" value="">
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</form>
+  

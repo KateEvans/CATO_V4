@@ -1,0 +1,158 @@
+<style>
+input[disabled] {
+  border: 0;
+  text-align: right;
+  cursor: default;
+}
+h3 {
+  font-weight: bold;
+}
+div.headed-summary {
+  margin-bottom: 0;
+}
+div.grid-1-4 {
+  text-align: right;
+}
+input {
+}
+
+.form-total {
+  border-top: 1px solid #bfc1c3 !important;
+  border-bottom: 1px solid #bfc1c3 !important;
+  border-left: none;
+  border-right: none;
+  font-weight: 700;
+  text-align: right;
+  width: 100%;
+}
+
+.payee {
+  display:none;
+}
+
+.payee input {
+  text-align: left;
+}
+
+#bankDetails input {
+  text-align: left;
+}
+
+</style>
+<form method="POST" action="/accountsapprove" class="form">
+<br />
+
+
+<fieldset class="form-group inline">
+  
+    <legend>
+        
+        Who should receive the repayment?
+    </legend>
+
+  
+    
+      <label for="estimatedFigures2-true" class="block-label" onclick="$('.payee').hide();">
+           The company 
+        <input type="radio" id="estimatedFigures2-true" name="estimatedFigures2" value="true">
+      </label>
+    
+      <label for="estimatedFigures2-false" class="block-label" onclick="$('.payee').show();">
+           Someone else 
+        <input type="radio" id="estimatedFigures2-false" name="estimatedFigures2" value="false">
+      </label>
+    
+  
+  
+    
+</fieldset>
+
+
+<div class="payee">
+
+
+          <br />
+
+          <h2>Details of individual authorised to receive the payment</h2>
+
+          <br />
+        
+          <div class="form-group">
+          <fieldset>
+            <label class="form-label" for="name">Name</label>
+              <input class="form-control" id="name" type="text" onblur="$('#nominee').text(this.value);">
+          </fieldset>
+        </div>
+
+      <p style="font-weight:bold;">Address</p>
+
+
+          <div class="address-group">
+
+            <div class="form-group">
+              <label class="form-label" for="building">Building and street</label>
+                <input class="form-control" id="building" type="text"><br />
+                <input class="form-control" id="" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="town">Town or city</label>
+              <input class="form-control" id="town" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="county">County</label>
+                <input class="form-control" id="county" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="postcode">Postcode</label>
+                <input class="form-control" id="postcode" type="text"><br />
+              </div>
+
+          </div>
+
+          <div class="form-group">
+        </div>
+</div>
+
+<h2>Bank details</h2>
+
+<fieldset id="bankDetails" class="cato-calculation-form" data-journey="ct600:navigate:bank-details" >
+      
+            <div class="form-group">
+              <label class="form-label" for="postcode">Name of bank or building society</label>
+                <input class="form-control" id="postcode" type="text"><br />
+              </div>
+            <div class="form-group">
+              <label class="form-label" for="postcode">Name of account</label>
+                <input class="form-control" id="postcode" type="text"><br />
+              </div>
+            <div class="form-group">
+              <label class="form-label" for="postcode">Sort code</label>
+                <input class="form-control" id="postcode" type="text"><br />
+              </div>
+            <div class="form-group">
+              <label class="form-label" for="postcode">Account number</label>
+                <input class="form-control" id="postcode" type="text"><br />
+              </div>
+
+            <div class="form-group">
+              <label class="form-label" for="postcode">Building society roll/reference (optional)</label>
+                <input class="form-control" id="postcode" type="text"><br />
+              </div>
+
+          <fieldset class="payee" style="margin-bottom: 30px;">
+
+           <label class="form-label" for="ref"><a href="#nominatorHelp" class="help-link" onclick="$('#referenceHelp').toggle();return false;">Payment reference</a></label>
+          <small class="hidden-help" id="referenceHelp"><p>This reference will appear on the recipient’s bank statement. For example, if the recipient is an accountant or other agent, you may wish to provide an account number or company name.</p></small>
+             
+              <input class="form-control" id="ref" type="text">
+<br />
+
+          </fieldset>
+
+    
+</fieldset>
+</form>
+  

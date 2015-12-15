@@ -1,0 +1,170 @@
+.header__menu__proposition-name {
+  @include bold-24;
+  text-decoration: none;
+  color: $white;
+}
+
+.header__menu__proposition-links {
+  @include bold-16;
+  float: right;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  @include media-down(tablet) {
+    width: 100%;
+  }
+
+  li {
+    display: inline;
+    padding-right: 15px;
+  }
+
+  a{
+    @include bold-16;
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.page-navigation {
+  @include media-down(mobile) {
+    margin-top: 0;
+  }
+
+  width: 64%;
+  float: left;
+
+  ol {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    overflow: hidden;
+    width:50%;
+
+    @include ie-lte(7) {
+      width: 49%;
+    }
+
+    @include media-down(mobile) {
+      float: none;
+      display: block;
+      width: auto;
+    }
+  }
+
+  li {
+    list-style: decimal;
+    list-style-position: outside;
+    margin-right: 0.75em;
+    margin-left: 1.5em;
+    clear: left;
+
+    @include ie-lte(7) {
+      list-style: none;
+      margin-left: 0;
+      display: list-item;
+    }
+
+    @include media-down(mobile) {
+      float: none;
+      margin: 0 1em 0 2.25em;
+    }
+
+    a {
+      padding: 0.25em 1em 0.25em 0;
+      @include core-16;
+
+      @include ie-lte(7) {
+        display: inline;
+        float: left;
+      }
+    }
+
+    @include media-down(mobile) {
+      @include core-19($line-height: (45/19));
+
+      span, a {
+        border-top: solid 1px $grey-6;
+        margin: 0 -1em 0 -2.25em;
+        padding: 1em 1em 1em 2.75em;
+      }
+    }
+  }
+}
+
+.tabs-nav {
+  margin: 2em 0;
+  border-bottom: 1px solid #ccc;
+  list-style-type: none;
+  margin-bottom: 1em;
+
+  @include media(tablet) {
+    @extend %contain-floats;
+    display: flex;
+  }
+
+  &.__tab {
+    margin-bottom: 0;
+    border-top: 1px solid $border-colour;
+    display: block;
+    padding: 0.5em 0;
+    text-decoration: none;
+
+    .count {
+      background-color: $red;
+      color: $white;
+      padding: 0 5px;
+    }
+
+    @include media(tablet) {
+      float: left;
+      background-color: #dee0e2;
+      border: 0;
+      margin: 0.25em 0.25em 0.25em 0;
+      padding: 0.45em;
+    }
+  }
+
+  &.__tab--active {
+    border-top: 1px solid $border-colour;
+    margin-bottom: 0;
+    padding: 0.5em 0;
+    display:block;
+
+    @include media(tablet) {
+      border: 1px solid $border-colour;
+      border-bottom: 1px solid #fff;
+      float: left;
+      margin: 0 0.25em -1px 0;
+      padding: 0.7em;
+    }
+  }
+}
+
+.back-link {
+  @include core-19();
+  border-bottom: 1px solid $black;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: em(30);
+
+  &:before {
+    content: "\2039"; // Unicode &lsaquo;
+    padding-right: em(5);
+  }
+
+}
+
+a.back-link {
+  color: $black;
+}
+
+#global-breadcrumb {
+  margin:0;
+  padding-top:0;
+
+  li {
+    margin-bottom: 0;
+  }
+}

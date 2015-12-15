@@ -1,0 +1,65 @@
+{{<cato_layout_no_nav}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_eligibility_clubs_tax_period_header}}
+    {{>cato_eligibility_clubs_tax_period}}
+    <div class="form-group">
+        <br>
+        <!--<a href="/cato/turnover_clubs.html" class="next button" id="next-button">Continue</a>-->
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+
+        $('#next-button').click(function(){
+//                window.location.href = "account_dates.html" + window.location.search;
+                window.location.href = "charities_eligibility_start" + window.location.search;
+
+        })
+
+
+
+        $(".arrow-down").hide();
+
+
+        $( ".summary" ).click(function() {
+            $('.panel-indent').toggle( "fast", function() {
+            });
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+            console.log('.arrows');
+        });
+
+
+        $("#dates").hide();
+
+        $('#date1').click(function(){
+            hideDatesPanel();
+        })
+
+        $('#date2').click(function(){
+            hideDatesPanel();
+        })
+
+        function hideDatesPanel(){
+            $('#dates').css( "display", "none");
+        }
+
+
+        $('#own_dates').click(function(){
+            $("#dates").show();
+        });
+
+
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout_no_nav}}

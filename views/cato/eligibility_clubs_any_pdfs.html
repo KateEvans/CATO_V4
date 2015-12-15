@@ -1,0 +1,51 @@
+{{<cato_layout_no_nav}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_eligibility_any_pdfs_header}}
+    {{>cato_eligibility_clubs_any_pdfs}}
+    <div class="form-group">
+        <br>
+        <!--<a href="/cato/eligibility_clubs_adjust_figures.html" class="next button" id="next-button">Continue</a>-->
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $(".arrow-down").hide();
+//        $(".panel-indent").hide();
+
+        $('#next-button').click(function(){
+
+            if($('#yes').prop('checked')){
+                window.location.href = "clubs_exclusion_1.html" + window.location.search;
+            }
+            else{
+                window.location.href = "/cato/eligibility_clubs_leased_cars.html" + window.location.search;
+            }
+
+        })
+
+
+        $( ".summary" ).click(function() {
+
+            $('.panel-indent').toggle( "fast", function() {
+            });
+
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+
+            console.log('.arrows');
+        });
+
+
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout_no_nav}}

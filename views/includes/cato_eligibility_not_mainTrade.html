@@ -1,0 +1,92 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 89%;
+}
+
+</style>
+
+<br />
+
+<form method="POST" class="form">
+
+
+    <div class="form-group">
+        <fieldset class="form-group" id="2">
+            <!--<span class="form-label-bold">Do you need to report leased cars?</span>-->
+
+            <p class="form-hint">For example, income from selling goods as a sideline or charging administration fees.
+                This appears as 'other income' in the accounts.
+            </p>
+
+
+            <ul>
+                <li>
+                    <label for="q2"  class="block-label">Yes - I need to report other income over £1,000
+                        <input type="radio" id="q2" name="q2" value="1"/>
+                    </label>
+                </li>
+
+                <li style="clear:left;">
+                    <label for="q21"  class="block-label">No - I don't need to report other income over £1,000
+                        <input type="radio" id="q21" name="q2" value="2"/>
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+    </div>
+
+</form>

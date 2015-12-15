@@ -1,0 +1,275 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+{{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_loans_company_made_header}}
+    {{>cato_loans_company_made_3}}
+    <div class="form-group">
+        <br>
+        <a href="/cato/loan_earlier_periods.html" class="next button" id="next-button">Continue</a>
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+
+        $(".arrow-down").hide();
+        $(".arrow-down_1").hide();
+        $(".arrow-down_2").hide();
+        $(".arrow-down_3").hide();
+
+
+        $( ".summary" ).click(function() {
+            $('#panel-indent').toggle( "fast", function() {
+            });
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+        });
+
+        $( ".summary_1" ).click(function() {
+            $('#panel-indent_1').toggle( "fast", function() {
+            });
+            $('.arrows_1').find(".arrow-side_1, .arrow-down_1").toggle();
+        });
+
+        $( ".summary_2" ).click(function() {
+            $('#panel-indent_2').toggle( "fast", function() {
+            });
+            $('.arrows_2').find(".arrow-side_2, .arrow-down_2").toggle();
+        });
+
+        $( ".summary_3" ).click(function() {
+            $('#panel-indent_3').toggle( "fast", function() {
+            });
+            $('.arrows_3').find(".arrow-side_3, .arrow-down_3").toggle();
+        });
+
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+
+        var name = getUrlParameter('name');
+        var outstandingAmount = getUrlParameter('outstanding');
+        var amountRepaidAfter = getUrlParameter('AmountRepaidAfter');
+        var amountRepaidBetween = getUrlParameter('AmountRepaidBetween');
+        var amountWrittenOff = getUrlParameter('amountWrittenOff');
+        var amountWriteOff = getUrlParameter('amountWriteOff');
+        var add_loan = getUrlParameter('add_loan');
+        var add_loan_2 = getUrlParameter('add_loan2');
+//        console.log(amountWriteOff);
+
+        var b_day = getUrlParameter('b_day');
+        var b_month = getUrlParameter('b_month');
+        var b_year = getUrlParameter('b_year');
+        var repaymentDate = b_day + "/" + b_month + "/" + b_year;
+
+        var w_day = getUrlParameter('w_day');
+        var w_month = getUrlParameter('w_month');
+        var w_year = getUrlParameter('w_year');
+        var writtenOffDate = w_day + "/" + w_month + "/" + w_year;
+
+
+        var writeOff_1 = getUrlParameter('amountWrittenOff_1');
+        var writeOff_2a = getUrlParameter('amountWrittenOff_2a');
+
+
+
+
+       /* $('#repaymentAmount').text("£"+ amountRepaidBetween);
+        $('#last_repayment_date').text(repaymentDate);
+        $('#writtenOffAmount').text(amountRepaidAfter);
+        $('#outstanding-amount').text("£"+outstandingAmount);
+        $('#Loaned-to').text(name);*/
+
+        /* #### OPEN THE PANEL FOR THE 1ST WRITE OFF FOR THE 2ND LOAN IF THERE IS ONE #### */
+        /*if(writeOff_2a != undefined ){
+            var w_day_2a = getUrlParameter('w_day_2a');
+            var w_month_2a = getUrlParameter('w_month_2a');
+            var w_year_2a = getUrlParameter('w_year_2a');
+            var writtenOffDate_1 = w_day_2a + "/" + w_month_2a + "/" + w_year_2a;
+
+            $('#writeOffs_2a').show();
+            $('#writtenOffAmount_2').text(writeOff_2a);
+            $('#writeOff_date_2').text(writtenOffDate_1);
+            $('#').text();
+        }*/
+
+
+        /* #### OPEN THE PANEL TO SHOW THE 2ND LOAN #### */
+        /*if(add_loan == "1"){
+
+            var name_1 = getUrlParameter('name_1');
+            var outstandingAmount_2 = getUrlParameter('outstanding_1');
+            var amountRepaidAfter_1 = getUrlParameter('AmountRepaidAfter_1');
+            var amountRepaidBetween_1 = getUrlParameter('AmountRepaidBetween_1');
+            var amountWrittenOff_2a = getUrlParameter('amountWrittenOff_2a');
+            var amountWriteOff_1 = getUrlParameter('amountWriteOff_1');
+            var add_loan_1 = getUrlParameter('add_loan_1');
+
+            var b_day_1 = getUrlParameter('b_day_1');
+            var b_month_1 = getUrlParameter('b_month_1');
+            var b_year_1 = getUrlParameter('b_year_1');
+            var repaymentDate_1 = b_day_1 + "/" + b_month_1 + "/" + b_year_1;
+
+            $('#person_loan2').show();
+            $('#Loaned-to_2').text(name_1);
+            $('#repaymentAmount_2').text("£"+ amountRepaidBetween_1);
+            $('#outstanding-amount_2').text("£"+outstandingAmount_2);
+            $('#last_repayment_date_2').text(repaymentDate_1);
+        }
+
+        /!* #### OPEN THE PANEL TO SHOW THE 3RD LOAN #### *!/
+        if(add_loan_2 == "yes"){
+            var name_3 = getUrlParameter('name_2');
+            var outstandingAmount_3 = getUrlParameter('outstanding_2');
+            var repayments_2 = getUrlParameter('repayments_2');
+
+            $('#person_loan3').show();
+            $('#Loaned-to_3').text(name_3);
+            $('#outstanding-amount_3').text("£"+outstandingAmount_3);
+
+            if(repayments_2 == "none"){
+                $('#repaymentAmount_3').text('None');
+                $('#last_repayment_date_3').text('N/A');
+                $('#row_relief_due_3').remove();
+            }
+
+        }*/
+
+
+
+        /* #### NAVIGATE TO ADD ANOTHER WRITE OFF #### */
+        $("#add_writeOff").click(function(){
+            window.location.href = "/cato/loan_writeOffs.html" + window.location.search + "&add_WriteOff=1";
+        });
+
+        /* #### ADD ANOTHER LOAN LINK #### */
+
+        $('#add_loan').click(function(){
+
+            if(add_loan == "1"){
+                window.location.href = "/cato/add_loan.html" + window.location.search + "&add_loan2=yes";
+            } else {
+                window.location.href = "/cato/add_loan.html" + window.location.search + "&add_loan=1"
+            }
+
+        });
+
+        /* #### ADD WRITE OFF FOR 2ND LOAN #### */
+        $('#add_writeOff_2a').click(function(){
+            window.location.href = "/cato/loan_writeOffs.html" + window.location.search + "&add_WriteOff=2a";
+        })
+
+
+
+        if(writeOff_1 != undefined || writeOff_1 == "1"){
+            var amountWrittenOff_1 = getUrlParameter('amountWrittenOff_1');
+            var w_day_1 = getUrlParameter('w_day_1');
+            var w_month_1 = getUrlParameter('w_month_1');
+            var w_year_1 = getUrlParameter('w_year_1');
+            var writtenOffDate_1 = w_day_1 + "/" + w_month_1 + "/" + w_year_1;
+            $('#writtenOffAmount_1b').text(amountWrittenOff_1);
+            $('#writeOff_date_1b').text(writtenOffDate_1);
+            $('#writeOffs_1b').show();
+        }
+
+
+
+        if(amountWrittenOff == undefined && amountRepaidBetween != undefined){
+
+//            window.alert('1');
+
+            $('#repaymentAmount').text("£"+amountRepaidBetween);
+            $('#last_repayment_date').text(repaymentDate);
+            $('#row_write_off').remove();
+
+        } else if (amountWrittenOff != undefined && amountRepaidBetween == undefined){
+
+//            window.alert('2');
+
+            $('#writeOffs').show();
+            $('#writtenOffAmount').text("£"+amountWrittenOff);
+            $('#writeOff_date').text(writtenOffDate);
+            $('#row_repayment').remove();
+            $('#row_repay_date').remove();
+            $('#row_relief_due').remove();
+
+        } else if (amountWrittenOff != undefined && amountRepaidBetween != undefined){
+
+//            window.alert('3');
+
+            $('#writeOffs').show();
+            $('#writtenOffAmount').text("£"+amountWrittenOff);
+            $('#writeOff_date').text(writtenOffDate);
+            $('#repaymentAmount').text("£"+amountRepaidBetween);
+            $('#last_repayment_date').text(repaymentDate)
+
+        } else if (amountWriteOff == "none"){
+
+            window.alert('4');
+
+            $('#writeOffs').hide();
+        }
+
+
+
+
+        $('#edit_name').click(function(){
+
+            window.location.href="/cato/add_loan.html"+ window.location.search +"&update=loan1";
+        })
+
+        /*$('#edit_repayments').click(function(){
+            window.location.href="/cato/loan_repayments.html"+ window.location.search +"&state=edit";
+        })
+
+        $('#edit_repay_date').click(function(){
+            window.location.href="/cato/loan_repayments.html"+ window.location.search +"&state=edit";
+        })
+
+        $('#edit_writeOffs').click(function(){
+            window.location.href="/cato/loan_writeOffs.html?name="+name+"&outstanding="+outstandingAmount+"&amountWriteOff="+amountWrittenOff+"&w_day="+w_day+"&w_month="+w_month+"&w_year="+w_year+"&repaidAmount="+repaidAmount+"&b_day="+r_day+"&r_month="+r_month+"&r_year="+r_year+"&state=edit";
+        })*/
+
+        $("#delete_repayments").click(function () {
+            $('#repayments').remove();
+        });
+
+        $("#delete_writeOffs").click(function () {
+            $('#writeOffs').remove();
+        });
+
+
+
+
+
+    });
+
+</script>
+
+
+{{/pageScripts}}
+
+{{/cato_layout}}

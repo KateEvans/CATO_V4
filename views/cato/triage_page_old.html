@@ -1,0 +1,55 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$content}}
+
+<main id="wrapper" role="main">
+  <div id="content">
+
+	<div class="inner-block">
+    	<div class="phase-banner">
+        <p>
+          <strong class="phase-tag">BETA</strong>
+          <span>This is a <a data-sso="false" target="_blank" href="https://www.gov.uk/help/beta">trial service</a>. Help us improve it - send your <a data-sso="false" target="_blank" href="/beta-feedback" id="feedback-link">feedback</a>.</span>
+        </p>
+      	</div><!-- / .phase-banner --> 
+    	{{>cato_service_info}}
+  		<!--{{>cato_company_info}}-->
+ 	</div><!-- / .inner-block --> 
+
+
+
+    <div class="grid-wrapper">
+    
+      	<div class="grid grid-2-3">
+        	<div class="inner-block">
+          {{>cato_triage_header}}
+                {{>cato_triage}}
+                <div class="form-group">
+                <br>
+                <a href="#" class="next button" id="next-button">Continue</a>
+                <!--<a href="landing.html" class="next button" id="next-button">Continue</a>-->
+                <!--<a href="https://web-qa.tax.service.gov.uk/cato/dashboard" class="next button" id="next-button">Continue</a>-->
+                <ul>
+                <!--    <li><a href="/" target="_blank">Help on *page title* (opens in a new tab/window)</a></li>
+                  <li><a href="/" target="_blank">Preview your accounts so far (opens in a new tab/window)</a></li>-->
+                      <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+                  </ul>
+                </div>
+        	</div><!-- / .inner-block --> 
+      	</div><!-- / .grid .grid-2-3 -->
+      
+  	</div>
+    
+   </div><!-- / #content -->
+</main><!-- / #wrapper -->
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>scripts}}
+
+{{/bodyEnd}}
+
+{{/cato_layout}}

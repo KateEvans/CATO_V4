@@ -1,0 +1,165 @@
+<style>
+
+    .summary, .summary_1, .summary_2, .summary_3  {
+        text-decoration: underline;
+    }
+    .summary:hover, .summary_1:hover, .summary_2:hover, .summary_3:hover  {
+        color: #2e8aca;
+    }
+    .summary, .summary_1, .summary_2, .summary_3 {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    .arrow-down, .arrow-side, .arrow-down_1, .arrow-side_1, .arrow-down_2, .arrow-side_2, .arrow-down_3, .arrow-side_3{
+        margin-left:0px;
+        width:25px;
+        display:inline-block;
+        color:#005ea5;
+        cursor:pointer;
+    }
+
+    /*div#panel-indent, div#panel-indent_1, div#panel-indent_2, div#panel-indent_3{
+        display: none;
+    }*/
+
+
+    .div-table{
+        display:table;
+        width:100%;
+        background-color:#fff;
+        border-top:0px solid  #666666;
+        border-bottom:0px solid  #666666;
+        border-spacing:0px;/*cellspacing:poor IE support for  this*/
+        border:0px solid red;
+    }
+    .div-table-row{
+        display:table-row;
+        width:auto;
+        clear:both;
+    }
+    .div-table-col{
+        float:left;/*fix for  buggy browsers*/
+        display:table-column;
+        width:25%;
+        /*background-color:#fff;*/
+        padding: 0.5em 0;
+    }
+    .div-table-col:nth-child(1){
+        width:55%;
+        padding-left:0.5em;
+        border:0px solid red;
+    }
+
+    .div-table-col:nth-child(2){
+        float:left;/*fix for  buggy browsers*/
+        display:table-column;
+        width:13%;
+        /*background-color:#fff;*/
+        border:0px solid red;
+
+    }
+
+    .div-table-col:nth-child(3){
+        text-align: right;
+        float:left;/*fix for  buggy browsers*/
+        display:table-column;
+        width:25%;
+        border:0px solid red;
+    }
+
+
+    .div-table1{
+        display:table;
+        width:100%;
+        background-color:#fff;
+        border-top:0px solid  #666666;
+        border-bottom:0px solid  #666666;
+        border-spacing:0px;/*cellspacing:poor IE support for  this*/
+        border:0px solid red;
+    }
+    .div-table-row1{
+        display:table-row;
+        width:auto;
+        clear:both;
+    }
+    .div-table-col1{
+        float:left;/*fix for  buggy browsers*/
+        display:table-column;
+        width:25%;
+        /*background-color:#fff;*/
+        padding: 0.5em 0;
+    }
+    .div-table-col1:nth-child(1){
+        width:55%;
+        padding-left:0.5em;
+        border:1px solid red;
+    }
+
+    .div-table-col1:nth-child(2){
+        float:left;/*fix for  buggy browsers*/
+        display:table-column;
+        width:13%;
+        /*background-color:#fff;*/
+        border:1px solid red;
+
+    }
+
+    .div-table-col1:nth-child(3){
+        text-align: right;
+        float:left;/*fix for  buggy browsers*/
+        display:table-column;
+        width:25%;
+        border:1px solid red;
+    }
+
+    .bold{
+        font-weight: bold;
+    }
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+
+    <div class="div-table1">
+        <div class="div-table-row1">
+            <div class="div-table-col1">
+                Did you make any loans to directors or shareholders this period
+            </div>
+            <div class="div-table-col1"></div>
+            <div class="div-table-col1"><a href='#' id='edit1'>Edit</a><a href='#' style='padding-left: 0.7em' id='delete1'>Delete</a></div>
+        </div>
+
+        <div class="div-table-row1">
+            <div class="div-table-col1">
+                Did you make any loans to directors or shareholders this period
+            </div>
+            <div class="div-table-col1"></div>
+            <div class="div-table-col1"><a href='#' id='edit2'>Edit</a><a href='#' style='padding-left: 0.7em' id='delete2'>Delete</a></div>
+        </div>
+    </div>
+
+
+    <div>
+        <span class="heading-medium">Loans</span>
+    </div>
+
+    <div class="form-group" style="text-align: right">
+        <p>
+            <a id="add_loan" href="#">Add another loan</a>
+        </p>
+    </div>
+
+    <div id="section"></div>
+
+
+
+</form>
+  

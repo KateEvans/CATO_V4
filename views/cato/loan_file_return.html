@@ -1,0 +1,59 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_loan_file_return_header}}
+    {{>cato_loan_file_return}}
+    <div class="form-group">
+        <br>
+        <a class="next button" id="next-button">Save and continue</a>
+        <ul>
+            <li><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('#outstandingLoans').hide();
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+
+        var name = getUrlParameter('name');
+        var outstandingAmount = getUrlParameter('outstanding');
+        var amountWrittenOff = $('#amount_writeOff').val();
+        var day = $('#day').val();
+        var month = $('#month').val();
+        var year = $('#year').val();
+
+
+        $('#next-button').click(function(){
+//            window.location.href = "/cato/loans_company_made.html?name="+name+"&outstanding="+outstandingAmount+"&amountWriteOff"+amountWrittenOff+"&day="+day+"&month="+month+"&year="+year;
+            window.location.href = "/cato/loans_company_made.html"+window.location.search;
+        })
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

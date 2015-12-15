@@ -1,0 +1,85 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+td.row-label{
+    font-weight: bold;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+
+    <fieldset class="form-group" id=1" style="margin:1em">
+        <legend class="form-label-bold">Do you want to change the dates of your reporting periods?</legend>
+        <p>You can change your company’s reporting period (its financial year). You could do this to line up
+            with other important dates, for example.</p>
+        <p>Companies House and HM Revenue and Customs (HMRC) have different reporting periods for every company. They need to align.</p><br />
+
+
+        <table>
+            <tbody>
+           <!-- <tr>
+                <td class="row-label">Companies House period:</td>
+                <td>1 December 2013 to 1 May 2015</td>
+            </tr>-->
+            <tr>
+                <td class="row-label">HMRC period 1:</td>
+                <td>1 December 2013 to 30 November 2014</td>
+            </tr>
+            <tr>
+                <td class="row-label">HMRC period 2:</td>
+                <td>1 December 2013 to 1 May 2015</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <br />
+
+        <p>Your reporting period for Companies House is longer than 12 months, so you have 2 HMRC periods to fill the gap.</p>
+
+        <div class="form-group">
+            <details>
+                <summary><span class="summary">Why change the reporting period dates?</span></summary>
+                <div class="panel-indent">
+                    <p>You can change the end date of your Companies House period (‘period of accounts’) by 7 days.
+                        This will make your Companies House period longer or shorter.</p>
+
+                    <p>You could do this to align the Companies House reporting period with other important dates, for example.</p>
+
+                    <p>If you change your Companies House period, you’ll need to change your HMRC period so the start and end dates match.</p>
+
+                    <p>Your HMRC reporting period can be a maximum of 12 months. So if your Companies
+                        House period is longer than 12 months, you’ll need an extra HMRC period to fill the gap.</p>
+                </div>
+            </details>
+        </div>
+
+        <label for="type1" class="block-label">Yes - I want to change my dates
+            <input type="radio" id="type1" name="selectedType" value="1"/>
+        </label>
+        <label for="type2" class="block-label">No - I don't want to change my dates
+            <input type="radio" id="type2" name="selectedType" value="2"/>
+        </label>
+
+    </fieldset>
+
+
+</form>
+  

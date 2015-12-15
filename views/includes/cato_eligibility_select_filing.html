@@ -1,0 +1,253 @@
+<style>
+
+    .summary {
+        text-decoration: underline;
+    }
+    .summary:hover {
+        color: #2e8aca;
+    }
+    .summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+    .arrow-down, .arrow-side{
+        margin-left:0px;
+        width:25px;
+        display:inline-block;
+        color:#005ea5;
+        cursor:pointer;
+    }
+
+    div.panel-indent{
+        display: none;
+    }
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+
+
+
+        <div class="form-group">
+            <fieldset class="form-group" id="selectedPeriod">
+
+                <!--<legend>Select the type of accounts you're filing to HM Revenue and Customs (HMRC), and the type you're
+                    filing to Companies House.</legend>-->
+
+                {{#isJoint}}
+                <legend>Select the type of accounts you're filing to HM Revenue and Customs (HMRC), and the type you're
+                    filing to Companies House.</legend>
+                {{/isJoint}}
+                {{#isHMRC}}
+                <legend>Select the type of accounts you're filing to HM Revenue and Customs (HMRC).</legend>
+                {{/isHMRC}}
+                {{#isCoHo}}
+                <legend>Select the type of accounts you're filing to Companies House.</legend>
+                {{/isCoHo}}
+                {{#isCharities}}
+                <legend>Select the type of accounts you're filing to HM Revenue and Customs (HMRC), and the type you're filing to Companies House.</legend>
+                {{/isCharities}}
+
+
+                <!--<p>Micro-entities are very small companies - they can choose to file simpler accounts than larger companies.</p>-->
+
+
+                {{#isJoint}}
+                <p>If you send your profit and loss to Companies House, it will be available to the public.</p>
+                {{/isJoint}}
+                {{#isHMRC}}
+
+                {{/isHMRC}}
+                {{#isCoHo}}
+                <p>If you send your profit and loss to Companies House, it will be available to the public.</p>
+                {{/isCoHo}}
+
+                <!--<section>
+
+                    <span class="arrows" style="display: inline">
+                        <span class="arrow-side">&#9658;</span><span class="arrow-down">&#9660;</span>
+                    </span>
+                    <span class="summary">Find out about the types of accounts</span>
+
+                    <div class="panel-indent" id="details-content-0" aria-hidden="false">
+                        {{#isJoint}}
+                        <p>The types of accounts you can file are:</p>
+                        <ul class="list-bullet">
+                            <li>abbreviated accounts: the balance sheet and notes</li>
+                            <li>full accounts: balance sheet, profit and loss, directors’ report and notes</li>
+                            <li>standard micro-entity accounts: a shorter balance sheet, profit and loss, directors’ report and optional footnotes</li>
+                            <li>basic micro-entity accounts: just the shorter balance sheet and optional footnotes</li>
+                        </ul>
+                        {{/isJoint}}
+                        {{#isHMRC}}
+                        <p>The types of accounts you can file are:</p>
+                        <ul class="list-bullet">
+                            <li>full accounts: balance sheet, profit and loss, directors’ report and notes</li>
+                            <li>micro-entity accounts: a shorter balance sheet, profit and loss, directors’ report and optional footnotes</li>
+                        </ul>
+                        {{/isHMRC}}
+                        {{#isCoHo}}
+                        <p>The types of accounts you can file are:</p>
+                        <ul class="list-bullet">
+                            <li>abbreviated accounts: the balance sheet and notes</li>
+                            <li>full accounts: balance sheet, profit and loss, directors’ report and notes</li>
+                            <li>standard micro-entity accounts: a shorter balance sheet, profit and loss, directors’ report and optional footnotes</li>
+                            <li>basic micro-entity accounts: just the shorter balance sheet and optional footnotes</li>
+                        </ul>
+                        {{/isCoHo}}
+                    </div>
+                </section>-->
+
+                {{#isCharities}}
+                <p>The types of accounts you can file are:</p>
+                <ul class="list-bullet">
+                    <li>abbreviated accounts: the balance sheet and notes</li>
+                    <li>full accounts: balance sheet, profit and loss, directors’ report and notes</li>
+                </ul>
+                {{/isCharities}}
+            </fieldset>
+
+
+
+            <div>
+
+                {{#isJoint}}
+                <legend class="form-label-bold">Want to keep your profit and loss private?</legend>
+
+                <ul style="margin-top: 0.5em">
+                    <li>
+                        <input type="checkbox" id="chk_bx_filter" name="selectedType" value="1" style="margin-right: 0.5em"/>
+                        Only show filing options that will keep your profit and loss private
+                    </li>
+                </ul>
+                {{/isJoint}}
+                {{#isHMRC}}
+
+                {{/isHMRC}}
+                {{#isCoHo}}
+                <legend class="form-label-bold">Want to keep your profit and loss private?</legend>
+
+                <ul style="margin-top: 0.5em">
+                    <li>
+                        <input type="checkbox" id="chk_bx_filter" name="selectedType" value="1" style="margin-right: 0.5em"/>
+                        Only show filing options that will keep your profit and loss private
+                    </li>
+                </ul>
+                {{/isCoHo}}
+
+            </div>
+
+            {{#isJoint}}
+            <fieldset>
+                <ul id="account_list">
+                    <li>
+                        <label for="type1"  class="block-label">Abbreviated accounts to Companies House, and full accounts to HMRC
+                            <input type="radio" id="type1" name="selectedType" value="1"/>
+                        </label>
+                    </li>
+
+                    <li style="clear:left;">
+                        <label for="type2"  class="block-label">Full accounts to both Companies House and HMRC
+                            <input type="radio" id="type2" name="selectedType" value="2"/>
+                        </label>
+                    </li>
+
+                    <li style="clear:left;">
+                        <label for="type3"  class="block-label">Standard micro-entity accounts to both Companies House and HMRC
+                            <input type="radio" id="type3" name="selectedType" value="3"/>
+                        </label>
+                    </li>
+
+                    <li style="clear:left;">
+                        <label for="type3"  class="block-label">Basic micro-entity accounts to Companies House, and standard micro-entity accounts to HMRC
+                            <input type="radio" id="type4" name="selectedType" value="4"/>
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            {{/isJoint}}
+            {{#isHMRC}}
+            <fieldset>
+                <ul id="account_list">
+                    <li style="clear:left;">
+                        <label for="type2"  class="block-label">Full accounts
+                            <input type="radio" id="type2" name="selectedType" value="2"/>
+                        </label>
+                    </li>
+
+                    <li style="clear:left;">
+                        <label for="type3"  class="block-label">Micro-entity accounts
+                            <input type="radio" id="type3" name="selectedType" value="3"/>
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            {{/isHMRC}}
+            {{#isCoHo}}
+            <fieldset>
+                <ul id="account_list">
+                    <li>
+                        <label for="type1"  class="block-label">Abbreviated accounts
+                            <input type="radio" id="type1" name="selectedType" value="1"/>
+                        </label>
+                    </li>
+
+                    <li style="clear:left;">
+                        <label for="type2"  class="block-label">Full accounts
+                            <input type="radio" id="type2" name="selectedType" value="2"/>
+                        </label>
+                    </li>
+
+                    <li style="clear:left;">
+                        <label for="type3"  class="block-label">Standard micro-entity accounts
+                            <input type="radio" id="type3" name="selectedType" value="3"/>
+                        </label>
+                    </li>
+
+                    <li style="clear:left;">
+                        <label for="type3"  class="block-label">Basic micro-entity accounts
+                            <input type="radio" id="type4" name="selectedType" value="4"/>
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            {{/isCoHo}}
+            {{#isCharities}}
+            <fieldset>
+                <ul id="account_list">
+                    <li>
+                        <label for="type1"  class="block-label">Abbreviated accounts to Companies House, and full accounts to HMRC
+                            <input type="radio" id="type1" name="selectedType" value="1"/>
+                        </label>
+                    </li>
+
+                    <li style="clear:left;">
+                        <label for="type2"  class="block-label">Full accounts to both Companies House and HMRC
+                            <input type="radio" id="type2" name="selectedType" value="2"/>
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            {{/isCharities}}
+
+
+
+
+
+
+
+        </div>
+
+
+
+        
+</form>
+  

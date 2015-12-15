@@ -1,0 +1,123 @@
+.dataTables_wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dataTables_info {
+  float: left;
+
+  &.no-float {
+    float: none;
+  }
+}
+
+#js-select-all {
+  width: 3%;
+}
+
+.controlpanel {
+  background-color: $white;
+  width: 100%;
+  padding: 5px 0;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+  }
+}
+
+.controlpanel__items {
+  position: relative;
+}
+
+.dataTables_filter {
+  text-align: right;
+  position: absolute;
+  right: 0;
+  top: -69px;
+
+  input {
+    background-image: url("../images/icon-search-dark.png");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    border: 1px solid $grey-1;
+    padding-left: 30px;
+    width: em(300);
+
+    @include device-pixel-ratio() {
+      background-image: url("../images/icon-search-dark-2x.png");
+      background-size: 16px 16px;
+    }
+  }
+}
+
+::-webkit-input-placeholder {
+  color: $grey-1;
+  font-size: em(15);
+  padding: em(5) 0 0 em(5);
+}
+
+.dataTables_paginate {
+  text-align: right;
+
+  span, a {
+    margin-right: 5px;
+  }
+
+  a {
+    color: $link-colour;
+    cursor: pointer;
+
+    &:hover {
+      color: $link-hover-colour;
+    }
+  }
+
+  .current {
+    color: $text-colour;
+  }
+
+  .disabled {
+    display: none;
+  }
+}
+
+.dataTable thead {
+  .sorting {
+    background: url("../images/sort_both.png") no-repeat scroll center right;
+  }
+
+  .sorting_asc {
+    background: url("../images/sort_asc.png") no-repeat scroll center right;
+  }
+
+  .sorting_desc {
+    background: url("../images/sort_desc.png") no-repeat scroll center right;
+  }
+
+  .sorting_asc_disabled {
+    background: url("../images/sort_asc_disabled.png") no-repeat scroll center right;
+  }
+
+  .sorting_desc_disabled {
+    background: url("../images/sort_desc_disabled.png") no-repeat scroll center right;
+  }
+
+  .client {
+    background-position-x: 57px;
+  }
+
+  .paye {
+    background-position-x: 120px;
+  }
+
+  .client-ref {
+    background-position-x: 123px;
+  }
+
+  label, th {
+    cursor: pointer;
+  }
+}

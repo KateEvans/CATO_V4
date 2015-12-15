@@ -1,0 +1,145 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+    
+
+        <fieldset class="inline" id="ineligible-accs">
+          <legend class="form-label-bold">Do you need to include anything complicated in your accounts?</legend>
+
+          <p>Examples include:</p>
+           <ul class="list-bullet">
+              <li>Capital gains and losses</li>
+              <li>Called up share capital not paid</li>
+              <li>Capital instruments</li>
+              <li>Cash flow statements</li>
+              <li>Foreign income and currency transactions</li>
+              <li style="list-style-type: none;"><a href="#" onclick="$('#accountsList').show().visible(); $(this).parent().hide().invisible(); return false; ">see full list</a></li>
+              <div class="hidden" id="accountsList">
+                <li>Contingent assets</li>
+                <li>Current asset investments</li>
+                <li>Defined benefit pension scheme</li>
+                <li>Exceptional items</li>
+                <li>Financial instruments</li>
+                <li>Fixed asset investments</li>
+                <li>The costs of restructuring</li>
+                <li>Other reserves</li>
+                <li>A revaluation deficit</li>
+                <li>Prior-year adjustments</li>
+                <li>Profit or loss on disposal of fixed assets of a material nature</li>
+                <li>Share-based payments</li>
+                <li>Share premium</li>
+                <li>Turnover above £6.5 million</li>
+              </div>
+            </ul>
+
+              <div class="form-group form-group-related">
+              <label data-target="" class="block-label" for="yes" onclick="$('#next-button').attr( 'href', '/cato/eligibility-no.html'); $('#ineligible-tax').hide().invisible();">
+                <input type="radio" value="Yes" name="ineligible-accs" id="yes">
+                Yes
+              </label>
+              <label class="block-label" for="no" onclick="$('#next-button').attr( 'href', '/cato/eligibility-who.html'); $('#ineligible-tax').show().visible();">
+                <input type="radio" value="No" name="ineligible-accs" id="no">
+                No
+              </label>
+            </div>
+
+          
+        </fieldset>
+
+
+        <fieldset class="inline" id="ineligible-tax">
+          <legend class="form-label-bold">Do you need to include anything complicated in your tax return?</legend>
+
+          <p>Examples include:</p>
+
+          <ul class="list-bullet">
+              <li>Being in receivership</li>
+              <li>Being in your second or a subsequent year of liquidation</li>
+              <li>Loans to participators</li>
+              <li>Being in members' voluntary liquidation</li>
+              <li>Non-trading income</li>
+              <li>Leased cars</li>
+              <li style="list-style-type: none;"><a href="#" onclick="$('#returnList').show().visible(); $(this).parent().hide().invisible(); return false; ">see full list</a></li>
+                  <div class="hidden" id="returnList">
+                    <li>An accounting period covered by more than one set of statutory accounts</li>
+                    <li>Statutory accounts that cover more than 3 Corporation Tax accounting periods</li>
+                    <li>Repayment of a loan to a participator more than 9 months after the end of the accounting period</li>
+                    <li>A turnover above £6.5 million, as a charity</li>
+                    <li>A turnover above £632,000, as a company</li>
+                    <li>Capital allowances, except Annual Investment Allowance, and plant and machinery included in general and small pools</li>
+                    <li>Miscellaneous income over £1000, including all HMRC incentives</li>
+                    <li>Complex loan-relationship entries</li>
+                    <li>Group or consortium relief</li>
+                    <li>Gross income from property over £5,200 or where the expenses exceed the income from property</li>
+                    <li>That you pay your Corporation Tax in instalments</li>
+                    <li>That you are registered outside the UK but operate in the UK without a permanent branch or office</li>
+                    <li>Franked investments</li>
+                    <li>Associated companies</li>
+                    <li>Losses brought back from later periods</li>
+                    <li>PDF attachments</li>
+                  </div>
+            </ul>
+
+              <div class="form-group form-group-related">
+              <label data-target="" class="block-label" for="yes2" onclick="$('#next-button').attr( 'href', '/cato/eligibility-no.html'); $('#ineligible-items').show().visible();">
+                <input type="radio" value="Yes" name="ineligible-tax" id="yes2">
+                Yes
+              </label>
+              <label class="block-label" for="no2" onclick="$('#next-button').attr( 'href', '/cato/eligibility-who.html'); $('#ineligible-items').hide().invisible();">
+                <input type="radio" value="No" name="ineligible-tax" id="no2">
+                No
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="inline hidden" id="ineligible-items">
+          <legend class="form-label">Please select which item(s) apply</legend>
+
+          <ul class="list">
+              <li><input type="checkbox" id="item1" /><label for="item1">Being in receivership</label></li>
+              <li><input type="checkbox" id="item2" /><label for="item2">Being in your second or a subsequent year of liquidation</label></li>
+              <li><input type="checkbox" id="item3" /><label for="item3">Loans to participators</label></li>
+              <li><input type="checkbox" id="item4" /><label for="item4">Members' voluntary liquidation</label></li>
+              <li><input type="checkbox" id="item5" /><label for="item5" onclick="$('#next-button').attr( 'href', '/cato/eligibility-who.html');">Non-trading income</label></li>
+              <li><input type="checkbox" id="item6" /><label for="item6" onclick="$('#next-button').attr( 'href', '/cato/eligibility-who.html');">Leased cars</label></li>
+              <li><input type="checkbox" id="item7" /><label for="item7">An accounting period covered by more than one set of statutory accounts</label></li>
+              <li><input type="checkbox" id="item8" /><label for="item8">Statutory accounts that cover more than 3 Corporation Tax accounting periods</label></li>
+              <li><input type="checkbox" id="item9" /><label for="item9">A repayment of a loan to a participator more than 9 months after the end of the accounting period</label></li>
+              <li><input type="checkbox" id="item12" /><label for="item12">A turnover above £6.5 million, as a charity</label></li>
+              <li><input type="checkbox" id="item13" /><label for="item13" onclick="$('#next-button').attr( 'href', '/cato/eligibility-who.html');">A turnover above £632,000, as a company</label></li>
+              <li><input type="checkbox" id="item14" /><label for="item14" onclick="$('#next-button').attr( 'href', '/cato/eligibility-who.html');">Capital allowances, except Annual Investment Allowance, and plant and machinery included in general and small pools</label></li>
+              <li><input type="checkbox" id="item15" /><label for="item15" onclick="$('#next-button').attr( 'href', '/cato/eligibility-who.html');">Miscellaneous income over £1000, including all HMRC incentives</label></li>
+              <li><input type="checkbox" id="item16" /><label for="item16" onclick="$('#next-button').attr( 'href', '/cato/eligibility-who.html');">Complex loan-relationship entries</label></li>
+              <li><input type="checkbox" id="item17" /><label for="item17" onclick="$('#next-button').attr( 'href', '/cato/eligibility-who.html');">Group or consortium relief</label></li>
+              <li><input type="checkbox" id="item18" /><label for="item18" onclick="$('#next-button').attr( 'href', '/cato/eligibility-who.html');">Gross income from property over £5,200 or where the expenses exceed the income from property</label></li>
+                    <li>That you pay your Corporation Tax in instalments</li>
+                    <li>That you are registered outside the UK but operate in the UK without a permanent branch or office</li>
+              <li><input type="checkbox" id="item19" /><label for="item19">Franked investments</label></li>
+              <li><input type="checkbox" id="item20" /><label for="item20">Associated companies</label></li>
+              <li><input type="checkbox" id="item21" /><label for="item21">Losses brought back from later periods</label></li>
+              <li><input type="checkbox" id="item22" /><label for="item22">PDF attachments</label></li>
+            </ul>
+          </fieldset>
+        
+</form>
+  

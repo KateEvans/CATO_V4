@@ -1,0 +1,159 @@
+<script type="text/javascript">
+
+
+    function show_table(){
+        if($('#upload_table').hide()){
+            $('#upload_table').show();
+            $('#file_description').show();
+        }
+    }
+
+
+
+
+    function makeFileList() {
+        var input = document.getElementById("filesToUpload");
+
+        var table = document.getElementById("fileList");
+        while (table.hasChildNodes()) {
+            table.removeChild(table.firstChild);
+        }
+        for (var i = 0; i < input.files.length; i++) {
+            var row = document.createElement("tr");
+            var td = document.createElement("td");
+            td.innerHTML = input.files[i].name;
+            var cell1 = document.createElement("td");
+            cell1.innerHTML = "<img src='/public/images/progress_bar.gif'> 100%";
+            var cell2 = document.createElement("td");
+            cell2.innerHTML = "(1,360kb)";
+            var cell3 = document.createElement("td");
+            cell3.innerHTML = "<a href='#' onclick='deleteRow(this)'>Remove</a>";
+            row.appendChild(td);
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            row.appendChild(cell3);
+
+            table.appendChild(row);
+
+        }
+        /*if(!table.hasChildNodes()) {
+            var row = document.createElement("tr");
+            var td = document.createElement("td");
+            td.innerHTML = 'No Files Selected';
+            row.appendChild(td);
+        }*/
+//        alert(table.children.length);
+    }
+
+
+    function deleteRow(o){
+        var table = document.getElementById("fileList");
+        var remove = o.parentNode.parentNode;
+        remove.parentNode.removeChild(remove);
+
+        if(!table.hasChildNodes()) {
+            var row = document.createElement("tr");
+            var cell1 = document.createElement("td");
+            cell1.innerHTML = 'No files selected';
+            var cell2 = document.createElement("td");
+            var cell3 = document.createElement("td");
+            var cell4 = document.createElement("td");
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            row.appendChild(cell3);
+            row.appendChild(cell4);
+            table.appendChild(row);
+            $('#file_description').hide();
+        }
+    }
+</script>
+
+<style>
+    .fileUpload {
+        position: relative;
+        overflow: hidden;
+        margin: 10px;
+    }
+    .fileUpload input.upload {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    .upload_button{
+        background-color: #ccc;
+        border: medium none;
+        border-radius: 0;
+        box-shadow: 0 2px 0 #003518;
+        color: #000;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 0.8em;
+        line-height: 1.25;
+        margin: 0 15px 15px 0;
+        padding: 0.52632em 0.78947em 0.26316em;
+        position: relative;
+        text-decoration: none;
+        vertical-align: top;
+    }
+
+    .upload_button:hover {
+        background-color: #aaa;
+    }
+</style>
+
+
+<table id="upload_table">
+    <thead>
+        <tr>
+            <td>File name</td>
+            <td>Status</td>
+            <td>Size</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody id="fileList">
+        <tr>
+            <td>No files uploaded</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<div style="margin: 20px 0 0 0">
+    <form method="post" action="/" enctype="multipart/form-data">
+
+        <div class="fileUpload upload_button">
+            <span>Select a file</span>
+            <input type="file" id="filesToUpload" multiple="" onChange="makeFileList(); show_table()" class="upload" />
+        </div>
+
+
+        <details>
+            <summary><span class="summary"><a href="#">Find out about size limits and file restrictions</a> </span></summary>
+            <div class="panel-indent">
+                <p>You can upload files of any type, eg PDFs, Word documents, or Excel files.
+                    The combined size of your uploads can't be more than 5,000KB.</p>
+            </div>
+        </details>
+
+        <!--<div id="file_description" style="margin-top: 1em">
+            <label for="file_description">Comments</label>
+            <textarea style="width: 100%; overflow-y: auto; height: 6em; padding: 0.25em; resize: none;
+            font-size: 0.9em" placeholder="Enter additional file information"></textarea>
+        </div>-->
+
+
+    </form>
+</div>
+
+

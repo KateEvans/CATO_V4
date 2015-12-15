@@ -1,0 +1,112 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding-bottom: 0.5em !important;
+  margin: 0.5em 0;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 17%;
+  text-align: right;
+}
+a.block-addition__link {
+  padding: 0.5em 0.5em 0.3em 0.5em;
+  text-align: right;
+  background-color: #DEE0E2;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 2px solid #003518;
+    font-size: 0.9em;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 67%;
+}
+
+.button {
+    margin: 0 15px 0 0;
+    padding: 0.52632em 0.39em 0.26316em;
+    vertical-align: bottom;
+}
+
+</style>
+
+
+<form method="POST" action="/accountsapprove" class="form">
+    
+  <h2 class="heading-medium">Car summary</h2>
+
+      <div id="taxAvoidanceQuestionSummary" class="block-summary">
+         <!-- <div class="block-summary__text">
+          Loans to report: Yes
+      </div>-->
+    
+        <!--<a class="block-summary__edit-link" href="/cato/loans.html"> <span class="visuallyhidden">@editHint.get</span> Edit</a>-->
+  
+      </div>
+
+
+<div id="taxAvoidanceSummary" class="block-summary block-indent">
+    <img src="/public/images/icon-important-2x.png" width="30em" align="top" style="margin-right: 0.75em" />
+    <div class="block-summary__text">
+        Registration number: A983 VT0<br />
+        Purchased: 1 April 2013 to 31 March 2015<br />
+        Second hand<br />
+        Cost: £9,800<br />
+        Emission level: 230g CO2<br />
+    </div>
+
+    <div class="block-summary__edit-link" >
+        <!--<a href="/cato/loan-write-off.html" class="next button">Delete</a>-->
+        <a class="button" href="/cato/company_cars.html" style="display: inline-block"> <span class="visuallyhidden">@editHint.get</span> Delete</a>
+        <a class="block-summary__edit-link" href="/cato/vehicle_summary.html">Cancel</a>
+    </div>
+
+</div>
+</form>
+  

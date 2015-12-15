@@ -1,0 +1,28 @@
+// Standard palette, greys form govuk _colours.scss
+$black: #0b0c0c;
+$grey-1: #6f777b;
+$grey-2: #bfc1c3;
+$grey-3: #dee0e2;
+$grey-4: #f8f8f8;
+$white: #fff;
+$baby-pink: #f499be;
+$baby-pink-50: #faccdf;
+$baby-pink-25: #fdebf2;
+
+/* Styling from application.scss Currently we need to redefine them here as application.scss is housed in another project */
+$beta-colour: #f47738;
+$button-colour: #00823b;
+$govuk-blue: #005ea5;
+$secondary-text-colour: $grey-1;
+$hm-revenue-customs: #009390;
+$link-colour: $govuk-blue;
+$mellow-red: #df3034;
+$error-colour: $mellow-red;
+$error-background: #fef7f7;
+$page-colour: $white;
+$border-colour: $grey-2;
+$panel-colour: #DEE0E2;
+$text-colour:#0B0C0C;
+
+$warning-bg-color: #ffffcc;
+$warning-border-color: #ffbf47;

@@ -1,0 +1,486 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 89%;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.cato-summary .summary-figures {
+font-weight: 700;
+text-align: right;
+border: 0;
+width: 100%;
+color: #000000;
+}
+
+
+</style>
+
+<form method="POST" action="/accountsapprove" class="form cato-summary">
+    
+ <!--               
+  <h2 class="heading-medium">Loans</h2>
+      <div id="taxAvoidanceQuestionSummary" class="block-summary">
+          <div class="block-summary__text">
+          Loans to report: Yes
+      </div>
+    
+        <a class="block-summary__edit-link" href="/cato/loans.html"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+  
+      </div>
+
+
+<div id="taxAvoidanceSummary" class="block-summary block-indent">
+    <div class="block-summary__text">
+    <h3>Loans added</h3>
+    <p>
+    Loan recipient: Clive Williams<br />
+    Loan amount: £10,000<br />
+    Amount repaid: £3,000<br />
+    Last repayment: 2 September 2014
+  </p>
+</div>    
+        <a class="block-summary__edit-link" href="#"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+    
+</div>
+
+<div id="taxAvoidanceSummary" class="block-summary block-indent">
+    <div class="block-summary__text">
+    Loan recipient: Joan Smith<br />
+    Loan amount: £25,000<br />
+    Amount repaid: £20,000<br />
+    Last repayment: 2 June 2015
+</div>    
+        <a class="block-summary__edit-link" href="#"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+    
+</div>
+
+<div class="block-indent">
+    
+        <a href="/cato/add_loan_again.html" class="block-addition__link" id="addAnother_taxAvoidance">Add another loan</a>
+    
+  <h2 class="heading-medium">Write off and releases</h2>    
+
+      <div id="taxAvoidanceQuestionSummary" class="block-summary">
+          <div class="block-summary__text">
+          Write offs or releases to report: Yes
+      </div>
+    
+        <a class="block-summary__edit-link" href="/cato/loan-write-off.html"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+  
+      </div>
+
+
+<div id="taxAvoidanceSummary" class="block-summary block-indent">
+    <div class="block-summary__text">
+    <h3>Write offs or releases added</h3>
+    <p>
+    Loan recipient: Clive Williams<br />
+    Loan amount: £10,000<br />
+    Amount written off or released: £2,000<br />
+    Date of write off or release: 2 October 2014
+  </p>
+</div>    
+        <a class="block-summary__edit-link" href="#"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+    
+</div>
+
+<div id="taxAvoidanceSummary" class="block-summary block-indent">
+    <div class="block-summary__text">
+    Loan recipient: Clive Williams<br />
+    Loan amount: £10,000<br />
+    Amount written off or released: £1,500<br />
+    Date of write off or release: 2 November 2014
+</div>    
+        <a class="block-summary__edit-link" href="#"> <span class="visuallyhidden">@editHint.get</span> Edit</a>
+    
+</div>
+
+<div class="block-addition block-indent">
+    
+        <a href="#" class="block-addition__link" id="addAnother_taxAvoidance">Add another write off or release</a>
+    
+-->
+  <h2 class="heading-medium">Calculations</h2>    
+
+<div class="">
+
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Loans outstanding from this period
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures summary-figures" ng-show="boxNumHelp">
+                  £15,000
+                </div>
+            </div>
+        </div> 
+      </div>
+
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Tax chargeable on loans
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £3,750
+                </div>
+            </div>
+        </div> 
+      </div>
+        
+      <br />
+      <h3>In the nine months after the period</h3>
+
+
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Amount repaid
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £2,000
+                </div>
+            </div>
+        </div> 
+      </div>
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Amount written off or released
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £1,500
+                </div>
+            </div>
+        </div> 
+      </div>
+      
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Total amount repaid, written off or released
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £3,500
+                </div>
+            </div>
+        </div> 
+      </div>
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Relief due
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £750
+                </div>
+            </div>
+        </div> 
+      </div>
+
+      <br />
+
+      <h3>More than nine months after the period, where relief is now due</h3>
+
+
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Amount repaid
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £1,000
+                </div>
+            </div>
+        </div> 
+      </div>
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Amount written off or released
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £1,000
+                </div>
+            </div>
+        </div> 
+      </div>
+      
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Total amount repaid, written off or released
+              </label>
+            </div> 
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £2,000
+                </div>
+            </div>
+        </div> 
+      </div>
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Relief due
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £500
+                </div>
+            </div>
+        </div> 
+      </div>
+
+
+      <br />
+
+      <h3>More than nine months after the period, where relief is not yet due</h3>
+
+
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Amount repaid
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £1,000
+                </div>
+            </div>
+        </div> 
+      </div>
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Amount written off or released
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £1,000
+                </div>
+            </div>
+        </div> 
+      </div>
+      
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Total amount repaid, written off or released
+              </label>
+            </div> 
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £2,000
+                </div>
+            </div>
+        </div> 
+      </div>
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Relief due now
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £0
+                </div>
+            </div>
+        </div> 
+      </div>
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Relief to be claimed separately
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £500
+                </div>
+            </div>
+        </div> 
+      </div>
+
+
+      <br />
+
+
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Other outstanding loans from earlier periods:
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £10,000
+                </div>
+            </div>
+        </div> 
+      </div>
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Total outstanding loans
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £25,000
+                </div>
+            </div>
+        </div> 
+      </div>
+      <div class="grid-wrapper flush--right">
+        <div class="grid grid-3-4">
+            <div class="inner-block"> 
+              <label for="profitsFromNonTradingLoanRelationships" class="form-label">
+                  Tax payable
+              </label>
+            </div>
+        </div> 
+        <div class="grid grid-1-4">
+            <div class="inner-block flush--right">
+                <div class="text--center box-number--inline ng-hide summary-figures" ng-show="boxNumHelp">
+                  £2,500
+                </div>
+            </div>
+        </div> 
+      </div>
+
+
+
+</div>
+
+</div>
+</form>
+  

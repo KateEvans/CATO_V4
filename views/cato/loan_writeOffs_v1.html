@@ -1,0 +1,114 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_loan_writeOffs_header}}
+    {{>cato_loan_writeOffs_v1}}
+    <div class="form-group">
+        <br>
+        <a class="next button" id="next-button">Save and continue</a>
+        <ul>
+            <li><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+
+        var name = getUrlParameter('name');
+        var outstandingAmount = getUrlParameter('outstanding');
+        var repaidAmount = getUrlParameter('repaidAmount');
+        var repayments = getUrlParameter('repayments');
+
+        var r_day = getUrlParameter('r_day');
+        var r_month = getUrlParameter('r_month');
+        var r_year = getUrlParameter('r_year');
+
+        var add_loan2 = getUrlParameter('add_loan2');
+
+        $('#Loaned-to').text(name);
+        $('#outstanding-amount').text("£"+outstandingAmount);
+
+
+
+        $('#next-button').click(function(){
+            if($('#yes-repayment').is(':checked')){
+                window.location.href = "/cato/loan_writeOffs.html" + window.location.search;
+
+            } else if(name == "HenryJones"){
+                window.location.href = "/cato/loans_company_made_3.html";
+            } else {
+                window.location.href = "/cato/loans_company_made.html" + window.location.search;
+            }
+
+        });
+
+
+        /*  $('#next-button').click(function(){
+
+           if($('#yes-repayment').is(':checked')){
+                window.location.href = "/cato/loan_writeOffs.html" + window.location.search;
+
+            } else if($('#no-repayment').is(':checked') && repayments == "undefined") {
+                window.alert('test');
+                window.location.href = "/cato/loans_company_made.html" + window.location.search;
+
+            } else if ($('#no-repayment').is(':checked')) {
+
+                if(r_month > 9 && r_year == 2016){
+                    window.location.href = "/cato/loan_writeOffs_repayments.html" + window.location.search + "&amountWriteOff=none"
+
+                } else {
+                    window.location.href = "/cato/loans_company_made.html" + window.location.search;
+                }
+            } else {
+                window.alert(' 1');
+                window.location.href = "/cato/loan_writeOffs_repayments.html" + window.location.search + "&amountWriteOff=undefined";
+            }
+
+            if($('#yes-repayment').is(':checked')){
+                window.location.href = "/cato/loan_writeOffs.html" + window.location.search;
+            }
+
+            if($('#no-repayment').is(':checked')) {
+                if(add_loan2 == "yes"){
+                    window.location.href = "/cato/loans_company_made.html" + window.location.search + "&amountWriteOff_2=none";
+                } else {
+                    window.location.href = "/cato/loans_company_made.html" + window.location.search + "&amountWriteOff=none";
+                }
+            }
+
+        })*/
+
+
+
+
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

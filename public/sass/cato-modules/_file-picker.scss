@@ -1,0 +1,11 @@
+.file-picker
+{
+    display: inline-block;
+    position: relative;
+    width: auto;
+
+    input[type=file]
+    {
+        display: none;
+    }
+}

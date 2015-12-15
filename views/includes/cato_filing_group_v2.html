@@ -1,0 +1,50 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+    <div class="form-group">
+        <fieldset class="form-group" id="selectedPeriod">
+            <ul>
+                <li id="joint">
+                    <label for="type1"  class="block-label">HM Revenue and Customs and Companies House
+                        <input type="radio" id="type1" name="selectedType" value="1"/>
+                    </label>
+                </li>
+
+                <li style="clear:left;" id="hmrc">
+                    <label for="type2"  class="block-label">HM Revenue and Customs only
+                        <input type="radio" id="type2" name="selectedType" value="2"/>
+                    </label>
+                </li>
+
+                <li style="clear:left;" id="coho">
+                    <label for="type3"  class="block-label">Companies House only
+                        <input type="radio" id="type3" name="selectedType" value="3"/>
+                    </label>
+                </li>
+
+            </ul>
+        </fieldset>
+    </div>
+
+</form>
+  

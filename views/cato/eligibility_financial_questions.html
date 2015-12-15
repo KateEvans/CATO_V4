@@ -1,0 +1,54 @@
+{{<cato_layout_no_nav}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_eligibility_financial_questions_header}}
+    {{>cato_eligibility_financial_questions}}
+    <div class="form-group">
+        <br>
+
+        {{#isJoint}}
+        <a href="#" class="next button" id="next-button">Continue</a>
+        {{/isJoint}}
+        {{#isHMRC}}
+        <a href="#" class="next button" id="next-button">Continue</a>
+        {{/isHMRC}}
+        {{#isCoHo}}
+        <a href="/cato/dormancy_q1.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isCoHo}}
+
+        <!--<a href="" class="next button" id="next-button">Continue</a>-->
+        <ul>
+            <!--    <li><a href="/" target="_blank">Help on *page title* (opens in a new tab/window)</a></li>
+              <li><a href="/" target="_blank">Preview your accounts so far (opens in a new tab/window)</a></li>-->
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+
+        $("#q_2").hide();
+        $("#q_4").hide();
+
+        $(".arrow-down").hide();
+
+
+        $( ".summary" ).click(function() {
+            $('.panel-indent').toggle( "fast", function() {
+            });
+            $('.arrows').find(".arrow-side, .arrow-down").toggle();
+            console.log('.arrows');
+        });
+
+
+
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout_no_nav}}

@@ -1,0 +1,230 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_loan_repayments_header}}
+    {{>cato_loan_repayments}}
+    <div class="form-group">
+        <br>
+        <a class="next button secondary" id="add_another-button">Save and add another repayment</a>
+        <a class="next button" id="next-button">Save and continue</a>
+        <ul>
+            <li><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        /* #### hide the AP date panel #### */
+        $('#late_paymentDate').show();
+        $('#banner_repayment').hide();
+
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+        var name = getUrlParameter('name');
+        var outstandingAmount = getUrlParameter('outstanding');
+        var amountRepaidBetween = getUrlParameter('AmountRepaidBetween_1');
+        var state = getUrlParameter('state');
+        var add_loan = getUrlParameter('add_loan');
+        var between_day = getUrlParameter('b_day_1');
+        var between_month = getUrlParameter('b_month_1');
+        var between_year = getUrlParameter('b_year_1');
+        var repaymentsAfter = getUrlParameter('AmountRepaidAfter');
+        var repaymentsAfter_day = getUrlParameter('repaidAfter_day');
+        var repaymentsAfter_month = getUrlParameter('repaidAfter_month');
+        var repaymentsAfter_year = getUrlParameter('repaidAfter_year');
+        var type = getUrlParameter('type');
+        var late_r_payment = null;
+        var counter = 0;
+        var repayment_str = "";
+        var str = "";
+        var Rcounter = getUrlParameter('Rcounter');
+
+
+        var repaidAmount = null;
+        var repaidAfter_day = null;
+        var repaidAfter_month = null;
+        var repaidAfter_year = null;
+
+        $('#repaid_after').val(repaymentsAfter);
+        $('#r_day').val(repaymentsAfter_day);
+        $('#r_month').val(repaymentsAfter_month);
+        $('#r_year').val(repaymentsAfter_year);
+
+
+
+        if(add_loan != undefined){
+            $('#repaid_after').attr('id', 'repaid_after_1');
+            $('#r_day').attr('id', 'r_day_1');
+            $('#r_month').attr('id', 'r_month_1');
+            $('#r_year').attr('id', 'r_year_1');
+            $('#day').attr('id', 'day_1');
+            $('#month').attr('id', 'month_1');
+            $('#year').attr('id', 'year_1');
+        }
+
+
+
+        /* #### POPULATE THE LOAN RECIPIENT AND OUTSTANDING AMOUNT AT TOP OF PAGE #### */
+        $('#Loaned-to').text(name);
+        $('#outstanding-amount').text(outstandingAmount);
+
+
+
+        /* #### CHECK TO SEE IF DATE IS OUT OF RANGE THEN SHOW THE PANEL BELOW #### */
+        /*$("#r_month").on("keyup", function(){
+
+            if(parseInt(this.value) > 9 && parseInt($('#r_year').val( )) > 2015){
+                $('#late_paymentDate').show();
+                late_r_payment = "yes";
+            } else {
+                $('#late_paymentDate').hide();
+                late_r_payment = null;
+            }
+
+        });
+
+        $("#r_year").on("keyup", function(){
+
+            if(parseInt(this.value) > 2015 && parseInt($('#r_month').val( )) > 9){
+                $('#late_paymentDate').show();
+                late_r_payment = "yes";
+            } else {
+                $('#late_paymentDate').hide();
+                late_r_payment = null;
+            }
+
+        });*/
+
+
+        /* #### ADD ANOTHER PAYMENT BUTTON #### */
+        $('#add_another-button').click(function(){
+            $('#banner_repayment').show();
+
+            counter ++;
+
+            repaidAmount = $('#repaid_after').val();
+            repaidAfter_day = $('#r_day').val();
+            repaidAfter_month = $('#r_month').val();
+            repaidAfter_year = $('#r_year').val();
+
+            str = "&AmountRepaidAfter"+counter+"="+repaidAmount+"&repaidAfter_day"+counter+"="+repaidAfter_day+
+                    "&repaidAfter_month"+counter+"="+repaidAfter_month+"&repaidAfter_year"+counter+"="+repaidAfter_year;
+
+            repayment_str = repayment_str + str;
+
+            $('#repaid_after').val("");
+            $('#r_day').val("");
+            $('#r_month').val("");
+            $('#r_year').val("");
+            $('#day').val("");
+            $('#month').val("");
+            $('#year').val("");
+
+        });
+
+
+        /*$('#next-button').click(function(){
+            repaidAmount = $('#repaid_after').val();
+            repaidAfter_day = $('#r_day').val();
+            repaidAfter_month = $('#r_month').val();
+            repaidAfter_year = $('#r_year').val();
+
+
+            if(type == "edit" || type != undefined){
+
+                window.location.href = "/cato/loan_writeOffs.html?name="+name+"&outstanding="+outstandingAmount+"&AP_date=31/12/2015" +
+                "&AmountRepaidBetween_1="+amountRepaidBetween+"&b_day_1="+between_day+"&b_month_1="+between_month+
+                        "&b_year_1="+between_year+"&AmountRepaidAfter="+repaymentsAfter+"&" +"repaidAfter_day="+repaymentsAfter_day+
+                        "&repaidAfter_month="+repaidAfter_month+"&repaidAfter_year="+repaidAfter_year+"&amountWrittenOff=1000&w_day=15&w_month=2&w_year=2016&type=edit"
+            } else {
+
+                if(repaidAmount == "" || repaymentsAfter_day == "" || repaymentsAfter_month == "" || repaymentsAfter_year == ""){
+//                    window.alert("/cato/loan_writeOffs_v1.html" + window.location.search + repayment_str + "&counter="+counter);
+                    window.location.href = "/cato/loan_writeOffs_v1.html" + window.location.search + repayment_str + "&Rcounter="+counter;
+                } else {
+                    counter ++;
+
+                    str = "&AmountRepaidAfter"+counter+"="+repaidAmount+"&repaidAfter_day"+counter+"="+repaidAfter_day+
+                            "&repaidAfter_month"+counter+"="+repaidAfter_month+"&repaidAfter_year"+counter+"="+repaidAfter_year;
+
+                    repayment_str = repayment_str + str;
+                    window.location.href = "/cato/loan_writeOffs_v1.html" + window.location.search + repayment_str + "&Rcounter="+counter;
+                }
+            }
+
+        });*/
+
+
+        $('#next-button').click(function(){
+            repaidAmount = $('#repaid_after').val();
+            repaidAfter_day = $('#r_day').val();
+            repaidAfter_month = $('#r_month').val();
+            repaidAfter_year = $('#r_year').val();
+
+
+            if(type == "edit" || type != undefined){
+
+                window.location.href = "/cato/loan_writeOffs.html?name="+name+"&outstanding="+outstandingAmount+"&AP_date=31/12/2015" +
+                        "&AmountRepaidBetween_1="+amountRepaidBetween+"&b_day_1="+between_day+"&b_month_1="+between_month+
+                        "&b_year_1="+between_year+"&AmountRepaidAfter="+repaymentsAfter+"&" +"repaidAfter_day="+repaymentsAfter_day+
+                        "&repaidAfter_month="+repaidAfter_month+"&repaidAfter_year="+repaidAfter_year+"&amountWrittenOff=1000&w_day=15&w_month=2&w_year=2016&type=edit"
+            } else {
+
+                if(add_loan == "yes" || add_loan != undefined){
+
+                    Rcounter++;
+                    var url = window.location.search;
+                    url = url.replace('Rcounter','oldRcounter');
+
+                    str = "&AmountRepaidAfter"+Rcounter+"="+repaidAmount+"&repaidAfter_day"+Rcounter+"="+repaidAfter_day+
+                            "&repaidAfter_month"+Rcounter+"="+repaidAfter_month+"&repaidAfter_year"+Rcounter+"="+repaidAfter_year;
+
+//                    window.alert(url);
+
+                    window.location.href = "/cato/loans_company_made.html" + url + str + "&Rcounter="+Rcounter;
+                } else {
+                    counter ++;
+
+                    str = "&AmountRepaidAfter"+counter+"="+repaidAmount+"&repaidAfter_day"+counter+"="+repaidAfter_day+
+                            "&repaidAfter_month"+counter+"="+repaidAfter_month+"&repaidAfter_year"+counter+"="+repaidAfter_year;
+
+                    repayment_str = repayment_str + str;
+//                    console.log(str);
+                    window.location.href = "/cato/loan_writeOffs_v1.html" + window.location.search + repayment_str + "&Rcounter="+counter;
+                }
+            }
+
+        });
+
+
+
+
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}

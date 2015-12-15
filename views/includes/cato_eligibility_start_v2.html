@@ -1,0 +1,85 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+        <div class="form-group">
+            <p>Not every type of organisation can use this service to file the accounts and tax return.
+               <br /> Answer the following questions to find out if you’re eligible - it shouldn’t take more
+                than 10 minutes.</p>
+
+            </div>
+
+
+        <div class="form-group">
+            <fieldset id="selectedPeriod">
+
+                <legend class="form-label-bold">Select your type of organisation or company</legend>
+
+                <div class="roleDiv">
+                    <label for="radio-inline-Executor" class="block-label ">
+                        <input type="checkbox" value="Executor" name="radio-inline-role" id="radio-inline-Executor">
+                        Limited company
+                    </label>
+                    <div class="helpLineDiv">
+                        <span class="roleInfo">You sell goods or services, and your shares aren't traded on the stock exchange.</span>
+                    </div>
+                </div>
+
+                <div class="roleDiv">
+                    <label for="non-profit" class="block-label ">
+                        <input type="checkbox" value="Executor" name="radio-inline-role" id="non-profit">
+                        Non-profit organisation
+                    </label>
+                    <div class="helpLineDiv">
+                        <span class="roleInfo">A charity, community amateur sports club, members’ club or voluntary association.</span>
+                    </div>
+                </div>
+
+                <div class="roleDiv">
+                    <label for="limited-guarantee" class="block-label ">
+                        <input type="checkbox" value="Executor" name="radio-inline-role" id="limited-guarantee">
+                        Company limited by guarantee
+                    </label>
+                    <div class="helpLineDiv">
+                        <span class="roleInfo">Your company has members instead of shareholders.</span>
+                    </div>
+                </div>
+
+
+            </fieldset>
+        </div>
+
+
+        <div class="form-group">
+            <details>
+                <summary><span class="summary">Is your organisation not listed?</span></summary>
+                <div class="panel-indent">
+                    <p>You’ll need to use a different service to file your company accounts and tax return.
+                        You can file separately with <a href="#">Companies House</a> and <a href="#"> HM Revenue and Customs</a>.</p>
+                </div>
+            </details>
+        </div>
+        
+</form>
+  

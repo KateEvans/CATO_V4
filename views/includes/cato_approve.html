@@ -1,0 +1,75 @@
+<div class="text">
+<p>The accounts can be submitted to Companies House after they have been approved. </p>
+</div>
+
+<form method="POST" action="/accountsapprove" class="form">
+    
+            <input type="hidden" value="6fc5b372f0f7b79d57fcf47c482971b3f08aa2bc-1399121072583-db1bbe51ab97fa47bfcdeb0f" name="csrf">
+
+            <h3 class="heading-medium">1. Agree to approval statement</h3>
+            
+            
+            
+               <div class="form-group">
+            <fieldset>
+                <legend class="form-label-bold visuallyhidden">Agree to approval statement</legend>
+                <label class="block-label" for="accountsApproved">
+                   <input type="checkbox" id="accountsApproved" name="accountsApproved"> 
+                  The micro-entity accounts have been approved by the director/board of directors.
+                </label>
+             </fieldset>
+             </div>
+             
+             
+             <div class="form-group">
+          <fieldset>
+            <legend class="form-label-bold">2. Select date of approval</legend>
+
+            <div class="date-of-birth">
+              <p class="form-hint">For example, 31 03 2014</p>
+
+              <div class="form-group form-group-day">
+                <label for="dob-day">Day</label>
+                <input type="text" id="dob-day" class="form-control">
+              </div>
+              <div class="form-group form-group-month">
+                <label for="dob-month">Month</label>
+                <input type="text" id="dob-month" class="form-control">
+              </div>
+              <div class="form-group form-group-year">
+                <label for="dob-year">Year</label>
+                <input type="text" id="dob-year" class="form-control">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+            
+
+
+            <h3 class="heading-medium">3. Select approver(s)</h3>
+  <div class="form-group">
+    	  <fieldset>
+                <legend class="form-label-bold visuallyhidden">Select approver(s)</legend>
+
+                <p>You must select at least one of the following approvers:</p>
+                <label class="block-label" for="name1">
+                   <input type="checkbox" id="name1" name=""> 
+                  John Smith
+                </label>
+                 <label class="block-label" for="name2">
+                   <input type="checkbox" id="name2" name=""> 
+                  James Smith
+                </label>
+              
+              </fieldset>
+</div>
+     
+       <h3  class="heading-medium">4. Save a copy</h3>
+            <p><a href="/" target="_blank">Save the approved accounts as a PDF</a> copy for your records.</p>
+            
+
+
+
+        
+</form>
+  

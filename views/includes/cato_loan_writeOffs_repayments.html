@@ -1,0 +1,180 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 89%;
+}
+
+</style>
+
+
+<form method="POST" action="/accountsapprove" class="form">
+    <br />
+    <div id="taxAvoidanceSummary" class="block-summary">
+        <div class="block-summary__text">
+            <span class="heading-small">Loan recipient:</span> <span id="Loaned-to"></span><br />
+            <span class="heading-small">Loan amount after 31 December 2015:</span> <span id="outstanding-amount"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>You added repayments or write offs after <strong>30 September 2016</strong>. You’ll be charged Corporation Tax on the outstanding loan.</p>
+
+        <p>Enter the end date of the tax period when each repayment or write off happened. This helps us work out when you can reclaim the Corporation Tax.</p>
+    </div>
+
+    <div class="form-group" id="close1">
+        <table width="100%">
+            <tr bgcolor="#D6DBDC">
+                <th width="60%">Repayment or write off</th>
+                <th nowrap="nowrap">End date of tax period</th>
+            </tr>
+
+            <!-- #### START OF THE REPAYMENTS ROW #### -->
+            <tr id="row_repayments">
+                <td valign="top">Repayment: <span id="repaymentDate"></span></td>
+                <td>
+
+                    <fieldset id="paymentDate">
+                        <div class="date-of-birth">
+                            <div class="form-group">
+
+                                <label for="day" class=" label--dateField-group" style="font-size: 16px">
+                                  <span class="label__text">
+                                      Day
+                                  </span>
+                                </label>
+                                <input type="text" class="input--xxsmall form-control" name="day" id="day" value="">
+
+                            </div>
+
+                            <div class="form-group flush--bottom">
+
+                                <label for="month" class=" label--dateField-group" style="font-size: 16px">
+                                  <span class="label__text">
+                                      Month
+                                  </span>
+                                </label>
+                                <input type="text" class="input--xxsmall form-control" name="month" id="month" value="">
+
+                            </div>
+
+                            <div class="form-group form-group-year">
+                                <label for="year" class=" label--dateField-group" style="font-size: 16px">
+                                  <span class="label__text">
+                                      Year
+                                  </span>
+                                </label>
+                                <input type="text" class="input--xsmall form-control" name="year" id="year" value="">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                </td>
+            </tr>
+            <!-- #### END OF THE REPAYMENTS ROW #### -->
+
+            <!-- #### START OF THE WRITE OFFS ROW #### -->
+            <tr id="row_writeOff">
+                <td valign="top">Write off: <span id="writeOffDate"></span></td>
+                <td>
+
+                    <fieldset id="paymentDate_1">
+                        <div class="date-of-birth">
+                            <div class="form-group">
+
+                                <label for="day" class=" label--dateField-group" style="font-size: 16px">
+                                  <span class="label__text">
+                                      Day
+                                  </span>
+                                </label>
+                                <input type="text" class="input--xxsmall form-control" name="day" id="day1" value="">
+
+                            </div>
+
+                            <div class="form-group flush--bottom">
+
+                                <label for="month" class=" label--dateField-group" style="font-size: 16px">
+                                  <span class="label__text">
+                                      Month
+                                  </span>
+                                </label>
+                                <input type="text" class="input--xxsmall form-control" name="month" id="month1" value="">
+
+                            </div>
+
+                            <div class="form-group form-group-year">
+                                <label for="year" class=" label--dateField-group" style="font-size: 16px">
+                                  <span class="label__text">
+                                      Year
+                                  </span>
+                                </label>
+                                <input type="text" class="input--xsmall form-control" name="year" id="year1" value="">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                </td>
+            </tr>
+            <!-- #### END OF THE WRITE-OFFS ROW #### -->
+
+        </table>
+    </div>
+
+
+
+
+</form>
+  

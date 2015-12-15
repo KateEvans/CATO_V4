@@ -1,0 +1,109 @@
+<style>
+
+details .summary {
+  text-decoration: underline;
+}
+details summary:hover {
+  color: #2e8aca;
+}
+details summary {
+  display: inline-block;
+  color: #005ea5;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.26316em;
+}
+
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+  <legend class="form-label-bold">You are eligible to file a:</legend>
+
+    <div class="form-group form-group-compound">
+      <label class="block-label" for="nationality-british">
+        <input id="nationality-british" type="checkbox" value="" checked="checked">
+        Microentity filing
+      </label>
+    </div>
+
+    <p>This consists of:</p>
+
+    <ul>
+      <li><span style="font-weight:bold">Companies House submission:</span>
+        <ul style="margin-left: 20px">
+          <li>Microentity accounts</li>
+        </ul>
+      </li>
+      <li><span style="font-weight:bold">HMRC submission</span>
+        <ul style="margin-left: 20px">
+          <li>Microentity accounts</li>
+          <li>Microentity computations</li>
+          <li>Microentity annual tax return</li>
+        </ul>
+      </li>
+
+
+    </ul>
+
+    <p class="form-block">OR</p>
+    <p><a href="#" onclick="$('#company-size, #coho, #hmrc').show().visible(); return false;">Change filing type</a></p>
+
+
+      <div class="form-group hidden" id="company-size">
+
+        <label class="form-label" for="full-name-f1">Filing type</label>
+
+      <label class="block-label" for="radio-1">
+        <input id="radio-1" type="radio" name="radio-group1" value="Northern Ireland" checked="checked">
+        Microentity
+      </label>
+      <label class="block-label" for="radio-2">
+        <input id="radio-2" type="radio" name="radio-group1" value="Isle of Man or the Channel Islands">
+        Small and medium-sized enterprise
+      </label>
+
+    </div>
+
+
+      <div class="form-group hidden" id="coho">
+
+        <label class="form-label" for="full-name-f1">Companies House submission</label>
+
+      <label class="block-label" for="radio-3">
+        <input id="radio-3" type="radio" name="radio-group2" value="Northern Ireland" checked="checked">
+        Microentity
+      </label>
+      <label class="block-label" for="radio-4">
+        <input id="radio-4" type="radio" name="radio-group2" value="Isle of Man or the Channel Islands">
+        Abbreviated
+      </label>
+      <label class="block-label" for="radio-5">
+        <input id="radio-5" type="radio" name="radio-group2" value="Isle of Man or the Channel Islands">
+        Full
+      </label>
+      
+    </div>
+
+      <div class="form-group hidden" id="hmrc">
+
+        <label class="form-label" for="full-name-f1">HMRC submission</label>
+
+      <label class="block-label" for="radio-6">
+        <input id="radio-6" type="radio" name="radio-group3" value="Northern Ireland" checked="checked">
+        Microentity
+      </label>
+      <label class="block-label" for="radio-7">
+        <input id="radio-7" type="radio" name="radio-group3" value="Isle of Man or the Channel Islands">
+        Full
+      </label>
+      
+    </div>
+
+
+
+</form>
+  

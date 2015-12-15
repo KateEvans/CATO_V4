@@ -1,0 +1,40 @@
+{{<cato_layout_no_nav}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_eligibility_account_dates_header}}
+    {{>cato_eligibility_account_dates}}
+    <div class="form-group">
+        {{#isJoint}}
+        <a href="/cato/eligibility_select_filing.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isJoint}}
+        {{#isHMRC}}
+        <a href="/cato/turnover_v2.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isHMRC}}
+        {{#isCoHo}}
+        <a href="/cato/eligibility_select_filing.html?name={{name}}" class="next button" id="next-button">Continue</a>
+        {{/isCoHo}}
+
+        <ul>
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#next-button').click(function(){
+
+                if($('#q2').is(':checked')){
+                    window.location.href = "application_exclusion.html" + window.location.search;
+                }
+
+
+            })
+        });
+    </script>
+{{/pageScripts}}
+
+{{/cato_layout_no_nav}}

@@ -1,0 +1,52 @@
+<style>
+    details .summary {
+        text-decoration: underline;
+    }
+    details summary:hover {
+        color: #2e8aca;
+    }
+    details summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.26316em;
+    }
+
+</style>
+
+<br />
+
+<form method="POST" class="form">
+
+    <div class="form-group">
+        <p class="form-label-bold">There's <span style="font-weight: bold">£4,800</span> in your main pool. You can claim up to <span style="font-weight: bold">£864</span> of this.</p>
+    </div>
+
+    <div class="form-group">
+        <details>
+            <summary><span class="summary">Find out how these figures are calculated</span></summary>
+            <div class="panel-indent">
+                <span>Your main pool includes:</span><br />
+                <ul class="list-bullet">
+                    <li><span style="font-weight: bold">£1,200</span> in your main pool at the start of this period</li>
+                    <li><span style="font-weight: bold">£1,800</span> of your spending on company cars</li>
+                    <li><span style="font-weight: bold">£2,400</span> of your spending on assets other than cars</li>
+                </ul>
+
+                The <span style="font-weight: bold">£600</span> you received from selling assets came out of your main pool</p>
+
+                <p>You can claim up to 18% of your main pool this period.</p>
+            </div>
+        </details>
+    </div>
+
+    <div class="form-group">
+        <fieldset class="form-group inline">
+            <p class="form-label-bold">How much do you want to claim from your main pool?</p>
+            <span class="form-hint">Anything you don't claim will stay in your main pool for the next reporting period.</span>
+            <label for="input_1">£</label>
+            <input id="input_1" type="text" />
+        </fieldset>
+    </div>
+</form>

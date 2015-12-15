@@ -1,0 +1,38 @@
+{{<cato_layout_no_nav}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageContent}}
+    {{>cato_eligibility_header}}
+    {{>cato_eligibility_start_v2}}
+    <div class="form-group">
+        <br>
+        <!--<a href="/cato/company_activity_v2.html" class="next button" id="next-button">Continue</a>-->
+        <a class="next button" id="next-button">Continue</a>
+        <ul>
+            <!--    <li><a href="/" target="_blank">Help on *page title* (opens in a new tab/window)</a></li>
+              <li><a href="/" target="_blank">Preview your accounts so far (opens in a new tab/window)</a></li>-->
+            <li><a href="#" onclick="javascript:history.go(-1)">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#next-button').click(function(){
+
+            if($('#non-profit').prop('checked') || $('#limited-guarantee').prop('checked')){
+                window.location.href = "application_exclusion.html" + window.location.search;
+            }
+            else{
+                window.location.href = "company_activity_v2.html" + window.location.search;
+            }
+
+
+        })
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout_no_nav}}

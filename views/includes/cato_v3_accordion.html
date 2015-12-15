@@ -1,0 +1,296 @@
+<style>
+table.acc {
+    width: 100%;
+}
+
+summary {
+    width: 100%;
+}
+
+.completed {
+  float: right;
+  font-weight: normal;
+  color: #777;
+  display: none;
+}
+
+table.acc td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.42857;
+  font-weight: 400;
+  text-transform: none;
+  text-align: left;
+  color: #0b0c0c;
+  border-top: 1px solid #bfc1c3;
+  padding: 10px 20px 10px 0;
+}
+
+table.acc td form, .acc .helptext .button, .nudged {
+    margin-left: 28px;
+}
+
+
+.colorback {
+  font-weight: bold;
+}
+
+.button-link, details summary, details summary {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  background: none;
+  border: none;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  color: #005ea5;
+  line-height: 1.25;
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 0 15px 15px 0;
+  padding: 10px 10px 5px 10px;
+  vertical-align: top;
+}
+
+.acc details label.form-label {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.acc .form-control[type="text"] {
+  width: 60% !important;
+}
+
+.acc .form-control[disabled] {
+  width: 100% !important;
+}
+
+.warning {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+</style>
+<s ript>
+<br />
+<table class="acc">
+    <tbody>
+        <tr>
+            <td>
+                <details class="helptext" open>
+                    <summary id="property-label" role="button" style="margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px;" class="colorback"><span class="summary" onclick="$('table.acc details').removeAttr('open'); $('body').scrollTop( 0 ); $(this).parent().parent().attr('open', 'open');">About your return</span>
+                    <div id="about-completed" class="completed">Completed</div>
+                  </summary>
+                    
+                    <fieldset class="form-group inline nudged">
+                      
+                        <legend>
+                          <a href="#" class="help-link" onclick="$('#estimatedFigures').toggle(); return false;">
+                            Are any of your figures estimated?
+                            </a>
+                        </legend>
+                      
+                           <div class="hidden-help" data-ng-class="{ 'visuallyhidden': !estimatedFiguresHelp }" id="estimatedFigures" style="display: none;">
+                            <p>If a company supplies estimated figures which prove not to be reasonable and therefore not best estimates, it may become liable to a penalty</p>
+                           </div>
+                                      
+                          <label for="estimatedFigures-true" class="block-label">
+                               Yes 
+                            <input type="radio" id="estimatedFigures-true" name="estimatedFigures" value="true" data-ng-model="estimatedFigures" data-ng-click="clearValues($event)" data-init-value-on-scope="" class="ng-pristine ng-valid">
+                          </label>
+                        
+                          <label for="estimatedFigures-false" class="block-label">
+                               No 
+                            <input type="radio" id="estimatedFigures-false" name="estimatedFigures" value="false" data-ng-model="estimatedFigures" data-ng-click="clearValues($event)" data-init-value-on-scope="" class="ng-pristine ng-valid">
+                          </label>
+                        
+                    </fieldset>
+
+
+
+<fieldset class="form-group inline nudged">
+    <legend>
+        Did you receive any franked investment income?
+    </legend>
+    
+      <label for="franked-true" class="block-label">
+           Yes 
+        <input type="radio" id="franked-true" name="franked" value="true" onclick="$('#franked-income').show();">
+      </label>
+    
+      <label for="franked-false" class="block-label">
+           No 
+        <input type="radio" id="franked-false" name="franked" value="false" data-ng-model="franked" onclick="$('#franked-income').hide();">
+      </label>
+</fieldset>
+
+
+
+
+        <div class="form-group  nudged " style="display:none;" id="franked-income">
+        <div class="grid-wrapper flush--right">
+        <span id="val_taxDeductedFromGrossIncomeIncludedInProfits">
+            
+        </span>
+            
+                <div class="grid grid-3-4">
+                    <div class="inner-block"> 
+                        
+                      <label for="taxDeductedFromGrossIncomeIncludedInProfits" class="form-label   ">
+                          Amount of franked investment income
+                      </label>
+
+                    </div>
+                </div> 
+            
+            <div class="grid grid-1-4">
+                <div class="inner-block flush--right"> 
+                <input type="text" class="form-control  form-control  ng-pristine ng-valid" data-init-value-on-scope="taxDeductedFromGrossIncomeIncludedInProfits" data-ng-model="taxDeductedFromGrossIncomeIncludedInProfits" data-ng-change="updateTaxesPayableAndRepayable()" name="taxDeductedFromGrossIncomeIncludedInProfits" id="taxDeductedFromGrossIncomeIncludedInProfits" value="">
+            
+                </div>
+            </div> 
+    
+    </div>
+    
+    </div>
+
+                    <br />
+                    <a href="#" class="next button" onclick="$('table.acc details').removeAttr('open'); $(this).parent().parent().parent().next().find('details').attr('open', 'open'); $('#about-completed').show();">Save and continue</a>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details class="helptext">
+                <summary id="property-label" role="button" style="margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px;" class="colorback"><span class="summary" onclick="$('table.acc details').removeAttr('open'); $('body').scrollTop( 0 ); $(this).parent().parent().attr('open', 'open');">Tax avoidance schemes</span>
+                    <div id="avoidance-completed" class="completed">Completed</div>
+                  </summary>
+
+                        <br />
+                <fieldset class="form-group inline nudged">
+                        <legend>
+                            Are you required to declare a tax avoidance scheme?
+                        </legend>
+                      
+                          <label for="taxAvoidance2-true" class="block-label">
+                               Yes          
+                            <input type="radio" id="taxAvoidance2-true" name="taxAvoidance2" value="true" data-ng-model="taxAvoidance2" data-ng-click="clearValues($event)" data-init-value-on-scope="" class="ng-pristine ng-valid" onclick="$('#avoidance').show(); $('#avoidance-button').text('Add scheme');">
+                       </label>
+                      
+                          <label for="taxAvoidance2-false" class="block-label">
+                               No 
+                            <input type="radio" id="taxAvoidance2-false" name="taxAvoidance2" value="false" data-ng-model="taxAvoidance2" data-ng-click="clearValues($event)" data-init-value-on-scope="" class="ng-pristine ng-valid" onclick="$('#avoidance').hide(); $('#avoidance-button').text('Save and continue');">
+                          </label>
+                        
+                      
+                    </fieldset>
+                    <div id="avoidance" style="display:none;">
+                      {{>cato_v3_avoidance}}
+                    </div>
+                    <br />
+                    <a href="#" class="next button" id="avoidance-button" onclick="$('table.acc details').removeAttr('open'); $(this).parent().parent().parent().next().find('details').attr('open', 'open'); $('body').scrollTop( 0 );  $('#avoidance-completed').show();">Save and continue</a>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details class="helptext" id="loans-box">
+                <summary id="property-label" role="button" style="margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px;" class="colorback"><span class="summary" onclick="$('table.acc details').removeAttr('open');$(this).parent().parent().attr('open', 'open'); ">Loans to participators</span>
+                    <div id="loans-completed" class="completed">Completed</div>
+                  </summary>
+
+                <fieldset class="form-group inline nudged">
+
+                    <a href="#" class="help-link" onclick="$('#loans-help').toggle(); return false;" style="display: block;">
+                      Do you need to report any loans to participators (eg shareholders or directors)?
+                  </a>
+
+                     <div class="hidden-help" id="loans-help" style="display: none;">
+                      A participator is any person having a share or interest in the capital or income of the company.<br>An associate of a participator is any relative or partner, or any trustee of a settlement in which the participator or their relative were a settlor.
+                     </div>
+                  
+                    <label for="lpq03-true" class="block-label">
+                         Yes 
+                      <input type="radio" id="lpq03-true" name="lpq03" value="true" data-ng-model="lpq03" data-ng-click="clearLpq03($event)" data-init-value-on-scope="" class="ng-pristine ng-valid" onclick="$('#loans').show();">
+                    </label>
+                  
+                    <label for="lpq03-false" class="block-label">
+                         No 
+                      <input type="radio" id="lpq03-false" name="lpq03" value="false" data-ng-model="lpq03" data-ng-click="clearLpq03($event)" data-init-value-on-scope="" class="ng-pristine ng-valid" onclick="$('#loans').hide();">
+                    </label>
+                        
+                </fieldset>
+
+                    <div id="loans" class="nudged" style="display:none;">
+                      {{>cato_v3_loans}}
+                    </div>
+                    <br />
+                    <a href="#" class="next button" id="first-loan-button" onclick="$('table.acc details').removeAttr('open'); $(this).parent().parent().parent().next().find('details').attr('open', 'open'); $('body').scrollTop( 0 );  $('#avoidance-completed, #calcs').show(); $('#calcs-intro').hide(); $('#loans-completed').show();">Save and continue</a>
+
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details class="helptext" id="calcs-box">
+                <summary id="property-label" role="button" style="margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px;" class="colorback"><span class="summary" onclick="$('table.acc details').removeAttr('open');$(this).parent().parent().attr('open', 'open');">Calculations</span>
+                    <div id="calcs-completed" class="completed">Completed</div>
+                  </summary>
+                    <p class="nudged" id="calcs-intro">You need to complete the <a href="#"  onclick="$('table.acc details').removeAttr('open'); $('#loans-box').attr('open', 'open'); return false;">Loans to participators</a> section before you can view your calculations.</p>
+                    <div id="calcs" style="display:none">
+                  {{>cato_v3_calcs}}
+                </div>
+                    <br />
+                    <a href="#" class="next button" onclick="$('table.acc details').removeAttr('open'); $(this).parent().parent().parent().next().find('details').attr('open', 'open'); $('body').scrollTop( 0 ); $('#calcs-completed').show();">Save and continue</a>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details class="helptext">
+                <summary id="property-label" role="button" style="margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px;" class="colorback"><span class="summary" onclick="$('table.acc details').removeAttr('open');$(this).parent().parent().attr('open', 'open');">Repayments</span>
+                    <div id="repayments-completed" class="completed">Completed</div>
+                  </summary>
+                {{>cato_v3_repayments}}
+                    <br />
+                    <a href="#" class="next button" onclick="$('table.acc details').removeAttr('open'); $(this).parent().parent().parent().next().find('details').attr('open', 'open'); $('body').scrollTop( 0 ); $('#repayments-completed').show();">Save and continue</a>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details class="helptext">
+                <summary id="property-label" role="button" style="margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px;" class="colorback"><span class="summary" onclick="$('table.acc details').removeAttr('open');$(this).parent().parent().attr('open', 'open');">Payee</span>
+                    <div id="payee-completed" class="completed">Completed</div>
+                  </summary>
+                {{>cato_v3_payee}}
+                    <br />
+                    <a href="#" class="next button" onclick="$('table.acc details').removeAttr('open'); $(this).parent().parent().parent().next().find('details').attr('open', 'open'); $('#payee-completed').show(); $('body').scrollTop( 0 ); $('.warning').hide();">Save and continue</a>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <details class="helptext">
+                <summary id="property-label" role="button" style="margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px;" class="colorback"><span class="summary" onclick="$('table.acc details').removeAttr('open'); $(this).parent().parent().attr('open', 'open'); $('#summary-completed').show();">Tax return summary</span>
+                    <div id="summary-completed" class="completed">Reviewed</div>
+                  </summary>
+                  <div class="warning nudged">
+                    Be aware that this summary will not be accurate until all other sections have been completed.
+                  </div>
+                {{>cato_v3_summary}}
+                </details>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+  

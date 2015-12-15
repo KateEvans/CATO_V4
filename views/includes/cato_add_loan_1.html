@@ -1,0 +1,90 @@
+<style>
+.help-link:after, .help-link:visited:after {
+  background-color: #2e8aca;
+  color: #fff;
+  content: '?';
+  position: relative;
+  width: 24px;
+  height: 22px;
+  display:  inline-block;
+  top: 1px;
+  text-align:center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 4px;
+  vertical-align: top;
+  padding-top: 2px;
+
+}
+
+a.help-link, a.help-link:visited {
+  text-decoration: none;
+  color: #0B0C0C;
+}
+
+a.help-link:hover {
+  text-decoration: underline;
+  color: #2e8aca;
+}
+
+.hidden-help, .js-disabled-hidden-help {
+  font-size: 16px;
+  margin-top: 1em;
+  border-left: 0.3em solid #bfc1c3;
+  padding-left: 1em;
+  display: block;
+  color: #6f777b;
+}
+
+.block-summary, .block-addition {
+  padding: 10px 0 !important;
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.block-summary__edit-link, .block-summary__text {
+  display: inline-block;
+}
+.block-summary__edit-link {
+  width: 10%;
+  text-align: right;
+}
+.block-summary__text {
+  display: inline-block;
+  width: 89%;
+}
+
+</style>
+
+<br />
+
+<form method="POST" action="/accountsapprove" class="form">
+
+          <div class="form-group">
+              <p>
+                  <span class="text--center box-number"><span class="visuallyhidden">Box</span> LP02.1</span>
+              </p>
+              <p class="form-hint">
+                  Enter the name of a shareholder or director your company lent money to this period. You’ll be able to add more people later.
+              </p>
+          <fieldset>
+              <input class="form-control" id="full-name" type="text">
+          </fieldset>
+        </div>
+
+          <div class="form-group">
+          <fieldset>
+
+            <p class="form-label-bold" for="outstanding-amount">
+                <span class="text--center box-number"><span class="visuallyhidden">Box</span> LP02.2</span>How much did they still owe the company after 31 December 2015?</p>
+              <p class="form-hint">
+                  If you made more than one loan to this person, enter the total amount that was outstanding from all the loans.
+              </p>
+              £<input class="form-control" id="outstanding-amount" type="text" style="width: 25%;">
+          </fieldset>
+        </div>
+
+</form>

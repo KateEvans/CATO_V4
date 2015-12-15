@@ -1,0 +1,78 @@
+{{<cato_layout}}
+
+{{$pageTitle}}File your Company Accounts and Tax online{{/pageTitle}}
+
+{{$pageNavigation}}
+    {{>cato_menu_nav}}
+{{/pageNavigation}}
+
+{{$pageContent}}
+    {{>cato_loan_repayments_header}}
+    {{>cato_loan_repayments_v2}}
+    <div class="form-group">
+        <br>
+        <a class="next button" id="next-button">Save and continue</a>
+        <ul>
+            <li><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        </ul>
+    </div>
+{{/pageContent}}
+
+
+{{$pageScripts}}
+<script type="text/javascript">
+    $(document).ready(function() {
+
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+
+        var name = getUrlParameter('name');
+        var outstandingAmount = getUrlParameter('outstanding');
+        var repaidAmount = getUrlParameter('repaidAmount');
+        var add_loan2 = getUrlParameter('add_loan2');
+
+
+
+        $('#Loaned-to').text(name);
+        $('#outstanding-amount').text("£"+outstandingAmount);
+
+
+
+
+
+        $('#next-button').click(function(){
+            if($('#yes-repayment').is(':checked')){
+                window.location.href = "/cato/loan_repayments_2_2.html" + window.location.search;
+            }
+
+            if($('#no-repayment').is(':checked')){
+                /*if (add_loan2 == "yes"){
+                    window.location.href = "/cato/loan_repayments_v1.html" + window.location.search + "&repayments_2=none";
+                } else {
+                    window.location.href = "/cato/loan_repayments_v1.html" + window.location.search + "&repayments=undefined";
+                }*/
+
+                window.location.href = "/cato/loan_repayments_v1.html" + window.location.search + "&repayments-between=none";
+
+            }
+        })
+
+    });
+</script>
+{{/pageScripts}}
+
+{{/cato_layout}}
